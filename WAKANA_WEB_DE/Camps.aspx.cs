@@ -15,7 +15,7 @@ namespace WAKANA_WEB_DE
     public partial class Camps : System.Web.UI.Page
     {
         string connStr = ConfigurationManager.ConnectionStrings["mySql"].ConnectionString;
-        string query = "SELECT id, days, tituloingles as titulo, texto, CONCAT('img/camps/',imagen) AS imagen, CONCAT('img/camps/',imagencamp) AS imagencamp FROM schoolcamps";
+        string query = "SELECT id, days, tituloingles as titulo, texto, CONCAT('~/GetImage.aspx?type=schoolcampslogo&image=',id) AS imagen FROM schoolcamps";
 
         protected void Page_Load(object sender, EventArgs e)
         {

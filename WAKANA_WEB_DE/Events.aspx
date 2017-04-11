@@ -125,7 +125,7 @@
     </script>
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 
-        <div class="background-media" style="background-image: url('../img/slide/events.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; background-position: 50% 0px;" data-start="background-position:50% 0px"
+        <div class="background-media" style="background-image: url('../../img/slide/events.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; background-position: 50% 0px;" data-start="background-position:50% 0px"
             data-70-top-bottom="background-position:50% -120px">
         </div>
         <div class="background-overlay  " style="background-color: rgba(0,0,0,0.4);"></div>
@@ -135,7 +135,7 @@
                     <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.50);">
 
 
-                        <img class="imgquoute" src='img/events.jpg' style="opacity:0;"> </img>
+                        <img class="imgquoute" src='../../img/events.jpg' style="opacity:0;"> </img>
                         <div class='overlay'>
                             <p class="poverlay">Events</p>
                         </div>

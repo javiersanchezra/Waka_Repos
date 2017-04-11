@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-12 primercol"><a class="lobstertitle">Tipis</a></div>
             </div>
-            <div class="row">
+<%--            <div class="row">
                 <div class="col-md-3 col-sm-4 col-xs-6 ">
 
 
@@ -22,7 +22,7 @@
                     </a>
                 </div>
 
-            </div>
+            </div>--%>
             <div class="row">
                 <div class="col-md-12">
                     <div class="portfolio-container element-normal-top element-no-bottom debajotitulo" style="margin-top: 20px !important">

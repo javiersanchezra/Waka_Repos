@@ -135,7 +135,7 @@
                     <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.50);">
 
 
-                        <img class="imgquoute" src='img/events.jpg' style="opacity:0;"> </img>
+                        <img class="imgquoute" src='../img/events.jpg' style="opacity:0;"> </img>
                         <div class='overlay'>
                             <p class="poverlay">Events</p>
                         </div>

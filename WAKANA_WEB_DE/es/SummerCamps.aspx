@@ -98,8 +98,7 @@
                     <div class="CAMP">
                         <div class="TITULOCAMP"> <%# Eval("titulo") %></div>
 
-                        <img src="<%# Eval("imagen") %>" width="100%" height="auto" />
-                       
+                           <asp:Image ID="Image1" runat="server" ImageUrl=<%# Eval("imagen")%>  />
                         <a href="#" onclick="ShowModal('<%# Eval("id") %>', 'School');return false;" ><div class="buttonmoreinfo"> MORE INFO </div></a>
                       
                     </div>

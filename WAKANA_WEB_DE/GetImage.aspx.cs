@@ -19,9 +19,129 @@ namespace WAKANA_WEB_DE
                 {
                     MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
 
-                    string strQuery = "SELECT imagen FROM evento";
+                    string strQuery = "SELECT imagen FROM evento where id =@id";
                     MySqlCommand cmd = new MySqlCommand(strQuery,con);
                     cmd.Parameters.AddWithValue("@id",  Request.QueryString["image"].ToString());
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    if (dt != null)
+                    {
+                        Byte[] bytes = (Byte[])dt.Rows[0][0];
+                        Response.Buffer = true;
+                        Response.Charset = "";
+                        Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                        Response.ContentType = "image/jpeg";
+                        //Response.ContentType = dt.Rows[0]["ContentType"].ToString();
+                        //Response.AddHeader("content-disposition", "attachment;filename="
+                        //+ "imagen" + Request.QueryString["image"].ToString() +"jpg");
+                        Response.BinaryWrite(bytes);
+                        Response.Flush();
+                        Response.End();
+                    }
+                }
+            }
+
+            if (Request.QueryString["type"] == "summercampslogo")
+            {
+                if (Request.QueryString["image"] != null)
+                {
+                    MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+
+                    string strQuery = "SELECT imagen FROM summercamps where id =@id";
+                    MySqlCommand cmd = new MySqlCommand(strQuery, con);
+                    cmd.Parameters.AddWithValue("@id", Request.QueryString["image"].ToString());
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    if (dt != null)
+                    {
+                        Byte[] bytes = (Byte[])dt.Rows[0][0];
+                        Response.Buffer = true;
+                        Response.Charset = "";
+                        Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                        Response.ContentType = "image/png";
+                        //Response.ContentType = dt.Rows[0]["ContentType"].ToString();
+                        //Response.AddHeader("content-disposition", "attachment;filename="
+                        //+ "imagen" + Request.QueryString["image"].ToString() +"jpg");
+                        Response.BinaryWrite(bytes);
+                        Response.Flush();
+                        Response.End();
+                    }
+                }
+            }
+
+            if (Request.QueryString["type"] == "summercamps")
+            {
+                if (Request.QueryString["image"] != null)
+                {
+                    MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+
+                    string strQuery = "SELECT imagencamp FROM summercamps where id =@id";
+                    MySqlCommand cmd = new MySqlCommand(strQuery, con);
+                    cmd.Parameters.AddWithValue("@id", Request.QueryString["image"].ToString());
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    if (dt != null)
+                    {
+                        Byte[] bytes = (Byte[])dt.Rows[0][0];
+                        Response.Buffer = true;
+                        Response.Charset = "";
+                        Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                        Response.ContentType = "image/jpeg";
+                        //Response.ContentType = dt.Rows[0]["ContentType"].ToString();
+                        //Response.AddHeader("content-disposition", "attachment;filename="
+                        //+ "imagen" + Request.QueryString["image"].ToString() +"jpg");
+                        Response.BinaryWrite(bytes);
+                        Response.Flush();
+                        Response.End();
+                    }
+                }
+            }
+
+            if (Request.QueryString["type"] == "schoolcampslogo")
+            {
+                if (Request.QueryString["image"] != null)
+                {
+                    MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+
+                    string strQuery = "SELECT imagen FROM schoolcamps where id =@id";
+                    MySqlCommand cmd = new MySqlCommand(strQuery, con);
+                    cmd.Parameters.AddWithValue("@id", Request.QueryString["image"].ToString());
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    if (dt != null)
+                    {
+                        Byte[] bytes = (Byte[])dt.Rows[0][0];
+                        Response.Buffer = true;
+                        Response.Charset = "";
+                        Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                        Response.ContentType = "image/png";
+                        //Response.ContentType = dt.Rows[0]["ContentType"].ToString();
+                        //Response.AddHeader("content-disposition", "attachment;filename="
+                        //+ "imagen" + Request.QueryString["image"].ToString() +"jpg");
+                        Response.BinaryWrite(bytes);
+                        Response.Flush();
+                        Response.End();
+                    }
+                }
+            }
+
+            if (Request.QueryString["type"] == "schoolcamps")
+            {
+                if (Request.QueryString["image"] != null)
+                {
+                    MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+
+                    string strQuery = "SELECT imagencamp FROM schoolcamps where id =@id";
+                    MySqlCommand cmd = new MySqlCommand(strQuery, con);
+                    cmd.Parameters.AddWithValue("@id", Request.QueryString["image"].ToString());
                     DataTable dt = new DataTable();
                     MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                     da.Fill(dt);

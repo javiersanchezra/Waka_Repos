@@ -77,33 +77,15 @@
    
             <div class="row">
 
-                <%--<div class="col-md-3 col-sm-6 col-xs-12">
-                   
-                    <div class="CAMP">
-                        <div class="TITULOCAMP"> Wakana Camp</div>
-                        <div class="camptext">
-                            7 Days<br>
-                           <br><br>
-                        </div>
-                        <div class="buttonmoreinfo"> MORE INFO</div>
-
-                    </div>
-                      
-
-                </div>--%>
+    
                  <asp:Repeater ID="Repeater1" runat="server">
                         <ItemTemplate>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                    
                     <div class="CAMP">
                         <div class="TITULOCAMP"> <%# Eval("titulo") %></div>
-                        <%--<div class="camptext">
-                            
-                             <%# Eval("days") %> Days
-                        <br>
-                           <br><br>
-                        </div>--%>
-                        <img src="<%# Eval("imagen") %>" width="100%" height="auto" />
+                    
+                           <asp:Image ID="Image1" runat="server" ImageUrl=<%# Eval("imagen")%>  />
                         <a href="#" onclick="ShowModal('<%# Eval("id") %>', 'summer');return false;" ><div class="buttonmoreinfo">INFORMACIÓN</div></a>
                       
                     </div>
@@ -114,20 +96,7 @@
                 
              </ItemTemplate>
                         </asp:Repeater>
-                <%-- <div class="col-md-3 col-sm-6 col-xs-12">
-                   
-                    <div class="CAMP">
-                        <div class="TITULOCAMP" > Create your own</div>
-                        <div class="camptext">
-                            Contact us for a personalized camp
-                           <br>
-                        </div>
-                        <a href="#" onclick="ShowContactMod();return false;" ><div class="buttonmoreinfo" style="background-color:red;"> MORE INFO </div></a>
-                      
-                    </div>
-                      
-
-                </div>--%>
+              
             </div>
 
        

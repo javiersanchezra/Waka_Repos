@@ -22,9 +22,9 @@ namespace WAKANA_WEB_DE
                 tabla = "schoolcamps";
             else
                 tabla = "summercamps";
-            string query = "SELECT titulo, texto,  CONCAT('~/img/camps/',imagencamp) AS imagencamp FROM " + tabla + " WHERE id =" + id;
+            string query = "SELECT titulo, texto,  CONCAT('~/GetImage.aspx?type=" + tabla +"&image=',id) AS imagencamp FROM " + tabla + " WHERE id =" + id;
 
-            string queryingles = "SELECT  tituloingles, textoingles,  CONCAT('~/img/camps/',imagencamp) AS imagencamp FROM " + tabla + " WHERE id =" + id;
+            string queryingles = "SELECT  tituloingles, textoingles,  CONCAT('~/GetImage.aspx?type=" + tabla + "&image=',id) AS imagencamp FROM " + tabla + " WHERE id =" + id;
 
             if (idioma == "en")
                 query = queryingles;

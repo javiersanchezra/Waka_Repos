@@ -11,7 +11,7 @@ namespace WAKANA_WEB_DE
 {
     public partial class SummerCamps : System.Web.UI.Page
     {
-        string query = "SELECT id, days, tituloingles as titulo, texto, CONCAT('img/camps/',imagen) AS imagen, CONCAT('img/camps/',imagencamp) AS imagencamp FROM summercamps";
+        string query = "SELECT id, days, tituloingles as titulo, texto, CONCAT('~/GetImage.aspx?type=summercampslogo&image=',id) AS imagen FROM summercamps";
 
         protected void Page_Load(object sender, EventArgs e)
         {

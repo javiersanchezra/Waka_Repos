@@ -140,7 +140,7 @@
           <div class="col-md-6 margenazo">
               <p class="cmn-t-underline ">MOODY</p>
               <div style="line-height:15px;">
-              <p class="texto">I´m Moody, faithfull companion and your guardian during in the of Wakana Lake. </p>
+              <p class="texto">I´m Moody, faithfull companion and your guardian during the nights of Wakana Lake. </p>
            
            </div>
           </div>

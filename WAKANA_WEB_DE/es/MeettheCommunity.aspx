@@ -150,7 +150,7 @@
           <div class="col-md-6 margenazo">
               <p class="cmn-t-underline ">GINGER</p>
               <div style="line-height:15px;">
-            <p class="texto">Pitágoras, Jack y Ginger, pequeños leones de Wakana Lake no permitirán que ningún ratón duerma bajo tú cama</p>
+            <p class="texto">Junto con Pitágoras y Jack, la dulce Ginger no permitirá que ningún ratón duerma bajo tú cama.</p>
            
            </div>
           </div>
