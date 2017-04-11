@@ -1,0 +1,1524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{11249611-FEEE-4F4B-B958-AC750C175007}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WAKANA_WEB_DE</RootNamespace>
+    <AssemblyName>WAKANA_WEB_DE</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Web.Resources.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PayPal, Version=1.8.0.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.8.0\lib\net451\PayPal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Accommodation.aspx" />
+    <Content Include="Activities.aspx" />
+    <Content Include="Andalusian.aspx" />
+    <Content Include="assets\css\background.png" />
+    <Content Include="assets\css\bigplay.png" />
+    <Content Include="assets\css\bigplay.svg" />
+    <Content Include="assets\css\blank.png" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\color-defaults.min.css" />
+    <Content Include="assets\css\controls.png" />
+    <Content Include="assets\css\controls.svg" />
+    <Content Include="assets\css\facebook.png" />
+    <Content Include="assets\css\flashmediaelement-cdn.swf" />
+    <Content Include="assets\css\flashmediaelement.swf" />
+    <Content Include="assets\css\fonts.min.css" />
+    <Content Include="assets\css\jquery_preview_warning.jpg" />
+    <Content Include="assets\css\jquery_visual_editor_ad.jpg" />
+    <Content Include="assets\css\logobar.png" />
+    <Content Include="assets\css\noneed.css" />
+    <Content Include="assets\css\silverlightmediaelement.xap" />
+    <Content Include="assets\css\swatch-black.min.css" />
+    <Content Include="assets\css\swatch-blue.min.css" />
+    <Content Include="assets\css\swatch-gray.min.css" />
+    <Content Include="assets\css\swatch-white-black.min.css" />
+    <Content Include="assets\css\swatch-white-green.min.css" />
+    <Content Include="assets\css\swatch-white-red.min.css" />
+    <Content Include="assets\css\swatch-white.min.css" />
+    <Content Include="assets\css\theme.min.css" />
+    <Content Include="assets\css\wakana.css" />
+    <Content Include="assets\css\youtube.png" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\images\1485611568_2_-_Facebook.png" />
+    <Content Include="assets\images\1485611568_2_-_LinkedIn.png" />
+    <Content Include="assets\images\1485611571_11_-_Youtube.png" />
+    <Content Include="assets\images\1485787829_9_-_Instagram.png" />
+    <Content Include="assets\images\1485787832_1_-_Twitter.png" />
+    <Content Include="assets\images\1485867857_12_-_Vimeo.png" />
+    <Content Include="assets\images\blank.png" />
+    <Content Include="assets\images\book\Andalusian.jpg" />
+    <Content Include="assets\images\book\archery.jpg" />
+    <Content Include="assets\images\book\biking.jpg" />
+    <Content Include="assets\images\book\caballo.jpg" />
+    <Content Include="assets\images\book\Camp.jpg" />
+    <Content Include="assets\images\book\camping.jpg" />
+    <Content Include="assets\images\book\canopy.jpg" />
+    <Content Include="assets\images\book\corporation.jpg" />
+    <Content Include="assets\images\book\event.jpg" />
+    <Content Include="assets\images\book\floraandfauna.jpg" />
+    <Content Include="assets\images\book\Group.jpg" />
+    <Content Include="assets\images\book\kayak.jpg" />
+    <Content Include="assets\images\book\Kitesurf.jpg" />
+    <Content Include="assets\images\book\main.jpg" />
+    <Content Include="assets\images\book\ornithology.jpg" />
+    <Content Include="assets\images\book\paddlesurf.jpg" />
+    <Content Include="assets\images\book\riding.jpg" />
+    <Content Include="assets\images\book\spartantrial.jpg" />
+    <Content Include="assets\images\book\swimming.jpg" />
+    <Content Include="assets\images\book\Teepdes.jpg" />
+    <Content Include="assets\images\book\Teepes.jpg" />
+    <Content Include="assets\images\book\visit.jpg" />
+    <Content Include="assets\images\book\wakesurf.jpg" />
+    <Content Include="assets\images\book\windsurfing.jpg" />
+    <Content Include="assets\images\book\Yurts.jpg" />
+    <Content Include="assets\images\camps\camp.jpg" />
+    <Content Include="assets\images\contact.jpg" />
+    <Content Include="assets\images\DSCF2765w.jpg" />
+    <Content Include="assets\images\DSCF2869w.jpg" />
+    <Content Include="assets\images\england.jpg" />
+    <Content Include="assets\images\experience\family.jpg" />
+    <Content Include="assets\images\experience\friends.jpg" />
+    <Content Include="assets\images\experience\lovedones.jpg" />
+    <Content Include="assets\images\experience\team.jpg" />
+    <Content Include="assets\images\facebook.png" />
+    <Content Include="assets\images\felipe.jpg" />
+    <Content Include="assets\images\flechaback.png" />
+    <Content Include="assets\images\Ginger.jpg" />
+    <Content Include="assets\images\giselalogo.png" />
+    <Content Include="assets\images\grid-10.png" />
+    <Content Include="assets\images\grid-100.png" />
+    <Content Include="assets\images\grid-20.png" />
+    <Content Include="assets\images\grid-30.png" />
+    <Content Include="assets\images\grid-40.png" />
+    <Content Include="assets\images\grid-50.png" />
+    <Content Include="assets\images\grid-60.png" />
+    <Content Include="assets\images\grid-70.png" />
+    <Content Include="assets\images\grid-80.png" />
+    <Content Include="assets\images\grid-90.png" />
+    <Content Include="assets\images\Jack _ Rocky.jpg" />
+    <Content Include="assets\images\joseantonio.jpg" />
+    <Content Include="assets\images\juanantonio.jpg" />
+    <Content Include="assets\images\logobar.png" />
+    <Content Include="assets\images\miguelangel.jpg" />
+    <Content Include="assets\images\Moody.jpg" />
+    <Content Include="assets\images\rev-slider\coloredbg.png" />
+    <Content Include="assets\images\rev-slider\font\revicons.svg" />
+    <Content Include="assets\images\rev-slider\gridtile.png" />
+    <Content Include="assets\images\rev-slider\gridtile_3x3.png" />
+    <Content Include="assets\images\rev-slider\gridtile_3x3_white.png" />
+    <Content Include="assets\images\rev-slider\gridtile_white.png" />
+    <Content Include="assets\images\rev-slider\loader.gif" />
+    <Content Include="assets\images\slide\back1.jpg" />
+    <Content Include="assets\images\slide\backandalusian.jpg" />
+    <Content Include="assets\images\slide\backexperience2.jpg" />
+    <Content Include="assets\images\slide\backFAQ.jpg" />
+    <Content Include="assets\images\slide\BACKFAQ2.JPG" />
+    <Content Include="assets\images\slide\backmeet.jpg" />
+    <Content Include="assets\images\slide\backplace.jpg" />
+    <Content Include="assets\images\slide\backtepees.jpg" />
+    <Content Include="assets\images\slide\backyurtas.jpg" />
+    <Content Include="assets\images\slide\caballitos.jpg" />
+    <Content Include="assets\images\slide\events.jpg" />
+    <Content Include="assets\images\slide\faces.jpg" />
+    <Content Include="assets\images\slide\slide1.jpg" />
+    <Content Include="assets\images\slide\slide2.jpg" />
+    <Content Include="assets\images\slide\slide3.jpg" />
+    <Content Include="assets\images\slide\slidecamps.jpg" />
+    <Content Include="assets\images\slide\slidefamily.jpg" />
+    <Content Include="assets\images\spain.jpg" />
+    <Content Include="assets\images\spartanlogo.png" />
+    <Content Include="assets\images\svg\bigplay.svg" />
+    <Content Include="assets\images\svg\controls.svg" />
+    <Content Include="assets\images\svg\mejs-controls.svg" />
+    <Content Include="assets\images\transparent.png" />
+    <Content Include="assets\images\uploads\image-02-normal-150x150.jpg" />
+    <Content Include="assets\images\uploads\image-03-normal-150x150.jpg" />
+    <Content Include="assets\images\uploads\image-08-normal-150x150.jpg" />
+    <Content Include="assets\images\Westerm.jpg" />
+    <Content Include="assets\images\youtube.png" />
+    <Content Include="assets\images\_MG_2855.jpg" />
+    <Content Include="assets\images\_MG_2920.jpg" />
+    <Content Include="assets\js\chart.js" />
+    <Content Include="assets\js\contact.js" />
+    <Content Include="assets\js\map.js" />
+    <Content Include="assets\js\packages.min.js" />
+    <Content Include="assets\js\revolution.js" />
+    <Content Include="assets\js\revolution.min.js" />
+    <Content Include="assets\js\theme.js" />
+    <Content Include="assets\js\theme.min.js" />
+    <Content Include="assets\videos\fit_edit.mp4" />
+    <Content Include="assets\videos\girls.mp4" />
+    <Content Include="assets\videos\Inspiring.mp3" />
+    <Content Include="assets\videos\themepunch-script-1.mp3" />
+    <Content Include="assets\videos\themepunch-script-10.mp3" />
+    <Content Include="assets\videos\themepunch-script-2.mp3" />
+    <Content Include="assets\videos\themepunch-script-3.mp3" />
+    <Content Include="assets\videos\themepunch-script-4.mp3" />
+    <Content Include="assets\videos\themepunch-script-5.mp3" />
+    <Content Include="assets\videos\themepunch-script-6.mp3" />
+    <Content Include="assets\videos\themepunch-script-7.mp3" />
+    <Content Include="assets\videos\themepunch-script-9.mp3" />
+    <Content Include="assets\videos\vid3.mp4" />
+    <Content Include="assets\videos\wakana6febrero.mp4" />
+    <Content Include="assets\videos\wakana_1.mp4" />
+    <Content Include="assets\videos\wakana_2.mp4" />
+    <Content Include="assets\videos\wakana_3.mp4" />
+    <Content Include="assets\warning.js" />
+    <Content Include="BOOKING.aspx" />
+    <Content Include="Booking_Cancel.aspx" />
+    <Content Include="Booking_Success.aspx" />
+    <Content Include="Booking_test.aspx" />
+    <Content Include="CampamentoIndividual.aspx" />
+    <Content Include="Camps.aspx" />
+    <Content Include="CancelationPolicy.aspx" />
+    <Content Include="Community.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="es\Accommodation.aspx" />
+    <Content Include="es\Activities.aspx" />
+    <Content Include="es\Andalusian.aspx" />
+    <Content Include="es\Camps.aspx" />
+    <Content Include="es\CancelationPolicy.aspx" />
+    <Content Include="es\Community.aspx" />
+    <Content Include="es\Contact.aspx" />
+    <Content Include="es\Default.aspx" />
+    <Content Include="es\Events.aspx" />
+    <Content Include="es\Experience.aspx" />
+    <Content Include="es\Faces.aspx" />
+    <Content Include="es\FAQ.aspx" />
+    <Content Include="es\favicon.ico" />
+    <Content Include="es\GeneralConditions.aspx" />
+    <Content Include="es\General_Activities.aspx" />
+    <Content Include="es\Global.asax" />
+    <Content Include="es\LegalNotice.aspx" />
+    <Content Include="es\Map.aspx" />
+    <Content Include="es\MeettheCommunity.aspx" />
+    <Content Include="es\Partners.aspx" />
+    <Content Include="es\Place.aspx" />
+    <Content Include="es\ReservationPolicy.aspx" />
+    <Content Include="es\SpartanCamps.aspx" />
+    <Content Include="es\SummerCamps.aspx" />
+    <Content Include="es\Tepees.aspx" />
+    <Content Include="es\Videos.aspx" />
+    <Content Include="es\Yurtas.aspx" />
+    <Content Include="EventoIndividual.aspx" />
+    <Content Include="Events.aspx" />
+    <Content Include="Experience.aspx" />
+    <Content Include="Faces.aspx" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4895.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4899.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4913.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4915.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4919.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4920.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4923.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4930.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\IMG_4934.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\Portada Andalusian Cortijo.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4895.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4899.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4913.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4915.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4919.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4920.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4923.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4930.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\IMG_4934.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\Portada Andalusian Cortijo.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\t\_MG_5500.jpg" />
+    <Content Include="gallery\Accomodation\Andalusian House\_MG_5500.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\1.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\2.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\3.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\4.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\Cover Image.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\IMG_4712.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\t\1.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\t\2.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\t\3.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\t\4.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\t\Cover Image.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\t\IMG_4712.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\t\_DSC0040.jpg" />
+    <Content Include="gallery\Accomodation\Tepees\_DSC0040.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\DSCF4814w.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\DSCF4825w.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\DSCF4864w.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\IMG_2443.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\IMG_5539.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\Portada Yurta.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\t\DSCF4814w.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\t\DSCF4825w.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\t\DSCF4864w.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\t\IMG_2443.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\t\IMG_5539.jpg" />
+    <Content Include="gallery\Accomodation\Yurta\t\Portada Yurta.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\IMG_2825.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2839.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2842.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2847.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2857.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2862.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2863.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2864.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2866.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2867.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Arc Attack\_MG_2868.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Biking\DSCF4922w copia.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Biking\_DSC0012.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\4d9b08d2-a49f-48f9-9abb-0e8414fe32f3.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\9b65503e-7a21-42ee-98bd-52b115861cc0.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0010.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0015.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0032.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0036.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0051.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0060.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0079.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0084.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0094.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0099.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0122.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0131.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0149.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0172.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0216.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0260.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0275.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0303.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0311.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0312.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0332.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0335.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0345.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_DSC0370.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2358.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2399.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2410.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2417.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2429%281%29.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2429.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2473.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2498%281%29.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Canopy Park\_MG_2498.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Flora and Fauna\DSCF2198w.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Flora and Fauna\DSCF2202w.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Flora and Fauna\_MG_5478.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Flora and Fauna\_MG_5493.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Flora and Fauna\_MG_5495.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Horse Riding\_DSC0006.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Horse Riding\_DSC0008.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Horse Riding\_DSC0559.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Horse Riding\_DSC0571.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Horse Riding\_DSC0739.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Horse Riding\_DSC0824.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Kayaking\_MG_2789.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Kayaking\_MG_2809.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Kitesurf\14264123_10154215757872713_9149863906871206843_n.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Kitesurf\Copia de Captura de pantalla 2016-07-04 a las 21.44.25.png" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Kitesurf\Copia de Captura de pantalla 2016-07-04 a las 21.51.12.png" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Kitesurf\_MG_2994.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Kitesurf\_MG_3228 %282%29.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Ornithology\_DSC0005.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Ornithology\_DSC0007.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Ornithology\_DSC0126.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Ornithology\_DSC0430.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Ornithology\_DSC0568.JPG" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Paddle Surf\_MG_2662.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Paddle Surf\_MG_2665.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Paddle Surf\_MG_2894.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Paddle Surf\_MG_2911.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Paddle Surf\_MG_2924.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Paddle Surf\_MG_2946.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_1955.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_1960.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_1961.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_1963.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_1968.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_1980.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_1985.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2007.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2025.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2041.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2044.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2051.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2054.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2063.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2066.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2083.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2102.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2107.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2125.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2160.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2162.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2199%281%29.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2199.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2204.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2208.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2209.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2212.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2216.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2223.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan Trail\_MG_2227.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_1955.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_1960.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_1961.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_1963.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_1968.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_1980.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_1985.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2007.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2025.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2041.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2044.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2051.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2054.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2063.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2066.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2083.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2102.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2107.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2125.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2160.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2199%281%29.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2199.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2204.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2208.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2209.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2212.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2216.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2223.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Spartan\_MG_2227.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Swimming\DSCF2754w.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Swimming\DSCF3340w.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Swimming\DSCF3342w.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Swimming\_MG_2287.jpg" />
+    <Content Include="gallery\Activities %28 For Activity Screen%29\Windsurf\Paddle surf.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\14264123_10154215757872713_9149863906871206843_n.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\4d9b08d2-a49f-48f9-9abb-0e8414fe32f3.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\Kite Surf.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\Paddle surf.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\Spartan Race 1.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\Spartan Race 2 23.34.58.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\Spartan Race 3.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\14264123_10154215757872713_9149863906871206843_n.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\4d9b08d2-a49f-48f9-9abb-0e8414fe32f3.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\DSCF3465w.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\Kite Surf.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\Paddle surf.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\Spartan Race 1.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\Spartan Race 2 23.34.58.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\Spartan Race 3.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_DSC0032.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_DSC0051.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_DSC0079.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_DSC0260.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_1983.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2041.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2063.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2162.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2364.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2638.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2665.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2789.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2855.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_2920.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_3690.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_3710.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\t\_MG_3785.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_DSC0032.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_DSC0051.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_DSC0079.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_DSC0260.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_1983.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2041.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2063.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2162.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2364.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2638.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2665.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2789.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2855.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_2920.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_3690.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_3710.jpg" />
+    <Content Include="gallery\Activity %28 in the Gallery Section%29\_MG_3785.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF2764w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF2801w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF2925w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF2990w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3017w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3030w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3031w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3044w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3148w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3329w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3365w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3369w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3380w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3402w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3417w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3676w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3789w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3799w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF3816w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF4088w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF4151w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF4170w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF4499r.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\DSCF4586r.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\IMG_0258w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF2764w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF2801w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF2925w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF2990w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3017w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3030w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3031w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3044w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3148w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3329w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3365w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3369w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3380w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3402w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3417w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3676w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3789w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3799w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF3816w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF4088w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF4151w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF4170w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF4499r.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\DSCF4586r.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\IMG_0258w.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\_MG_2287.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\_MG_2327.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\t\_MG_2350.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\_MG_2287.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\_MG_2327.jpg" />
+    <Content Include="gallery\Faces %28 in the Gallery Section%29\_MG_2350.jpg" />
+    <Content Include="gallery\Videos %28 %28 in the Gallery Section%29\video1.jpg" />
+    <Content Include="gallery\Videos %28 %28 in the Gallery Section%29\video2.jpg" />
+    <Content Include="gallery\Videos %28 %28 in the Gallery Section%29\video3.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\01042761-647d-4767-bf6c-4764b6bda17d.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\0d4f67c3-d1b6-4bbd-b050-659ef9a8d0d5.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\13528204_10154369680768278_1587439655621401165_o.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\2016-12-07-PHOTO-00000087.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\2016-12-07-PHOTO-00000500.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\328ecf22-5a14-4def-8491-f51750300150.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\4d9b08d2-a49f-48f9-9abb-0e8414fe32f3.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\6a9d7ff5-e9e8-40eb-b9c2-999ddcacb552.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\9b65503e-7a21-42ee-98bd-52b115861cc0.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\b7d60e2d-e21d-4d8c-b94b-eaed47c84e46.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\Busardo Ratonerow.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\de1dc642-9043-4c30-b887-afb8c1fceda3.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\DSCF1883w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\DSCF5891w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\DSC_0543.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\DSC_0637.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\DSC_0646.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\fee1f679-4a2e-40d7-a0f0-4e755566aaee.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\HSHSHSH.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_2976.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_3466w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_3476w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_3495w - Kopie.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_3534w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_4659.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_4717.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_4867.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_4868.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_4872.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_4873.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_4876.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_5377.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\IMG_5380.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\tipi lago.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\01042761-647d-4767-bf6c-4764b6bda17d.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\0d4f67c3-d1b6-4bbd-b050-659ef9a8d0d5.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\13528204_10154369680768278_1587439655621401165_o.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\2016-12-07-PHOTO-00000087.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\2016-12-07-PHOTO-00000500.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\328ecf22-5a14-4def-8491-f51750300150.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\4d9b08d2-a49f-48f9-9abb-0e8414fe32f3.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\6a9d7ff5-e9e8-40eb-b9c2-999ddcacb552.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\9b65503e-7a21-42ee-98bd-52b115861cc0.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\b7d60e2d-e21d-4d8c-b94b-eaed47c84e46.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\Busardo Ratonerow.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\de1dc642-9043-4c30-b887-afb8c1fceda3.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\DSCF1883w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\DSCF5891w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\DSC_0543.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\DSC_0637.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\DSC_0646.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\fee1f679-4a2e-40d7-a0f0-4e755566aaee.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\HSHSHSH.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_2976.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_3466w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_3476w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_3495w - Kopie.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_3534w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4617.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4638.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4654.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4659.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4664.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4717.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4867.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4868.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4872.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4873.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_4876.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_5377.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\IMG_5380.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\tipi lago.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\t\_DSC0088w.jpg" />
+    <Content Include="gallery\Wakana Lake %28%28 in the Gallery Section%29\_DSC0088w.jpg" />
+    <Content Include="GeneralConditions.aspx" />
+    <Content Include="General_Activities.aspx" />
+    <Content Include="GetImage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="img\act\archery.jpg" />
+    <Content Include="img\act\biking.jpg" />
+    <Content Include="img\act\camping.jpg" />
+    <Content Include="img\act\canopy.jpg" />
+    <Content Include="img\act\floraandfauna.jpg" />
+    <Content Include="img\act\kayak.jpg" />
+    <Content Include="img\act\Kitesurf.jpg" />
+    <Content Include="img\act\main.jpg" />
+    <Content Include="img\act\ornithology.jpg" />
+    <Content Include="img\act\paddlesurf.jpg" />
+    <Content Include="img\act\riding.jpg" />
+    <Content Include="img\act\spartantrial.jpg" />
+    <Content Include="img\act\swimming.jpg" />
+    <Content Include="img\act\wakesurf.jpg" />
+    <Content Include="img\act\windsurfing.jpg" />
+    <Content Include="img\Andalusian House\IMG_4894.jpg" />
+    <Content Include="img\Andalusian House\IMG_4895.jpg" />
+    <Content Include="img\Andalusian House\IMG_4899.jpg" />
+    <Content Include="img\Andalusian House\IMG_4905.jpg" />
+    <Content Include="img\Andalusian House\IMG_4906.jpg" />
+    <Content Include="img\Andalusian House\IMG_4907.jpg" />
+    <Content Include="img\Andalusian House\IMG_4908.jpg" />
+    <Content Include="img\Andalusian House\IMG_4909.jpg" />
+    <Content Include="img\Andalusian House\IMG_4910.jpg" />
+    <Content Include="img\Andalusian House\IMG_4912.jpg" />
+    <Content Include="img\Andalusian House\IMG_4915.jpg" />
+    <Content Include="img\Andalusian House\IMG_4917.jpg" />
+    <Content Include="img\Andalusian House\IMG_4919.jpg" />
+    <Content Include="img\Andalusian House\IMG_4920.jpg" />
+    <Content Include="img\Andalusian House\IMG_4922.jpg" />
+    <Content Include="img\Andalusian House\IMG_4923.jpg" />
+    <Content Include="img\Andalusian House\IMG_4926.jpg" />
+    <Content Include="img\Andalusian House\IMG_4927.jpg" />
+    <Content Include="img\Andalusian House\IMG_4931.jpg" />
+    <Content Include="img\Andalusian House\IMG_4933.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4894.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4895.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4899.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4905.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4906.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4907.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4908.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4909.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4910.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4912.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4915.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4917.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4919.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4920.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4922.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4923.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4926.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4927.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4931.jpg" />
+    <Content Include="img\Andalusian House\t\IMG_4933.jpg" />
+    <Content Include="img\Andalusian House\t\_MG_4294.jpg" />
+    <Content Include="img\Andalusian House\_MG_4294.jpg" />
+    <Content Include="img\ANDALUSIAN.jpg" />
+    <Content Include="img\bookcover.jpg" />
+    <Content Include="img\camps\3dias.jpg" />
+    <Content Include="img\camps\4dias.jpg" />
+    <Content Include="img\camps\5dias.jpg" />
+    <Content Include="img\camps\6dias.jpg" />
+    <Content Include="img\camps\logoazul.png" />
+    <Content Include="img\camps\logocafe.png" />
+    <Content Include="img\camps\logomorado.png" />
+    <Content Include="img\camps\logored.png" />
+    <Content Include="img\camps\logoverde.png" />
+    <Content Include="img\DSCF4670w.jpg" />
+    <Content Include="img\DSCF4785w.jpg" />
+    <Content Include="img\DSCF4786w.jpg" />
+    <Content Include="img\events.jpg" />
+    <Content Include="img\events\3dias.jpg" />
+    <Content Include="img\events\hercules.jpg" />
+    <Content Include="img\map.png" />
+    <Content Include="img\play-button.png" />
+    <Content Include="img\Portada Yurta.jpg" />
+    <Content Include="img\slide\back1.jpg" />
+    <Content Include="img\slide\backandalusian.jpg" />
+    <Content Include="img\slide\backexperience2.jpg" />
+    <Content Include="img\slide\backFAQ.jpg" />
+    <Content Include="img\slide\BACKFAQ2.JPG" />
+    <Content Include="img\slide\backmeet.jpg" />
+    <Content Include="img\slide\backplace.jpg" />
+    <Content Include="img\slide\backtepees.jpg" />
+    <Content Include="img\slide\backyurtas.jpg" />
+    <Content Include="img\slide\caballitos.jpg" />
+    <Content Include="img\slide\DSCF2765w.jpg" />
+    <Content Include="img\slide\events.jpg" />
+    <Content Include="img\slide\faces.jpg" />
+    <Content Include="img\slide\slide1.jpg" />
+    <Content Include="img\slide\slide2 - copia.jpg" />
+    <Content Include="img\slide\slide2.jpg" />
+    <Content Include="img\slide\slide3.jpg" />
+    <Content Include="img\slide\slidecamps.jpg" />
+    <Content Include="img\slide\slidefamily.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_1.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_2.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_3.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_4.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_5.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_6.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_7.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_CAMP_8.jpg" />
+    <Content Include="img\SPARTAN CAMPS\SPARTAN_LOGO.png" />
+    <Content Include="img\TEEPES - copia.jpg" />
+    <Content Include="img\TEEPES.jpg" />
+    <Content Include="img\Tepees\DSCF1883w.jpg" />
+    <Content Include="img\Tepees\DSCF1896w copia.jpg" />
+    <Content Include="img\Tepees\DSCF1896w.jpg" />
+    <Content Include="img\Tepees\DSCF3297w.jpg" />
+    <Content Include="img\Tepees\IMG_4125.jpg" />
+    <Content Include="img\Tepees\IMG_4129.jpg" />
+    <Content Include="img\Tepees\t\DSCF1883w.jpg" />
+    <Content Include="img\Tepees\t\DSCF1896w copia.jpg" />
+    <Content Include="img\Tepees\t\DSCF1896w.jpg" />
+    <Content Include="img\Tepees\t\DSCF3297w.jpg" />
+    <Content Include="img\Tepees\t\IMG_4125.jpg" />
+    <Content Include="img\Tepees\t\IMG_4129.jpg" />
+    <Content Include="img\t\DSCF4670w.jpg" />
+    <Content Include="img\t\DSCF4785w.jpg" />
+    <Content Include="img\t\DSCF4786w.jpg" />
+    <Content Include="img\Wakana\14192658_10154211461847713_8142078389862595981_n.jpg" />
+    <Content Include="img\Wakana\14264123_10154215757872713_9149863906871206843_n.jpg" />
+    <Content Include="img\Wakana\Captura de pantalla 2016-02-09 a las 1.00.35.jpg" />
+    <Content Include="img\Wakana\colorDSCF4570r.jpg" />
+    <Content Include="img\Wakana\DSCF2801w.jpg" />
+    <Content Include="img\Wakana\DSCF2869w.jpg" />
+    <Content Include="img\Wakana\DSCF3365w.jpg" />
+    <Content Include="img\Wakana\DSCF3369w.jpg" />
+    <Content Include="img\Wakana\DSCF3380w.jpg" />
+    <Content Include="img\Wakana\DSCF3402w.jpg" />
+    <Content Include="img\Wakana\DSCF3417w.jpg" />
+    <Content Include="img\Wakana\DSCF3676w.jpg" />
+    <Content Include="img\Wakana\DSCF3735w.jpg" />
+    <Content Include="img\Wakana\DSCF4088w.jpg" />
+    <Content Include="img\Wakana\DSCF4119w.jpg" />
+    <Content Include="img\Wakana\DSCF4195r.jpg" />
+    <Content Include="img\Wakana\DSCF4499r.jpg" />
+    <Content Include="img\Wakana\DSCF4507r.jpg" />
+    <Content Include="img\Wakana\DSCF4586r.jpg" />
+    <Content Include="img\Wakana\Paddle surf.jpg" />
+    <Content Include="img\Wakana\Spartan Race 1.jpg" />
+    <Content Include="img\Wakana\Spartan Race 2 23.34.58.jpg" />
+    <Content Include="img\Wakana\Spartan Race 3.jpg" />
+    <Content Include="img\Wakana\t\14192658_10154211461847713_8142078389862595981_n.jpg" />
+    <Content Include="img\Wakana\t\14264123_10154215757872713_9149863906871206843_n.jpg" />
+    <Content Include="img\Wakana\t\Captura de pantalla 2016-02-09 a las 1.00.35.jpg" />
+    <Content Include="img\Wakana\t\colorDSCF4570r.jpg" />
+    <Content Include="img\Wakana\t\DSCF2801w.jpg" />
+    <Content Include="img\Wakana\t\DSCF2869w.jpg" />
+    <Content Include="img\Wakana\t\DSCF3365w.jpg" />
+    <Content Include="img\Wakana\t\DSCF3369w.jpg" />
+    <Content Include="img\Wakana\t\DSCF3380w.jpg" />
+    <Content Include="img\Wakana\t\DSCF3402w.jpg" />
+    <Content Include="img\Wakana\t\DSCF3417w.jpg" />
+    <Content Include="img\Wakana\t\DSCF3676w.jpg" />
+    <Content Include="img\Wakana\t\DSCF3735w.jpg" />
+    <Content Include="img\Wakana\t\DSCF4088w.jpg" />
+    <Content Include="img\Wakana\t\DSCF4119w.jpg" />
+    <Content Include="img\Wakana\t\DSCF4195r.jpg" />
+    <Content Include="img\Wakana\t\DSCF4499r.jpg" />
+    <Content Include="img\Wakana\t\DSCF4507r.jpg" />
+    <Content Include="img\Wakana\t\DSCF4586r.jpg" />
+    <Content Include="img\Wakana\t\Paddle surf.jpg" />
+    <Content Include="img\Wakana\t\Spartan Race 1.jpg" />
+    <Content Include="img\Wakana\t\Spartan Race 2 23.34.58.jpg" />
+    <Content Include="img\Wakana\t\Spartan Race 3.jpg" />
+    <Content Include="img\Wakana\t\_MG_1983.jpg" />
+    <Content Include="img\Wakana\t\_MG_2041.jpg" />
+    <Content Include="img\Wakana\t\_MG_2063.jpg" />
+    <Content Include="img\Wakana\t\_MG_2287.jpg" />
+    <Content Include="img\Wakana\t\_MG_2289.jpg" />
+    <Content Include="img\Wakana\t\_MG_2327.jpg" />
+    <Content Include="img\Wakana\t\_MG_2665.jpg" />
+    <Content Include="img\Wakana\t\_MG_2789.jpg" />
+    <Content Include="img\Wakana\t\_MG_3679.jpg" />
+    <Content Include="img\Wakana\t\_MG_3710.jpg" />
+    <Content Include="img\Wakana\t\_MG_3785.jpg" />
+    <Content Include="img\Wakana\_MG_1983.jpg" />
+    <Content Include="img\Wakana\_MG_2041.jpg" />
+    <Content Include="img\Wakana\_MG_2063.jpg" />
+    <Content Include="img\Wakana\_MG_2287.jpg" />
+    <Content Include="img\Wakana\_MG_2289.jpg" />
+    <Content Include="img\Wakana\_MG_2327.jpg" />
+    <Content Include="img\Wakana\_MG_2665.jpg" />
+    <Content Include="img\Wakana\_MG_2789.jpg" />
+    <Content Include="img\Wakana\_MG_3679.jpg" />
+    <Content Include="img\Wakana\_MG_3710.jpg" />
+    <Content Include="img\Wakana\_MG_3785.jpg" />
+    <Content Include="img\YURTAS.jpg" />
+    <Content Include="img\Yurtas\2016-06-12 11.47.38 %281%29.jpg" />
+    <Content Include="img\Yurtas\DSCF4670w.jpg" />
+    <Content Include="img\Yurtas\DSCF4695w.jpg" />
+    <Content Include="img\Yurtas\DSCF4710w.jpg" />
+    <Content Include="img\Yurtas\DSCF4711w.jpg" />
+    <Content Include="img\Yurtas\DSCF4716w.jpg" />
+    <Content Include="img\Yurtas\DSCF4727w.jpg" />
+    <Content Include="img\Yurtas\DSCF4737w.jpg" />
+    <Content Include="img\Yurtas\DSCF4739w.jpg" />
+    <Content Include="img\Yurtas\DSCF4763w.jpg" />
+    <Content Include="img\Yurtas\DSCF4765w.jpg" />
+    <Content Include="img\Yurtas\DSCF4767w.jpg" />
+    <Content Include="img\Yurtas\DSCF4769w.jpg" />
+    <Content Include="img\Yurtas\DSCF4784w.jpg" />
+    <Content Include="img\Yurtas\DSCF4785w.jpg" />
+    <Content Include="img\Yurtas\DSCF4786w.jpg" />
+    <Content Include="img\Yurtas\DSCF4803w.jpg" />
+    <Content Include="img\Yurtas\DSCF4814w.jpg" />
+    <Content Include="img\Yurtas\DSCF4825w.jpg" />
+    <Content Include="img\Yurtas\DSCF4834w.jpg" />
+    <Content Include="img\Yurtas\DSCF4839w.jpg" />
+    <Content Include="img\Yurtas\DSCF4864w.jpg" />
+    <Content Include="img\Yurtas\IMG_2443.jpg" />
+    <Content Include="img\Yurtas\IMG_2807.jpg" />
+    <Content Include="img\Yurtas\t\2016-06-12 11.47.38 %281%29.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4670w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4695w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4710w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4711w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4716w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4727w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4737w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4739w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4763w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4765w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4767w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4769w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4784w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4785w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4786w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4803w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4814w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4825w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4834w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4839w.jpg" />
+    <Content Include="img\Yurtas\t\DSCF4864w.jpg" />
+    <Content Include="img\Yurtas\t\IMG_2443.jpg" />
+    <Content Include="img\Yurtas\t\IMG_2807.jpg" />
+    <Content Include="indcamp.aspx" />
+    <Content Include="LegalNotice.aspx" />
+    <Content Include="Map.aspx" />
+    <Content Include="MeettheCommunity.aspx" />
+    <Content Include="Partners.aspx" />
+    <Content Include="Paypal.png" />
+    <Content Include="Place.aspx" />
+    <Content Include="ReservationPolicy.aspx" />
+    <Content Include="Response.aspx" />
+    <Content Include="revolution\assets\coloredbg.png" />
+    <Content Include="revolution\assets\gridtile.png" />
+    <Content Include="revolution\assets\gridtile_3x3.png" />
+    <Content Include="revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="revolution\assets\gridtile_white.png" />
+    <Content Include="revolution\assets\loader.gif" />
+    <Content Include="revolution\css\closedhand.cur" />
+    <Content Include="revolution\css\layers.css" />
+    <Content Include="revolution\css\navigation.css" />
+    <Content Include="revolution\css\openhand.cur" />
+    <Content Include="revolution\css\settings.css" />
+    <Content Include="revolution\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="revolution\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="revolution\fonts\revicons\revicons.svg" />
+    <Content Include="revolution\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="revolution\js\source\jquery.themepunch.revolution.js" />
+    <Content Include="revolution\js\source\jquery.themepunch.tools.min.js" />
+    <Content Include="SchoolCamps.aspx" />
+    <Content Include="SpartanCamps.aspx" />
+    <Content Include="Success.aspx" />
+    <Content Include="SummerCamps.aspx" />
+    <Content Include="Tepees.aspx" />
+    <Content Include="Videos.aspx" />
+    <Content Include="Yurtas.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wakana_1.mp4" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\images\rev-slider\font\revicons.eot" />
+    <Content Include="assets\images\rev-slider\font\revicons.ttf" />
+    <Content Include="assets\images\rev-slider\font\revicons.woff" />
+    <Content Include="revolution\assets\svg\index.php" />
+    <Content Include="revolution\assets\svg\svg.zip" />
+    <Content Include="revolution\css\index.php" />
+    <Content Include="revolution\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="revolution\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="revolution\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="revolution\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="revolution\fonts\font-awesome\index.php" />
+    <Content Include="revolution\fonts\index.php" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\css\index.php" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\index.php" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\index.php" />
+    <Content Include="revolution\fonts\revicons\index.php" />
+    <Content Include="revolution\fonts\revicons\revicons.eot" />
+    <Content Include="revolution\fonts\revicons\revicons.ttf" />
+    <Content Include="revolution\fonts\revicons\revicons.woff" />
+    <Content Include="revolution\index.php" />
+    <Content Include="revolution\info.cfg" />
+    <Content Include="revolution\js\extensions\index.php" />
+    <Content Include="revolution\js\extensions\source\index.php" />
+    <Content Include="revolution\js\index.php" />
+    <Content Include="revolution\js\source\index.php" />
+    <Content Include="revolution\php\facebook\class-facebook.php" />
+    <Content Include="revolution\php\flickr\class-flickr.php" />
+    <Content Include="revolution\php\instagram\class-instagram.php" />
+    <Content Include="revolution\php\twitter\class-twitter.php" />
+    <Content Include="revolution\php\twitter\connection\Application.php" />
+    <Content Include="revolution\php\twitter\connection\ConnectionAbstract.php" />
+    <Content Include="revolution\php\twitter\connection\User.php" />
+    <Content Include="revolution\php\twitter\RestApi.php" />
+    <Content Include="revolution\php\vimeo\class-vimeo.php" />
+    <Content Include="revolution\php\youtube\class-youtube.php" />
+    <Content Include="Main.Master" />
+    <Content Include="packages.config" />
+    <Content Include="img\camps\camps.psd" />
+    <Content Include="es\Main.Master" />
+    <Content Include="Gisela Pulido Pro Center.pdf" />
+    <Content Include="img\slide\slide.rar" />
+    <None Include="Properties\PublishProfiles\wakana1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\wakana1 - Web Deploy.pubxml" />
+    <Content Include="Response.aspx.bak" />
+    <None Include="wakana1 - FTP %282%29.pubxml" />
+    <None Include="wakana1 - FTP.pubxml" />
+    <None Include="wakana1 - Web Deploy %282%29.pubxml" />
+    <None Include="wakana1 - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accommodation.aspx.cs">
+      <DependentUpon>Accommodation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accommodation.aspx.designer.cs">
+      <DependentUpon>Accommodation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activities.aspx.cs">
+      <DependentUpon>Activities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activities.aspx.designer.cs">
+      <DependentUpon>Activities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Andalusian.aspx.cs">
+      <DependentUpon>Andalusian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Andalusian.aspx.designer.cs">
+      <DependentUpon>Andalusian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseSamplePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BOOKING.aspx.cs">
+      <DependentUpon>BOOKING.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BOOKING.aspx.designer.cs">
+      <DependentUpon>BOOKING.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking_Cancel.aspx.cs">
+      <DependentUpon>Booking_Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking_Cancel.aspx.designer.cs">
+      <DependentUpon>Booking_Cancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking_Success.aspx.cs">
+      <DependentUpon>Booking_Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking_Success.aspx.designer.cs">
+      <DependentUpon>Booking_Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking_test.aspx.cs">
+      <DependentUpon>Booking_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking_test.aspx.designer.cs">
+      <DependentUpon>Booking_test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CampamentoIndividual.aspx.cs">
+      <DependentUpon>CampamentoIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CampamentoIndividual.aspx.designer.cs">
+      <DependentUpon>CampamentoIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Camps.aspx.cs">
+      <DependentUpon>Camps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Camps.aspx.designer.cs">
+      <DependentUpon>Camps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CancelationPolicy.aspx.cs">
+      <DependentUpon>CancelationPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CancelationPolicy.aspx.designer.cs">
+      <DependentUpon>CancelationPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Community.aspx.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Community.aspx.designer.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Accommodation.aspx.cs">
+      <DependentUpon>Accommodation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Accommodation.aspx.designer.cs">
+      <DependentUpon>Accommodation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Activities.aspx.cs">
+      <DependentUpon>Activities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Activities.aspx.designer.cs">
+      <DependentUpon>Activities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Andalusian.aspx.cs">
+      <DependentUpon>Andalusian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Andalusian.aspx.designer.cs">
+      <DependentUpon>Andalusian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Camps.aspx.cs">
+      <DependentUpon>Camps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Camps.aspx.designer.cs">
+      <DependentUpon>Camps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\CancelationPolicy.aspx.cs">
+      <DependentUpon>CancelationPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\CancelationPolicy.aspx.designer.cs">
+      <DependentUpon>CancelationPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Community.aspx.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Community.aspx.designer.cs">
+      <DependentUpon>Community.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Experience.aspx.cs">
+      <DependentUpon>Experience.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Experience.aspx.designer.cs">
+      <DependentUpon>Experience.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Faces.aspx.cs">
+      <DependentUpon>Faces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Faces.aspx.designer.cs">
+      <DependentUpon>Faces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\GeneralConditions.aspx.cs">
+      <DependentUpon>GeneralConditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\GeneralConditions.aspx.designer.cs">
+      <DependentUpon>GeneralConditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\General_Activities.aspx.cs">
+      <DependentUpon>General_Activities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\General_Activities.aspx.designer.cs">
+      <DependentUpon>General_Activities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="es\LegalNotice.aspx.cs">
+      <DependentUpon>LegalNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\LegalNotice.aspx.designer.cs">
+      <DependentUpon>LegalNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="es\Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\MeettheCommunity.aspx.cs">
+      <DependentUpon>MeettheCommunity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\MeettheCommunity.aspx.designer.cs">
+      <DependentUpon>MeettheCommunity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Partners.aspx.cs">
+      <DependentUpon>Partners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Partners.aspx.designer.cs">
+      <DependentUpon>Partners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Place.aspx.cs">
+      <DependentUpon>Place.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Place.aspx.designer.cs">
+      <DependentUpon>Place.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\ReservationPolicy.aspx.cs">
+      <DependentUpon>ReservationPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\ReservationPolicy.aspx.designer.cs">
+      <DependentUpon>ReservationPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\SpartanCamps.aspx.cs">
+      <DependentUpon>SpartanCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\SpartanCamps.aspx.designer.cs">
+      <DependentUpon>SpartanCamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\SummerCamps.aspx.cs">
+      <DependentUpon>SummerCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\SummerCamps.aspx.designer.cs">
+      <DependentUpon>SummerCamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Tepees.aspx.cs">
+      <DependentUpon>Tepees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Tepees.aspx.designer.cs">
+      <DependentUpon>Tepees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Videos.aspx.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Videos.aspx.designer.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\Yurtas.aspx.cs">
+      <DependentUpon>Yurtas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\Yurtas.aspx.designer.cs">
+      <DependentUpon>Yurtas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventoIndividual.aspx.cs">
+      <DependentUpon>EventoIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventoIndividual.aspx.designer.cs">
+      <DependentUpon>EventoIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Experience.aspx.cs">
+      <DependentUpon>Experience.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Experience.aspx.designer.cs">
+      <DependentUpon>Experience.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Faces.aspx.cs">
+      <DependentUpon>Faces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Faces.aspx.designer.cs">
+      <DependentUpon>Faces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralConditions.aspx.cs">
+      <DependentUpon>GeneralConditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralConditions.aspx.designer.cs">
+      <DependentUpon>GeneralConditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="General_Activities.aspx.cs">
+      <DependentUpon>General_Activities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="General_Activities.aspx.designer.cs">
+      <DependentUpon>General_Activities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetImage.aspx.cs">
+      <DependentUpon>GetImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetImage.aspx.designer.cs">
+      <DependentUpon>GetImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="indcamp.aspx.cs">
+      <DependentUpon>indcamp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indcamp.aspx.designer.cs">
+      <DependentUpon>indcamp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LegalNotice.aspx.cs">
+      <DependentUpon>LegalNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LegalNotice.aspx.designer.cs">
+      <DependentUpon>LegalNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MeettheCommunity.aspx.cs">
+      <DependentUpon>MeettheCommunity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeettheCommunity.aspx.designer.cs">
+      <DependentUpon>MeettheCommunity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Partners.aspx.cs">
+      <DependentUpon>Partners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partners.aspx.designer.cs">
+      <DependentUpon>Partners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Place.aspx.cs">
+      <DependentUpon>Place.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Place.aspx.designer.cs">
+      <DependentUpon>Place.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationPolicy.aspx.cs">
+      <DependentUpon>ReservationPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservationPolicy.aspx.designer.cs">
+      <DependentUpon>ReservationPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Response.aspx.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Response.aspx.designer.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolCamps.aspx.cs">
+      <DependentUpon>SchoolCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SchoolCamps.aspx.designer.cs">
+      <DependentUpon>SchoolCamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpartanCamps.aspx.cs">
+      <DependentUpon>SpartanCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpartanCamps.aspx.designer.cs">
+      <DependentUpon>SpartanCamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SummerCamps.aspx.cs">
+      <DependentUpon>SummerCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SummerCamps.aspx.designer.cs">
+      <DependentUpon>SummerCamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tepees.aspx.cs">
+      <DependentUpon>Tepees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tepees.aspx.designer.cs">
+      <DependentUpon>Tepees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Common.cs" />
+    <Compile Include="Utilities\Configuration.cs" />
+    <Compile Include="Utilities\RequestFlow.cs" />
+    <Compile Include="Utilities\RequestFlowItem.cs" />
+    <Compile Include="Utilities\SampleCategory.cs" />
+    <Compile Include="Utilities\SampleItem.cs" />
+    <Compile Include="Videos.aspx.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Videos.aspx.designer.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yurtas.aspx.cs">
+      <DependentUpon>Yurtas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yurtas.aspx.designer.cs">
+      <DependentUpon>Yurtas.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\gridimages\" />
+    <Folder Include="assets\images\rev-slider\images\" />
+    <Folder Include="assets\svg\" />
+    <Folder Include="gallery\Gallery Images -20170130T190822Z\Gallery Images \" />
+    <Folder Include="revolution\assets\sources\" />
+    <Folder Include="revolution\css\navigation-skins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50048</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50048/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

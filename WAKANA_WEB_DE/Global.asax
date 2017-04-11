@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="WAKANA_WEB_DE.Global_asax" Language="C#" %>

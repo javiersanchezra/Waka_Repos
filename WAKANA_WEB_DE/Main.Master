@@ -1,0 +1,642 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WAKANA_WEB_DE.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Wakana Lake</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,300italic,400italic,600italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/theme.min.css">
+    <link rel="stylesheet" href="../assets/css/color-defaults.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/swatch-white.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/swatch-blue.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/swatch-gray.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/swatch-black.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/swatch-white-black.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/wakana.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/swatch-white-green.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/swatch-white-red.min.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/fonts.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="../revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="../revolution/css/navigation.css">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-91744513-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+        function ShowLoginWindow() {
+            pcLogin.Show();
+        }
+        function CambiarEspanol() {
+            window.location = "es/" + document.location.pathname.split("/").slice(-1);
+
+        }
+        function OnListBoxIndexChanged() {
+
+            CallbackPanelContact.PerformCallback();
+        }
+        function ShowModal(id, tipo) {
+            modal.SetContentUrl("../CampamentoIndividual.aspx?idioma=en&id=" + id + "&tipo=" + tipo);
+
+            var w = window.innerWidth;;
+            if (w <= 800)
+                w = w * .90;
+            else
+                w = 700;
+
+            var h = window.innerHeight * .90;
+            modal.SetSize(w, h);
+            modal.UpdatePosition();
+            modal.Show();
+        }
+
+        function ShowModalEvent(id, tipo, t) {
+            modal.SetContentUrl("../Eventoindividual.aspx?idioma=en&id=" + id);
+
+            var w = window.innerWidth;;
+            if (w <= 800)
+                w = w * .90;
+            else
+                w = 700;
+
+            var h = window.innerHeight * .70;
+            modal.SetSize(w, h);
+            modal.UpdatePosition();
+            modal.Show();
+        }
+    </script>
+    <style>
+        .scrollbar {
+        }
+
+            .scrollbar::-webkit-scrollbar {
+                width: 6px !important;
+                background-color: transparent !important;
+            }
+
+            .scrollbar::-webkit-scrollbar-thumb {
+                background-color: lightgray !important;
+                border-radius: 10px !important;
+            }
+
+                .scrollbar::-webkit-scrollbar-thumb:hover {
+                    background-color: dimgray !important;
+                }
+
+                .scrollbar::-webkit-scrollbar-thumb:active {
+                    background-color: gray !important;
+                }
+
+        .modalcamp {
+            width: 50vw;
+            height: 80vh;
+        }
+
+        .modalcampimg {
+            width: 50vw;
+            height: auto;
+        }
+
+        @media (max-height: 600px) {
+            .dxpcLite_DevEx .dxpc-mainDiv, .dxpcLite_DevEx.dxpc-mainDiv, .dxdpLite_DevEx .dxpc-mainDiv, .dxdpLite_DevEx.dxpc-mainDiv {
+                height: 600px;
+            }
+
+            .modalcamp {
+                height: 95vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .modalcamp {
+                width: 90vw;
+                height: 90vh;
+            }
+
+            .modalcampimg {
+                width: 90vw;
+            }
+        }
+
+        .textocamp {
+            white-space: pre-line;
+        }
+
+        .campimage {
+        }
+    </style>
+</head>
+
+<body class="transparent-header">
+    <form id="form1" runat="server">
+        <div class="pace-overlay"></div>
+        <div id="masthead" class="navbar navbar-static-top swatch-black navbar-sticky" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="Default.aspx" class="navbar-brand" style="height: 60px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                        <img src="../assets/images/logobar.png" alt="Wakana Lake" />
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse main-navbar" role="navigation">
+                    <div class="menu-sidebar pull-right">
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <%-- <li class="dropdown menu-item-object-oxy_mega_menu ">
+                            <a href="#" onclick="ShowLoginWindow();return false;" >BOOK NOW</a>
+                        </li>--%>
+
+                        <li class="dropdown">
+                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown">Place</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Faces.aspx">Gallery
+                                                    
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="Map.aspx">Map
+                                                    
+                                    </a>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Community</a>
+
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="Community.aspx">About Us</a></li>
+                                        <li><a href="Meetthecommunity.aspx">Team</a></li>
+                                    </ul>
+
+
+
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accommodation</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Yurtas.aspx">Yurts
+                                                    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Andalusian.aspx">Andalusian Cortijo
+                                                    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Tepees.aspx">Tepees
+                                                    
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Camps</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Camps.aspx">School Camps
+                                                    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="SummerCamps.aspx">Wakana Lake Summers Camps
+                                                    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="SpartanCamps.aspx">Spartan Race Camps
+                                                    
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Activities.aspx">Activities</a>
+
+                        </li>
+                        <li class="dropdown">
+                            <a href="Events.aspx">Events</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="Partners.aspx">Partners</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" onclick="CambiarEspanol();return false;" style="font-size: 30px;">
+                                <img style="padding-bottom: 10px" width="34px" height="20px" src="assets/images/spain.jpg"></img></a>
+
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="content">
+            <article>
+                <script type="text/javascript">
+                    var oxyThemeData = {
+                        navbarHeight: 90,
+                        navbarScrolled: 70,
+                        navbarScrolledPoint: 200,
+                        navbarScrolledSwatches:
+                        {
+                            up: 'swatch-black',
+                            down: 'swatch-black'
+                        },
+                        scrollFinishedMessage: 'No more items to load.',
+                        hoverMenu:
+                        {
+                            hoverActive: false,
+                            hoverDelay: 1,
+                            hoverFadeDelay: 200
+                        }
+                    };
+
+
+
+
+
+
+                    function ShowLoginWindow() {
+                        pcLogin.Show();
+                    }
+                    $("#example-basic").steps({
+                        headerTag: "h3",
+                        bodyTag: "section",
+                        transitionEffect: "slideLeft",
+                        autoFocus: true
+                    });
+
+                    function ShowPrevPage() {
+                        PerformCallback('prev');
+                    }
+
+                    //function UpdateInfo2() {
+                    //    var days = calendar.Get
+                    //    tbInfo.SetText(days !== -1 ? days + ' days' : '');
+                    //}
+
+                    function ShowNextPage() {
+                        PerformCallback('next');
+                    }
+                    function PerformCallback(command) {
+                        CallbackPanel.PerformCallback(CallbackPanel.cpPageIndex + ':' + command);
+                    }
+                    function UpdatePager() {
+                        var pageNumber = CallbackPanel.cpPageIndex + 1;
+                        var isFirst = (CallbackPanel.cpPageIndex == 0);
+                        var isLast = (CallbackPanel.cpPageIndex == (CallbackPanel.cpPageCount - 1));
+                        lbPageInfo.SetText('Page: ' + pageNumber + ' of ' + CallbackPanel.cpPageCount);
+                        btPrev.SetEnabled(!isFirst);
+                        btNext.SetEnabled(!isLast);
+                    }
+                    function FINALIZAR() {
+                        var tt1 = t1.GetText();
+                        var tt2 = t2.GetText();
+                        var tt3 = t3.GetText();
+                        alert("Enviar Email Textbox 1 + 2+ 3" + tt1 + tt2 + tt3);
+                    }
+                    function ShowContactMod() {
+                        ContactMod.Show();
+                    }
+
+                </script>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </article>
+            <footer id="footer" role="contentinfo">
+                <section class="section swatch-black">
+                    <div class="container">
+
+                        <div class="row" style="margin-top: 25px; margin-bottom: 25px;">
+                            <div class="col-md-11">
+                                <div class="row">
+
+                                    <div class="col-md-2" style="padding-left: 0px; padding-right: 0px;">
+                                        <center><a class="linksub"  href="LegalNotice.aspx" style=" color:white; ">LEGAL NOTICE</a></br> <a class="linksub"  href="GeneralConditions.aspx" style=" color:white; ">GENERAL CONDITIONS</a></br><a class="linksub"  href="ReservationPolicy.aspx" style=" color:white; ">RESERVATION POLICY</a></br><a class="linksub"  href="CancelationPolicy.aspx" style=" color:white; ">CANCELATION POLICY</a>
+                     </center>
+                                        </br>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <center> <a  class="linksub" href="FAQ.aspx" style=" color:white; ">FAQ</a>
+                       </center>
+                                        </br>
+                                    </div>
+                                    <div class="col-md-4" style="color: white; text-align: left;">
+                                        <center>
+                                        <a class="linksub" href="Map.aspx" style="color:white;  ">LOCATION</a></br></br>
+                                            <a href="https://www.google.com.mx/maps/place/WAKANA+LAKE/@36.31006,-5.7429637,21z/data=!4m5!3m4!1s0x0:0x1925801980d6b5aa!8m2!3d36.3100875!4d-5.7428419"><span class="fa fa-map-marker " style="margin-right: 10px;"></span>Ctra. A 2226 Benalup - Los Barrios </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;km 6,5, C.P. 11190 Benalup - Casas Viejas, Cádiz</br>Lat,Long: 36.3097393,-5.7433607</a>
+                                        </center>
+                                        </br>
+                                    </div>
+                                    <div class="col-md-4" style="color: white; text-align: left;">
+                                        <center>
+                                        <a class="linksub" href="Contact.aspx" >CONTACT</a></br></br>
+                                          <span class="fa fa-phone  " style="margin-right: 10px;"></span>+34 687 929459 </br>
+                                        <span class="fa fa-envelope-o " style="margin-right: 10px;"></span>info@wakanalake.com</br>
+                       
+
+                                            </center>
+                                        </br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="row">
+
+                                    <div class="col-md-10">
+
+                                        <div class="row" style="margin-bottom: 5px;">
+                                            <div class="col-sm-2  col-md-12 " style="margin: 2px">
+                                                <a href="https://www.facebook.com/wakanalake/?fref=ts">
+                                                    <center> <img width="50px" height="50px" src="../assets/images/1485611568_2_-_Facebook.png" alt="Wakana Lake" style=" line-height:30px;">
+                                                </a>
+                                                </center>
+                                            </div>
+
+                                            <div class=" col-sm-2 col-md-12 " style="margin: 2px">
+                                                <a href="https://www.youtube.com/channel/UC7H0oHEhLyXlt326BmSPGdA">
+                                                    <center> <img width="50px" height="50px" src="../assets/images/1485611571_11_-_Youtube.png" alt="Wakana Lake" style=" line-height:30px;">
+                           </center>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-2  col-md-12 " style="margin: 2px">
+                                                <a href="https://www.instagram.com/wakanalake/?hl=en">
+                                                    <center> <img width="50px" height="50px" src="../assets/images/1485787829_9_-_Instagram.png" alt="Wakana Lake" style=" line-height:30px;">
+                                                </a>
+                                                </center>
+                                            </div>
+
+                                            <div class=" col-sm-2 col-md-12 " style="margin: 2px">
+                                                <a href="https://twitter.com/WakanaLake ">
+                                                    <center> <img width="50px" height="50px" src="../assets/images/1485787832_1_-_Twitter.png" alt="Wakana Lake" style=" line-height:30px;">
+                           </center>
+                                                </a>
+                                            </div>
+                                            <div class=" col-sm-2 col-md-12 " style="margin: 2px">
+                                                <a href="https://vimeo.com/user42686332">
+                                                    <center> <img width="50px" height="50px" src="../assets/images/1485867857_12_-_Vimeo.png" alt="Wakana Lake" style=" line-height:30px;">
+                           </center>
+                                                </a>
+                                            </div>
+                                            <div class=" col-sm-2 col-md-12 " style="margin: 2px">
+                                                <a href="https://www.linkedin.com/company-beta/16158262/">
+                                                    <center> <img width="50px" height="50px" src="../assets/images/1485611568_2_-_LinkedIn.png" alt="Wakana Lake" style=" line-height:30px;">
+                           </center>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+                   <!-- BOOKING PLACE HOLDER MODAL -->
+                <dx:ASPxPopupControl ID="pcLogin" runat="server" CloseAction="CloseButton" CloseOnEscape="true" Modal="True"
+                    PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ClientInstanceName="pcLogin"
+                    HeaderText="Modal" AllowDragging="True" PopupAnimationType="None" EnableViewState="False" ShowHeader="False">
+                    <ClientSideEvents PopUp="function(s, e) { ASPxClientEdit.ClearGroup('entryGroup'); tbLogin.Focus(); }" />
+                    <ContentCollection>
+                        <dx:PopupControlContentControl runat="server">
+                            Booking Modal PlaceHolder
+                   
+                        </dx:PopupControlContentControl>
+                    </ContentCollection>
+                    <ContentStyle>
+                        <Paddings PaddingBottom="5px" />
+                    </ContentStyle>
+                </dx:ASPxPopupControl>
+
+
+
+                <!-- CAMP MODAL -->
+                <dx:ASPxPopupControl ID="camp" runat="server" CssClass="modalcamp" ClientInstanceName="camp" CloseAction="OuterMouseClick" CloseOnEscape="true" Modal="True"
+                    PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+                    ShowHeader="false" ShowCloseButton="true"
+                    AutoUpdatePosition="true"
+                    AllowResize="false" PopupAnimationType="Fade" EnableViewState="False"
+                    CloseAnimationType="Fade" LoadContentViaCallback="OnFirstShow" OnWindowCallback="camp_WindowCallback" ContentStyle-Wrap="True">
+
+                    <ContentCollection>
+
+                        <dx:PopupControlContentControl runat="server" Style="padding: 0px !important">
+                            <asp:Repeater ID="Repeater2" runat="server">
+                                <ItemTemplate>
+                                    <div class="row" style="margin: 0px !important">
+
+                                        <div class="col-xs-12   modalcampimg " style="padding: 0px !important;">
+
+
+                                            <dx:ASPxImage ID="ASPxImage1" CssClass="modalcampimg" ImageUrl='<%# Eval("imagencamp") %>' runat="server" ShowLoadingImage="true"></dx:ASPxImage>
+
+
+                                            <div class="cmn-t-underlinecamp" style="color: black; padding-left: 15px;"><%# Eval("titulo") %></div>
+                                            <div class="textocamp" style="color: black; padding-left: 15px;"><%# Eval("texto") %></div>
+
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </dx:PopupControlContentControl>
+                    </ContentCollection>
+                </dx:ASPxPopupControl>
+
+
+
+
+
+                <%--CONTACT FORM POP UP--%>
+                <dx:ASPxPopupControl ID="ContactMod" runat="server" CloseAction="OuterMouseClick" CloseOnEscape="true" Modal="True"
+                    PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ClientInstanceName="ContactMod"
+                    ShowHeader="false" ShowCloseButton="false" CssClass="noBackground"
+                    HeaderStyle-BackgroundImage-ImageUrl="~/assets/images/Westerm.jpg"
+                    HeaderStyle-BackgroundImage-Repeat="NoRepeat" AutoUpdatePosition="true" HeaderStyle-CssClass="HeaderStyle" HeaderText="BOOK NOW"
+                    AllowDragging="false" AllowResize="false" PopupAnimationType="Fade" EnableViewState="False"
+                    ContentStyle-BackColor="Transparent" CloseAnimationType="Fade">
+                    <ContentStyle CssClass="noBackground">
+                        <Paddings Padding="0px" />
+                    </ContentStyle>
+
+                    <ContentStyle>
+                        <Paddings PaddingBottom="5px" />
+                    </ContentStyle>
+
+                    <HeaderStyle CssClass="HeaderStyle">
+                        <BackgroundImage ImageUrl="~/assets/images/Westerm.jpg" Repeat="NoRepeat"></BackgroundImage>
+                    </HeaderStyle>
+                    <ContentCollection>
+
+                        <dx:PopupControlContentControl runat="server">
+
+
+                            <div class="row rowPopup" style="background-image: url('../assets/images/Westerm.jpg'); text-align: center !important; background-repeat: no-repeat">
+                                <center>
+                                                                                                    <div class="col-md-12" style="text-align:center;">
+                                                                                                        <br />
+                                                                                                        <br />
+                                                                                                        <br />
+                                                                                                        <br />
+                                                                                                        <span class="lobstertitlePopup">MESSAGE&nbsp;&nbsp;US</span>
+                                                                                                        <br />
+                                                                                                        <br />
+                                                                                                        <br />
+                                                                                                        <br />
+                                                                                                    </div>
+                                                                                                        </center>
+
+                            </div>
+
+                            <dx:ASPxCallbackPanel ID="CallbackPanelContact" runat="server" Width="100%" ClientInstanceName="CallbackPanelContact" OnCallback="ASPxCallbackPanel3_Callback" EnableCallbackAnimation="True">
+                                <PanelCollection>
+                                    <dx:PanelContent>
+                                        <dx:ASPxPanel ID="ASPxPanel1" runat="server" Width="100%">
+                                            <PanelCollection>
+
+                                                <dx:PanelContent runat="server">
+                                                    <div class="row rowPopup">
+
+                                                        <div class="col-sm-10 col-sm-offset-1 col-xs-12" style="line-height: 15px; padding: 10px;">
+                                                            <center>
+                                                                                                        <%--<div style=" padding:10px; color: #333333; font-family:'Quicksand'; font-size:60px; line-height:55px;font-weight:100;" >TELL US MORE</div>--%><br /><br />
+                                                                                                            <dx:ASPxTextBox ID="yourname" ClientInstanceName="yourname" runat="server" Width="80%" Height="30px" NullText="Your Name" Font-Names="quicksand" Font-Size="20pt" style="font-weight:100; padding-left:10px; padding-right:10px;"></dx:ASPxTextBox>
+                                                                                                            <br />
+                                                                                                            <dx:ASPxTextBox ID="phonenumber" ClientInstanceName="phonenumber" runat="server" Width="80%" Height="30px" NullText="Phone Number" Font-Names="quicksand" Font-Size="20pt" style="font-weight:100; padding-left:10px; padding-right:10px;"></dx:ASPxTextBox>
+                                                                                                            <br />
+                                                                                                            <dx:ASPxTextBox ID="email" ClientInstanceName="email" runat="server" Width="80%" Height="30px" NullText="example@email.com" Font-Names="quicksand" Font-Size="20pt" style="font-weight:100; padding-left:10px; padding-right:10px;"></dx:ASPxTextBox>
+                                                                                                             <br />
+                                                                                                            <dx:ASPxMemo ID="memo"  ClientInstanceName="memo" runat="server" Width="80%" Height="90px" NullText="Your Message" Font-Names="quicksand" Font-Size="15pt" style="font-weight:100; padding-left:10px; "></dx:ASPxMemo>
+                                                                                                             <br />
+                                                                                                            <dx:ASPxButton ID="ASPxButton1" style="color: #ffffff;    font: 25px Quicksand; font-size:25px;   border: 1px solid #a9acb5;    background: #82b727;    padding: 1px;" runat="server" Text="SEND EMAIL"  AutoPostBack="False" >
+                                                                                                                 <ClientSideEvents Click="OnListBoxIndexChanged" />
+                                                                                                            </dx:ASPxButton>
+                                                                                                            </center>
+                                                            </span>                                                                                             
+                                                                                                    <br />
+                                                        </div>
+
+                                                    </div>
+
+                                                </dx:PanelContent>
+                                            </PanelCollection>
+                                        </dx:ASPxPanel>
+                                        <dx:ASPxPanel ID="ASPxPanel2" runat="server" Width="100%" Visible="false">
+                                            <PanelCollection>
+                                                <dx:PanelContent runat="server">
+                                                    <div class="row rowPopup">
+
+                                                        <div class="col-xs-8 col-xs-offset-2">
+                                                            <center> <span style="color: #333333; font-family:'Quicksand'; font-size:2vw";>THANK YOU<br /><br />
+                                                                                                            We got your email, we are going to contact you soon.
+                                                                                                        </span>     
+                                                                                                        </center>
+                                                            <br />
+                                                        </div>
+
+                                                    </div>
+
+                                                </dx:PanelContent>
+                                            </PanelCollection>
+                                        </dx:ASPxPanel>
+                                    </dx:PanelContent>
+                                </PanelCollection>
+                            </dx:ASPxCallbackPanel>
+                            <br />
+                  
+                        </dx:PopupControlContentControl>
+                    </ContentCollection>
+                    <Border BorderColor="Transparent" BorderStyle="None" BorderWidth="0" />
+                </dx:ASPxPopupControl>
+
+
+          
+                <dx:ASPxPopupControl ID="ASPxPopupControl2" runat="server" AppearAfter="100" Modal="True"
+                    ClientInstanceName="modal" PopupAnimationType="Fade"
+                    PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+                    CloseAction="OuterMouseClick" ScrollBars="none" ShowHeader="false" AutoUpdatePosition="true" ShowOnPageLoad="false" ModalBackgroundStyle-BackColor="black">
+                    <ClientSideEvents CloseUp="function(s, e) {s.RefreshContentUrl();}" />
+                </dx:ASPxPopupControl>
+
+
+
+
+
+
+            </footer>
+        </div>
+        <script>
+
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: "629483980570403",
+                    xfbml: true,
+                    version: "v2.6"
+                });
+
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) { return; }
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script src="../assets/js/packages.min.js"></script>
+        <script src="../assets/js/theme.min.js"></script>
+        <script type="text/javascript">$crisp = []; CRISP_WEBSITE_ID = "85259242-642f-4086-a7c1-e1bd19899fe8"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.im/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+
+    </form>
+</body>
+</html>
