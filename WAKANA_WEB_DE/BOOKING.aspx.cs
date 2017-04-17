@@ -13,8 +13,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PayPal.Api;
-
-
+using MySql.Data.MySqlClient;
+using System.Configuration;
 
 
 namespace WAKANA_WEB_DE
@@ -25,46 +25,47 @@ namespace WAKANA_WEB_DE
         {
             deEnd.MinDate = DateTime.Today;
             deStart.MinDate = DateTime.Today;
-            string payerId = Request.Params["PayerID"];
-            this.RegisterSampleRequestFlow();
-            // ### Api Context
-            // Pass in a `APIContext` object to authenticate 
-            // the call and to send a unique request id 
-            // (that ensures idempotency). The SDK generates
-            // a request id if you do not pass one explicitly. 
-            // See [Configuration.cs](/Source/Configuration.html) to know more about APIContext.
-            var apiContext = Configuration.GetAPIContext();
+            loadCosts();
+            //string payerId = Request.Params["PayerID"];
+            //this.RegisterSampleRequestFlow();
+            //// ### Api Context
+            //// Pass in a `APIContext` object to authenticate 
+            //// the call and to send a unique request id 
+            //// (that ensures idempotency). The SDK generates
+            //// a request id if you do not pass one explicitly. 
+            //// See [Configuration.cs](/Source/Configuration.html) to know more about APIContext.
+            //var apiContext = Configuration.GetAPIContext();
 
-            if (!string.IsNullOrEmpty(payerId))
-            {
-                var guid = Request.Params["guid"];
+            //if (!string.IsNullOrEmpty(payerId))
+            //{
+            //    var guid = Request.Params["guid"];
 
-                // ^ Ignore workflow code segment
-                #region Track Workflow
-                this.flow = Session["flow-" + guid] as RequestFlow;
-                this.RegisterSampleRequestFlow();
-                this.flow.RecordApproval("PayPal payment approved successfully.");
-                #endregion
+            //    // ^ Ignore workflow code segment
+            //    #region Track Workflow
+            //    this.flow = Session["flow-" + guid] as RequestFlow;
+            //    this.RegisterSampleRequestFlow();
+            //    this.flow.RecordApproval("PayPal payment approved successfully.");
+            //    #endregion
 
-                // Using the information from the redirect, setup the payment to execute.
-                var paymentId = Request.Params["paymentId"];
-                var paymentExecution = new PaymentExecution() { payer_id = payerId };
-                var payment = new Payment() { id = paymentId };
+            //    // Using the information from the redirect, setup the payment to execute.
+            //    var paymentId = Request.Params["paymentId"];
+            //    var paymentExecution = new PaymentExecution() { payer_id = payerId };
+            //    var payment = new Payment() { id = paymentId };
 
-                // ^ Ignore workflow code segment
-                #region Track Workflow
-                this.flow.AddNewRequest("Execute PayPal payment", payment);
-                #endregion
+            //    // ^ Ignore workflow code segment
+            //    #region Track Workflow
+            //    this.flow.AddNewRequest("Execute PayPal payment", payment);
+            //    #endregion
 
-                // Execute the payment.
-                var executedPayment = payment.Execute(apiContext, paymentExecution);
-                // ^ Ignore workflow code segment
-                #region Track Workflow
-                this.flow.RecordResponse(executedPayment);
-                #endregion
+            //    // Execute the payment.
+            //    var executedPayment = payment.Execute(apiContext, paymentExecution);
+            //    // ^ Ignore workflow code segment
+            //    #region Track Workflow
+            //    this.flow.RecordResponse(executedPayment);
+            //    #endregion
 
-                // For more information, please visit [PayPal Developer REST API Reference](https://developer.paypal.com/docs/api/).
-            }
+            //    // For more information, please visit [PayPal Developer REST API Reference](https://developer.paypal.com/docs/api/).
+            //}
 
         }
         public bool IsValid(string emailaddress)
@@ -82,13 +83,48 @@ namespace WAKANA_WEB_DE
         }
         List<fecha> fechas = new List<fecha>();
 
+        protected void loadCosts()
+        {
 
+            string query = "Select * from general";
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+            con.Open();
+            try
+            {
+                MySqlCommand com = new MySqlCommand(query, con);
+                MySqlDataReader rd = com.ExecuteReader();
+                rd.Read();
+                Session["highseason_yurta12"] = rd[1].ToString();
+                Session["highseason_yurta34"] = rd[2].ToString();
+                Session["highseason_yurta56"] = rd[3].ToString();
+                Session["lowseason_yurta12"] = rd[4].ToString();
+                Session["lowseason_yurta34"] = rd[5].ToString();
+                Session["lowseason_yurta56"] = rd[6].ToString();
+                Session["highseason_tepee12"] = rd[7].ToString();
+                Session["highseason_tepee34"] = rd[8].ToString();
+                Session["highseason_tepee56"] = rd[9].ToString();
+                Session["lowseason_tepee12"] = rd[10].ToString();
+                Session["lowseason_tepee34"] = rd[11].ToString();
+                Session["lowseason_tepee56"] = rd[12].ToString();
+            }
+            catch { }
+            finally
+            {
+                con.Close();
+            }
+
+        }
 
 
         protected void CallbackPanel_Callback(object sender, CallbackEventArgsBase e)
         {
+            //SE OBTIENEN LOS PARAMETROS DEL LADO DEL CLIENTE Y SE DIVIDEN POR : EN UN ARREGLO DE CADENAS
             string[] parameters = e.Parameter.Split(':');
+            //EL PRIMER PARAMETRO CORRESPONDE A LA HOJA ACTUAL DEL PROCESO DE RESERVACIÓN
             int currentPageIndex = int.Parse(parameters[0]);
+
+
+            //CASOS DEPENDIENDO DE LA HOJA ACTUAL DEL PROCESO DE RESERVACIÓN
             switch (currentPageIndex)
             {
                 case 0:
@@ -150,8 +186,7 @@ namespace WAKANA_WEB_DE
                         }
                         Session["altas"] = altas.ToString();
                         Session["bajas"] = bajas.ToString();
-                        //Session["altas"] = 0;
-                        //Session["bajas"] = (deEnd.Date.ToUniversalTime() - deStart.Date.ToUniversalTime()).TotalDays;
+
                         currentPageIndex++;
                     }
                     else
@@ -174,12 +209,12 @@ namespace WAKANA_WEB_DE
                             currentPageIndex = 5;
 
                         }
-                        else if (buttonOver.Checked)
-                        {
-                            Session["TypeBooking"] = "Over";
-                            currentPageIndex = 5;
+                        //else if (buttonOver.Checked)
+                        //{
+                        //    Session["TypeBooking"] = "Over";
+                        //    currentPageIndex = 5;
 
-                        }
+                        //}
                         else if (buttonGroup.Checked)
                         {
                             Session["TypeBooking"] = "Group";
@@ -249,7 +284,7 @@ namespace WAKANA_WEB_DE
                         }
                         else if (Session["TypeBooking"] == "Over")
                         {
-                            buttonOver.Checked = true;
+                            
                         }
                         else if (Session["TypeBooking"] == "Group")
                         {
@@ -285,7 +320,7 @@ namespace WAKANA_WEB_DE
                         if (Teepes.Checked)
                         {
                             Session["TypeAccommodation"] = "Teepes";
-                     
+
                             currentPageIndex++;
                         }
                         else if (Yurtas.Checked)
@@ -310,7 +345,7 @@ namespace WAKANA_WEB_DE
                         }
                         else if (Session["TypeBooking"] == "Over")
                         {
-                            buttonOver.Checked = true;
+                            //buttonOver.Checked = true;
                         }
                         else if (Session["TypeBooking"] == "Group")
                         {
@@ -329,7 +364,7 @@ namespace WAKANA_WEB_DE
                             buttonCorporate.Checked = true;
                         }
                         currentPageIndex = 2;
-                       
+
                     }
 
                     break;
@@ -397,20 +432,20 @@ namespace WAKANA_WEB_DE
                     }
                     else
                     {
-                        
-                            if (Session["ACTIVITIES"].ToString().Contains("Canopy"))
-                                canopybutton.Checked = true;
-                            if (Session["ACTIVITIES"].ToString().Contains("Arc Attack"))
-                                arcbutton.Checked = true;
-                            if (Session["ACTIVITIES"].ToString().Contains("Kayak"))
-                                kayakbutton.Checked = true;
-                            if (Session["ACTIVITIES"].ToString().Contains("Kite & Wind Surf"))
-                                kitebutton.Checked = true;
-                            if (Session["ACTIVITIES"].ToString().Contains("Horse Riding"))
-                                horsebutton.Checked = true;
-                            if (Session["ACTIVITIES"].ToString().Contains("Swimming"))
-                                swimbutton.Checked = true;
-                            currentPageIndex--;
+
+                        if (Session["ACTIVITIES"].ToString().Contains("Canopy"))
+                            canopybutton.Checked = true;
+                        if (Session["ACTIVITIES"].ToString().Contains("Arc Attack"))
+                            arcbutton.Checked = true;
+                        if (Session["ACTIVITIES"].ToString().Contains("Kayak"))
+                            kayakbutton.Checked = true;
+                        if (Session["ACTIVITIES"].ToString().Contains("Kite & Wind Surf"))
+                            kitebutton.Checked = true;
+                        if (Session["ACTIVITIES"].ToString().Contains("Horse Riding"))
+                            horsebutton.Checked = true;
+                        if (Session["ACTIVITIES"].ToString().Contains("Swimming"))
+                            swimbutton.Checked = true;
+                        currentPageIndex--;
                     }
 
 
@@ -421,7 +456,7 @@ namespace WAKANA_WEB_DE
                 default:
                     if (parameters[1] == "prev")
 
-                        { 
+                    {
 
 
 
@@ -446,11 +481,11 @@ namespace WAKANA_WEB_DE
 
             while (Arr.ToUniversalTime() < Dep.ToUniversalTime())
             {
-                
+
                 fechas.Add(new fecha(compareDates(Arr.ToUniversalTime()), Arr.ToUniversalTime()));
                 Arr.ToUniversalTime();
                 Arr = Arr.ToUniversalTime().AddDays(1);
-              
+
             }
 
         }
@@ -591,7 +626,7 @@ namespace WAKANA_WEB_DE
         public void RunSample()
         {
             var totalint = 0;
-          
+
             int personas = 0;
             personas = Convert.ToInt32(spin.Number);
             Session["PERSONAS"] = personas.ToString();
@@ -622,7 +657,7 @@ namespace WAKANA_WEB_DE
                 return_url = "http://wakanalake.com/Booking_Success.aspx"
             };
 
-            
+
             var itemList = new ItemList()
             {
                 items = new List<Item>()
@@ -714,15 +749,15 @@ namespace WAKANA_WEB_DE
 
         }
 
-        
+
 
         protected void ASPxButton1_Click(object sender, EventArgs e)
         {
-            RunSample();    
+            RunSample();
         }
     }
 }
-    public class fecha
+public class fecha
 {
     bool alta;
     DateTime date;

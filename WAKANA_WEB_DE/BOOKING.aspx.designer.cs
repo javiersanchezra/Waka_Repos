@@ -175,15 +175,6 @@ namespace WAKANA_WEB_DE {
         protected global::DevExpress.Web.ASPxButton buttonCamp;
         
         /// <summary>
-        /// buttonOver control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxButton buttonOver;
-        
-        /// <summary>
         /// buttonGroup control.
         /// </summary>
         /// <remarks>
@@ -326,6 +317,15 @@ namespace WAKANA_WEB_DE {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton Yurtas;
+        
+        /// <summary>
+        /// ASPxButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton ASPxButton2;
         
         /// <summary>
         /// View6 control.

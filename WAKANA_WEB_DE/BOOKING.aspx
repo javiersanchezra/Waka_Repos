@@ -316,7 +316,7 @@
                                     <center>
 
                                                                                                     <div class="col-xs-8 col-xs-offset-2">
-                                                                                                        <span style="color: #333333; font-family:'Quicksand'; font-size:7vw;";>TYPE OF STAY
+                                                                                                        <span style="color: #333333; font-family:'Quicksand'; font-size:7vw;";>Your Experience
                                                                                                                                                                                                                                                                                                                                      
                                                                                                         </span>                                                                                             
                                                                                                                                                                                                                                                                                                         
@@ -340,20 +340,9 @@
                                                                         </dx:ASPxButton>
 
                                                                         <br />
-                                                                        <label style="font-family: 'Quicksand';">Camp</label>
+                                                                        <label style="font-family: 'Quicksand';">Camps</label>
                                                                     </div>
-                                                                    <div class="col-xs-4 " style="padding: 0 !important">
-                                                                        <dx:ASPxButton ID="buttonOver" runat="server" AutoPostBack="False"
-                                                                            GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/caballo.jpg" Image-Width="80px" Image-Height="80px">
-                                                                            <Image Height="80px" Width="80px" Url="~/assets/images/book/caballo.jpg"></Image>
 
-                                                                        </dx:ASPxButton>
-                                                                      
-                                                                        <br />
-                                                                        <label style="font-family: 'Quicksand';">
-                                                                            Overnight<br />
-                                                                            Stay</label>
-                                                                    </div>
                                                                     <div class="col-xs-42" style="padding: 0 !important">
                                                                         <dx:ASPxButton ID="buttonGroup" runat="server" AutoPostBack="False"
                                                                             GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/Group.jpg" Image-Width="80px" Image-Height="80px">
@@ -363,8 +352,8 @@
                                                                       
                                                                         <br />
                                                                         <label style="font-family: 'Quicksand';">
-                                                                            Group<br />
-                                                                            Event</label>
+                                                                            Groups Over<br />
+                                                                            18 People</label>
                                                                     </div>
 
                                                                     </center>
@@ -530,7 +519,7 @@
                                 <br />
                                 <div class="row" style="margin-left: 12px; margin-right: 12px;">
                                     <center>
-                                                                    <div class="col-xs-4" style="padding: 0 !important">
+                                                                    <div class="col-xs-3" style="padding: 0 !important">
                                                                         <dx:ASPxButton ID="Teepes" runat="server" AutoPostBack="False" Checked="True"
                                                                             GroupName="A" Width="80px" Height="80px" Image-Url="~/assets/images/book/Teepes.jpg" Image-Width="80px" Image-Height="80px" Paddings-Padding="0px">
                                                                             <Image Height="80px" Width="80px" Url="~/assets/images/book/Teepes.jpg"></Image>
@@ -540,9 +529,9 @@
                                                                         </dx:ASPxButton>
 
                                                                         <br />
-                                                                        <label style="font-family: 'Quicksand';">Teepes</label>
+                                                                        <label style="font-family: 'Quicksand';">Tepee</label>
                                                                     </div>
-                                           <div class="col-xs-4" style="padding: 0 !important">
+                                           <div class="col-xs-3" style="padding: 0 !important">
                                                                         <dx:ASPxButton ID="Andalusian" runat="server" AutoPostBack="False" Checked="False"
                                                                             GroupName="A" Width="80px" Height="80px" Image-Url="~/assets/images/book/.jpg" Image-Width="80px" Image-Height="80px" Paddings-Padding="0px">
                                                                             <Image Height="80px" Width="80px" Url="~/assets/images/book/Andalusian.jpg"></Image>
@@ -552,13 +541,10 @@
                                                                         </dx:ASPxButton>
 
                                                                         <br />
-                                                                        <label style="font-family: 'Quicksand';">Andalusian House</label>
+                                                                        <label style="font-family: 'Quicksand';">Andalusian Cortijo</label>
                                                                     </div>
-                                                                    <div class="col-xs-4 " style="padding: 0 !important">
-                                                                       
-                                                                    </div>
-                                                                    <div class="col-xs-4" style="padding: 0 !important">
-                                                                     <dx:ASPxButton ID="Yurtas" runat="server" AutoPostBack="False"
+                                                                    <div class="col-xs-3 " style="padding: 0 !important">
+                                                                       <dx:ASPxButton ID="Yurtas" runat="server" AutoPostBack="False"
                                                                             GroupName="A" Width="80px" Height="80px" Image-Url="~/assets/images/book/Yurts.jpg" Image-Width="80px" Image-Height="80px">
                                                                             <Image Height="80px" Width="80px" Url="~/assets/images/book/Yurts.jpg"></Image>
 
@@ -567,17 +553,18 @@
                                                                         <br />
                                                                         <label style="font-family: 'Quicksand';">
                                                                             Yurts</label>
-                                                                        
-<%--                                                                            <dx:ASPxButton ID="ASPxButton3" runat="server" AutoPostBack="False"
-                                                                            GroupName="A" Width="80px" Height="80px" Image-Url="~/assets/images/book/Andalusian.jpg" Image-Width="80px" Image-Height="80px">
-                                                                            <Image Height="80px" Width="80px" Url="~/assets/images/book/Andalusian.jpg"></Image>
+                                                                    </div>
+                                                                    <div class="col-xs-3" style="padding: 0 !important">
+                                                                     <dx:ASPxButton ID="ASPxButton2" runat="server" AutoPostBack="False"
+                                                                            GroupName="A" Width="80px" Height="80px" Image-Url="~/assets/images/book/Yurts.jpg" Image-Width="80px" Image-Height="80px">
+                                                                            <Image Height="80px" Width="80px" Url="~/assets/images/book/Yurts.jpg"></Image>
 
                                                                         </dx:ASPxButton>
                                                                       
                                                                         <br />
                                                                         <label style="font-family: 'Quicksand';">
-                                                                            Andalusian<br />
-                                                                            House</label>--%>
+                                                                            None</label>
+                                                                        
                                                                     </div>
 
                                                                     </center>
@@ -605,6 +592,8 @@
                                                                                                     
                                   </center>
                                 </div>
+                              
+                                <br>
                               
                                 </br> 
                     <div class="row" style="margin-left: 12px; margin-right: 12px;">
@@ -715,6 +704,8 @@
 
 
                                 </div>
+
+                                <br>
 
                              </br>
                                 <div class="row" style="margin-left: 12px; margin-right: 12px;">

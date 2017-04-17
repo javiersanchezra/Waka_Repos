@@ -230,7 +230,6 @@
     <Content Include="BOOKING.aspx" />
     <Content Include="Booking_Cancel.aspx" />
     <Content Include="Booking_Success.aspx" />
-    <Content Include="Booking_test.aspx" />
     <Content Include="CampamentoIndividual.aspx" />
     <Content Include="Camps.aspx" />
     <Content Include="CancelationPolicy.aspx" />
@@ -813,6 +812,8 @@
     <None Include="Properties\PublishProfiles\wakana1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\wakana1 - Web Deploy.pubxml" />
     <Content Include="Response.aspx.bak" />
+    <None Include="Properties\PublishProfiles\wakanav2 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\wakanav2 - Web Deploy.pubxml" />
     <None Include="wakana1 - FTP %282%29.pubxml" />
     <None Include="wakana1 - FTP.pubxml" />
     <None Include="wakana1 - Web Deploy %282%29.pubxml" />
@@ -871,13 +872,6 @@
     </Compile>
     <Compile Include="Booking_Success.aspx.designer.cs">
       <DependentUpon>Booking_Success.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Booking_test.aspx.cs">
-      <DependentUpon>Booking_test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Booking_test.aspx.designer.cs">
-      <DependentUpon>Booking_test.aspx</DependentUpon>
     </Compile>
     <Compile Include="CampamentoIndividual.aspx.cs">
       <DependentUpon>CampamentoIndividual.aspx</DependentUpon>
