@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../assets/css/swatch-white-green.min.css" media="screen">
     <link rel="stylesheet" href="../assets/css/swatch-white-red.min.css" media="screen">
     <link rel="stylesheet" href="../assets/css/fonts.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../assets/css/General_Activities.css">
 
 
     <!-- Slider Revolution CSS Files -->
@@ -56,94 +57,24 @@
 
          <script>
 
-    window.fbAsyncInit = function() {
-      FB.init({
-          appId: "1703294839696411",
-        xfbml: true,
-        version: "v2.6"
-      });
+             window.fbAsyncInit = function () {
+                 FB.init({
+                     appId: "1703294839696411",
+                     xfbml: true,
+                     version: "v2.6"
+                 });
 
-    };
+             };
 
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) { return; }
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+             (function (d, s, id) {
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) { return; }
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/en_US/sdk.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
 
   </script>
-
-    <style type="text/css">
-        .swatch-black, [class*=swatch-] .swatch-black {
-            background: #eef7e6;
-            color: #fff;
-        }
-
-        .element-normal-bottom {
-            margin-bottom: 72px !important;
-        }
-
-        .element-normal-top {
-            margin-top: 72px !important;
-        }
-
-        .mfp-fade.mfp-bg.mfp-ready {
-            opacity: .60;
-            background-color: black;
-        }
-
-        button.mfp-arrow {
-            background: rgba(0, 0, 0, 0) !important;
-        }
-
-        .mfp-arrow .mfp-a, .mfp-arrow .mfp-b, .mfp-arrow:before {
-            display: inline-block;
-            font-family: FontAwesome;
-            font-size: 60px;
-            line-height: 60px;
-        }
-
-        .mfp-iframe-holder .mfp-close, .mfp-image-holder .mfp-close {
-            background-color: rgba(0,0,0,.0) !important;
-            color: #fff;
-            margin: -20px;
-        }
-
-        .texto {
-            margin-bottom: 0rem;
-            position: relative;
-            color: #fff;
-            margin-top: 0rem;
-            margin-left:15rem;
-            font-size: 15px;
-            margin-bottom: 3rem;
-            font-family: Quicksand;
-            font-weight: 100;
-            text-align: left;
-        }
-
-        .cmn-t-underline {
-            position: relative;
-            color: #fff;
-            margin-top: 0rem;
-            font-size: 45px;
-            margin-bottom: 3rem;
-            font-family: 'Josefin Sans';
-            text-align: left;
-        }
-
-            .cmn-t-underline:after {
-                content: "";
-                position: absolute;
-                width: 20%;
-                height: 1px;
-                bottom: 0;
-                left: -2%;
-                border-bottom: 1px solid white;
-            }
-    </style>
 
 </head>
 <body class="transparent-header">
@@ -998,7 +929,7 @@
                                             <script type="text/javascript">
                                                 var tpj = jQuery;
 
-                                          
+
                                                 var revapi154;
                                                 tpj(document).ready(function () {
                                                     if (tpj("#menu").revolution == undefined) {

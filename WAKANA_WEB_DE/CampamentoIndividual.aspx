@@ -8,55 +8,8 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/theme.min.css">
     <link rel="stylesheet" href="../assets/css/wakana.css" media="screen">
-    <title></title>
-    <style>
-        .scrollbar {
-        }
-
-            .scrollbar::-webkit-scrollbar {
-                width: 6px !important;
-                background-color: transparent !important;
-            }
-
-            .scrollbar::-webkit-scrollbar-thumb {
-                background-color: lightgray !important;
-                border-radius: 10px !important;
-            }
-
-                .scrollbar::-webkit-scrollbar-thumb:hover {
-                    background-color: dimgray !important;
-                }
-
-                .scrollbar::-webkit-scrollbar-thumb:active {
-                    background-color: gray !important;
-                }
-
-        .modalcamp {
-            width: 50vw;
-            height: 80vh;
-        }
-
-        @media (max-height: 600px) {
-
-            .modalcamp {
-                height: 95vh;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .modalcamp {
-                width: 90vw;
-                height: 90vh;
-            }
-        }
-
-        .textocamp {
-            white-space: pre-line;
-        }
-
-        .campimage {
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/CampamentoIndividual.css" media="screen">
+    <title>Campamento</title>
 </head>
 
 <body>

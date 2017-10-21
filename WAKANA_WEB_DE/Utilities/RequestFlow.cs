@@ -9,120 +9,89 @@ namespace WAKANA_WEB_DE
 {
     public class RequestFlow
     {
-        /// <summary>
-        /// Gets the list of RequestFlowItems for this flow.
-        /// </summary>
-        public List<RequestFlowItem> Items { get; private set; }
+        public string Description
+        {
+            get;
+            set;
+        }
 
-        /// <summary>
-        /// Gets or sets a general description of the flow.
-        /// </summary>
-        public string Description { get; set; }
+        public List<RequestFlowItem> Items
+        {
+            get;
+            private set;
+        }
 
-        /// <summary>
-        /// Default construct that initializes the Items list.
-        /// </summary>
         public RequestFlow()
         {
             this.Items = new List<RequestFlowItem>();
         }
 
-        /// <summary>
-        /// Adds a new RequestFlowItem to the list of Items.
-        /// </summary>
-        /// <param name="title">Title of this flow item.</param>
-        /// <param name="requestObject">(Optional) The object used for the request.</param>
-        /// <param name="description">(Optional) The description of the request.</param>
         public void AddNewRequest(string title, IPayPalSerializableObject requestObject = null, string description = "")
         {
             this.Items.Add(new RequestFlowItem()
             {
-                Request = requestObject == null ? string.Empty : Common.FormatJsonString(requestObject.ConvertToJson()),
+                Request = (requestObject == null ? string.Empty : Common.FormatJsonString(requestObject.ConvertToJson())),
                 Title = title,
                 Description = description
             });
         }
 
-        /// <summary>
-        /// Records a response in the last RequestFlowItem stored in the Items list.
-        /// </summary>
-        /// <param name="responseObject"></param>
-        public void RecordResponse(IPayPalSerializableObject responseObject)
-        {
-            if(responseObject != null && this.Items.Any())
-            {
-                this.Items.Last().Response = Common.FormatJsonString(responseObject.ConvertToJson());
-            }
-        }
-
-        /// <summary>
-        /// Records a success message that indicates the last request was successful.
-        /// </summary>
-        /// <param name="message"></param>
         public void RecordActionSuccess(string message)
         {
-            if(this.Items.Any())
+            if (this.Items.Any<RequestFlowItem>())
             {
-                this.Items.Last().RecordSuccess(message);
+                this.Items.Last<RequestFlowItem>().RecordSuccess(message);
             }
         }
 
-        /// <summary>
-        /// Records an image that was returned from a call (e.g. Invoice.QrCode)
-        /// </summary>
-        /// <param name="image"></param>
-        public void RecordImage(Image image)
+        public void RecordApproval(string message)
         {
-            if(this.Items.Any())
+            if (this.Items.Any<RequestFlowItem>())
             {
-                var filename = "Images/sample.png";
-                var serverRoot = HttpContext.Current.Server.MapPath(null);
-                image.Save(Path.Combine(serverRoot, filename));
-                this.Items.Last().ImagePath = filename;
+                RequestFlowItem requestFlowItem = this.Items.Last<RequestFlowItem>();
+                requestFlowItem.Title = string.Concat(requestFlowItem.Title, " (Approved!)");
+                this.Items.Last<RequestFlowItem>().RedirectUrlText = message;
+                this.Items.Last<RequestFlowItem>().IsRedirectApproved = true;
             }
         }
 
-        /// <summary>
-        /// Records an exception that was encountered and ties it to the last RequestResponse object in the flow.
-        /// </summary>
-        /// <param name="ex"></param>
         public void RecordException(Exception ex)
         {
             if (ex != null)
             {
-                if (!this.Items.Any())
+                if (!this.Items.Any<RequestFlowItem>())
                 {
                     this.Items.Add(new RequestFlowItem());
                 }
-                this.Items.Last().RecordException(ex);
+                this.Items.Last<RequestFlowItem>().RecordException(ex);
             }
         }
 
-        /// <summary>
-        /// Records a redirect URL that should be displayed with a flow item.
-        /// </summary>
-        /// <param name="text">The display text</param>
-        /// <param name="redirectUrl">The URL for the redirect</param>
+        public void RecordImage(Image image)
+        {
+            if (this.Items.Any<RequestFlowItem>())
+            {
+                string str = "Images/sample.png";
+                string str1 = HttpContext.Current.Server.MapPath(null);
+                image.Save(Path.Combine(str1, str));
+                this.Items.Last<RequestFlowItem>().ImagePath = str;
+            }
+        }
+
         public void RecordRedirectUrl(string text, string redirectUrl)
         {
-            if(this.Items.Any())
+            if (this.Items.Any<RequestFlowItem>())
             {
-                this.Items.Last().RedirectUrlText = text;
-                this.Items.Last().RedirectUrl = redirectUrl;
+                this.Items.Last<RequestFlowItem>().RedirectUrlText = text;
+                this.Items.Last<RequestFlowItem>().RedirectUrl = redirectUrl;
             }
         }
 
-        /// <summary>
-        /// Records that a resource has been approved for payment.
-        /// </summary>
-        /// <param name="message"></param>
-        public void RecordApproval(string message)
+        public void RecordResponse(IPayPalSerializableObject responseObject)
         {
-            if (this.Items.Any())
+            if (responseObject != null && this.Items.Any<RequestFlowItem>())
             {
-                this.Items.Last().Title += " (Approved!)";
-                this.Items.Last().RedirectUrlText = message;
-                this.Items.Last().IsRedirectApproved = true;
+                this.Items.Last<RequestFlowItem>().Response = Common.FormatJsonString(responseObject.ConvertToJson());
             }
         }
     }

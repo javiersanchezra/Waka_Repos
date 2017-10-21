@@ -13,32 +13,26 @@ namespace WAKANA_WEB_DE
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Call this so the request/response flow is recorded and displayed properly.
             this.RegisterSampleRequestFlow();
             try
             {
-               this.RunSample();
-               
+                this.RunSample();
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                this.flow.RecordException(ex);
+                this.flow.RecordException(exception);
             }
-            //Server.Transfer("~/Response.aspx");
         }
-
-        /// <summary>
-        /// Primary method where each sample page should run their sample code.
-        /// </summary>
-        protected abstract void RunSample();
 
         protected void RegisterSampleRequestFlow()
         {
-            if(this.flow == null)
+            if (this.flow == null)
             {
                 this.flow = new RequestFlow();
             }
             HttpContext.Current.Items["Flow"] = this.flow;
         }
+
+        protected abstract void RunSample();
     }
 }

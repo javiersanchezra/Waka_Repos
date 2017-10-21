@@ -8,62 +8,15 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/theme.min.css">
     <link rel="stylesheet" href="../assets/css/wakana.css" media="screen">
-    <title></title>
-    <style>
-        .scrollbar {
+    <link rel="stylesheet" href="../assets/css/EventoIndividual.css" media="screen">
+
+    <title>Evento</title>
+    <script>
+        function openInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
         }
-
-            .scrollbar::-webkit-scrollbar {
-                width: 6px !important;
-                background-color: transparent !important;
-            }
-
-            .scrollbar::-webkit-scrollbar-thumb {
-                background-color: lightgray !important;
-                border-radius: 10px !important;
-            }
-
-                .scrollbar::-webkit-scrollbar-thumb:hover {
-                    background-color: dimgray !important;
-                }
-
-                .scrollbar::-webkit-scrollbar-thumb:active {
-                    background-color: gray !important;
-                }
-
-        .modalcamp {
-            width: 50vw;
-            height: 80vh;
-        }
-
-        @media (max-height: 600px) {
-
-            .modalcamp {
-                height: 95vh;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .modalcamp {
-                width: 90vw;
-                height: 90vh;
-            }
-        }
-
-
-        /*LOCAL OVERRIDES*/
-        .textocamp {
-            white-space: pre-line;
-            text-align: center !important;
-        }
-
-        .lobstertitle {
-            color: black !important;
-        }
-
-        .campimage {
-        }
-    </style>
+    </script>
 </head>
 
 <body>
@@ -80,11 +33,12 @@
 
                 </div>
             </div>
+            </br>
             <div class="row" style="margin: 0px !important">
 
                 <div class="col-xs-12 " style="padding: 0px !important;">
                     <center>
-                                        <div class="textocamp" style="font-size:35px; font-weight:600;"><asp:Literal ID="literalfecha" runat="server"></asp:Literal></div>
+                                        <div class="textocamp" style="font-size:20px; font-weight:600;"><asp:Literal ID="literalfecha" runat="server"></asp:Literal></div>
                                     </center>
 
                 </div>
@@ -96,22 +50,32 @@
                 </div>
                 <div class="col-xs-12 " style="padding: 0px !important;">
                     <center>
-                                        <div class="textocamp" style="font-size:30px; padding:0px !important;"><asp:Literal ID="Literallinea1" runat="server"></asp:Literal></div>
+                                        <div class="textocamp" style="font-size:30px;  line-height:30px;  padding:0px !important;"><asp:Literal ID="Literallinea1" runat="server"></asp:Literal></div>
                                     </center>
 
                 </div>
                 <div class="col-xs-12 " style="padding: 0px !important;">
                     <center>
-                                        <div class="textocamp" style="font-size:30px; padding:0px !important;"><asp:Literal ID="Literallinea2" runat="server"></asp:Literal></div>
+                                        <div class="textocamp" style="font-size:30px; line-height:30px; padding:0px !important;"><asp:Literal ID="Literallinea2" runat="server"></asp:Literal></div>
                                     </center>
 
                 </div>
                 <div class="col-xs-10 col-xs-offset-1" style="padding: 0px !important;">
                     <center>
-                                        <div class="textocamp" style="font-size:25px; font-weight:100; padding:0px !important;"><asp:Literal ID="Literaldescripcion" runat="server"></asp:Literal></div>
+                                        <div class="textocamp" style="font-size:25px;  line-height:25px; font-weight:100; padding:0px !important;"><asp:Literal ID="Literaldescripcion" runat="server"></asp:Literal></div>
                                     </center>
 
                 </div>
+                <asp:Literal ID="rowlinkliteral" runat="server"></asp:Literal>
+                  
+                    <center>
+                                        <dx:ASPxButton ID="moreinfobutton" runat="server" Text="MAS INFORMACIÓN" AutoPostBack="False" ClientInstanceName="close"
+                                Style="color: #ffffff; font: 25px Quicksand; font-size: 25px; border: 1px solid #a9acb5; background: #82b727; padding: 1px;">
+                                <ClientSideEvents Click="function(s, e) { closePopup(); }"></ClientSideEvents>
+                            </dx:ASPxButton>  </center>
+
+                </div>
+                   
             </div>
         </div>
     </form>

@@ -6,36 +6,33 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using MySql.Data.MySqlClient; using System.Configuration;
+using DevExpress.Web;
+
 namespace WAKANA_WEB_DE
 {
     public partial class Events : System.Web.UI.Page
     {
-        string query = "SET lc_time_names = 'en_US'; SELECT id,  UPPER(DATE_FORMAT(fecha,'%M, %d')) AS  fecha, tituloingles as titulo, descripcioningles as texto FROM evento";
+        private string query = " SELECT id,  fechaingles  fecha, tituloingles as titulo, descripcioningles as texto FROM evento  order by orden asc";
         protected void Page_Load(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
-            MySqlDataAdapter da = new MySqlDataAdapter(query, con);
-            DataTable tablita = new DataTable();
-            da.Fill(tablita);
-            Repeater1.DataSource = tablita;
-            Repeater1.DataBind();
-
-
+            MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(this.query, mySqlConnection);
+            DataTable dataTable = new DataTable();
+            mySqlDataAdapter.Fill(dataTable);
+            this.Repeater1.DataSource = dataTable;
+            this.Repeater1.DataBind();
         }
 
-        protected void ASPxCallbackPanel3_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
+        protected void ASPxCallbackPanel3_Callback(object sender, CallbackEventArgsBase e)
         {
-            string parameter = e.Parameter.ToString();
-            if (parameter == "calendar")
+            if (e.Parameter.ToString() == "calendar")
             {
-                ASPxPanel1.Visible = true;
-                ASPxPanel2.Visible = false;
+                this.ASPxPanel1.Visible = true;
+                this.ASPxPanel2.Visible = false;
+                return;
             }
-            else
-            {
-                ASPxPanel1.Visible = false;
-                ASPxPanel2.Visible = true;
-            }
+            this.ASPxPanel1.Visible = false;
+            this.ASPxPanel2.Visible = true;
         }
     }
 }

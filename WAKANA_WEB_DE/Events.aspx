@@ -1,117 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="WAKANA_WEB_DE.Events" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .events {
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.50);
-        }
-
-        .eventsbutton {
-            background-color: rgba(0, 0, 0, 0.50);
-           
-        }
-
-        .eventsdate {
-            font-family: Quicksand;
-            font-weight: 100;
-            font-size: 40px;
-            text-align: right;
-        }
-
-        .eventstitle {
-            font-family: Quicksand;
-            font-weight: 200;
-            font-size: 60px;
-            text-align: center;
-        }
-
-        .eventsinfo {
-            font-family: Quicksand;
-            font-weight: 100;
-            font-size: 15px;
-            text-align: center;
-        }
-
-        .imgquoute {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .overlay {
-            z-index: 99;
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-        }
-
-        .poverlay {
-            text-align: center;
-            color: white;
-            font-size: 165px;
-            font-weight: lighter;
-            line-height: 2;
-             font-family: 'Josefin Sans';
-            /*font-family: Lobster,cursive;*/
-            text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
-        }
-
-        @media (max-width: 900px) {
-            .poverlay {
-                text-align: center;
-                color: white;
-                font-size: 65px;
-                font-weight: lighter;
-                line-height: 2;
-                 font-family: 'Josefin Sans';
-                /*font-family: Lobster,cursive;*/
-                text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
-            }
-
-            .eventsdate {
-                font-family: Quicksand;
-                font-weight: 100;
-                font-size: 25px;
-                text-align: right;
-            }
-
-            .eventstitle {
-                font-family: Quicksand;
-                font-weight: 200;
-                font-size: 40px;
-                text-align: center;
-            }
-
-            .eventsinfo {
-                font-family: Quicksand;
-                font-weight: 100;
-                font-size: 12px;
-                text-align: center;
-            }
-
-        .mybox {
-	position: relative;
-	padding: 20px 0px 20px 0px;
-	background-color: #EEEEEE;
-}
-
-.mybox:before {
-	content: '';
-	position: absolute;
-	bottom: 10px;
-	top: 25%;
-
-	border-left: 1px solid white;
-}
-        }
-    </style>
      <script type="text/javascript">
-        
+
          function ShowCalendar() {
-            
+
              ASPxCallbackPanel3.PerformCallback('calendar');
          }
          function ShowList() {
@@ -121,7 +14,7 @@
          function PerformCallback(command) {
              ASPxCallbackPanel3.PerformCallback(command);
          }
-       
+
     </script>
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 

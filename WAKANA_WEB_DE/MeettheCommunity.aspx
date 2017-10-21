@@ -1,48 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="MeettheCommunity.aspx.cs" Inherits="WAKANA_WEB_DE.MeettheCommunity" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
- 
-
-
-
-
-.texto {
-    margin-bottom: 0rem;
-    position: relative;
-    color: #fff;
-    margin-top: 0rem;
-    font-size: 15px;
-    margin-bottom: 3rem;
-    font-family: Quicksand;
-    font-weight: 100;
-  line-height:14px;
-        text-align: justify;
-}
-
-
-.cmn-t-underline {
-    position: relative;
-    color: #fff;
-    margin-top: 0rem;
-    font-size: 35px;
-    
-    font-family: 'Josefin Sans';
-    text-align: left;
-}
-
-
-    .cmn-t-underline:after {
-        content: "";
-        position: absolute;
-        width: 20%;
-        height: 1px;
-        bottom: 0;
-        left: -2%;
-        border-bottom: 1px solid white;
-    }
-
-
-    </style>
 
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
     

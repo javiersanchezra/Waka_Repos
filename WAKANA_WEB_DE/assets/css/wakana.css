@@ -821,8 +821,1365 @@ button.mfp-arrow {
 }
 
 .dropdown{
-    font-size:20px;
+    font-size:17px;
 }
 .dropdown-menu {
     font-size:20px;
 }
+
+/*CampamentoIndividual*/
+.scrollbar {
+}
+
+    .scrollbar::-webkit-scrollbar {
+        width: 6px !important;
+        background-color: transparent !important;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background-color: lightgray !important;
+        border-radius: 10px !important;
+    }
+
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: dimgray !important;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb:active {
+            background-color: gray !important;
+        }
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+@media (max-height: 600px) {
+
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+.textocamp {
+    white-space: pre-line;
+}
+
+.campimage {
+}
+
+/*MAIN*/
+.scrollbar::-webkit-scrollbar {
+    width: 6px !important;
+    background-color: transparent !important;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: lightgray !important;
+    border-radius: 10px !important;
+}
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: dimgray !important;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:active {
+        background-color: gray !important;
+    }
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+.modalcampimg {
+    width: 50vw;
+    height: auto;
+}
+
+@media (max-height: 600px) {
+    .dxpcLite_DevEx .dxpc-mainDiv, .dxpcLite_DevEx.dxpc-mainDiv, .dxdpLite_DevEx .dxpc-mainDiv, .dxdpLite_DevEx.dxpc-mainDiv {
+        height: 600px;
+    }
+
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .modalcampimg {
+        width: 90vw;
+    }
+}
+
+.textocamp {
+    white-space: pre-line;
+}
+
+.campimage {
+}
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px !important;
+}
+
+/*Activities*/
+.CAMP {
+    background-color: rgba(255, 255, 255, 0.30);
+    margin: 5px;
+    overflow: auto;
+}
+
+.imgcontainer {
+    height: 300px;
+}
+
+@media (min-width: 768px) {
+    .imgcontainer {
+        height: 600px;
+    }
+}
+
+.modalact {
+    width: 750px;
+    height: 600px;
+}
+
+@media (max-width: 768px) {
+    .modalact {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+.camptext {
+    font-family: Quicksand;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 100;
+    padding: 20px;
+    color: black;
+}
+
+.TITULOCAMP {
+    padding-top: 220px;
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 20px;
+    color: white;
+}
+
+p.TITULOCAMP:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    margin-bottom: -5px;
+    border-bottom: 2px solid white;
+}
+
+.buttonmoreinfo {
+    background-color: #81b72d;
+    height: 60px;
+    padding-top: 8px;
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    margin: 25px;
+}
+
+.cuadro {
+    position: relative;
+    display: block;
+    margin: 2em 0;
+    background-color: transparent;
+    color: #222;
+}
+
+    .cuadro:after {
+        display: block;
+        padding-bottom: 100%;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.30);
+        content: "";
+        border-color: white;
+        border-width: 7px;
+        border-style: solid;
+    }
+
+.cuadro__inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadro__wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadro__content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    font-family: 'Josefin Sans';
+    line-height: 30px;
+}
+
+    .cuadro__content a {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        color: white;
+        font-family: 'Josefin Sans';
+        line-height: 30px;
+    }
+
+    .cuadro__content:hover span {
+        display: none;
+    }
+
+    .cuadro__content:hover a {
+        line-height: 10px !important;
+        font-size: 40px;
+        display: inline !important;
+    }
+
+.swatch-blue a:hover, [class*=swatch-] .swatch-blue a:hover {
+    color: white;
+}
+
+@media (min-width: 480px) {
+    .cuadro__content {
+        font-size: 5em;
+    }
+
+    .divcirculo {
+        padding: 130px;
+    }
+}
+
+.cuadro:hover:after {
+    box-shadow: 0px 0px 10px #fff;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+
+
+div.container4 {
+    padding-top: 100%;
+    width: 100% !important;
+    position: relative;
+    background-image: url("http://r.ddmcdn.com/s_f/o_1/cx_633/cy_0/cw_1725/ch_1725/w_720/APL/uploads/2014/11/too-cute-doggone-it-video-playlist.jpg");
+    background-size: 100%;
+    margin: 0;
+    transition: .5s;
+    color: #fff;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.00);
+}
+
+    div.container4:hover {
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.35);
+        transition: .35s;
+    }
+
+    div.container4 p.Tit2 {
+        margin: 0;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        font-size: 35px;
+        font-family: Quicksand;
+        transform: translate(0%, 0%);
+        /*text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 1px;*/
+    }
+
+    div.container4 p.Desc {
+        margin: 0;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+    }
+
+    div.container4 p {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+
+        div.container4 p.MainTitle {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-family: 'Josefin Sans';
+            /*font-family: Lobster;*/
+            font-size: calc(3vw + 40px);
+        }
+
+@media (min-width: 768px) {
+    .cuadro__content {
+        font-size: 2em;
+    }
+
+    .divcirculo {
+        padding: 50px;
+    }
+}
+
+
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px 0px 0px 0px !important;
+}
+
+/*BocalanCamps*/
+.CAMP {
+    background-color: rgba(255, 255, 255, 0.30);
+    margin: 5px;
+    overflow: auto;
+}
+
+.camptext {
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 400;
+    padding: 20px;
+    color: black;
+}
+
+.TITULOCAMP {
+    background-color: white;
+    padding: 15px;
+    font-family: 'Josefin Sans';
+    /*font-family: Lobster;*/
+    font-size: 30px;
+    line-height: 45px;
+    color: rgba(0, 0, 0, 0.85);
+    height: 165px;
+}
+
+/*.buttonmoreinfo {
+    background-color: #81b72d;
+    height: 60px;
+    padding-top: 8px;
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    margin: 25px;
+}*/
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+@media (max-height: 600px) {
+
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+.textocamp {
+    margin-bottom: 0rem;
+    position: relative;
+    color: black;
+    margin-top: -20px;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 3rem;
+    font-family: Quicksand;
+    font-weight: 400;
+    text-align: left;
+}
+
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px 0px 0px 0px !important;
+}
+
+/*Booking_Cancel*/
+/*Booking_Sucess*/
+.swatch-blue a:hover, [class*=swatch-] .swatch-blue a:hover {
+    color: #ffffff;
+}
+
+.lobstertitle3 {
+    color: white !important;
+    font-size: 30px;
+    font-family: 'Josefin Sans';
+    text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
+    padding-top: 40px;
+    margin: 30px;
+}
+
+/*Camps*/
+.CAMP {
+    background-color: rgba(255, 255, 255, 0.30);
+    margin: 5px;
+    overflow: auto;
+}
+
+.camptext {
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 400;
+    padding: 20px;
+    color: black;
+}
+
+.TITULOCAMP {
+    background-color: white;
+    padding: 15px;
+    font-family: 'Josefin Sans';
+    /*font-family: Lobster;*/
+    font-size: 60px;
+    line-height: 45px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/*.buttonmoreinfo {
+    background-color: #81b72d;
+    height: 60px;
+    padding-top: 8px;
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    margin: 25px;
+}*/
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+@media (max-height: 600px) {
+
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+.textocamp {
+    margin-bottom: 0rem;
+    position: relative;
+    color: black;
+    margin-top: -20px;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 3rem;
+    font-family: Quicksand;
+    font-weight: 400;
+    text-align: left;
+}
+
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px 0px 0px 0px !important;
+}
+
+/*Community*/
+.swatch-blue a:hover, [class*=swatch-] .swatch-blue a:hover {
+    color: #ffffff;
+}
+
+.lobstertitle3 {
+    color: white !important;
+    font-size: 30px;
+    font-family: 'Josefin Sans';
+    text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
+    padding-top: 40px;
+    margin: 30px;
+}
+
+/*Contact*/
+@media only screen and (min-width: 1501px) {
+    .ImagenContact {
+        margin-top: 0rem;
+        height: auto;
+        width: 120%;
+        margin-left: 4rem;
+    }
+
+    div.margenazo {
+        margin-left: -3rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .ImagenContact {
+        height: auto;
+    }
+}
+
+a.ReserveNow {
+    color: #fff;
+    position: relative;
+    font-size: 20px;
+    font-family: 'Josefin Sans';
+}
+
+    a.ReserveNow:focus {
+        text-decoration: none;
+    }
+
+    a.ReserveNow:hover {
+        text-decoration: none;
+        color: #ccc;
+    }
+
+    a.ReserveNow:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 1px;
+        bottom: 0;
+        left: 25%;
+        margin-bottom: -5px;
+        border-bottom: 2px solid white;
+    }
+
+@media only screen and (max-width: 1500px) {
+    div.margenazo {
+        margin-left: -60px;
+    }
+
+    .ImagenContact {
+        width: 120%;
+    }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 500px) {
+    .ImagenContact {
+        margin-left: 0rem;
+        height: auto;
+    }
+}
+
+.texto {
+    margin-bottom: 0rem;
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 20px;
+    margin-bottom: 3rem;
+    font-family: Quicksand;
+    font-weight: 100;
+    text-align: left;
+}
+
+.textob {
+    margin-bottom: 0rem;
+    position: relative;
+    color: #fff !important;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 3rem;
+    font-family: Quicksand;
+    font-weight: 100;
+    text-align: center;
+}
+
+.cmn-t-underline {
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 45px;
+    margin-bottom: 3rem;
+    font-family: 'Josefin Sans';
+    text-align: left;
+}
+
+    .cmn-t-underline:after {
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 1px;
+        bottom: 0;
+        left: -2%;
+        border-bottom: 1px solid white;
+    }
+
+/*Videos*/
+.cmn-t-underline {
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 40px;
+    margin-bottom: 3rem;
+    font-family: 'Josefin Sans';
+    text-align: center;
+}
+
+.cmn-t-underlinecamp {
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 45px;
+    margin-bottom: 3rem;
+    font-family: 'Josefin Sans';
+    text-align: left;
+}
+
+    .cmn-t-underlinecamp:after {
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 1px;
+        bottom: 0;
+        left: -2%;
+        border-bottom: 1px solid black;
+    }
+
+.cmn-t-underline:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 1px solid white;
+}
+
+.containervideo {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*SummerCamps*/
+.CAMP {
+    background-color: rgba(255, 255, 255, 0.30);
+    margin: 5px;
+    overflow: auto;
+}
+
+.camptext {
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 400;
+    padding: 20px;
+    color: black;
+}
+
+.TITULOCAMP {
+    background-color: white;
+    padding: 15px;
+    font-family: 'Josefin Sans';
+    /*font-family: Lobster;*/
+    font-size: 30px;
+    line-height: 45px;
+    color: rgba(0, 0, 0, 0.85);
+    height: 165px;
+}
+
+/*.buttonmoreinfo {
+    background-color: #81b72d;
+    height: 60px;
+    padding-top: 8px;
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    margin: 25px;
+}*/
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+@media (max-height: 600px) {
+
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+.textocamp {
+    margin-bottom: 0rem;
+    position: relative;
+    color: black;
+    margin-top: -20px;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 3rem;
+    font-family: Quicksand;
+    font-weight: 400;
+    text-align: left;
+}
+
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px 0px 0px 0px !important;
+}
+
+/*Success*/
+.swatch-blue a:hover, [class*=swatch-] .swatch-blue a:hover {
+    color: #ffffff;
+}
+
+.lobstertitle3 {
+    color: white !important;
+    font-size: 30px;
+    font-family: 'Josefin Sans';
+    text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
+    padding-top: 40px;
+    margin: 30px;
+}
+
+/*SchoolCamps*/
+.CAMP {
+    background-color: rgba(255, 255, 255, 0.30);
+    margin: 5px;
+    overflow: auto;
+}
+
+.camptext {
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 400;
+    padding: 20px;
+    color: black;
+}
+
+.TITULOCAMP {
+    background-color: white;
+    padding: 15px;
+    font-family: 'Josefin Sans';
+    /*font-family: Lobster;*/
+    font-size: 60px;
+    line-height: 45px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/*.buttonmoreinfo {
+    background-color: #81b72d;
+    height: 60px;
+    padding-top: 8px;
+    font-family: Quicksand;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    margin: 25px;
+}*/
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+@media (max-height: 600px) {
+
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+.textocamp {
+    margin-bottom: 0rem;
+    position: relative;
+    color: black;
+    margin-top: -20px;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 3rem;
+    font-family: Quicksand;
+    font-weight: 400;
+    text-align: left;
+}
+
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px 0px 0px 0px !important;
+}
+
+/*Partners*/
+.cmn-t-underline {
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 40px;
+    margin-bottom: 3rem;
+    font-family: 'Josefin Sans';
+    text-align: center;
+}
+
+.cmn-t-underlinecamp {
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 45px;
+    margin-bottom: 3rem;
+    font-family: 'Josefin Sans';
+    text-align: left;
+}
+
+    .cmn-t-underlinecamp:after {
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 1px;
+        bottom: 0;
+        left: -2%;
+        border-bottom: 1px solid black;
+    }
+
+.cmn-t-underline:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 1px solid white;
+}
+
+/*MeettheCommunity*/
+.texto {
+    margin-bottom: 0rem;
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 15px;
+    margin-bottom: 3rem;
+    font-family: Quicksand;
+    font-weight: 100;
+    line-height: 14px;
+    text-align: justify;
+}
+
+
+.cmn-t-underline {
+    position: relative;
+    color: #fff;
+    margin-top: 0rem;
+    font-size: 35px;
+    font-family: 'Josefin Sans';
+    text-align: left;
+}
+
+
+    .cmn-t-underline:after {
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 1px;
+        bottom: 0;
+        left: -2%;
+        border-bottom: 1px solid white;
+    }
+
+/*FAQ*/
+.quicksandtitle {
+    color: white !important;
+    font-size: 45px;
+    font-family: 'Quicksand', cursive;
+    font-weight: 100;
+}
+
+/*Faces*/
+.swatch-blue .portfolio-title, [class*=swatch-] .swatch-blue .portfolio-title {
+    background: transparent;
+    color: white;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.portfolio-filter {
+    background: transparent;
+    color: white !important;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.swatch-blue .btn-primary:hover, .swatch-blue button:hover, .swatch-blue input[type=submit]:hover, [class*=swatch-] .swatch-blue .btn-primary:hover, [class*=swatch-] .swatch-blue button:hover, [class*=swatch-] .swatch-blue input[type=submit]:hover {
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.swatch-blue .btn-primary, .swatch-blue button, .swatch-blue input[type=submit], [class*=swatch-] .swatch-blue .btn-primary, [class*=swatch-] .swatch-blue button, [class*=swatch-] .swatch-blue input[type=submit] {
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Josefin Sans';
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.tp-caption.Newspaper-Button, .Newspaper-Button {
+    color: inherit;
+}
+
+/*Events*/
+.events {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.eventsbutton {
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.eventsdate {
+    font-family: Quicksand;
+    font-weight: 100;
+    font-size: 40px;
+    text-align: right;
+}
+
+.eventstitle {
+    font-family: Quicksand;
+    font-weight: 200;
+    font-size: 60px;
+    text-align: center;
+}
+
+.eventsinfo {
+    font-family: Quicksand;
+    font-weight: 100;
+    font-size: 15px;
+    text-align: center;
+}
+
+.imgquoute {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    z-index: 99;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.poverlay {
+    text-align: center;
+    color: white;
+    font-size: 165px;
+    font-weight: lighter;
+    line-height: 2;
+    font-family: 'Josefin Sans';
+    /*font-family: Lobster,cursive;*/
+    text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
+}
+
+@media (max-width: 900px) {
+    .poverlay {
+        text-align: center;
+        color: white;
+        font-size: 65px;
+        font-weight: lighter;
+        line-height: 2;
+        font-family: 'Josefin Sans';
+        /*font-family: Lobster,cursive;*/
+        text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
+    }
+
+    .eventsdate {
+        font-family: Quicksand;
+        font-weight: 100;
+        font-size: 25px;
+        text-align: right;
+    }
+
+    .eventstitle {
+        font-family: Quicksand;
+        font-weight: 200;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .eventsinfo {
+        font-family: Quicksand;
+        font-weight: 100;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .mybox {
+        position: relative;
+        padding: 20px 0px 20px 0px;
+        background-color: #EEEEEE;
+    }
+
+        .mybox:before {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            top: 25%;
+            border-left: 1px solid white;
+        }
+}
+
+/*Booking_test*/
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.videopop {
+    width: 800px;
+}
+
+@media (max-width: 850px) {
+
+    .videopop {
+        width: 90vw;
+    }
+}
+
+.botonarreglado {
+    margin-right: 0px !important;
+}
+
+.botonarreglado2 {
+    margin-left: 0px !important;
+    margin-top: 100px !important;
+}
+
+@media (min-width: 768px) {
+
+    .botonarreglado {
+        margin-right: 210px !important;
+    }
+
+    .botonarreglado2 {
+        margin-top: 0px !important;
+        margin-left: 210px !important;
+    }
+}
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px !important;
+}
+
+/*BOOKING*/
+html,
+body {
+    overflow: hidden;
+}
+
+.scrollbar {
+}
+
+    .scrollbar::-webkit-scrollbar {
+        width: 6px !important;
+        background-color: transparent !important;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background-color: lightgray !important;
+        border-radius: 10px !important;
+    }
+
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: dimgray !important;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb:active {
+            background-color: gray !important;
+        }
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+@media (max-height: 600px) {
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+.textocamp {
+    white-space: pre-line;
+}
+
+.campimage {
+}
+
+.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.overlay {
+    z-index: 99;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.poverlay {
+    text-align: center;
+    color: white;
+    font-size: 165px;
+    font-weight: lighter;
+    line-height: 2;
+    font-family: 'Josefin Sans';
+    /*font-family: Lobster,cursive;*/
+    text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
+}
+
+@media (max-width: 900px) {
+    .poverlay {
+        text-align: center;
+        color: white;
+        font-size: 65px;
+        font-weight: lighter;
+        line-height: 2;
+        font-family: 'Josefin Sans';
+        /*font-family: Lobster,cursive;*/
+        text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
+    }
+}
+
+.imgquoute {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dxbButtonChecked_DevEx {
+    color: #3c3c3c;
+    background: #dbdde2 url(/DXR.axd?r=0_618-nKxBd) repeat-x left top;
+    border: 4px solid #82b727;
+}
+
+a.wakanasublink {
+    color: #000;
+}
+
+    a.wakanasublink:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 1px;
+        bottom: 0;
+        left: 25%;
+        margin-bottom: -5px;
+        border-bottom: 2px solid black;
+    }
+
+/*CampamentoIndividual*/
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.videopop {
+    width: 800px;
+}
+
+@media (max-width: 850px) {
+
+    .videopop {
+        width: 90vw;
+    }
+}
+
+.botonarreglado {
+    margin-right: 0px !important;
+}
+
+.botonarreglado2 {
+    margin-left: 0px !important;
+    margin-top: 100px !important;
+}
+
+@media (min-width: 768px) {
+
+    .botonarreglado {
+        margin-right: 210px !important;
+    }
+
+    .botonarreglado2 {
+        margin-top: 0px !important;
+        margin-left: 210px !important;
+    }
+}
+
+.dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+    white-space: normal;
+    padding: 0px !important;
+}
+
+/*Evento ind*/
+.scrollbar {
+}
+
+    .scrollbar::-webkit-scrollbar {
+        width: 6px !important;
+        background-color: transparent !important;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background-color: lightgray !important;
+        border-radius: 10px !important;
+    }
+
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: dimgray !important;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb:active {
+            background-color: gray !important;
+        }
+
+.modalcamp {
+    width: 50vw;
+    height: 80vh;
+}
+
+@media (max-height: 600px) {
+
+    .modalcamp {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalcamp {
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+
+/*LOCAL OVERRIDES*/
+.textocamp {
+    white-space: pre-line;
+    text-align: center !important;
+}
+
+.lobstertitle {
+    color: black !important;
+}
+
+.campimage {
+}
+
+
+
+

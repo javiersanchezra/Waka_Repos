@@ -32,10 +32,12 @@
     <link rel="stylesheet" type="text/css" href="../revolution/css/settings.css">
     <link rel="stylesheet" type="text/css" href="../revolution/css/layers.css">
     <link rel="stylesheet" type="text/css" href="../revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../revolution/css/Booking_test.css">
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
 
     <!-- Core jQuery Script -->
     <script src="../assets/js/packages.min.js"></script>
@@ -61,7 +63,7 @@
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-91744513-1', 'auto');
@@ -96,60 +98,15 @@
             YoutubeMod.Show();
         }
         ShowYouTube();
+
+        function HidePopup() {
+            booking.Hide();
+
+        }
     </script>
 
     <style>
-        .videoWrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            padding-top: 25px;
-            height: 0;
-        }
-
-            .videoWrapper iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-
-        .videopop {
-            width: 800px;
-        }
-
-        @media (max-width: 850px) {
-
-            .videopop {
-                width: 90vw;
-            }
-        }
-
-        .botonarreglado {
-            margin-right: 0px !important;
-        }
-
-        .botonarreglado2 {
-            margin-left: 0px !important;
-            margin-top: 100px !important;
-        }
-
-        @media (min-width: 768px) {
-
-            .botonarreglado {
-                margin-right: 210px !important;
-            }
-
-            .botonarreglado2 {
-                margin-top: 0px !important;
-                margin-left: 210px !important;
-            }
-        }
-
-        .dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
-            white-space: normal;
-            padding: 0px !important;
-        }
+        
     </style>
 </head>
 <body class="transparent-header">
@@ -1209,256 +1166,7 @@
                     </dx:ASPxPopupControl>
 
 
-                    <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" CloseAction="OuterMouseClick" CloseOnEscape="true" Modal="True"
-                        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ClientInstanceName="pcLogin"
-                        ShowHeader="false" ShowCloseButton="false" CssClass="noBackground"
-                        HeaderStyle-BackgroundImage-ImageUrl="~/assets/images/Westerm.jpg"
-                        HeaderStyle-BackgroundImage-Repeat="NoRepeat" AutoUpdatePosition="true" HeaderStyle-CssClass="HeaderStyle" HeaderText="BOOK NOW"
-                        AllowDragging="false" AllowResize="false" PopupAnimationType="Fade" EnableViewState="False" Width="600" Height="700"
-                        ContentStyle-BackColor="Transparent" CloseAnimationType="Fade">
-                        <ContentStyle>
-                            <Paddings PaddingBottom="5px" />
-                        </ContentStyle>
-                        <ContentStyle CssClass="noBackground">
-                            <Paddings Padding="0px" />
-                        </ContentStyle>
-
-                        <HeaderStyle CssClass="HeaderStyle">
-                            <BackgroundImage ImageUrl="~/assets/images/Westerm.jpg" Repeat="NoRepeat"></BackgroundImage>
-                        </HeaderStyle>
-                        <ContentCollection>
-
-                            <dx:PopupControlContentControl runat="server">
-                                <dx:ASPxCallbackPanel runat="server" ID="CallbackPanel" ClientInstanceName="CallbackPanel"
-                                    Width="100%" OnCallback="CallbackPanel_Callback" OnCustomJSProperties="rpFilmCollection_CustomJSProperties">
-                                    <PanelCollection>
-                                        <dx:PanelContent runat="server">
-                                            <div class="row rowPopup" style="height: 150px; background-image: url('../assets/images/Westerm.jpg'); text-align: center !important; background-repeat: no-repeat">
-
-                                                <div class="col-md-12" style="text-align: center;">
-                                                    <br />
-                                                    <br />
-                                                    <br />
-                                                    <br />
-                                                    <span class="lobstertitlePopup">BOOK NOW</span>
-                                                    <br />
-                                                    <br />
-                                                    <br />
-                                                    <br />
-                                                </div>
-                                            </div>
-
-                                            <dx:ASPxCallbackPanel runat="server" ID="ASPxCallbackPanel2" ClientInstanceName="CallbackPanel"
-                                                Width="100%" OnCallback="CallbackPanel_Callback" OnCustomJSProperties="rpFilmCollection_CustomJSProperties" EnableCallbackAnimation="True">
-                                                <PanelCollection>
-                                                    <dx:PanelContent runat="server">
-                                                        <div class="row" style="height: 500px">
-                                                            <asp:MultiView ID="MultiView" runat="server" ActiveViewIndex="0">
-                                                                <asp:View ID="View1" runat="server">
-
-
-                                                                    <div class="col-sm-12 col-sm-offset-2">
-
-
-
-                                                                        <span style="color: #333333; font-size: 2vw;">Personal Information<br />
-                                                                            <br />
-                                                                            <dx:ASPxTextBox ID="t1" ClientInstanceName="t1" runat="server" Width="255px" Height="30px" NullText="First Name"></dx:ASPxTextBox>
-                                                                            <br />
-                                                                            <dx:ASPxTextBox ID="t6" ClientInstanceName="t6" runat="server" Width="255px" Height="30px" NullText="Last Name"></dx:ASPxTextBox>
-                                                                            <br />
-                                                                            <dx:ASPxTextBox ID="t7" ClientInstanceName="t7" runat="server" Width="255px" Height="30px" NullText="Phone Number"></dx:ASPxTextBox>
-                                                                            <br />
-                                                                            <dx:ASPxTextBox ID="t8" ClientInstanceName="t8" runat="server" Width="255px" Height="30px" NullText="example@email.com"></dx:ASPxTextBox>
-                                                                        </span>
-                                                                        <br />
-
-                                                                    </div>
-
-                                                                </asp:View>
-                                                                <asp:View ID="View2" runat="server">
-
-
-
-
-                                                                    <center>
-                                                                                                
-                                                                                                    <div class="col-xs-8 col-xs-offset-2">
-                                                                                                        <span style="color: #333333; font-family:'Quicksand'; font-size:3vw";>Select Date<br /><br />
-                                                                                                            <dx:ASPxCalendar ID="ASPxCalendar1"  ClientInstanceName="calendar" EnableMultiSelect="true" HeaderStyle-BackColor="#699669" BackColor="YellowGreen" AutoPostBack="false" runat="server">
-                                                                                                             
-
-<HeaderStyle BackColor="#699669"></HeaderStyle>
-                                                                                                             
-                                                                                                            
-</dx:ASPxCalendar>
-                                                                                                        </span>                                                                                             
-                                                                                                    <br />                                                                                                                                                                                                            
-                                                                                                    </div>
-                                                                                                   
-                                                                                                    </center>
-
-
-                                                                </asp:View>
-                                                                <asp:View ID="View3" runat="server">
-
-                                                                    <div class="row">
-                                                                        <center>
-
-                                                                                                    <div class="col-xs-8 col-xs-offset-2">
-                                                                                                        <span style="color: #333333; font-family:'Quicksand'; font-size:3vw;";>TYPE OF STAY<br />
-                                                                                                                                                                                                                                                                                                                                     
-                                                                                                        </span>                                                                                             
-                                                                                                                                                                                                                                                                                                        
-                                                                                                    </div>
-                                                                                                   
-                                                                                                    </center>
-
-
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <center>
-                                                                                            <div class="col-xs-2" style="padding: 0 !important">
-                                                                                                <dx:ASPxButton ID="ASPxButton2" runat="server" AutoPostBack="False" Checked="True"
-                                                                                                    GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/Camp.jpg" Image-Width="80px" Image-Height="80px" Paddings-Padding="0px">
-<Image Height="80px" Width="80px" Url="~/assets/images/book/Camp.jpg"></Image>
-
-<Paddings Padding="0px"></Paddings>
-                                                                                                
-</dx:ASPxButton>
-                                                                                             
-                                                                                                <br />
-                                                                                                <label >Camp</label>
-                                                                                            </div>
-                                                                                            <div class="col-xs-2 " style="padding: 0 !important">
-                                                                                                <dx:ASPxButton ID="ASPxButton3" runat="server" AutoPostBack="False"
-                                                                                                    GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/caballo.jpg" Image-Width="80px" Image-Height="80px">
-<Image Height="80px" Width="80px" Url="~/assets/images/book/caballo.jpg"></Image>
-                                                                                                
-</dx:ASPxButton>
-                                                                                                <%--<img src="assets\images\caballo.png" width="80" height="80"/> --%>
-                                                                                                <br />
-                                                                                                <label >Overnight<br />
-                                                                                                    Stay</label>
-                                                                                            </div>
-                                                                                            <div class="col-xs-2 " style="padding: 0 !important">
-                                                                                                <dx:ASPxButton ID="ASPxButton4" runat="server" AutoPostBack="False"
-                                                                                                    GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/Group.jpg" Image-Width="80px" Image-Height="80px">
-<Image Height="80px" Width="80px" Url="~/assets/images/book/Group.jpg"></Image>
-                                                                                                
-</dx:ASPxButton>
-                                                                                                <%--<img src="assets\images\Group.png" width="80" height="80"/> --%>
-                                                                                                <br />
-                                                                                                <label >Group<br />
-                                                                                                    Event</label>
-                                                                                            </div>
-                                                                                            <div class="col-xs-2 " style="padding: 0 !important">
-                                                                                                <dx:ASPxButton ID="ASPxButton5" runat="server" AutoPostBack="False"
-                                                                                                    GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/event.jpg" Image-Width="80px" Image-Height="80px">
-<Image Height="80px" Width="80px" Url="~/assets/images/book/event.jpg"></Image>
-                                                                                                
-</dx:ASPxButton>
-                                                                                                <%--<img src="assets\images\event.png" width="80" height="80"/>--%>
-                                                                                                <br />
-                                                                                                <label >Event</label>
-                                                                                            </div>
-                                                                                            <div class="col-xs-2 " style="padding: 0 !important">
-                                                                                                <dx:ASPxButton ID="ASPxButton6" runat="server" AutoPostBack="False"
-                                                                                                    GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/visit.jpg" Image-Width="80px" Image-Height="80px">
-<Image Height="80px" Width="80px" Url="~/assets/images/book/visit.jpg"></Image>
-                                                                                                
-</dx:ASPxButton>
-                                                                                                <%--<img src="assets\images\visit.png" width="80" height="80"/>--%>
-                                                                                                <br />
-                                                                                                <label >Day<br />
-                                                                                                    Visit</label>
-                                                                                            </div>
-                                                                                            <div class="col-xs-2 " style="padding: 0 !important">
-                                                                                                <dx:ASPxButton ID="ASPxButton7" runat="server" AutoPostBack="False"
-                                                                                                    GroupName="G" Width="80px" Height="80px" Image-Url="~/assets/images/book/corporation.jpg" Image-Width="80px" Image-Height="80px">
-<Image Height="80px" Width="80px" Url="~/assets/images/book/corporation.jpg"></Image>
-                                                                                                
-</dx:ASPxButton>
-                                                                                                <%--<img src="assets\images\corporation.png" width="80" height="80"/>--%>
-                                                                                                <br />
-                                                                                                <label >Corporate</label>
-                                                                                            </div>
-
-                                                                                            </center>
-                                                                    </div>
-
-
-                                                                </asp:View>
-                                                                <asp:View ID="View4" runat="server">
-
-
-
-                                                                    <div class="row">
-                                                                        <div class="col-sm-8 col-sm-offset-2 " style="text-align: center;">
-                                                                            TELL US MORE
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
-                                                                            <dx:ASPxTextBox ID="companyname" NullText="Company Name" runat="server" Width="170px" NullTextStyle-ForeColor="#333333">
-                                                                                <NullTextStyle ForeColor="#333333"></NullTextStyle>
-
-                                                                            </dx:ASPxTextBox>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-sm-4 col-sm-offset-2" style="text-align: center;">
-                                                                            <dx:ASPxTextBox ID="ASPxTextBox1" NullText="Company Name" runat="server" Width="170px" NullTextStyle-ForeColor="#333333">
-                                                                                <NullTextStyle ForeColor="#333333"></NullTextStyle>
-
-                                                                            </dx:ASPxTextBox>
-
-                                                                        </div>
-                                                                        <div class="col-sm-4" style="text-align: center;">
-                                                                            <dx:ASPxTextBox ID="ASPxTextBox2" NullText="Company Name" runat="server" Width="170px" NullTextStyle-ForeColor="#333333">
-                                                                                <NullTextStyle ForeColor="#333333"></NullTextStyle>
-
-                                                                            </dx:ASPxTextBox>
-
-                                                                        </div>
-                                                                    </div>
-
-                                                                </asp:View>
-                                                                <asp:View ID="View5" runat="server">
-                                                                </asp:View>
-
-                                                            </asp:MultiView>
-                                                        </div>
-                                                    </dx:PanelContent>
-                                                </PanelCollection>
-                                                <ClientSideEvents Init="function(s, e) { UpdatePager(); }" EndCallback="function(s, e){ UpdatePager(); }"></ClientSideEvents>
-                                            </dx:ASPxCallbackPanel>
-                                            <div class="row" style="height: 50px">
-                                                <div class="col-sm-12 col-md-12">
-                                                    <dx:ASPxLabel ID="lbPageInfo" runat="server" Text="" ClientInstanceName="lbPageInfo">
-                                                        <ClientSideEvents Click="function(s, e) { ShowNextPage(); }"></ClientSideEvents>
-                                                    </dx:ASPxLabel>
-
-                                                    <dx:ASPxButton ID="btPrev" runat="server" Text="Prev" AutoPostBack="False" ClientInstanceName="btPrev">
-                                                        <ClientSideEvents Click="function(s, e) { ShowPrevPage(); }"></ClientSideEvents>
-                                                    </dx:ASPxButton>
-                                                    <dx:ASPxButton ID="btNext" runat="server" Text="Next" AutoPostBack="False" ClientInstanceName="btNext">
-                                                        <ClientSideEvents Click="function(s, e) { ShowNextPage(); }"></ClientSideEvents>
-                                                    </dx:ASPxButton>
-                                                </div>
-                                            </div>
-
-
-                                        </dx:PanelContent>
-                                    </PanelCollection>
-                                    <ClientSideEvents Init="function(s, e) { UpdatePager(); }" EndCallback="function(s, e){ UpdatePager(); }"></ClientSideEvents>
-                                </dx:ASPxCallbackPanel>
-
-                            </dx:PopupControlContentControl>
-                        </ContentCollection>
-                        <Border BorderColor="Transparent" BorderStyle="None" BorderWidth="0" />
-                    </dx:ASPxPopupControl>
+                    
 
                     <dx:ASPxPopupControl ID="YoutubeMod" ClientInstanceName="YoutubeMod" runat="server" CloseAction="OuterMouseClick" CloseOnEscape="true" Modal="True"
                         PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowHeader="false" AutoUpdatePosition="True" CloseAnimationType="Slide" LoadContentViaCallback="None" CssClass="videopop">
@@ -1490,22 +1198,22 @@
         </div>
         <script>
 
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: "629483980570403",
-                    xfbml: true,
-                    version: "v2.6"
-                });
+                    window.fbAsyncInit = function () {
+                        FB.init({
+                            appId: "629483980570403",
+                            xfbml: true,
+                            version: "v2.6"
+                        });
 
-            };
+                    };
 
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) { return; }
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
+                    (function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
         </script>
         <script type="text/javascript">$crisp = []; CRISP_WEBSITE_ID = "85259242-642f-4086-a7c1-e1bd19899fe8"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.im/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
     </form>

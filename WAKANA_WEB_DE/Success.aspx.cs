@@ -13,6 +13,10 @@ namespace WAKANA_WEB_DE
 {
     public partial class Success : BaseSamplePage
     {
+        public Success()
+        {
+        }
+
         protected override void RunSample()
         { }
 
@@ -20,23 +24,22 @@ namespace WAKANA_WEB_DE
 
         //Método random.
         private static Random random = new Random();
+
         public static string CadenitaRandom(int length)
         {
-            const string chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+            return new string((
+                from s in Enumerable.Repeat<string>("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", length)
+                select s[Success.random.Next(s.Length)]).ToArray<char>());
         }
 
         protected void ASPxButton1_Click(object sender, EventArgs e)
         {
-            RunSample();
+            this.RunSample();
         }
 
-        // #Create Future Payment Using PayPal
-        // This sample code demonstrates how you can process a future payment made using a PayPal account.
-        /// <summary>
-        /// Code example for creating a future payment object.
-        /// </summary>
-        /// <param name="correlationId"></param>
-        /// <param name="authorizationCode"></param>
+        static Success()
+        {
+            Success.random = new Random();
+        }
     }
 }

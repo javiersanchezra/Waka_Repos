@@ -1,42 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/es/Main.Master" AutoEventWireup="true" CodeBehind="Faces.aspx.cs" Inherits="WAKANA_WEB_DE.es.Faces" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .swatch-blue .portfolio-title, [class*=swatch-] .swatch-blue .portfolio-title {
-            background: transparent;
-            color: white;
-            font-family: 'Josefin Sans';
-            font-size: 20px;
-            font-weight: 100;
-        }
-
-        .portfolio-filter {
-            background: transparent;
-            color: white !important;
-            font-family: 'Josefin Sans';
-            font-size: 20px;
-            font-weight: 100;
-        }
-
-        .swatch-blue .btn-primary:hover, .swatch-blue button:hover, .swatch-blue input[type=submit]:hover, [class*=swatch-] .swatch-blue .btn-primary:hover, [class*=swatch-] .swatch-blue button:hover, [class*=swatch-] .swatch-blue input[type=submit]:hover {
-            background: transparent;
-            color: #ffffff;
-            font-family: 'Josefin Sans';
-            font-size: 20px;
-            font-weight: 100;
-        }
-
-        .swatch-blue .btn-primary, .swatch-blue button, .swatch-blue input[type=submit], [class*=swatch-] .swatch-blue .btn-primary, [class*=swatch-] .swatch-blue button, [class*=swatch-] .swatch-blue input[type=submit] {
-            background: transparent;
-            color: #ffffff;
-            font-family: 'Josefin Sans';
-            font-size: 20px;
-            font-weight: 100;
-        }
-        .tp-caption.Newspaper-Button, .Newspaper-Button {
-    color: inherit;
-}
-    </style>
     <script>
         function myFunction(divObj) {
             divact.style.background = "transparent";

@@ -219,6 +219,7 @@
     <Content Include="assets\images\_MG_2920.jpg" />
     <Content Include="assets\js\chart.js" />
     <Content Include="assets\js\contact.js" />
+    <Content Include="assets\js\jscodigo.jsx" />
     <Content Include="assets\js\map.js" />
     <Content Include="assets\js\packages.min.js" />
     <Content Include="assets\js\revolution.js" />
@@ -226,10 +227,15 @@
     <Content Include="assets\js\theme.js" />
     <Content Include="assets\js\theme.min.js" />
     <Content Include="assets\videos\wakana6febrero.mp4" />
+    <Content Include="assets\videos\wakana_1.mp4" />
+    <Content Include="assets\videos\wakana_2.mp4" />
+    <Content Include="assets\videos\wakana_3.mp4" />
     <Content Include="assets\warning.js" />
+    <Content Include="BocalanCamps.aspx" />
     <Content Include="BOOKING.aspx" />
     <Content Include="Booking_Cancel.aspx" />
     <Content Include="Booking_Success.aspx" />
+    <Content Include="Booking_test.aspx" />
     <Content Include="CampamentoIndividual.aspx" />
     <Content Include="Camps.aspx" />
     <Content Include="CancelationPolicy.aspx" />
@@ -239,6 +245,7 @@
     <Content Include="es\Accommodation.aspx" />
     <Content Include="es\Activities.aspx" />
     <Content Include="es\Andalusian.aspx" />
+    <Content Include="es\BocalanCamps.aspx" />
     <Content Include="es\Camps.aspx" />
     <Content Include="es\CancelationPolicy.aspx" />
     <Content Include="es\Community.aspx" />
@@ -648,31 +655,18 @@
     <Content Include="img\act\biking.jpg" />
     <Content Include="img\act\camping.jpg" />
     <Content Include="img\act\canopy.jpg" />
-    <Content Include="img\act\Flora and Fauna\DSCF2198w.jpg" />
-    <Content Include="img\act\Flora and Fauna\DSCF2202w.jpg" />
     <Content Include="img\act\floraandfauna.jpg" />
     <Content Include="img\act\kayak.jpg" />
-    <Content Include="img\act\Kayaking\_MG_2789.jpg" />
-    <Content Include="img\act\Kayaking\_MG_2809.jpg" />
     <Content Include="img\act\Kitesurf.jpg" />
-    <Content Include="img\act\Kitesurf\_MG_3228 %282%29.jpg" />
     <Content Include="img\act\main.jpg" />
     <Content Include="img\act\ornithology.jpg" />
-    <Content Include="img\act\Paddle Surf\_MG_2665.jpg" />
-    <Content Include="img\act\Paddle Surf\_MG_2894.jpg" />
-    <Content Include="img\act\Paddle Surf\_MG_2946.jpg" />
     <Content Include="img\act\paddlesurf.jpg" />
     <Content Include="img\act\riding.jpg" />
-    <Content Include="img\act\Spartan Trail\_MG_2162.jpg" />
-    <Content Include="img\act\Spartan Trail\_MG_2199.jpg" />
     <Content Include="img\act\spartantrial.jpg" />
-    <Content Include="img\act\Spartan\_MG_2199.jpg" />
     <Content Include="img\act\swimming.jpg" />
-    <Content Include="img\act\Wake Surf\_MG_3010.jpg" />
     <Content Include="img\act\wakesurf.jpg" />
     <Content Include="img\act\windsurfing.jpg" />
     <Content Include="img\ANDALUSIAN.jpg" />
-    <Content Include="img\bookcover.jpg" />
     <Content Include="img\DSCF4670w.jpg" />
     <Content Include="img\DSCF4785w.jpg" />
     <Content Include="img\DSCF4786w.jpg" />
@@ -751,6 +745,7 @@
     <Content Include="revolution\js\jquery.themepunch.tools.min.js" />
     <Content Include="revolution\js\source\jquery.themepunch.revolution.js" />
     <Content Include="revolution\js\source\jquery.themepunch.tools.min.js" />
+    <Content Include="SchoolCamps.aspx" />
     <Content Include="SpartanCamps.aspx" />
     <Content Include="Success.aspx" />
     <Content Include="SummerCamps.aspx" />
@@ -759,6 +754,7 @@
     <Content Include="Yurtas.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="wakana_1.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -809,6 +805,12 @@
     <Content Include="es\Main.Master" />
     <Content Include="Gisela Pulido Pro Center.pdf" />
     <Content Include="img\slide\slide.rar" />
+    <Content Include="Accomodation Prices.pdf" />
+    <Content Include="ACTIVITIES TIMETABLE.pdf" />
+    <Content Include="HORARIO ACTIVIDADES PRIMAVERA VERANO.pdf" />
+    <Content Include="Pack 1 Day Without Accommodation from 1 to 7.pdf" />
+    <Content Include="Pack 1 Day Without Accommodation from 8 to 17.pdf" />
+    <Content Include="Precios Web_ENG.pdf" />
     <None Include="Properties\PublishProfiles\wakana1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\wakana1 - Web Deploy.pubxml" />
     <Content Include="Response.aspx.bak" />
@@ -852,6 +854,13 @@
     <Compile Include="BaseSamplePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BocalanCamps.aspx.cs">
+      <DependentUpon>BocalanCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BocalanCamps.aspx.designer.cs">
+      <DependentUpon>BocalanCamps.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BOOKING.aspx.cs">
       <DependentUpon>BOOKING.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -872,6 +881,13 @@
     </Compile>
     <Compile Include="Booking_Success.aspx.designer.cs">
       <DependentUpon>Booking_Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking_test.aspx.cs">
+      <DependentUpon>Booking_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking_test.aspx.designer.cs">
+      <DependentUpon>Booking_test.aspx</DependentUpon>
     </Compile>
     <Compile Include="CampamentoIndividual.aspx.cs">
       <DependentUpon>CampamentoIndividual.aspx</DependentUpon>
@@ -935,6 +951,13 @@
     </Compile>
     <Compile Include="es\Andalusian.aspx.designer.cs">
       <DependentUpon>Andalusian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="es\BocalanCamps.aspx.cs">
+      <DependentUpon>BocalanCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="es\BocalanCamps.aspx.designer.cs">
+      <DependentUpon>BocalanCamps.aspx</DependentUpon>
     </Compile>
     <Compile Include="es\Camps.aspx.cs">
       <DependentUpon>Camps.aspx</DependentUpon>
@@ -1135,6 +1158,7 @@
     <Compile Include="FAQ.aspx.designer.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
+    <Compile Include="fecha.cs" />
     <Compile Include="GeneralConditions.aspx.cs">
       <DependentUpon>GeneralConditions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1223,6 +1247,13 @@
     <Compile Include="Response.aspx.designer.cs">
       <DependentUpon>Response.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SchoolCamps.aspx.cs">
+      <DependentUpon>SchoolCamps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SchoolCamps.aspx.designer.cs">
+      <DependentUpon>SchoolCamps.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SpartanCamps.aspx.cs">
       <DependentUpon>SpartanCamps.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1278,6 +1309,7 @@
     <Folder Include="assets\images\rev-slider\images\" />
     <Folder Include="assets\svg\" />
     <Folder Include="gallery\Gallery Images -20170130T190822Z\Gallery Images \" />
+    <Folder Include="img\camps\" />
     <Folder Include="revolution\assets\sources\" />
     <Folder Include="revolution\css\navigation-skins\" />
   </ItemGroup>

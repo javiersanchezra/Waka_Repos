@@ -1,47 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/es/Main.Master" AutoEventWireup="true" CodeBehind="Partners.aspx.cs" Inherits="WAKANA_WEB_DE.es.Partners" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .cmn-t-underline {
-    position: relative;
-    color: #fff;
-    margin-top: 0rem;
-    font-size: 40px;
-    margin-bottom: 3rem;
-    font-family: 'Josefin Sans';
-    text-align: center;
-}
-.cmn-t-underlinecamp {
-    position: relative;
-    color: #fff;
-    margin-top: 0rem;
-    font-size: 45px;
-    margin-bottom: 3rem;
-    font-family: 'Josefin Sans';
-    text-align: left;
-}
-
- .cmn-t-underlinecamp:after {
-        content: "";
-        position: absolute;
-        width: 20%;
-        height: 1px;
-        bottom: 0;
-        left: -2%;
-        border-bottom: 1px solid black;
-    }
-
-    .cmn-t-underline:after {
-        content: "";
-        position: absolute;
-        width: 50%;
-        height: 1px;
-        bottom: 0;
-        left: 25%;
-        border-bottom: 1px solid white;
-    }
-
-
-    </style>
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 
         <div class="background-media" style="background-image: url('../img/slide/slide1.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; background-position: 50% 0px;" data-start="background-position:50% 0px"

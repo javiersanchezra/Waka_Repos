@@ -8,613 +8,672 @@ using DevExpress.Web;
 using System.Net.Mail;
 using RestSharp;
 using RestSharp.Authenticators;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using PayPal.Api;
+using System.Threading;
+using System.Web.SessionState;
 using MySql.Data.MySqlClient;
 using System.Configuration;
-
 
 namespace WAKANA_WEB_DE
 {
     public partial class BOOKING : System.Web.UI.Page
     {
+
+        List<fecha> fechas = new List<fecha>();
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            deEnd.MinDate = DateTime.Today;
-            deStart.MinDate = DateTime.Today;
-            loadCosts();
-            //string payerId = Request.Params["PayerID"];
-            //this.RegisterSampleRequestFlow();
-            //// ### Api Context
-            //// Pass in a `APIContext` object to authenticate 
-            //// the call and to send a unique request id 
-            //// (that ensures idempotency). The SDK generates
-            //// a request id if you do not pass one explicitly. 
-            //// See [Configuration.cs](/Source/Configuration.html) to know more about APIContext.
-            //var apiContext = Configuration.GetAPIContext();
+            this.deEnd.MinDate = DateTime.Today;
+            this.deStart.MinDate = DateTime.Today;
 
-            //if (!string.IsNullOrEmpty(payerId))
-            //{
-            //    var guid = Request.Params["guid"];
-
-            //    // ^ Ignore workflow code segment
-            //    #region Track Workflow
-            //    this.flow = Session["flow-" + guid] as RequestFlow;
-            //    this.RegisterSampleRequestFlow();
-            //    this.flow.RecordApproval("PayPal payment approved successfully.");
-            //    #endregion
-
-            //    // Using the information from the redirect, setup the payment to execute.
-            //    var paymentId = Request.Params["paymentId"];
-            //    var paymentExecution = new PaymentExecution() { payer_id = payerId };
-            //    var payment = new Payment() { id = paymentId };
-
-            //    // ^ Ignore workflow code segment
-            //    #region Track Workflow
-            //    this.flow.AddNewRequest("Execute PayPal payment", payment);
-            //    #endregion
-
-            //    // Execute the payment.
-            //    var executedPayment = payment.Execute(apiContext, paymentExecution);
-            //    // ^ Ignore workflow code segment
-            //    #region Track Workflow
-            //    this.flow.RecordResponse(executedPayment);
-            //    #endregion
-
-            //    // For more information, please visit [PayPal Developer REST API Reference](https://developer.paypal.com/docs/api/).
-            //}
+            //THIS WILL LOAD ACCOMMODATION COSTS FROM THE DATABASE
+            this.loadAccommodationCostfromDB();
 
         }
         public bool IsValid(string emailaddress)
         {
+            bool flag;
             try
             {
-                MailAddress m = new MailAddress(emailaddress);
-
-                return true;
+                MailAddress mailAddress = new MailAddress(emailaddress);
+                flag = true;
             }
             catch
             {
-                return false;
+                flag = false;
             }
-        }
-        List<fecha> fechas = new List<fecha>();
-
-        protected void loadCosts()
-        {
-
-            string query = "Select * from general";
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
-            con.Open();
-            try
-            {
-                MySqlCommand com = new MySqlCommand(query, con);
-                MySqlDataReader rd = com.ExecuteReader();
-                rd.Read();
-                Session["highseason_yurta12"] = rd[1].ToString();
-                Session["highseason_yurta34"] = rd[2].ToString();
-                Session["highseason_yurta56"] = rd[3].ToString();
-                Session["lowseason_yurta12"] = rd[4].ToString();
-                Session["lowseason_yurta34"] = rd[5].ToString();
-                Session["lowseason_yurta56"] = rd[6].ToString();
-                Session["highseason_tepee12"] = rd[7].ToString();
-                Session["highseason_tepee34"] = rd[8].ToString();
-                Session["highseason_tepee56"] = rd[9].ToString();
-                Session["lowseason_tepee12"] = rd[10].ToString();
-                Session["lowseason_tepee34"] = rd[11].ToString();
-                Session["lowseason_tepee56"] = rd[12].ToString();
-            }
-            catch { }
-            finally
-            {
-                con.Close();
-            }
-
+            return flag;
         }
 
-
-        protected void CallbackPanel_Callback(object sender, CallbackEventArgsBase e)
+        //BOOKING CALLBACK MANAGES ALL THE PROGRAMMING HAPENNING WHILE CHANGING BOOKING STEPS, LOADING AND SETTING ALL INFORMATION RECEIVED INTO THE SESSION AND ALSO STARTING THE PAYPAL FLOW
+        protected void Booking_Callback(object sender, CallbackEventArgsBase e)
         {
-            //SE OBTIENEN LOS PARAMETROS DEL LADO DEL CLIENTE Y SE DIVIDEN POR : EN UN ARREGLO DE CADENAS
-            string[] parameters = e.Parameter.Split(':');
-            //EL PRIMER PARAMETRO CORRESPONDE A LA HOJA ACTUAL DEL PROCESO DE RESERVACIÓN
-            int currentPageIndex = int.Parse(parameters[0]);
-
-
-            //CASOS DEPENDIENDO DE LA HOJA ACTUAL DEL PROCESO DE RESERVACIÓN
-            switch (currentPageIndex)
+            DateTime universalTime;
+            HttpSessionState session;
+            double num;
+            string[] strArrays = e.Parameter.Split(new char[] { ':' });
+            int num1 = int.Parse(strArrays[0]);
+            switch (num1)
             {
                 case 0:
-                    if (tfirstname.Text.Length < 3)
                     {
-                        errorPersonalInfo.Text = "Please enter Name";
-                    }
-                    else if (tlastname.Text.Length < 3)
-                    {
-                        errorPersonalInfo.Text = "Please enter Last Name";
-                    }
-                    else if (tphonenumber.Text.Length < 6)
-                    {
-                        errorPersonalInfo.Text = "Please enter valid Phone Number";
-                    }
-                    else if (!IsValid(temail.Text))
-                    {
-                        errorPersonalInfo.Text = "Please enter valid Email";
-                    }
-
-                    else if (parameters[1] == "next")
-                    {
-                        Session["FirstName"] = tfirstname.Text;
-                        Session["LastName"] = tlastname.Text;
-                        Session["PhoneNumber"] = tphonenumber.Text;
-                        Session["Email"] = temail.Text;
-
-                        currentPageIndex++;
-                    }
-
-
-                    break;
-
-
-                case 1:
-
-
-                    if (deStart.Date == DateTime.MinValue.Date)
-                    {
-                        errorDate.Text = "Please select arrival date.";
-                    }
-                    else if (deEnd.Date == DateTime.MinValue.Date)
-                    {
-                        errorDate.Text = "Please select departure date";
-                    }
-                    else if (parameters[1] == "next")
-                    {
-                        Session["FirstDate"] = deStart.Date.ToUniversalTime().ToString();
-                        Session["SecondDate"] = deEnd.Date.ToUniversalTime().ToString();
-                        recorrerfechas(deStart.Date.ToUniversalTime(), deEnd.Date.ToUniversalTime());
-                        int altas = 0;
-                        int bajas = 0;
-                        foreach (fecha f in fechas)
+                        if (this.tfirstname.Text.Length < 3)
                         {
-                            if (f.Alta == true)
-                                altas++;
-                            else
-                                bajas++;
+                            this.errorPersonalInfo.Text = "Please enter Name";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        Session["altas"] = altas.ToString();
-                        Session["bajas"] = bajas.ToString();
-
-                        currentPageIndex++;
-                    }
-                    else
-                    {
-                        tfirstname.Text = Convert.ToString(Session["FirstName"]);
-                        tlastname.Text = Convert.ToString(Session["LastName"]);
-                        tphonenumber.Text = Convert.ToString(Session["PhoneNumber"]);
-                        temail.Text = Convert.ToString(Session["Email"]);
-
-                        currentPageIndex--;
-                    }
-                    break;
-
-                case 2:
-                    if (parameters[1] == "next")
-                    {
-                        if (buttonCamp.Checked)
+                        else if (this.tlastname.Text.Length < 3)
                         {
-                            Session["TypeBooking"] = "Camp";
-                            currentPageIndex = 5;
-
+                            this.errorPersonalInfo.Text = "Please enter Last Name";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        //else if (buttonOver.Checked)
-                        //{
-                        //    Session["TypeBooking"] = "Over";
-                        //    currentPageIndex = 5;
-
-                        //}
-                        else if (buttonGroup.Checked)
+                        else if (this.tphonenumber.Text.Length < 6)
                         {
-                            Session["TypeBooking"] = "Group";
-                            currentPageIndex++;
+                            this.errorPersonalInfo.Text = "Please enter valid Phone Number";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        else if (buttonEvent.Checked)
+                        else if (this.IsValid(this.temail.Text))
                         {
-                            Session["TypeBooking"] = "Event";
-                            currentPageIndex++;
-                        }
-                        else if (buttonDay.Checked)
-                        {
-                            Session["TypeBooking"] = "Day";
-                            currentPageIndex = 5;
-
-                        }
-                        else if (buttonCorporate.Checked)
-                        {
-                            Session["TypeBooking"] = "Corporate";
-                            currentPageIndex++;
-                        }
-
-                    }
-                    else
-                    {
-                        deStart.Date = Convert.ToDateTime(Convert.ToString(Session["FirstDate"]));
-                        deEnd.Date = Convert.ToDateTime(Convert.ToString(Session["SecondDate"]));
-
-                        currentPageIndex--;
-                    }
-                    break;
-
-
-                case 3:
-
-                    if (parameters[1] == "next")
-                    {
-
-                        if (companyname.Text.Length < 3)
-                        {
-                            errortellusmore.Text = "Please enter Company name";
+                            if (strArrays[1] != "next")
+                            {
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            this.Session["FirstName"] = this.tfirstname.Text;
+                            this.Session["LastName"] = this.tlastname.Text;
+                            this.Session["PhoneNumber"] = this.tphonenumber.Text;
+                            this.Session["Email"] = this.temail.Text;
+                            num1++;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
                         else
                         {
-                            Session["CompanyName"] = companyname.Text;
-                            Session["Website"] = website.Text;
-                            Session["Amount"] = amount.Text;
-                            Session["Budget"] = budget.Text;
-                            Session["Tellusmore"] = tellusmore.Text;
-
-                            //Session["FirstName"] = tfirstname.Text;
-                            //Session["LastName"] = tlastname.Text;
-                            //Session["PhoneNumber"] = tphonenumber.Text;
-                            //Session["Email"] = temail.Text;
-                            SendMessageBooking("jaavier.sanchez@gmail.com", Session["FirstName"].ToString(), Session["LastName"].ToString(),
-                                Session["Email"].ToString(), Session["PhoneNumber"].ToString(), Session["TypeBooking"].ToString(), Session["FirstDate"].ToString(), Session["SecondDate"].ToString(),
-                                Session["CompanyName"].ToString(), Session["Website"].ToString(), Session["Amount"].ToString(), Session["Budget"].ToString(), Session["Tellusmore"].ToString());
-                            currentPageIndex++;
-
+                            this.errorPersonalInfo.Text = "Please enter valid Email";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
                     }
-                    else
+                case 1:
                     {
-                        if (Session["TypeBooking"] == "Camp")
+                        if (this.deStart.Date == DateTime.MinValue.Date)
                         {
-                            buttonCamp.Checked = true;
+                            this.errorDate.Text = "Please select arrival date.";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        else if (Session["TypeBooking"] == "Over")
+                        else if (this.deEnd.Date == DateTime.MinValue.Date)
                         {
-                            
+                            this.errorDate.Text = "Please select departure date";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        else if (Session["TypeBooking"] == "Group")
+                        else if (strArrays[1] != "next")
                         {
-                            buttonGroup.Checked = true;
+                            this.tfirstname.Text = Convert.ToString(this.Session["FirstName"]);
+                            this.tlastname.Text = Convert.ToString(this.Session["LastName"]);
+                            this.tphonenumber.Text = Convert.ToString(this.Session["PhoneNumber"]);
+                            this.temail.Text = Convert.ToString(this.Session["Email"]);
+                            num1--;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        else if (Session["TypeBooking"] == "Event")
+                        else
                         {
-                            buttonEvent.Checked = true;
+                            HttpSessionState str = this.Session;
+                            universalTime = this.deStart.Date.ToUniversalTime();
+                            str["FirstDate"] = universalTime.ToString();
+                            HttpSessionState httpSessionStates = this.Session;
+                            universalTime = this.deEnd.Date.ToUniversalTime();
+                            httpSessionStates["SecondDate"] = universalTime.ToString();
+                            DateTime dateTime = this.deStart.Date.ToUniversalTime();
+                            universalTime = this.deEnd.Date;
+                            this.recorrerfechas(dateTime, universalTime.ToUniversalTime());
+                            int num2 = 0;
+                            int num3 = 0;
+                            foreach (fecha fecha in this.fechas)
+                            {
+                                if (!fecha.Alta)
+                                {
+                                    num3++;
+                                }
+                                else
+                                {
+                                    num2++;
+                                }
+                            }
+                            this.Session["altas"] = num2.ToString();
+                            this.Session["bajas"] = num3.ToString();
+                            num1++;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        else if (Session["TypeBooking"] == "Day")
-                        {
-                            buttonDay.Checked = true;
-                        }
-                        else if (Session["TypeBooking"] == "Corporate")
-                        {
-                            buttonCorporate.Checked = true;
-                        }
-                        currentPageIndex--;
                     }
-                    break;
+                case 2:
+                    {
+                        if (strArrays[1] != "next")
+                        {
+                            this.deStart.Date = Convert.ToDateTime(Convert.ToString(this.Session["FirstDate"]));
+                            this.deEnd.Date = Convert.ToDateTime(Convert.ToString(this.Session["SecondDate"]));
+                            num1--;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else if (this.buttonExperience.Checked)
+                        {
+                            this.Session["TypeBooking"] = "Your Experience";
+                            num1 = 5;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else if (this.buttonCamp.Checked)
+                        {
+                            this.Session["TypeBooking"] = "Camps";
+                            num1 = 5;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else if (this.buttonGroup.Checked)
+                        {
+                            this.Session["TypeBooking"] = "Groups over 18 people";
+                            num1 = 5;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else if (!this.buttonEvent.Checked)
+                        {
+                            if (!this.buttonCorporate.Checked)
+                            {
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            this.Session["TypeBooking"] = "Corporate";
+                            num1 = 5;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else
+                        {
+                            this.Session["TypeBooking"] = "Event";
+                            num1 = 5;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                    }
+                case 3:
+                    {
+                        if (strArrays[1] != "next")
+                        {
+                            if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonExperience.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonCamp.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonGroup.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonEvent.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonCorporate.Checked = true;
+                            }
+                            num1--;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else if (this.tellusmore.Text.Length < 10)
+                        {
+                            this.errortellusmore.Text = "Please tell us more about your visit.";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else if (this.amount.Text.Length >= 1)
+                        {
+                            this.Session["Amount"] = this.amount.Text;
+                            this.Session["Tellusmore"] = this.tellusmore.Text;
+                            num1++;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else
+                        {
+                            this.errortellusmore.Text = "Please enter amount of people information.";
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                    }
                 case 4:
-
-
-
-
-                    break;
-
+                    {
+                        this.MultiView.ActiveViewIndex = num1;
+                        Thread.Sleep(20);
+                        return;
+                    }
                 case 5:
-
-                    if (parameters[1] == "next")
                     {
-
-                        if (Teepes.Checked)
+                        if (strArrays[1] != "next")
                         {
-                            Session["TypeAccommodation"] = "Teepes";
-
-                            currentPageIndex++;
+                            if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonExperience.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonCamp.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonGroup.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonEvent.Checked = true;
+                            }
+                            else if (this.Session["TypeBooking"] == null)
+                            {
+                                this.buttonCorporate.Checked = true;
+                            }
+                            num1 = 2;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        else if (Yurtas.Checked)
+                        else if (this.Teepes.Checked)
                         {
-                            Session["TypeAccommodation"] = "Yurtas";
-                            currentPageIndex++;
+                            if (this.Session["altas"].ToString() != "1")
+                            {
+                                this.Session["TypeAccommodation"] = "Tepees";
+                                num1++;
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            else
+                            {
+                                this.errorDays.Text = "For High Season the minimum stay is 2 nights.";
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
                         }
-                        else if (Andalusian.Checked)
+                        else if (this.Yurtas.Checked)
                         {
-                            Session["TypeAccommodation"] = "Andalusian";
-                            currentPageIndex = 3;
+                            if (this.Session["altas"].ToString() != "1")
+                            {
+                                this.Session["TypeAccommodation"] = "Yurtas";
+                                num1++;
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            else
+                            {
+                                this.errorDays.Text = "For High Season the minimum stay is 2 nights.";
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
                         }
-
-
-
+                        else if (!this.Andalusian.Checked)
+                        {
+                            if (!this.none.Checked)
+                            {
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            this.Session["TypeAccommodation"] = "None";
+                            num1++;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else
+                        {
+                            this.Session["TypeAccommodation"] = "Andalusian";
+                            num1++;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
                     }
-                    else
-                    {
-                        if (Session["TypeBooking"] == "Camp")
-                        {
-                            buttonCamp.Checked = true;
-                        }
-                        else if (Session["TypeBooking"] == "Over")
-                        {
-                            //buttonOver.Checked = true;
-                        }
-                        else if (Session["TypeBooking"] == "Group")
-                        {
-                            buttonGroup.Checked = true;
-                        }
-                        else if (Session["TypeBooking"] == "Event")
-                        {
-                            buttonEvent.Checked = true;
-                        }
-                        else if (Session["TypeBooking"] == "Day")
-                        {
-                            buttonDay.Checked = true;
-                        }
-                        else if (Session["TypeBooking"] == "Corporate")
-                        {
-                            buttonCorporate.Checked = true;
-                        }
-                        currentPageIndex = 2;
-
-                    }
-
-                    break;
                 case 6:
-
-                    if (parameters[1] == "next")
                     {
-                        if (canopybutton.Checked)
-                            Session["ACTIVITIES"] += "Canopy - ";
-                        if (arcbutton.Checked)
-                            Session["ACTIVITIES"] += "Arc Attack - ";
-                        if (kayakbutton.Checked)
-                            Session["ACTIVITIES"] += "Kayak - ";
-                        if (kitebutton.Checked)
-                            Session["ACTIVITIES"] += "Kite & Wind Surf - ";
-                        if (horsebutton.Checked)
-                            Session["ACTIVITIES"] += "Horse Riding - ";
-                        if (swimbutton.Checked)
-                            Session["ACTIVITIES"] += "Swimming - ";
-
-                        if (Session["ACTIVITIES"] != null)
+                        if (strArrays[1] != "next")
                         {
-                            if (Session["TypeAccommodation"] == "Teepes")
-                            {
-                                typeofacco.Text = " TEEPE";
-                                highdays.Text = Session["altas"].ToString();
-                                lowdays.Text = Session["bajas"].ToString();
-                                Session["altascosto"] = "155";
-                                highcost.Text = Session["altascosto"].ToString();
-                                Session["bajascosto"] = "140";
-                                lowcost.Text = Session["bajascosto"].ToString();
-                                total.Text = ((Convert.ToInt32(Session["altas"].ToString()) * 155) + (Convert.ToInt32(Session["bajas"].ToString()) * 140)).ToString();
-                                currentPageIndex++;
-                            }
-                            else if (Session["TypeAccommodation"] == "Yurtas")
-                            {
-                                typeofacco.Text = " YURTA";
-                                highdays.Text = Session["altas"].ToString();
-                                lowdays.Text = Session["bajas"].ToString();
-                                Session["altascosto"] = "195";
-                                highcost.Text = Session["altascosto"].ToString();
-                                Session["bajascosto"] = "180";
-                                lowcost.Text = Session["bajascosto"].ToString();
-                                total.Text = ((Convert.ToInt32(Session["altas"].ToString()) * 195) + (Convert.ToInt32(Session["bajas"].ToString()) * 180)).ToString();
-                                currentPageIndex++;
-                            }
-
+                            num1--;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
                         }
-                        else { errorActi.Text = "Please select at least 1 activity."; }
-
+                        else
+                        {
+                            this.Session["ACTIVITIES"] = null;
+                            if (this.canopybutton.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Canopy - ");
+                            }
+                            if (this.arcbutton.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Arc Attack - ");
+                            }
+                            if (this.kayakbutton.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Kayak - ");
+                            }
+                            if (this.horsebutton.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Horse Riding - ");
+                            }
+                            if (this.kitebutton.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Kitesurf - ");
+                            }
+                            if (this.spartantrial.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Spartan Trail - ");
+                            }
+                            if (this.jetbutton.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Jet Surf - ");
+                            }
+                            if (this.paddlebutton.Checked)
+                            {
+                                session = this.Session;
+                                session["ACTIVITIES"] = string.Concat(session["ACTIVITIES"], "Paddle Surf - ");
+                            }
+                            if (this.Session["ACTIVITIES"] != null)
+                            {
+                                this.Session["ACTIVITIES"] = this.Session["ACTIVITIES"].ToString().Substring(0, this.Session["ACTIVITIES"].ToString().Length - 3);
+                            }
+                            else
+                            {
+                                this.Session["ACTIVITIES"] = "None";
+                            }
+                            if (!this.ASPxCheckBox1.Checked || !this.ASPxCheckBox2.Checked)
+                            {
+                                this.errorActi.Text = "You need to check both boxes to continue.";
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            else if (this.Session["TypeAccommodation"] == null || this.Session["TypeAccommodation"] == null || this.Session["TypeBooking"] != null)
+                            {
+                                num1 = 3;
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            else if (this.Session["TypeAccommodation"] != null)
+                            {
+                                if (this.Session["TypeAccommodation"] != null)
+                                {
+                                    this.MultiView.ActiveViewIndex = num1;
+                                    Thread.Sleep(20);
+                                    return;
+                                }
+                                this.highdays.Value = this.Session["altas"].ToString();
+                                this.lowdays.Value = this.Session["bajas"].ToString();
+                                this.hiddenhigh12.Value = this.Session["highseason_yurta12"].ToString();
+                                this.hiddenhigh34.Value = this.Session["highseason_yurta34"].ToString();
+                                this.hiddenextracost.Value = this.Session["yurta_extrabed"].ToString();
+                                this.hiddenlow12.Value = this.Session["lowseason_yurta12"].ToString();
+                                this.hiddenlow34.Value = this.Session["lowseason_yurta34"].ToString();
+                                this.typeofacco.Text = " YURTA";
+                                this.activitiesliteral.Text = string.Concat(" ", this.Session["ACTIVITIES"].ToString());
+                                this.literalname.Text = string.Concat(this.Session["FirstName"].ToString(), " ", this.Session["LastName"].ToString());
+                                this.literalphone.Text = this.Session["PhoneNumber"].ToString();
+                                this.literalemail.Text = this.Session["Email"].ToString();
+                                this.Session["ServicesIncluded"] = "<br>Breakfast<br>Beds <br>Sheets<br>Electricity <br>Restroom with shower<br>Private Area and lake views <br>Pic-nic table<br>Use for 1 Kayak 2 person/day for 1 hour (from 10:00 to 12:00)";
+                                this.Session["DontForget"] = "It is required to bring from home bathroom utilities that you may need, such as towels, gels, toothpaste, etc.";
+                                Literal literal = this.arrivaldatelit;
+                                universalTime = Convert.ToDateTime(Convert.ToString(this.Session["FirstDate"]));
+                                literal.Text = universalTime.ToString("dd/MM/yyyy");
+                                Literal str1 = this.departuradatelit;
+                                universalTime = Convert.ToDateTime(Convert.ToString(this.Session["SecondDate"]));
+                                str1.Text = universalTime.ToString("dd/MM/yyyy");
+                                double num4 = (double)Convert.ToInt32(this.Session["altas"].ToString()) * Convert.ToDouble(this.Session["highseason_yurta12"].ToString());
+                                double num5 = (double)Convert.ToInt32(this.Session["bajas"].ToString()) * Convert.ToDouble(this.Session["lowseason_yurta12"].ToString());
+                                int num6 = Convert.ToInt32(this.Session["altas"].ToString()) + Convert.ToInt32(this.Session["bajas"].ToString());
+                                ASPxLabel aSPxLabel = this.averagelabel;
+                                num = (num4 + num5) / (double)num6;
+                                aSPxLabel.Text = string.Concat(num.ToString(), " €");
+                                num = num4 + num5;
+                                this.total.Text = string.Concat(num.ToString(), " €");
+                                num1++;
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                            else
+                            {
+                                this.highdays.Value = this.Session["altas"].ToString();
+                                this.lowdays.Value = this.Session["bajas"].ToString();
+                                this.hiddenhigh12.Value = this.Session["highseason_tepee12"].ToString();
+                                this.hiddenhigh34.Value = this.Session["highseason_tepee34"].ToString();
+                                this.hiddenextracost.Value = this.Session["tepee_extrabed"].ToString();
+                                this.hiddenlow12.Value = this.Session["lowseason_tepee12"].ToString();
+                                this.hiddenlow34.Value = this.Session["lowseason_tepee34"].ToString();
+                                this.typeofacco.Text = " TEPEE";
+                                this.activitiesliteral.Text = string.Concat(" ", this.Session["ACTIVITIES"].ToString());
+                                this.literalname.Text = string.Concat(this.Session["FirstName"].ToString(), " ", this.Session["LastName"].ToString());
+                                this.literalphone.Text = this.Session["PhoneNumber"].ToString();
+                                this.literalemail.Text = this.Session["Email"].ToString();
+                                this.Session["ServicesIncluded"] = "<br>Breakfast";
+                                this.Session["DontForget"] = " <br>Bed sheets are available for hire (€6) if you do not bring your own sleeping bag. <br>It is required to bring from home bathroom utilities that you may need, such as towels, gels, toothpaste, etc. <br>The tepees are only available if weather permits.";
+                                Literal literal1 = this.arrivaldatelit;
+                                universalTime = Convert.ToDateTime(Convert.ToString(this.Session["FirstDate"]));
+                                literal1.Text = universalTime.ToString("dd/MM/yyyy");
+                                Literal str2 = this.departuradatelit;
+                                universalTime = Convert.ToDateTime(Convert.ToString(this.Session["SecondDate"]));
+                                str2.Text = universalTime.ToString("dd/MM/yyyy");
+                                double num7 = (double)Convert.ToInt32(this.Session["altas"].ToString()) * Convert.ToDouble(this.Session["highseason_tepee12"].ToString());
+                                double num8 = (double)Convert.ToInt32(this.Session["bajas"].ToString()) * Convert.ToDouble(this.Session["lowseason_tepee12"].ToString());
+                                int num9 = Convert.ToInt32(this.Session["altas"].ToString()) + Convert.ToInt32(this.Session["bajas"].ToString());
+                                ASPxLabel aSPxLabel1 = this.averagelabel;
+                                num = (num7 + num8) / (double)num9;
+                                aSPxLabel1.Text = string.Concat(num.ToString(), " €");
+                                num = num7 + num8;
+                                this.total.Text = string.Concat(num.ToString(), " €");
+                                num1++;
+                                this.MultiView.ActiveViewIndex = num1;
+                                Thread.Sleep(20);
+                                return;
+                            }
+                        }
                     }
-                    else
-                    {
-                        currentPageIndex--;
-                    }
-                    break;
                 case 7:
-                    if (parameters[1] == "next")
                     {
-
-
-                        currentPageIndex++;
-
-
+                        if (strArrays[1] != "next")
+                        {
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Canopy"))
+                            {
+                                this.canopybutton.Checked = true;
+                            }
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Arc Attack"))
+                            {
+                                this.arcbutton.Checked = true;
+                            }
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Kayak"))
+                            {
+                                this.kayakbutton.Checked = true;
+                            }
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Horse Riding"))
+                            {
+                                this.horsebutton.Checked = true;
+                            }
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Kitesurf"))
+                            {
+                                this.kitebutton.Checked = true;
+                            }
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Spartan"))
+                            {
+                                this.spartantrial.Checked = true;
+                            }
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Jet Surf"))
+                            {
+                                this.jetbutton.Checked = true;
+                            }
+                            if (this.Session["ACTIVITIES"].ToString().Contains("Paddle Surf"))
+                            {
+                                this.paddlebutton.Checked = true;
+                            }
+                            num1--;
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        else
+                        {
+                            this.PAYPAL_CONNECTION();
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
                     }
-                    else
-                    {
-
-                        if (Session["ACTIVITIES"].ToString().Contains("Canopy"))
-                            canopybutton.Checked = true;
-                        if (Session["ACTIVITIES"].ToString().Contains("Arc Attack"))
-                            arcbutton.Checked = true;
-                        if (Session["ACTIVITIES"].ToString().Contains("Kayak"))
-                            kayakbutton.Checked = true;
-                        if (Session["ACTIVITIES"].ToString().Contains("Kite & Wind Surf"))
-                            kitebutton.Checked = true;
-                        if (Session["ACTIVITIES"].ToString().Contains("Horse Riding"))
-                            horsebutton.Checked = true;
-                        if (Session["ACTIVITIES"].ToString().Contains("Swimming"))
-                            swimbutton.Checked = true;
-                        currentPageIndex--;
-                    }
-
-
-
-
-
-                    break;
                 default:
-                    if (parameters[1] == "prev")
-
                     {
-
-
-
-                        //Session["T8"] = t5.Text;
-                        //t4.Text = Convert.ToString(Session["T6"]);
-                        currentPageIndex--;
+                        if (strArrays[1] != "prev")
+                        {
+                            this.MultiView.ActiveViewIndex = num1;
+                            Thread.Sleep(20);
+                            return;
+                        }
+                        num1--;
+                        this.MultiView.ActiveViewIndex = num1;
+                        Thread.Sleep(20);
+                        return;
                     }
-                    break;
-
             }
-
-
-
-            MultiView.ActiveViewIndex = currentPageIndex;
-            System.Threading.Thread.Sleep(20);
         }
-
 
 
         public void recorrerfechas(DateTime Arr, DateTime Dep)
         {
-
             while (Arr.ToUniversalTime() < Dep.ToUniversalTime())
             {
-
-                fechas.Add(new fecha(compareDates(Arr.ToUniversalTime()), Arr.ToUniversalTime()));
+                this.fechas.Add(new fecha(this.compareDates(Arr.ToUniversalTime()), Arr.ToUniversalTime()));
                 Arr.ToUniversalTime();
                 Arr = Arr.ToUniversalTime().AddDays(1);
-
             }
 
         }
 
         public bool compareDates(DateTime comp)
         {
-            //DateTime A_in = Convert.ToDateTime("07/04/2017").ToUniversalTime();
-            //DateTime A_fin = Convert.ToDateTime("16/04/2017").ToUniversalTime();
-            //DateTime B_in = Convert.ToDateTime("28/04/2017").ToUniversalTime();
-            //DateTime B_fin = Convert.ToDateTime("02/05/2017").ToUniversalTime();
-            //DateTime C_in = Convert.ToDateTime("01/07/2017").ToUniversalTime();
-            //DateTime C_fin = Convert.ToDateTime("31/08/2017").ToUniversalTime();
-            DateTime A_in = Convert.ToDateTime("2017-04-07").ToUniversalTime();
-            DateTime A_fin = Convert.ToDateTime("2017-04-16").ToUniversalTime();
-            DateTime B_in = Convert.ToDateTime("2017-04-28").ToUniversalTime();
-            DateTime B_fin = Convert.ToDateTime("2017-05-02").ToUniversalTime();
-            DateTime C_in = Convert.ToDateTime("2017-07-01").ToUniversalTime();
-            DateTime C_fin = Convert.ToDateTime("2017-08-31").ToUniversalTime();
-            if (comp.ToUniversalTime() >= A_in.ToUniversalTime() && comp.ToUniversalTime() <= A_fin.ToUniversalTime())
+            DateTime universalTime = Convert.ToDateTime("2017-04-07").ToUniversalTime();
+            DateTime dateTime = Convert.ToDateTime("2017-04-16").ToUniversalTime();
+            DateTime universalTime1 = Convert.ToDateTime("2017-04-28").ToUniversalTime();
+            DateTime dateTime1 = Convert.ToDateTime("2017-05-02").ToUniversalTime();
+            DateTime universalTime2 = Convert.ToDateTime("2017-07-01").ToUniversalTime();
+            DateTime dateTime2 = Convert.ToDateTime("2017-08-31").ToUniversalTime();
+            if (comp.ToUniversalTime() >= universalTime.ToUniversalTime() && comp.ToUniversalTime() <= dateTime.ToUniversalTime())
+            {
                 return true;
-
-            else if (comp.ToUniversalTime() >= B_in.ToUniversalTime() && comp.ToUniversalTime() <= B_fin.ToUniversalTime())
+            }
+            if (comp.ToUniversalTime() >= universalTime1.ToUniversalTime() && comp.ToUniversalTime() <= dateTime1.ToUniversalTime())
+            {
                 return true;
-
-            else if (comp.ToUniversalTime() >= C_in.ToUniversalTime() && comp.ToUniversalTime() <= C_fin.ToUniversalTime())
+            }
+            if (comp.ToUniversalTime() >= universalTime2.ToUniversalTime() && comp.ToUniversalTime() <= dateTime2.ToUniversalTime())
+            {
                 return true;
-            else
-                return false;
+            }
+            return false;
         }
-        public IRestResponse SendMessageBooking(string email, string name, string lastname, string emailfrom, string phonenumber, string typeofstay,
-            string arrivaldate, string departuredate, string companyname, string website, string amount, string budget, string moreinformation)
+
+        public IRestResponse SendMessageBooking(string email, string name, string lastname, string emailfrom, string phonenumber, string typeofstay, string arrivaldate, string departuredate, string companyname, string website, string amount, string budget, string moreinformation)
         {
-            string text = "<html><head></head><body style=\"text-align:center;\">"
-            + "<p style=\"font-size: 20px\"> "
-            + "<br />" + "<br />The following booking request was received:" + "<br />" + "<br />"
-                + "Message from: " + name + " " + lastname
-              + "<br />"
-                 + "Email: " + emailfrom
-                  + "<br />"
-                  + "Phone Number: " + phonenumber
-                  + "<br />"
-                   + "Type of Stay: " + typeofstay
-                  + "<br />"
-                    + "Arrival Date: " + arrivaldate
-                  + "<br />"
-                    + "Departure Date: " + departuredate
-                  + "<br />"
-
-                    + "Company Name: " + companyname
-                  + "<br />"
-
-                    + "Website of Company: " + website
-                  + "<br />"
-                    + "Amount of people: " + amount
-                  + "<br />"
-                    + "Budget: " + budget
-                  + "<br />"
-                    + "More information provided: " + moreinformation
-                  + "<br />"
-            + "</ p > </body></html>";
-            RestClient client = new RestClient();
-            client.BaseUrl = new Uri("https://api.mailgun.net/v3");
-            client.Authenticator =
-                    new HttpBasicAuthenticator("api",
-                                               "key-35e7388efdd202c9d79d75912e0c38d8");
-            RestRequest request = new RestRequest();
-            request.AddParameter("domain",
-                                 "noreplymail.develop.mx", ParameterType.UrlSegment);
-            request.Resource = "{domain}/messages";
-            request.AddParameter("from", "Wakana Lake Booking<wakana@noreplymail.develop.mx>");
-            request.AddParameter("to", email);
-
-            request.AddParameter("subject", "Wakana Lake Booking Request");
-
-            request.AddParameter("html", text);
-            request.Method = Method.POST;
-            return client.Execute(request);
+            string str = string.Concat(new string[] { "<html><head></head><body style=\"text-align:center;\"><p style=\"font-size: 20px\"> <br /><br />The following booking request was received:<br /><br />Message from: ", name, " ", lastname, "<br />Email: ", emailfrom, "<br />Phone Number: ", phonenumber, "<br />Type of Stay: ", typeofstay, "<br />Arrival Date: ", arrivaldate, "<br />Departure Date: ", departuredate, "<br />Departure Date: ", departuredate, "<br />Amount of people: ", amount, "<br />More information provided: ", moreinformation, "<br /></ p > </body></html>" });
+            RestClient restClient = new RestClient()
+            {
+                BaseUrl = new Uri("https://api.mailgun.net/v3"),
+                Authenticator = new HttpBasicAuthenticator("api", "key-35e7388efdd202c9d79d75912e0c38d8")
+            };
+            RestRequest restRequest = new RestRequest();
+            restRequest.AddParameter("domain", "noreplymail.develop.mx", ParameterType.UrlSegment);
+            restRequest.Resource = "{domain}/messages";
+            restRequest.AddParameter("from", "Wakana Lake Booking<wakana@noreplymail.develop.mx>");
+            restRequest.AddParameter("to", email);
+            restRequest.AddParameter("subject", "Wakana Lake Booking Request");
+            restRequest.AddParameter("html", str);
+            restRequest.Method = Method.POST;
+            return restClient.Execute(restRequest);
         }
 
 
         public IRestResponse SendMessageBookingReceived(string email, string name, string emailfrom, string message, string phonenumber)
         {
-            string text = "<html><head></head><body style=\"text-align:center;\">"
-            + "<p style=\"font-size: 15px\"> Your information for booking was received, we will contact you as soon as posible.<br /> Information provided:" + "<br />"
-
-                + "From: " + name
-                + "<br />"
-                 + "Email: " + emailfrom
-                  + "<br />"
-                  + "Phone Number: " + phonenumber
-                  + "<br />"
-                   + "Message: " + message
-                  + "<br />"
-
-            + "</ p > </body></html>";
-            RestClient client = new RestClient();
-            client.BaseUrl = new Uri("https://api.mailgun.net/v3");
-            client.Authenticator =
-                    new HttpBasicAuthenticator("api",
-                                               "key-35e7388efdd202c9d79d75912e0c38d8");
-            RestRequest request = new RestRequest();
-            request.AddParameter("domain",
-                                 "noreplymail.develop.mx", ParameterType.UrlSegment);
-            request.Resource = "{domain}/messages";
-            request.AddParameter("from", "Wakana Lake Booking< <wakana@noreplymail.develop.mx>");
-            request.AddParameter("to", email);
-
-            request.AddParameter("subject", "Your email was received.");
-            //request.AddParameter("text", text);
-            request.AddParameter("html", text);
-            request.Method = Method.POST;
-            return client.Execute(request);
+            string str = string.Concat(new string[] { "<html><head></head><body style=\"text-align:center;\"><p style=\"font-size: 15px\"> Your information for booking was received, we will contact you as soon as posible.<br /> Information provided:<br />From: ", name, "<br />Email: ", emailfrom, "<br />Phone Number: ", phonenumber, "<br />Message: ", message, "<br /></ p > </body></html>" });
+            RestClient restClient = new RestClient()
+            {
+                BaseUrl = new Uri("https://api.mailgun.net/v3"),
+                Authenticator = new HttpBasicAuthenticator("api", "key-35e7388efdd202c9d79d75912e0c38d8")
+            };
+            RestRequest restRequest = new RestRequest();
+            restRequest.AddParameter("domain", "noreplymail.develop.mx", ParameterType.UrlSegment);
+            restRequest.Resource = "{domain}/messages";
+            restRequest.AddParameter("from", "Wakana Lake Booking< <wakana@noreplymail.develop.mx>");
+            restRequest.AddParameter("to", email);
+            restRequest.AddParameter("subject", "Your email was received.");
+            restRequest.AddParameter("html", str);
+            restRequest.Method = Method.POST;
+            return restClient.Execute(restRequest);
         }
 
 
-
-        protected void rpFilmCollection_CustomJSProperties(object sender,
-            CustomJSPropertiesEventArgs e)
+        protected void rpFilmCollection_CustomJSProperties(object sender, CustomJSPropertiesEventArgs e)
         {
-            e.Properties["cpPageIndex"] = MultiView.ActiveViewIndex;
-            e.Properties["cpPageCount"] = MultiView.Views.Count;
+            e.Properties["cpPageIndex"] = this.MultiView.ActiveViewIndex;
+            e.Properties["cpPageCount"] = this.MultiView.Views.Count;
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            RunSample();
+            this.PAYPAL_CONNECTION();
         }
 
         protected RequestFlow flow;
+
         protected void RegisterSampleRequestFlow()
         {
             if (this.flow == null)
@@ -623,177 +682,192 @@ namespace WAKANA_WEB_DE
             }
             HttpContext.Current.Items["Flow"] = this.flow;
         }
-        public void RunSample()
+
+        public void PAYPAL_CONNECTION()
         {
-            var totalint = 0;
+            double num = 0;
+            int PersonasFromSpinner = 0;
+            PersonasFromSpinner = Convert.ToInt32(this.spin.Number);
 
-            int personas = 0;
-            personas = Convert.ToInt32(spin.Number);
-            Session["PERSONAS"] = personas.ToString();
-            if (personas == 5)
+            //SETS NUMBER OF PERSONS ON SESSION
+            this.Session["PERSONAS"] = PersonasFromSpinner.ToString();
+
+
+
+            APIContext aPIContext = new APIContext((new OAuthTokenCredential(ConfigManager.Instance.GetProperties())).GetAccessToken());
+            Payer payer = new Payer()
             {
-                personas = 30;
-            }
-            else if (personas == 6)
-            {
-                personas = 60;
-            }
-            else
-            {
-                personas = 0;
-            }
-            var config = ConfigManager.Instance.GetProperties();
-            var accessToken = new OAuthTokenCredential(config).GetAccessToken();
-            var apiContext = new APIContext(accessToken);
+                payment_method = "paypal"
+            };
+
+            //RANDOM SEED
+
+            Convert.ToString((new Random()).Next(100000));
 
 
-
-            var payer = new Payer() { payment_method = "paypal" };
-
-            var guid = Convert.ToString((new Random()).Next(100000));
-            var redirUrls = new RedirectUrls()
+            //SET PAYPAL RETURN URLS
+            RedirectUrls redirectUrl = new RedirectUrls()
             {
                 cancel_url = "http://wakanalake.com/Booking_Cancel.aspx",
                 return_url = "http://wakanalake.com/Booking_Success.aspx"
             };
-
-
-            var itemList = new ItemList()
+            ItemList itemList = new ItemList()
             {
                 items = new List<Item>()
             };
-            Session["HIGH_SEASON_DAYS"] = Session["altas"].ToString();
 
-            Session["HIGH_SEASON_COST"] = (Convert.ToInt32(Session["altascosto"].ToString()) + Convert.ToInt32(personas)).ToString();
-
-            Session["LOW_SEASON_DAYS"] = Session["bajas"].ToString();
-
-            Session["LOW_SEASON_COST"] = (Convert.ToInt32(Session["bajascosto"].ToString()) + Convert.ToInt32(personas)).ToString();
-
-
-            if (Convert.ToInt32(Session["altas"].ToString()) > 0)
+            #region LODI
+            if (this.Session["TypeAccommodation"].ToString() == "Yurtas" && (PersonasFromSpinner == 1 || PersonasFromSpinner == 2))
             {
+                this.Session["altascosto"] = this.Session["highseason_yurta12"].ToString();
+                this.Session["bajascosto"] = this.Session["lowseason_yurta12"].ToString();
+            }
+            if (this.Session["TypeAccommodation"].ToString() == "Yurtas" && (PersonasFromSpinner == 3 || PersonasFromSpinner == 4))
+            {
+                this.Session["altascosto"] = this.Session["highseason_yurta34"].ToString();
+                this.Session["bajascosto"] = this.Session["lowseason_yurta34"].ToString();
+            }
+            if (this.Session["TypeAccommodation"].ToString() == "Yurtas" && PersonasFromSpinner == 5)
+            {
+                this.Session["altascosto"] = Convert.ToDecimal(this.Session["highseason_yurta34"].ToString()) + (Convert.ToDecimal(this.Session["yurta_extrabed"].ToString()) * decimal.One);
+                this.Session["bajascosto"] = Convert.ToDecimal(this.Session["lowseason_yurta34"].ToString()) + (Convert.ToDecimal(this.Session["yurta_extrabed"].ToString()) * decimal.One);
+            }
+            if (this.Session["TypeAccommodation"].ToString() == "Yurtas" && PersonasFromSpinner == 6)
+            {
+                this.Session["altascosto"] = Convert.ToDecimal(this.Session["highseason_yurta34"].ToString()) + (Convert.ToDecimal(this.Session["yurta_extrabed"].ToString()) * new decimal(2));
+                this.Session["bajascosto"] = Convert.ToDecimal(this.Session["lowseason_yurta34"].ToString()) + (Convert.ToDecimal(this.Session["yurta_extrabed"].ToString()) * new decimal(2));
+            }
+            if (this.Session["TypeAccommodation"].ToString() == "Tepees" && (PersonasFromSpinner == 1 || PersonasFromSpinner == 2))
+            {
+                this.Session["altascosto"] = this.Session["highseason_tepee12"].ToString();
+                this.Session["bajascosto"] = this.Session["lowseason_tepee12"].ToString();
+            }
+            if (this.Session["TypeAccommodation"].ToString() == "Tepees" && (PersonasFromSpinner == 3 || PersonasFromSpinner == 4))
+            {
+                this.Session["altascosto"] = this.Session["highseason_tepee34"].ToString();
+                this.Session["bajascosto"] = this.Session["lowseason_tepee34"].ToString();
+            }
+            if (this.Session["TypeAccommodation"].ToString() == "Tepees" && PersonasFromSpinner == 5)
+            {
+                this.Session["altascosto"] = Convert.ToDecimal(this.Session["highseason_tepee34"].ToString()) + (Convert.ToDecimal(this.Session["tepee_extrabed"].ToString()) * decimal.One);
+                this.Session["bajascosto"] = Convert.ToDecimal(this.Session["lowseason_tepee34"].ToString()) + (Convert.ToDecimal(this.Session["tepee_extrabed"].ToString()) * decimal.One);
+            }
+            if (this.Session["TypeAccommodation"].ToString() == "Tepees" && PersonasFromSpinner == 6)
+            {
+                this.Session["altascosto"] = Convert.ToDecimal(this.Session["highseason_tepee34"].ToString()) + (Convert.ToDecimal(this.Session["tepee_extrabed"].ToString()) * new decimal(2));
+                this.Session["bajascosto"] = Convert.ToDecimal(this.Session["lowseason_tepee34"].ToString()) + (Convert.ToDecimal(this.Session["tepee_extrabed"].ToString()) * new decimal(2));
+            }
 
+
+
+
+            this.Session["HIGH_SEASON_DAYS"] = this.Session["altas"].ToString();
+            this.Session["HIGH_SEASON_COST"] = this.Session["altascosto"].ToString();
+            this.Session["LOW_SEASON_DAYS"] = this.Session["bajas"].ToString();
+            this.Session["LOW_SEASON_COST"] = this.Session["bajascosto"].ToString();
+            if (Convert.ToInt32(this.Session["altas"].ToString()) > 0)
+            {
                 itemList.items.Add(new Item()
                 {
-                    name = Session["TypeAccommodation"].ToString() + " High Season Stay",
+                    name = string.Concat(this.Session["TypeAccommodation"].ToString(), " High Season Stay"),
                     currency = "EUR",
-                    price = (Convert.ToInt32(Session["altascosto"].ToString()) + Convert.ToInt32(personas)).ToString(),
-                    quantity = Session["altas"].ToString()
+                    price = this.Session["altascosto"].ToString(),
+                    quantity = this.Session["altas"].ToString()
                 });
-                totalint = totalint + ((Convert.ToInt32(Session["altascosto"].ToString()) + personas) * Convert.ToInt32(Session["altas"].ToString()));
-
+                num = num + Convert.ToDouble(this.Session["altascosto"].ToString()) * Convert.ToDouble(this.Session["altas"].ToString());
             }
-            if (Convert.ToInt32(Session["bajas"].ToString()) > 0)
+            if (Convert.ToInt32(this.Session["bajas"].ToString()) > 0)
             {
                 itemList.items.Add(new Item()
                 {
-                    name = Session["TypeAccommodation"].ToString() + " Low Season Stay",
+                    name = string.Concat(this.Session["TypeAccommodation"].ToString(), " Low Season Stay"),
                     currency = "EUR",
-                    price = (Convert.ToInt32(Session["bajascosto"].ToString()) + Convert.ToInt32(personas)).ToString(),
-                    quantity = Session["bajas"].ToString()
+                    price = this.Session["bajascosto"].ToString(),
+                    quantity = this.Session["bajas"].ToString()
                 });
-
-                totalint = totalint + ((Convert.ToInt32(Session["bajascosto"].ToString()) + personas) * Convert.ToInt32(Session["bajas"].ToString()));
-
+                num = num + Convert.ToDouble(this.Session["bajascosto"].ToString()) * Convert.ToDouble(this.Session["bajas"].ToString());
             }
-
-
-
-
-            var details = new Details()
+            Details detail = new Details()
             {
                 tax = "0",
                 shipping = "0",
-                subtotal = totalint.ToString()
+                subtotal = num.ToString()
             };
-
-            var amount = new Amount()
+            Amount amount = new Amount()
             {
                 currency = "EUR",
-                total = totalint.ToString(), // Total must be equal to sum of shipping, tax and subtotal.
-                details = details
+                total = num.ToString(),
+                details = detail
             };
-            Session["TOTAL"] = totalint.ToString() + "EUR";
-            var transactionList = new List<Transaction>();
-
-            transactionList.Add(new Transaction()
+            this.Session["TOTAL"] = string.Concat(num.ToString(), " EUR");
+            List<Transaction> transactions = new List<Transaction>()
             {
-                description = "Transaction description.",
-                invoice_number = Common.GetRandomInvoiceNumber(),
-                amount = amount,
-                item_list = itemList
-            });
-
-            var payment = new Payment()
+                new Transaction()
+                {
+                    description = "Transaction description.",
+                    invoice_number = Common.GetRandomInvoiceNumber(),
+                    amount = amount,
+                    item_list = itemList
+                }
+            };
+            List<Links>.Enumerator enumerator = (new Payment()
             {
                 intent = "sale",
                 payer = payer,
-                redirect_urls = redirUrls,
-                transactions = transactionList
-            };
-
-
-            var createdPayment = payment.Create(apiContext);
-
-            var links = createdPayment.links.GetEnumerator();
-            while (links.MoveNext())
+                redirect_urls = redirectUrl,
+                transactions = transactions
+            }).Create(aPIContext).links.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                var link = links.Current;
-                if (link.rel.ToLower().Trim().Equals("approval_url"))
+                Links current = enumerator.Current;
+                if (!current.rel.ToLower().Trim().Equals("approval_url"))
                 {
-                    Response.Redirect(link.href);
+                    continue;
+                }
+                base.Response.Redirect(current.href);
+            }
+        }
+
+        protected void ASPxButton1_Click1(object sender, EventArgs e)
+        {
+            this.PAYPAL_CONNECTION();
+        }
+
+        protected void loadAccommodationCostfromDB()
+        {
+            string str = "Select * from general";
+            MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+            mySqlConnection.Open();
+            try
+            {
+                try
+                {
+                    MySqlDataReader mySqlDataReader = (new MySqlCommand(str, mySqlConnection)).ExecuteReader();
+                    mySqlDataReader.Read();
+                    this.Session["highseason_yurta12"] = mySqlDataReader[1].ToString();
+                    this.Session["highseason_yurta34"] = mySqlDataReader[2].ToString();
+                    this.Session["lowseason_yurta12"] = mySqlDataReader[3].ToString();
+                    this.Session["lowseason_yurta34"] = mySqlDataReader[4].ToString();
+                    this.Session["highseason_tepee12"] = mySqlDataReader[5].ToString();
+                    this.Session["highseason_tepee34"] = mySqlDataReader[6].ToString();
+                    this.Session["lowseason_tepee12"] = mySqlDataReader[7].ToString();
+                    this.Session["lowseason_tepee34"] = mySqlDataReader[8].ToString();
+                    this.Session["yurta_extrabed"] = mySqlDataReader[9].ToString();
+                    this.Session["tepee_extrabed"] = mySqlDataReader[10].ToString();
+                }
+                catch
+                {
                 }
             }
-
-
-        }
-
-
-
-        protected void ASPxButton1_Click(object sender, EventArgs e)
-        {
-            RunSample();
+            finally
+            {
+                mySqlConnection.Close();
+            }
         }
     }
 }
-public class fecha
-{
-    bool alta;
-    DateTime date;
 
-    public fecha(bool alta, DateTime date)
-    {
-        this.alta = alta;
-        this.date = date;
-    }
 
-    public bool Alta
-    {
-        get
-        {
-            return alta;
-        }
-
-        set
-        {
-            alta = value;
-        }
-    }
-
-    public DateTime Date
-    {
-        get
-        {
-            return date;
-        }
-
-        set
-        {
-            date = value;
-        }
-    }
-}
 
 
 

@@ -14,253 +14,121 @@ namespace WAKANA_WEB_DE
     public partial class Faces : System.Web.UI.Page
     {
         List<String> listadecadenas = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            string finalstring = "";
-
-            string path = "gallery/Wakana Lake (( in the Gallery Section)/";
-            string[] filesLoc = Directory.GetFiles(Server.MapPath("~/" + path), "*.jpg");
-            List<ListItem> files = new List<ListItem>();
-            foreach (string file in filesLoc)
+            int i;
+            string str = "";
+            string str1 = "gallery/Wakana Lake (( in the Gallery Section)/";
+            string[] files = Directory.GetFiles(base.Server.MapPath(string.Concat("~/", str1)), "*.jpg");
+            List<ListItem> listItems = new List<ListItem>();
+            string[] strArrays = files;
+            for (i = 0; i < (int)strArrays.Length; i++)
             {
-                files.Add(new ListItem(Path.GetFileName(file)));
+                string str2 = strArrays[i];
+                listItems.Add(new ListItem(Path.GetFileName(str2)));
             }
-
-            listadecadenas = files.Select(s => Convert.ToString(s)).ToList();
-
-            listadecadenas = listadecadenas.OrderBy(a => Guid.NewGuid()).ToList();
-
-
-            int intnumber = 1;
-            bool perro = false;
-            foreach (string s in listadecadenas)
+            this.listadecadenas = (
+                from s in listItems
+                select Convert.ToString(s)).ToList<string>();
+            this.listadecadenas = (
+                from a in this.listadecadenas
+                orderby Guid.NewGuid()
+                select a).ToList<string>();
+            int num = 1;
+            foreach (string listadecadena in this.listadecadenas)
             {
-                string iniciocondatalinks;
-
-                string datalinks = "";
-                for (int i = intnumber - 1; i < listadecadenas.Count; i++)
+                string str3 = "";
+                for (int j = num - 1; j < this.listadecadenas.Count; j++)
                 {
-
-
-
-                    datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
+                    str3 = string.Concat(str3, str1, this.listadecadenas[j], ", \r\n");
                 }
-
-                for (int i = 0; i < intnumber - 1; i++)
+                for (int k = 0; k < num - 1; k++)
                 {
-
-
-
-                    datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
+                    str3 = string.Concat(str3, str1, this.listadecadenas[k], ", \r\n");
                 }
-
-                datalinks = datalinks.Substring(0, datalinks.Length - 4);
-
-                iniciocondatalinks = "<div class=\"masonry-item portfolio-item isotope-item masonry-wide filter-masonry filter-lake\" data-menu-order=\"" + intnumber + "\" data-title=\"Wakana Lake Gallery\"> <div class=\"figure portfolio-os-animation element-no-top element-no-bottom text-center figcaption-middle normalwidth  image-filter-invert fade-in image-filter-onhover\" data-os-animation=\"fadeIn\" data-os-animation-delay=\"" + (Convert.ToDouble(intnumber) / 10 * 2) + "s\"> <a href =\"\" class=\"figure-image magnific-gallery\" data-links=\"" + datalinks + " \" target=\"_self\"> ";
-
-                intnumber++;
-                string temp = iniciocondatalinks;
-                temp += "  <img src=\"" + path + "t/" + s + "\" alt=\"Wakana\" class=\"normalwidth\">                                                     <div class=\"figure-overlay grid-overlay-20\">                                                         <div class=\"figure-overlay-container\">                                                             <span class=\"figure-icon\">                                 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\"><path d=\"M50.941 34.953v30.094M65.988 50h-30.093\"></path></g></svg>     </span>                                                         </div>  </div>                                                </a>                                            </div>                                        </div>";
-                finalstring += temp + "\r\n\r\n\r\n\r\n";
+                str3 = str3.Substring(0, str3.Length - 4);
+                object[] objArray = new object[] { "<div class=\"masonry-item portfolio-item isotope-item masonry-wide filter-masonry filter-lake\" data-menu-order=\"", num, "\" data-title=\"Wakana Lake Gallery\"> <div class=\"figure portfolio-os-animation element-no-top element-no-bottom text-center figcaption-middle normalwidth  image-filter-invert fade-in image-filter-onhover\" data-os-animation=\"fadeIn\" data-os-animation-delay=\"", Convert.ToDouble(num) / 10 * 2, "s\"> <a href =\"\" class=\"figure-image magnific-gallery\" data-links=\"", str3, " \" target=\"_self\"> " };
+                num++;
+                string str4 = string.Concat(objArray);
+                str4 = string.Concat(new string[] { str4, "  <img src=\"", str1, "t/", listadecadena, "\" alt=\"Wakana\" class=\"normalwidth\">                                                     <div class=\"figure-overlay grid-overlay-20\">                                                         <div class=\"figure-overlay-container\">                                                             <span class=\"figure-icon\">                                 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\"><path d=\"M50.941 34.953v30.094M65.988 50h-30.093\"></path></g></svg>     </span>                                                         </div>  </div>                                                </a>                                            </div>                                        </div>" });
+                str = string.Concat(str, str4, "\r\n\r\n\r\n\r\n");
             }
-            Literal1.Text = finalstring;
-
-
-
-
-
-            finalstring = "";
-
-            path = "gallery/Faces ( in the Gallery Section)/";
-
-            filesLoc = Directory.GetFiles(Server.MapPath("~/" + path), "*.jpg");
-            files = new List<ListItem>();
-            foreach (string file in filesLoc)
+            this.Literal1.Text = str;
+            str = "";
+            str1 = "gallery/Faces ( in the Gallery Section)/";
+            string[] files1 = Directory.GetFiles(base.Server.MapPath(string.Concat("~/", str1)), "*.jpg");
+            listItems = new List<ListItem>();
+            strArrays = files1;
+            for (i = 0; i < (int)strArrays.Length; i++)
             {
-                files.Add(new ListItem(Path.GetFileName(file)));
+                string str5 = strArrays[i];
+                listItems.Add(new ListItem(Path.GetFileName(str5)));
             }
-
-            listadecadenas = files.Select(s => Convert.ToString(s)).ToList();
-
-            listadecadenas = listadecadenas.OrderBy(a => Guid.NewGuid()).ToList();
-
-
-           intnumber = 1;
-            perro = false;
-            foreach (string s in listadecadenas)
+            this.listadecadenas = (
+                from s in listItems
+                select Convert.ToString(s)).ToList<string>();
+            this.listadecadenas = (
+                from a in this.listadecadenas
+                orderby Guid.NewGuid()
+                select a).ToList<string>();
+            num = 1;
+            foreach (string listadecadena1 in this.listadecadenas)
             {
-                string iniciocondatalinks;
-
-                string datalinks = "";
-                for (int i = intnumber - 1; i < listadecadenas.Count; i++)
+                string str6 = "";
+                for (int l = num - 1; l < this.listadecadenas.Count; l++)
                 {
-
-
-
-                    datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
+                    str6 = string.Concat(str6, str1, this.listadecadenas[l], ", \r\n");
                 }
-
-                for (int i = 0; i < intnumber - 1; i++)
+                for (int m = 0; m < num - 1; m++)
                 {
-
-
-
-                    datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
+                    str6 = string.Concat(str6, str1, this.listadecadenas[m], ", \r\n");
                 }
-
-                datalinks = datalinks.Substring(0, datalinks.Length - 4);
-
-                iniciocondatalinks = "<div class=\"masonry-item portfolio-item isotope-item masonry-wide filter-masonry filter-faces\" data-menu-order=\"" + intnumber + "\" data-title=\"Wakana Lake Gallery\"> <div class=\"figure portfolio-os-animation element-no-top element-no-bottom text-center figcaption-middle normalwidth  image-filter-invert fade-in image-filter-onhover\" data-os-animation=\"fadeIn\" data-os-animation-delay=\"" + (Convert.ToDouble(intnumber) / 10 * 2) + "s\"> <a href =\"\" class=\"figure-image magnific-gallery\" data-links=\"" + datalinks + " \" target=\"_self\"> ";
-
-                intnumber++;
-                string temp = iniciocondatalinks;
-                temp += "  <img src=\"" + path + "t/" + s + "\" alt=\"Wakana\" class=\"normalwidth\">                                                     <div class=\"figure-overlay grid-overlay-20\">                                                         <div class=\"figure-overlay-container\">                                                             <span class=\"figure-icon\">                                 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\"><path d=\"M50.941 34.953v30.094M65.988 50h-30.093\"></path></g></svg>     </span>                                                         </div>  </div>                                                </a>                                            </div>                                        </div>";
-                finalstring += temp + "\r\n\r\n\r\n\r\n";
+                str6 = str6.Substring(0, str6.Length - 4);
+                object[] num1 = new object[] { "<div class=\"masonry-item portfolio-item isotope-item masonry-wide filter-masonry filter-faces\" data-menu-order=\"", num, "\" data-title=\"Wakana Lake Gallery\"> <div class=\"figure portfolio-os-animation element-no-top element-no-bottom text-center figcaption-middle normalwidth  image-filter-invert fade-in image-filter-onhover\" data-os-animation=\"fadeIn\" data-os-animation-delay=\"", Convert.ToDouble(num) / 10 * 2, "s\"> <a href =\"\" class=\"figure-image magnific-gallery\" data-links=\"", str6, " \" target=\"_self\"> " };
+                num++;
+                string str7 = string.Concat(num1);
+                str7 = string.Concat(new string[] { str7, "  <img src=\"", str1, "t/", listadecadena1, "\" alt=\"Wakana\" class=\"normalwidth\">                                                     <div class=\"figure-overlay grid-overlay-20\">                                                         <div class=\"figure-overlay-container\">                                                             <span class=\"figure-icon\">                                 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\"><path d=\"M50.941 34.953v30.094M65.988 50h-30.093\"></path></g></svg>     </span>                                                         </div>  </div>                                                </a>                                            </div>                                        </div>" });
+                str = string.Concat(str, str7, "\r\n\r\n\r\n\r\n");
             }
-
-            Literal2.Text = finalstring;
-
-
-
-
-
-            finalstring = "";
-
-            path = "gallery/Activity ( in the Gallery Section)/";
-
-            filesLoc = Directory.GetFiles(Server.MapPath("~/" + path), "*.jpg");
-            files = new List<ListItem>();
-            foreach (string file in filesLoc)
+            this.Literal2.Text = str;
+            str = "";
+            str1 = "gallery/Activity ( in the Gallery Section)/";
+            string[] strArrays1 = Directory.GetFiles(base.Server.MapPath(string.Concat("~/", str1)), "*.jpg");
+            listItems = new List<ListItem>();
+            strArrays = strArrays1;
+            for (i = 0; i < (int)strArrays.Length; i++)
             {
-                files.Add(new ListItem(Path.GetFileName(file)));
+                string str8 = strArrays[i];
+                listItems.Add(new ListItem(Path.GetFileName(str8)));
             }
-
-            listadecadenas = files.Select(s => Convert.ToString(s)).ToList();
-
-            listadecadenas = listadecadenas.OrderBy(a => Guid.NewGuid()).ToList();
-
-
-            intnumber = 1;
-            perro = false;
-            foreach (string s in listadecadenas)
+            this.listadecadenas = (
+                from s in listItems
+                select Convert.ToString(s)).ToList<string>();
+            this.listadecadenas = (
+                from a in this.listadecadenas
+                orderby Guid.NewGuid()
+                select a).ToList<string>();
+            num = 1;
+            foreach (string listadecadena2 in this.listadecadenas)
             {
-                string iniciocondatalinks;
-
-                string datalinks = "";
-                for (int i = intnumber - 1; i < listadecadenas.Count; i++)
+                string str9 = "";
+                for (int n = num - 1; n < this.listadecadenas.Count; n++)
                 {
-
-
-
-                    datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
+                    str9 = string.Concat(str9, str1, this.listadecadenas[n], ", \r\n");
                 }
-
-                for (int i = 0; i < intnumber - 1; i++)
+                for (int o = 0; o < num - 1; o++)
                 {
-
-
-
-                    datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
+                    str9 = string.Concat(str9, str1, this.listadecadenas[o], ", \r\n");
                 }
-
-                datalinks = datalinks.Substring(0, datalinks.Length - 4);
-
-                iniciocondatalinks = "<div class=\"masonry-item portfolio-item isotope-item masonry-wide filter-masonry filter-activities\" data-menu-order=\"" + intnumber + "\" data-title=\"Wakana Lake Gallery\"> <div class=\"figure portfolio-os-animation element-no-top element-no-bottom text-center figcaption-middle normalwidth  image-filter-invert fade-in image-filter-onhover\" data-os-animation=\"fadeIn\" data-os-animation-delay=\"" + (Convert.ToDouble(intnumber) / 10 * 2) + "s\"> <a href =\"\" class=\"figure-image magnific-gallery\" data-links=\"" + datalinks + " \" target=\"_self\"> ";
-
-                intnumber++;
-                string temp = iniciocondatalinks;
-                temp += "  <img src=\"" + path + "t/" + s + "\" alt=\"Wakana\" class=\"normalwidth\">                                                     <div class=\"figure-overlay grid-overlay-20\">                                                         <div class=\"figure-overlay-container\">                                                             <span class=\"figure-icon\">                                 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\"><path d=\"M50.941 34.953v30.094M65.988 50h-30.093\"></path></g></svg>     </span>                                                         </div>  </div>                                                </a>                                            </div>                                        </div>";
-                finalstring += temp + "\r\n\r\n\r\n\r\n";
+                str9 = str9.Substring(0, str9.Length - 4);
+                object[] objArray1 = new object[] { "<div class=\"masonry-item portfolio-item isotope-item masonry-wide filter-masonry filter-activities\" data-menu-order=\"", num, "\" data-title=\"Wakana Lake Gallery\"> <div class=\"figure portfolio-os-animation element-no-top element-no-bottom text-center figcaption-middle normalwidth  image-filter-invert fade-in image-filter-onhover\" data-os-animation=\"fadeIn\" data-os-animation-delay=\"", Convert.ToDouble(num) / 10 * 2, "s\"> <a href =\"\" class=\"figure-image magnific-gallery\" data-links=\"", str9, " \" target=\"_self\"> " };
+                num++;
+                string str10 = string.Concat(objArray1);
+                str10 = string.Concat(new string[] { str10, "  <img src=\"", str1, "t/", listadecadena2, "\" alt=\"Wakana\" class=\"normalwidth\">                                                     <div class=\"figure-overlay grid-overlay-20\">                                                         <div class=\"figure-overlay-container\">                                                             <span class=\"figure-icon\">                                 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\"><path d=\"M50.941 34.953v30.094M65.988 50h-30.093\"></path></g></svg>     </span>                                                         </div>  </div>                                                </a>                                            </div>                                        </div>" });
+                str = string.Concat(str, str10, "\r\n\r\n\r\n\r\n");
             }
-
-            Literal3.Text = finalstring;
-
-
-
-
-
-            //finalstring = "";
-
-            //path = "gallery/Activity ( in the Gallery Section)/";
-
-            //filesLoc = Directory.GetFiles(Server.MapPath("~/" + path), "*.jpg");
-            //files = new List<ListItem>();
-            //foreach (string file in filesLoc)
-            //{
-            //    files.Add(new ListItem(Path.GetFileName(file)));
-            //}
-
-            //listadecadenas = files.Select(s => Convert.ToString(s)).ToList();
-
-            //listadecadenas = listadecadenas.OrderBy(a => Guid.NewGuid()).ToList();
-
-
-            //intnumber = 1;
-            //perro = false;
-            //foreach (string s in listadecadenas)
-            //{
-            //    string iniciocondatalinks;
-
-            //    string datalinks = "";
-            //    for (int i = intnumber - 1; i < listadecadenas.Count; i++)
-            //    {
-
-
-
-            //        datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
-            //    }
-
-            //    for (int i = 0; i < intnumber - 1; i++)
-            //    {
-
-
-
-            //        datalinks += path + listadecadenas[i] + ", \r\n";
-
-
-
-
-            //    }
-
-            //    datalinks = datalinks.Substring(0, datalinks.Length - 4);
-
-            //    iniciocondatalinks = "<div class=\"masonry-item portfolio-item isotope-item masonry-wide filter-masonry filter-lake\" data-menu-order=\"" + intnumber + "\" data-title=\"Wakana Lake Gallery\"> <div class=\"figure portfolio-os-animation element-no-top element-no-bottom text-center figcaption-middle normalwidth  image-filter-invert fade-in image-filter-onhover\" data-os-animation=\"fadeIn\" data-os-animation-delay=\".4s\"> <a href =\"\" class=\"figure-image magnific-gallery\" data-links=\"" + datalinks + " \" target=\"_self\"> ";
-
-            //    intnumber++;
-            //    string temp = iniciocondatalinks;
-            //    temp += "  <img src=\"" + path + "t/" + s + "\" alt=\"Wakana\" class=\"normalwidth\">                                                     <div class=\"figure-overlay grid-overlay-20\">                                                         <div class=\"figure-overlay-container\">                                                             <span class=\"figure-icon\">                                 <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\"><path d=\"M50.941 34.953v30.094M65.988 50h-30.093\"></path></g></svg>     </span>                                                         </div>  </div>                                                </a>                                            </div>                                        </div>";
-            //    finalstring += temp + "\r\n\r\n\r\n\r\n";
-            //}
-
-            //Literal3.Text = finalstring;
+            this.Literal3.Text = str;
         }
     }
 }

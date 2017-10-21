@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/es/Main.Master" AutoEventWireup="true" CodeBehind="Experience.aspx.cs" Inherits="WAKANA_WEB_DE.es.Experience" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        
-    </style>
 
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 

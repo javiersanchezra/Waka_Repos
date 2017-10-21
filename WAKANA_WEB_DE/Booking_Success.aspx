@@ -1,19 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Booking_Success.aspx.cs" Inherits="WAKANA_WEB_DE.Booking_Success" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <style>
-       .swatch-blue a:hover, [class*=swatch-] .swatch-blue a:hover {
-    color: #ffffff;
-}
-
-       .lobstertitle3 {
-    color: white !important;
-    font-size: 30px;
-    font-family: 'Josefin Sans';
-    text-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
-    
-    padding-top:40px;
-    margin:30px;
-}
+       
 
     </style>
      <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">

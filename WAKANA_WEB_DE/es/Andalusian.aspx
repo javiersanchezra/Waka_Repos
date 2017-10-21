@@ -12,17 +12,16 @@
             <div class="row">
                 <div class="col-md-12 primercol"><a class="lobstertitle">Cortijo Andaluz</a></div>
             </div>
-<%--            <div class="row">
+  <div class="row">
                 <div class="col-md-3 col-sm-4 col-xs-6 ">
 
 
-                    <a href="Accommodation.aspx">
-                        <div id="facesa" class="tp-caption Newspaper-Button" style="z-index: 108; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; text-align:center; font-family: 'Quicksand';">RETURN</div>
+                    <a href="../../Precios Web_ENG.pdf" target="_blank">
+                        <div id="facesa" class="tp-caption Newspaper-Button" style="z-index: 108; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; text-align:center; font-family: 'Quicksand';">PRECIOS</div>
                     </a>
                 </div>
 
-            </div>--%>
-            <div class="row">
+            </div>            <div class="row">
                 <div class="col-md-12">
                     <div class="portfolio-container element-normal-top element-no-bottom debajotitulo" style="margin-top: 20px !important">
                         <div class="portfolio masonry use-masonry " data-padding="0" data-col-xs="1" data-col-sm="2" data-col-md="4" data-col-lg="6" data-layout="masonry">
@@ -30,7 +29,7 @@
 
 
 
-                            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                            <asp:Literal ID="GalleryPlaceHolder" runat="server"></asp:Literal>
             
 
 

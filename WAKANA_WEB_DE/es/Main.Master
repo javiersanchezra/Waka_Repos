@@ -29,12 +29,14 @@
     <link rel="stylesheet" type="text/css" href="../revolution/css/settings.css">
     <link rel="stylesheet" type="text/css" href="../revolution/css/layers.css">
     <link rel="stylesheet" type="text/css" href="../revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/estilo.css">
+
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-91744513-1', 'auto');
@@ -42,6 +44,21 @@
 
     </script>
     <script type="text/javascript">
+        function ShowBooking() {
+            booking.SetContentUrl("../BOOKING.aspx");
+
+            var w = window.innerWidth;;
+            if (w <= 800)
+                w = w * .90;
+            else
+                w = 700;
+
+            //var h = window.innerHeight * .90;
+            var h = 630;
+            booking.SetSize(w, h);
+            booking.UpdatePosition();
+            booking.Show();
+        }
         function ShowLoginWindow() {
             pcLogin.Show();
         }
@@ -51,7 +68,7 @@
         }
         function CambiarIngles() {
             window.location = "../" + document.location.pathname.split("/").slice(-1);
-           
+
         }
         function ShowModal(id, tipo) {
             modal.SetContentUrl("../CampamentoIndividual.aspx?idioma=es&id=" + id + "&tipo=" + tipo);
@@ -82,45 +99,7 @@
             modal.Show();
         }
     </script>
-    <style>
-        .modalcamp {
-            width: 50vw;
-            height: 80vh;
-        }
-
-        .modalcampimg {
-            width: 50vw;
-            height: auto;
-        }
-
-        @media (max-height: 600px) {
-            .dxpcLite_DevEx .dxpc-mainDiv, .dxpcLite_DevEx.dxpc-mainDiv, .dxdpLite_DevEx .dxpc-mainDiv, .dxdpLite_DevEx.dxpc-mainDiv {
-                height: 1000px;
-            }
-
-            .modalcamp {
-                height: 95vh;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .modalcamp {
-                width: 90vw;
-                height: 90vh;
-            }
-
-            .modalcampimg {
-                width: 90vw;
-            }
-        }
-
-        .textocamp {
-            white-space: pre-line;
-        }
-
-        .campimage {
-        }
-    </style>
+    
 </head>
 
 <body class="transparent-header">
@@ -134,7 +113,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="Default.aspx" class="navbar-brand" style="height: 60px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                    <a href="Default.aspx" class="navbar-brand" style="width: 220px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
                         <img src="../assets/images/logobar.png" alt="Wakana Lake" />
                     </a>
                 </div>
@@ -179,7 +158,7 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Alojamiento</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Alojamientos</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="Yurtas.aspx">Yurtas
@@ -220,7 +199,11 @@
                                                     
                                     </a>
                                 </li>
-
+                                  <li>
+                                    <a href="BocalanCamps.aspx">Campamentos Bocalan
+                                                    
+                                    </a>
+                                </li>
 
                             </ul>
                         </li>
@@ -237,6 +220,10 @@
                         </li>
                           <li class="dropdown">
                              <a href="#" onclick="CambiarIngles();return false;" style=" font-size:30px;  "><img style="padding-bottom:10px" width="34px" height="20px" src="../assets/images/england.jpg"></img></a>
+                           
+                        </li>
+                          <li class="dropdown">
+                             <a href="#" onclick="ShowBooking();return false;" ">RESERVA</a>
                            
                         </li>
                     </ul>
@@ -581,30 +568,38 @@
         <ClientSideEvents CloseUp="function(s, e) {s.RefreshContentUrl();}" />
     </dx:ASPxPopupControl>
 
+                  <dx:ASPxPopupControl ID="booking" runat="server" AppearAfter="100" Modal="True"
+                        ClientInstanceName="booking" PopupAnimationType="Fade"
+                        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+                        CloseAction="OuterMouseClick" ScrollBars="none" ShowHeader="false" AutoUpdatePosition="true" ShowOnPageLoad="false" ModalBackgroundStyle-BackColor="black">
+                        <ClientSideEvents CloseUp="function(s, e) {s.RefreshContentUrl();}" />
+                    </dx:ASPxPopupControl>
+
+
             </footer>
         </div>
         <script>
 
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: "629483980570403",
-                    xfbml: true,
-                    version: "v2.6"
-                });
+                    window.fbAsyncInit = function () {
+                        FB.init({
+                            appId: "629483980570403",
+                            xfbml: true,
+                            version: "v2.6"
+                        });
 
-            };
+                    };
 
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) { return; }
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
+                    (function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
         </script>
         <script src="../assets/js/packages.min.js"></script>
         <script src="../assets/js/theme.min.js"></script>
-      <script type="text/javascript">$crisp=[];CRISP_WEBSITE_ID="85259242-642f-4086-a7c1-e1bd19899fe8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script><script type="text/javascript">$crisp=[];CRISP_WEBSITE_ID="85259242-642f-4086-a7c1-e1bd19899fe8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+      <script type="text/javascript">$crisp = []; CRISP_WEBSITE_ID = "85259242-642f-4086-a7c1-e1bd19899fe8"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.im/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script><script type="text/javascript">$crisp = []; CRISP_WEBSITE_ID = "85259242-642f-4086-a7c1-e1bd19899fe8"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.im/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
     </form>
 </body>
 </html>

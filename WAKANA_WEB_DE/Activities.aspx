@@ -53,242 +53,6 @@
         }
 
     </script>
-    <style>
-        .CAMP {
-            background-color: rgba(255, 255, 255, 0.30);
-            margin: 5px;
-            overflow: auto;
-        }
-
-        .imgcontainer {
-            height: 300px;
-        }
-
-        @media (min-width: 768px) {
-            .imgcontainer {
-                height: 600px;
-            }
-        }
-
-        .modalact {
-            width: 750px;
-            height: 600px;
-        }
-
-        @media (max-width: 768px) {
-            .modalact {
-                width: 90vw;
-                height: 90vh;
-            }
-        }
-
-        .camptext {
-            font-family: Quicksand;
-            font-size: 20px;
-            line-height: 40px;
-            font-weight: 100;
-            padding: 20px;
-            color: black;
-        }
-
-        .TITULOCAMP {
-            padding-top: 220px;
-            font-family: Quicksand;
-            font-size: 25px;
-            line-height: 20px;
-            color: white;
-        }
-
-        p.TITULOCAMP:after {
-            content: "";
-            position: absolute;
-            width: 50%;
-            height: 1px;
-            bottom: 0;
-            left: 25%;
-            margin-bottom: -5px;
-            border-bottom: 2px solid white;
-        }
-
-        .buttonmoreinfo {
-            background-color: #81b72d;
-            height: 60px;
-            padding-top: 8px;
-            font-family: Quicksand;
-            font-size: 25px;
-            line-height: 40px;
-            color: white;
-            margin: 25px;
-        }
-
-
-
-
-        .cuadro {
-            position: relative;
-            display: block;
-            margin: 2em 0;
-            background-color: transparent;
-            color: #222;
-        }
-
-            .cuadro:after {
-                display: block;
-                padding-bottom: 100%;
-                width: 100%;
-                height: 0;
-                background-color: rgba(0, 0, 0, 0.30);
-                content: "";
-                border-color: white;
-                border-width: 7px;
-                border-style: solid;
-            }
-
-        .cuadro__inner {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .cuadro__wrapper {
-            display: table;
-            width: 100%;
-            height: 100%;
-        }
-
-        .cuadro__content {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-            color: white;
-            font-family: 'Josefin Sans';
-            line-height: 30px;
-        }
-
-            .cuadro__content a {
-                display: table-cell;
-                vertical-align: middle;
-                text-align: center;
-                color: white;
-                font-family: 'Josefin Sans';
-                line-height: 30px;
-            }
-
-            .cuadro__content:hover span {
-                display: none;
-            }
-
-            .cuadro__content:hover a {
-                line-height: 10px !important;
-                font-size: 40px;
-                display: inline !important;
-            }
-
-        .swatch-blue a:hover, [class*=swatch-] .swatch-blue a:hover {
-            color: white;
-        }
-
-        @media (min-width: 480px) {
-            .cuadro__content {
-                font-size: 5em;
-            }
-
-            .divcirculo {
-                padding: 130px;
-            }
-        }
-
-        .cuadro:hover:after {
-            box-shadow: 0px 0px 10px #fff;
-            background-color: rgba(0, 0, 0, 0.50);
-        }
-
-
-
-        div.container4 {
-            padding-top: 100%;
-            width: 100% !important;
-            position: relative;
-            background-image: url("http://r.ddmcdn.com/s_f/o_1/cx_633/cy_0/cw_1725/ch_1725/w_720/APL/uploads/2014/11/too-cute-doggone-it-video-playlist.jpg");
-            background-size: 100%;
-            margin: 0;
-            transition: .5s;
-            color: #fff;
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,.00);
-        }
-
-            div.container4:hover {
-                box-shadow: inset 0 0 0 1000px rgba(0,0,0,.35);
-                transition: .35s;
-            }
-
-            div.container4 p.Tit2 {
-                margin: 0;
-                position: absolute;
-                top: 20%;
-                left: 10%;
-                font-size: 35px;
-                font-family: Quicksand;
-                transform: translate(0%, 0%);
-                /*text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 1px;*/
-            }
-
-            div.container4 p.Desc {
-                margin: 0;
-                position: absolute;
-                top: 30%;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-                font-size: 15px;
-            }
-
-            div.container4 p {
-                margin: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-            }
-
-                div.container4 p.MainTitle {
-                    margin: 0;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    margin-right: -50%;
-                    transform: translate(-50%, -50%);
-                    color: #fff;
-                    font-family: 'Josefin Sans';
-                    /*font-family: Lobster;*/
-                    font-size: calc(3vw + 40px);
-                }
-
-
-
-
-
-        @media (min-width: 768px) {
-            .cuadro__content {
-                font-size: 2em;
-            }
-
-            .divcirculo {
-                padding: 50px;
-            }
-        }
-
-
-
-        .dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
-            white-space: normal;
-            padding: 0px 0px 0px 0px !important;
-        }
-    </style>
 
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 
@@ -489,6 +253,46 @@
                 </div>
 
             </div>
+                 <div class="row">
+                <div class="col-md-12">
+                    </br>
+                                  <a href="../../ACTIVITIES TIMETABLE.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">Activities Schedule</a>
+                    </br>
+                </div>
+                </br>
+                          
+            </div>
+
+            </br>
+             <div class="row">
+                <div class="col-md-12">
+                    </br>
+                                  <a href="../../Pack 1 Day Without Accommodation from 1 to 7.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">PRICES for Groups up to 7 persons</a>
+                    </br>
+                </div>
+                </br>
+                          
+            </div>
+            </br>
+             <div class="row">
+                <div class="col-md-12">
+                    </br>
+                                  <a href="../../Pack 1 Day Without Accommodation from 8 to 17.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">PRICES for Groups from 8 up to 17 persons</a>
+                    </br>
+                </div>
+                </br>
+                   </div>
+            </br>
+                     <div class="row">
+                <div class="col-md-12">
+                    </br>
+                                  <a href="../../Gisela Pulido Pro Center.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">Gisela Pulido Pro Center Prices </a>
+                    </br>
+                </div>
+                </br>
+                          
+            </div>
+            </br>
     </section>
 
     <%-- MODAL SPARTAN--%>

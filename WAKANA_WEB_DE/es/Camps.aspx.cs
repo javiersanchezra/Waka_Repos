@@ -10,19 +10,22 @@ namespace WAKANA_WEB_DE.es
 {
     public partial class Camps : System.Web.UI.Page
     {
-        string query = "SELECT id, days, titulo, tituloingles texto, CONCAT('~/GetImage.aspx?type=schoolcampslogo&image=',id) AS imagen FROM schoolcamps";
+        private string query = "SELECT id, days, titulo, tituloingles texto, CONCAT('~/GetImage.aspx?type=schoolcampslogo&image=',id) AS imagen FROM schoolcamps";
+
+        public Camps()
+        {
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
-            MySqlDataAdapter da = new MySqlDataAdapter(query, con);
-            DataTable tablita = new DataTable();
-            da.Fill(tablita);
-            Repeater1.DataSource = tablita;
-            Repeater1.DataBind();
-
+            MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["mySql"].ConnectionString);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(this.query, mySqlConnection);
+            DataTable dataTable = new DataTable();
+            mySqlDataAdapter.Fill(dataTable);
+            this.Repeater1.DataSource = dataTable;
+            this.Repeater1.DataBind();
         }
 
-     
+
     }
 }

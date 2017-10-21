@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../assets/css/swatch-white-red.min.css" media="screen">
     <link rel="stylesheet" href="../assets/css/fonts.min.css" media="screen">
     <link rel="stylesheet" href="../assets/css/wakana.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/Default.css" media="screen">
 
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -61,7 +62,7 @@
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-91744513-1', 'auto');
@@ -69,11 +70,26 @@
 
     </script>
     <script>     function CambiarIngles() {
-         window.location = "../" + document.location.pathname.split("/").slice(-1);
+            window.location = "../" + document.location.pathname.split("/").slice(-1);
 
-     }
+        }
         function ShowContactMod() {
             ContactMod.Show();
+        }
+        function ShowBooking() {
+            booking.SetContentUrl("../BOOKING.aspx");
+
+            var w = window.innerWidth;;
+            if (w <= 800)
+                w = w * .90;
+            else
+                w = 700;
+
+            //var h = window.innerHeight * .90;
+            var h = 630;
+            booking.SetSize(w, h);
+            booking.UpdatePosition();
+            booking.Show();
         }
 
         function ShowYouTube() {
@@ -129,6 +145,10 @@
                 margin-left: 210px !important;
             }
         }
+            .dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
+            white-space: normal;
+            padding: 0px !important;
+        }
     </style>
 </head>
 <body class="transparent-header">
@@ -146,7 +166,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="Default.aspx" class="navbar-brand" style="height: 60px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                    <a href="Default.aspx" class="navbar-brand" style="width: 220px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
                         <img src="../assets/images/logobar.png" alt="Wakana Lake" />
                     </a>
                 </div>
@@ -191,7 +211,7 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alojamiento</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alojamientos</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="Yurtas.aspx">Yurtas
@@ -232,7 +252,11 @@
                                                     
                                     </a>
                                 </li>
-
+                                 <li>
+                                    <a href="BocalanCamps.aspx">Campamentos Bocalan
+                                                    
+                                    </a>
+                                </li>
 
                             </ul>
                         </li>
@@ -251,6 +275,10 @@
                             <a href="#" onclick="CambiarIngles();return false;" style="font-size: 30px;">
                                 <img style="padding-bottom: 10px" width="34px" height="20px" src="../assets/images/england.jpg"></img></a>
 
+                        </li>
+                           <li class="dropdown">
+                             <a href="#" onclick="ShowBooking();return false;" ">RESERVA</a>
+                           
                         </li>
                     </ul>
 
@@ -369,7 +397,7 @@
         "event": "click", 
         "action": "simplelink", 
         "target": "_self", 
-        "url": "Activities.aspx"
+        "url": "Events.aspx"
  
     }]'
                                     data-responsive_offset="on"
@@ -381,7 +409,7 @@
                                     data-paddingbottom="[10,10,10,10]"
                                     data-paddingleft="[10,10,10,10]"
                                     style="z-index: 198; width: 208px; text-align: center; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer;">
-                                    <a href="Activities.aspx" style="position: relative; z-index: 150; color: white;">EXPLORAR</a>
+                                    <a href="Events.aspx" style="position: relative; z-index: 150; color: white;">OFERTAS</a>
                                 </div>
 
 
@@ -974,7 +1002,7 @@
                                         </div>
                                         <div class="col-md-4" style="color: white; text-align: left;">
                                             <center>
-                                        <a class="linksub" href="Map.aspx" style="color:white;  ">LOCALIZACION</a></br></br>
+                                        <a class="linksub" href="Map.aspx" style="color:white;  ">LOCALIZACIÓN</a></br></br>
                                            <a href="https://www.google.com.mx/maps/place/WAKANA+LAKE/@36.31006,-5.7429637,21z/data=!4m5!3m4!1s0x0:0x1925801980d6b5aa!8m2!3d36.3100875!4d-5.7428419"><span class="fa fa-map-marker " style="margin-right: 10px;"></span>Ctra. A 2226 Benalup - Los Barrios </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;km 6,5, C.P. 11190 Benalup - Casas Viejas, Cádiz</br>Lat,Long: 36.3097393,-5.7433607</a>
                                      </center>
                                             </br>
@@ -1196,26 +1224,35 @@
                         </ContentCollection>
 
                     </dx:ASPxPopupControl>
+
+                      <dx:ASPxPopupControl ID="booking" runat="server" AppearAfter="100" Modal="True"
+                        ClientInstanceName="booking" PopupAnimationType="Fade"
+                        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+                        CloseAction="OuterMouseClick" ScrollBars="none" ShowHeader="false" AutoUpdatePosition="true" ShowOnPageLoad="false" ModalBackgroundStyle-BackColor="black">
+                        <ClientSideEvents CloseUp="function(s, e) {s.RefreshContentUrl();}" />
+                    </dx:ASPxPopupControl>
+
+
                 </footer>
         </div>
         <script>
 
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: "629483980570403",
-                    xfbml: true,
-                    version: "v2.6"
-                });
+                    window.fbAsyncInit = function () {
+                        FB.init({
+                            appId: "629483980570403",
+                            xfbml: true,
+                            version: "v2.6"
+                        });
 
-            };
+                    };
 
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) { return; }
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
+                    (function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
         </script>
 
         <script type="text/javascript">$crisp = []; CRISP_WEBSITE_ID = "85259242-642f-4086-a7c1-e1bd19899fe8"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.im/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>

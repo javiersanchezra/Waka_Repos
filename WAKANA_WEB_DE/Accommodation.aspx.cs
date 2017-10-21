@@ -9,6 +9,10 @@ namespace WAKANA_WEB_DE
 {
     public partial class Accommodation : System.Web.UI.Page
     {
+        public Accommodation()
+        {
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

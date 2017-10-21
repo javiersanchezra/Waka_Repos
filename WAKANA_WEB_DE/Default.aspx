@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../assets/css/swatch-white-red.min.css" media="screen">
     <link rel="stylesheet" href="../assets/css/fonts.min.css" media="screen">
     <link rel="stylesheet" href="../assets/css/wakana.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/Default.css" media="screen">
 
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -61,7 +62,7 @@
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-91744513-1', 'auto');
@@ -79,79 +80,24 @@
                 w = 700;
 
             //var h = window.innerHeight * .90;
-            var h = 700;
+            var h = 630;
             booking.SetSize(w, h);
             booking.UpdatePosition();
-           booking.Show();
+            booking.Show();
         }
 
 
 
 
         function ShowContactMod() {
-     ContactMod.Show();
- }
+            ContactMod.Show();
+        }
 
         function ShowYouTube() {
             YoutubeMod.Show();
         }
         ShowYouTube();
     </script>
-
-    <style>
-        .videoWrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            padding-top: 25px;
-            height: 0;
-        }
-
-            .videoWrapper iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-
-        .videopop {
-            width: 800px;
-        }
-
-        @media (max-width: 850px) {
-
-            .videopop {
-                width: 90vw;
-            }
-        }
-
-        .botonarreglado {
-            margin-right: 0px !important;
-        }
-
-        .botonarreglado2 {
-            margin-left: 0px !important;
-            margin-top: 100px !important;
-        }
-
-        @media (min-width: 768px) {
-
-            .botonarreglado {
-                margin-right: 210px !important;
-            }
-
-            .botonarreglado2 {
-                margin-top: 0px !important;
-                margin-left: 210px !important;
-            }
-        }
-
-        .dxpcLite_DevEx .dxpc-content, .dxdpLite_DevEx .dxpc-content {
-    white-space: normal;
-    padding: 0px !important;
-}
-
-    </style>
 </head>
 <body class="transparent-header">
     <form runat="server">
@@ -168,7 +114,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="Default.aspx" class="navbar-brand" style="height: 60px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                    <a href="Default.aspx" class="navbar-brand" style="width: 250px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
                         <img src="../assets/images/logobar.png" alt="Wakana Lake" />
                     </a>
                 </div>
@@ -254,7 +200,11 @@
                                                     
                                     </a>
                                 </li>
-
+                                  <li>
+                                    <a href="BocalanCamps.aspx">Bocalan Camps
+                                                    
+                                    </a>
+                                </li>
 
                             </ul>
                         </li>
@@ -274,10 +224,11 @@
                              <a href="/es/Default.aspx"  style=" font-size:30px;  "><img style="padding-bottom:10px" width="34px" height="20px" src="assets/images/spain.jpg"></img></a>
                            
                         </li>
-                  <%--     <li>
-                               <a href="#" onclick="ShowBooking();return false;" ><div class="buttonmoreinfo"> BOOKING</div></a>
-                      
-                        </li>--%>
+                        <li class="dropdown">
+                             <a href="#" onclick="ShowBooking();return false;" ">BOOKING</a>
+                           
+                        </li>
+
                     </ul>
 
                 </nav>
@@ -395,7 +346,7 @@
         "event": "click", 
         "action": "simplelink", 
         "target": "_self", 
-        "url": "Activities.aspx"
+        "url": "Events.aspx"
  
     }]'
                                     data-responsive_offset="on"
@@ -407,7 +358,7 @@
                                     data-paddingbottom="[10,10,10,10]"
                                     data-paddingleft="[10,10,10,10]"
                                     style="z-index: 198; width: 152px; text-align: center; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; ">
-                                    <a href="Activities.aspx" style="position: relative; z-index: 150; color: white;">EXPLORE</a>
+                                    <a href="Events.aspx" style="position: relative; z-index: 150; color: white;">PROMOTIONS</a>
                                 </div>
 
 
@@ -1225,12 +1176,14 @@
 
 
 
-                     <dx:ASPxPopupControl ID="booking" runat="server" AppearAfter="100" Modal="True"
-        ClientInstanceName="booking" PopupAnimationType="Fade" 
-        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
-        CloseAction="OuterMouseClick" ScrollBars="none" ShowHeader="false" AutoUpdatePosition="true" ShowOnPageLoad="false" ModalBackgroundStyle-BackColor="black">
-        <ClientSideEvents CloseUp="function(s, e) {s.RefreshContentUrl();}" />
-    </dx:ASPxPopupControl>
+                      <dx:ASPxPopupControl ID="booking" runat="server" AppearAfter="100" Modal="True"
+                        ClientInstanceName="booking" PopupAnimationType="Fade"
+                        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+                        CloseAction="OuterMouseClick" ScrollBars="none" ShowHeader="false" AutoUpdatePosition="true" ShowOnPageLoad="false" ModalBackgroundStyle-BackColor="black">
+                        <ClientSideEvents CloseUp="function(s, e) {s.RefreshContentUrl();}" />
+                    </dx:ASPxPopupControl>
+
+
 
 
 
@@ -1238,25 +1191,25 @@
         </div>
         <script>
 
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: "629483980570403",
-                    xfbml: true,
-                    version: "v2.6"
-                });
+                    window.fbAsyncInit = function () {
+                        FB.init({
+                            appId: "629483980570403",
+                            xfbml: true,
+                            version: "v2.6"
+                        });
 
-            };
+                    };
 
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) { return; }
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
+                    (function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) { return; }
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
         </script>
 
-    <script type="text/javascript">$crisp=[];CRISP_WEBSITE_ID="85259242-642f-4086-a7c1-e1bd19899fe8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <script type="text/javascript">$crisp = []; CRISP_WEBSITE_ID = "85259242-642f-4086-a7c1-e1bd19899fe8"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.im/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
           </form>
 </body>
 

@@ -6,97 +6,79 @@ namespace WAKANA_WEB_DE
 {
     public partial class Response : System.Web.UI.Page
     {
-        public RequestFlow Flow { get; set; }
+        public RequestFlow Flow
+        {
+            get;
+            set;
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!base.IsPostBack)
             {
                 this.Flow = this.GetFromContext<RequestFlow>("Flow");
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="isRequest"></param>
-        /// <returns></returns>
         protected string FormatPayloadText(string text, bool isRequest)
         {
-            if(string.IsNullOrEmpty(text))
+            if (!string.IsNullOrEmpty(text))
             {
-                return string.Format("No payload for this {0}.", (isRequest ? "request" : "response"));
+                return text;
             }
-            return text;
+            return string.Format("No payload for this {0}.", (isRequest ? "request" : "response"));
         }
 
-        /// <summary>
-        /// Gets the CSS class for the specified message.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <returns></returns>
         protected string GetMessageClass(RequestFlowItemMessage message)
         {
-            switch(message.Type)
+            RequestFlowItemMessageType type = message.Type;
+            if (type == RequestFlowItemMessageType.Success)
             {
-                case RequestFlowItemMessageType.Error:
-                    return "error";
-                case RequestFlowItemMessageType.Success:
-                    return "success";
-                default:
-                    return string.Empty;
+                return "success";
             }
+            if (type == RequestFlowItemMessageType.Error)
+            {
+                return "error";
+            }
+            return string.Empty;
         }
 
-        /// <summary>
-        /// Formats the message to include an accompanying icon from Font Awesome (http://fortawesome.github.io/Font-Awesome/).
-        /// </summary>
-        /// <param name="message"></param>
-        /// <returns></returns>
         protected string GetMessageWithMarkup(RequestFlowItemMessage message)
         {
-            var iconText = "";
-            switch(message.Type)
+            string str = "";
+            switch (message.Type)
             {
-                case RequestFlowItemMessageType.Error:
-                    iconText = "<i class=\"fa fa-times-circle\"></i>";
-                    break;
-
-                case RequestFlowItemMessageType.Success:
-                    iconText = "<i class=\"fa fa-check-circle\"></i>";
-                    break;
-
                 case RequestFlowItemMessageType.General:
-                    iconText = "<i class=\"fa fa-info-circle\"></i>";
-                    break;
+                    {
+                        str = "<i class=\"fa fa-info-circle\"></i>";
+                        break;
+                    }
+                case RequestFlowItemMessageType.Success:
+                    {
+                        str = "<i class=\"fa fa-check-circle\"></i>";
+                        break;
+                    }
+                case RequestFlowItemMessageType.Error:
+                    {
+                        str = "<i class=\"fa fa-times-circle\"></i>";
+                        break;
+                    }
             }
-            return string.Format("{0} {1}", iconText, message.Message);
+            return string.Format("{0} {1}", str, message.Message);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
         private string GetStringFromContext(string key)
         {
             return this.GetFromContext<string>(key);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key"></param>
-        /// <returns></returns>
         private T GetFromContext<T>(string key)
         {
-            if(HttpContext.Current.Items.Contains(key))
+            if (!HttpContext.Current.Items.Contains(key))
             {
-                return (T)HttpContext.Current.Items[key];
+                return default(T);
             }
-            return default(T);
+            return (T)HttpContext.Current.Items[key];
         }
     }
 }

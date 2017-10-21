@@ -1,14 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/es/Main.Master" AutoEventWireup="true" CodeBehind="FAQ.aspx.cs" Inherits="WAKANA_WEB_DE.es.FAQ" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .quicksandtitle {
-            color: white !important;
-            font-size: 45px;
-            font-family: 'Quicksand', cursive;
-            font-weight: 100;
-        }
-    </style>
+    
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 
         <div class="background-media" style="background-image: url('../img/slide/backFAQ2.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; background-position: 50% 0px;" data-start="background-position:50% 0px"

@@ -12,16 +12,16 @@
             <div class="row">
                 <div class="col-md-12 primercol"><a class="lobstertitle">Andalusian Cortijo</a></div>
             </div>
-   <%--         <div class="row ">
+   <div class="row">
                 <div class="col-md-3 col-sm-4 col-xs-6 ">
 
 
-                    <a href="Accommodation.aspx">
-                        <div id="facesa" class="tp-caption Newspaper-Button" style="z-index: 108; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; text-align:center; font-family: 'Quicksand';">RETURN</div>
+                    <a href="../../Precios Web_ENG.pdf" target="_blank">
+                        <div id="facesa" class="tp-caption Newspaper-Button" style="z-index: 108; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; text-align:center; font-family: 'Quicksand';">PRICES</div>
                     </a>
                 </div>
 
-            </div>--%>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="portfolio-container element-normal-top element-no-bottom debajotitulo" style="margin-top: 20px !important">
@@ -30,7 +30,7 @@
 
 
 
-                            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                            <asp:Literal ID="GalleryPlaceHolder" runat="server"></asp:Literal>
             
 
 
@@ -45,7 +45,7 @@
                 <header class="text-center  element-normal-top element-no-bottom not-condensed">
                     <h2 class="big hairline"></h2>
                 </header>
-                <img src="../assets/images/blank.png" alt="Wakana Lake" style="line-height: 30px;">
+                <img src="../assets/images/blank.png" alt="Wakana Lake" style="line-height: 30px;"/>
             </div>
         </div>
         </div>
