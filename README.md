@@ -43,3 +43,12 @@ To create a new Gallery Section you can copy any section (ex, Andalusian Cortijo
 
 > - To add a new "Animals Gallery Section", first copy any gallery page into a new page, and change         string PATH = "gallery/Accomodation/Andalusian House/"; to         string PATH = "gallery/AnimalGallery/";
 >This will load this gallery into the new page
+
+
+
+Uploading to Server
+-------------
+
+Wakana Lake is hosted on Microsoft Azure.
+To upload changes, just go to Publish and import the Publishing Profile (
+wakanav2.PublishSettings) provided before via email. Then just click on Publish, changes will be automatically posted on server.
