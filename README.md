@@ -45,6 +45,12 @@ To create a new Gallery Section you can copy any section (ex, Andalusian Cortijo
 >This will load this gallery into the new page
 
 
+CMS
+-------------
+
+To Add, Remove or Modify School Camps, Bocalan Camps etc, you have to access the CMS at http://wakanalakeadminboard.azurewebsites.net/
+
+
 
 Uploading to Server
 -------------
