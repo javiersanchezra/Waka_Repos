@@ -4,6 +4,107 @@
     <script type="text/javascript">
 
 </script>
+    <div class="pace-overlay"></div>
+
+        <div id="masthead" class="navbar navbar-static-top swatch-black navbar-sticky" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="Default.aspx" class="navbar-brand" style="width: 200px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                        <img src="../assets/images/logobar.png" alt="Wakana Lake" />
+                    </a>
+                </div>
+                 <nav class="collapse navbar-collapse main-navbar" role="navigation">
+                    <div class="menu-sidebar pull-right">
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <%-- <li class="dropdown menu-item-object-oxy_mega_menu ">
+                            <a href="#" onclick="ShowLoginWindow();return false;" >BOOK NOW</a>
+                        </li>--%>
+
+                        <li class="dropdown">
+                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal12" Text="<%$ Resources:Index, lugar %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Faces.aspx"><asp:Literal runat="server" ID="Literal13" Text="<%$ Resources:Index, galeria %>"></asp:Literal>         
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Map.aspx"><asp:Literal runat="server" ID="Literal14" Text="<%$ Resources:Index, mapa %>"></asp:Literal>
+                                                    
+                                    </a>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#"><asp:Literal runat="server" ID="Literal15" Text="<%$ Resources:Index, comunidad %>"></asp:Literal></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a  href="Community.aspx"><asp:Literal runat="server" ID="Literal16" Text="<%$ Resources:Index, acercadenos %>"></asp:Literal></a></li>
+                                        <li><a  href="Meetthecommunity.aspx"><asp:Literal runat="server" ID="Literal17" Text="<%$ Resources:Index, equipo %>"></asp:Literal></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal18" Text="<%$ Resources:Index, alojamientos %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Yurtas.aspx"><asp:Literal runat="server" ID="Literal19" Text="<%$ Resources:Index, yurtas %>"></asp:Literal>          
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Andalusian.aspx"><asp:Literal runat="server" ID="Literal20" Text="<%$ Resources:Index, cortijoandaluz %>"></asp:Literal>   
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="Tepees.aspx"><asp:Literal runat="server" ID="Literal21" Text="<%$ Resources:Index, tipis %>"></asp:Literal>          
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal22" Text="<%$ Resources:Index, campamentos %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Camps.aspx"><asp:Literal runat="server" ID="Literal23" Text="<%$ Resources:Index, campamentosescolares %>"></asp:Literal>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="SummerCamps.aspx"><asp:Literal runat="server" ID="Literal24" Text="<%$ Resources:Index, campamentosveranowakana %>"></asp:Literal>     
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="SpartanCamps.aspx"><asp:Literal runat="server" ID="Literal25" Text="<%$ Resources:Index, campamentosspartanrace %>"></asp:Literal>
+                                    </a>
+                                </li>
+                                  <li>
+                                    <a href="BocalanCamps.aspx"><asp:Literal runat="server" ID="Literal26" Text="<%$ Resources:Index, campamentosbocalan %>"></asp:Literal>         
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                          <li class="dropdown">
+                            <a href="Activities.aspx" ><asp:Literal runat="server" ID="Literal27" Text="<%$ Resources:Index, actividades %>"></asp:Literal></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Events.aspx" ><asp:Literal runat="server" ID="Literal28" Text="<%$ Resources:Index, eventos %>"></asp:Literal></a>
+                        </li>
+                           <li class="dropdown">
+                            <a href="Partners.aspx" ><asp:Literal runat="server" ID="Literal29" Text="<%$ Resources:Index, colaboradores %>"></asp:Literal></a>
+                        </li>
+                          <li class="dropdown lenguajediv">  <%--ELEGIR IDIOMA--%>
+                              <asp:ImageButton CssClass="imagenl" ID="ImageButton1" runat="server" Height="20px" ImageUrl="~/assets/images/england.jpg" OnClick="ImageButton1_Click" Width="34px" />
+                        </li>
+                        <li class="dropdown">
+                             <a href="#" onclick="ShowBooking();return false;" "><asp:Literal runat="server" ID="Literal31" Text="<%$ Resources:Index, reserva %>"></asp:Literal></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 
         <div class="background-media" style="background-image: url('../img/slide/back1.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; background-position: 50% 0px;" data-start="background-position:50% 0px"
@@ -24,13 +125,13 @@
                                     </div>
 
                                     <div class="col-md-4 hidden-xs hidden-sm margenazo " style="margin-top: 40px; background-color: #262626;">
-                                        <p class="texto " style="margin-top: 40px; margin-left: 10px; font-size: 45px">CONTACT US</p>
-                                        <p class="lobstertitle" style="margin-top: -25px;">Let's talk</p>
+                                        <p class="texto " style="margin-top: 40px; margin-left: 10px; font-size: 45px"><asp:Literal runat="server" ID="Literal30" Text="<%$ Resources:Index, contactcontactanos %>"></asp:Literal></p>
+                                        <p class="lobstertitle" style="margin-top: -25px;"><asp:Literal runat="server" ID="Literal1" Text="<%$ Resources:Index, contacthablemos %>"></asp:Literal></p>
 
                                     </div>
                                     <div class="col-md-4  visible-sm visible-xs " style="background-color: #262626;">
-                                        <p class="texto " style="margin-top: 40px; text-align: center; font-size: 45px">CONTACT US</p>
-                                        <p class="lobstertitle" style="margin-top: -25px;">Let's talk</p>
+                                        <p class="texto " style="margin-top: 40px; text-align: center; font-size: 45px"><asp:Literal runat="server" ID="Literal3" Text="<%$ Resources:Index, contactcontactanos %>"></asp:Literal></p>
+                                        <p class="lobstertitle" style="margin-top: -25px;"><asp:Literal runat="server" ID="Literal2" Text="<%$ Resources:Index, contacthablemos %>"></asp:Literal></p>
 
                                     </div>
 
@@ -46,40 +147,36 @@
                             <div class="col-md-4">
 
                             
-                                    <p class="textob">General Inquiries</p>
+                                    <p class="textob"><asp:Literal runat="server" ID="Literal4" Text="<%$ Resources:Index, contactconsultasgenerales %>"></asp:Literal></p>
                               
-                                <a href="#" onclick="ShowContactMod();return false;" class="wakanasublink" style="font-family: Quicksand; text-align: center;">Email Us!</a>
-                                </br> </br><center>
-<%--  <div class="fb-messengermessageus" 
-  messenger_app_id="629483980570403" 
-  page_id="514860192030027"
-  color="blue"
-  size="large" >
-</div> --%>  </center>
+                                <a href="#" onclick="ShowContactMod();return false;" class="wakanasublink" style="font-family: Quicksand; text-align: center;"><asp:Literal runat="server" ID="Literal5" Text="<%$ Resources:Index, contactmandanosemail %>"></asp:Literal></a>
+                                </br> </br>
                                 </br>
-                                           <a class="textob">Phone: +34 687 92 94 59</a>
+                                           <a class="textob"><asp:Literal runat="server" ID="Literal6" Text="<%$ Resources:Index, contacttelefono %>"></asp:Literal>: +34 687 92 94 59</a>
 
                             </div>
                             <div class="col-md-4">
-                                <p class="textob">Careers</p>
+                                <p class="textob"><asp:Literal runat="server" ID="Literal7" Text="<%$ Resources:Index, contactempleos %>"></asp:Literal></p>
                                 <a class="textob">careers@wakanalake.com</a>
 
                             </div>
                             <div class="col-md-4">
-                                <p class="textob">Our Location</p>
+                                <p class="textob"><asp:Literal runat="server" ID="Literal8" Text="<%$ Resources:Index, contactnuestralocalizacion %>"></asp:Literal></p>
                                 <a class="textob">Ctra. A-2226 Benalup - Los Barrios, km. 6,5</a> </br>
                                              <a class="textob">11190 Benalup - Casas Viejas (Cádiz) </a></br>
-                                             <a class="textob">España</a>
+                                             <a class="textob"><asp:Literal runat="server" ID="Literal9" Text="<%$ Resources:Index, contactespaña %>"></asp:Literal></a>
                                 </br> </br>
-                                             <a href="https://www.google.com.mx/maps/place/WAKANA+LAKE/@36.3100875,-5.7428419,15z/data=!4m2!3m1!1s0x0:0x1925801980d6b5aa?sa=X&ved=0ahUKEwjNoJqt-MXRAhUBw4MKHcgtBLwQ_BIIeDAP" class="wakanasublink" style="font-family: Quicksand; text-align: center;">Get Directions</a>
-
+                                             <a href="https://www.google.com.mx/maps/place/WAKANA+LAKE/@36.3100875,-5.7428419,15z/data=!4m2!3m1!1s0x0:0x1925801980d6b5aa?sa=X&ved=0ahUKEwjNoJqt-MXRAhUBw4MKHcgtBLwQ_BIIeDAP" class="wakanasublink" style="font-family: Quicksand; text-align: center;">
+                                                 <asp:Literal runat="server" ID="Literal10" Text="<%$ Resources:Index, contactdireccion %>"></asp:Literal></a>
                             </div>
                         </div>
                         <div class="row">
                             </br>
                                     <div class="col-md-12">
                                         </br></br>
-                                        <a href="#" onclick="ShowContactMod();return false;" class="wakanasublink" style="font-family: Quicksand; text-align: center;">Interested in partnering with us? - GET IN TOUCH</a>
+                                        <a href="#" onclick="ShowContactMod();return false;" class="wakanasublink" style="font-family: Quicksand; text-align: center;">
+                                            <asp:Literal runat="server" ID="Literal11" Text="<%$ Resources:Index, contactestasinteresado %>"></asp:Literal>
+                                        </a>
                                     </div>
 
                         </div>

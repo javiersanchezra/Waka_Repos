@@ -1,5 +1,106 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="GeneralConditions.aspx.cs" Inherits="WAKANA_WEB_DE.GeneralConditions" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="pace-overlay"></div>
+
+        <div id="masthead" class="navbar navbar-static-top swatch-black navbar-sticky" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="Default.aspx" class="navbar-brand" style="width: 200px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                        <img src="../assets/images/logobar.png" alt="Wakana Lake" />
+                    </a>
+                </div>
+                 <nav class="collapse navbar-collapse main-navbar" role="navigation">
+                    <div class="menu-sidebar pull-right">
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <%-- <li class="dropdown menu-item-object-oxy_mega_menu ">
+                            <a href="#" onclick="ShowLoginWindow();return false;" >BOOK NOW</a>
+                        </li>--%>
+
+                        <li class="dropdown">
+                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal10" Text="<%$ Resources:Index, lugar %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Faces.aspx"><asp:Literal runat="server" ID="Literal11" Text="<%$ Resources:Index, galeria %>"></asp:Literal>         
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Map.aspx"><asp:Literal runat="server" ID="Literal12" Text="<%$ Resources:Index, mapa %>"></asp:Literal>
+                                                    
+                                    </a>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#"><asp:Literal runat="server" ID="Literal13" Text="<%$ Resources:Index, comunidad %>"></asp:Literal></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a  href="Community.aspx"><asp:Literal runat="server" ID="Literal14" Text="<%$ Resources:Index, acercadenos %>"></asp:Literal></a></li>
+                                        <li><a  href="Meetthecommunity.aspx"><asp:Literal runat="server" ID="Literal15" Text="<%$ Resources:Index, equipo %>"></asp:Literal></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal16" Text="<%$ Resources:Index, alojamientos %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Yurtas.aspx"><asp:Literal runat="server" ID="Literal17" Text="<%$ Resources:Index, yurtas %>"></asp:Literal>          
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Andalusian.aspx"><asp:Literal runat="server" ID="Literal18" Text="<%$ Resources:Index, cortijoandaluz %>"></asp:Literal>   
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="Tepees.aspx"><asp:Literal runat="server" ID="Literal19" Text="<%$ Resources:Index, tipis %>"></asp:Literal>          
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal20" Text="<%$ Resources:Index, campamentos %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Camps.aspx"><asp:Literal runat="server" ID="Literal21" Text="<%$ Resources:Index, campamentosescolares %>"></asp:Literal>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="SummerCamps.aspx"><asp:Literal runat="server" ID="Literal22" Text="<%$ Resources:Index, campamentosveranowakana %>"></asp:Literal>     
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="SpartanCamps.aspx"><asp:Literal runat="server" ID="Literal23" Text="<%$ Resources:Index, campamentosspartanrace %>"></asp:Literal>
+                                    </a>
+                                </li>
+                                  <li>
+                                    <a href="BocalanCamps.aspx"><asp:Literal runat="server" ID="Literal24" Text="<%$ Resources:Index, campamentosbocalan %>"></asp:Literal>         
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                          <li class="dropdown">
+                            <a href="Activities.aspx" ><asp:Literal runat="server" ID="Literal25" Text="<%$ Resources:Index, actividades %>"></asp:Literal></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Events.aspx" ><asp:Literal runat="server" ID="Literal26" Text="<%$ Resources:Index, eventos %>"></asp:Literal></a>
+                        </li>
+                           <li class="dropdown">
+                            <a href="Partners.aspx" ><asp:Literal runat="server" ID="Literal27" Text="<%$ Resources:Index, colaboradores %>"></asp:Literal></a>
+                        </li>
+                          <li class="dropdown lenguajediv">  <%--ELEGIR IDIOMA--%>
+                              <asp:ImageButton CssClass="imagenl" ID="ImageButton1" runat="server" Height="20px" ImageUrl="~/assets/images/england.jpg" OnClick="ImageButton1_Click" Width="34px" />
+                        </li>
+                        <li class="dropdown">
+                             <a href="#" onclick="ShowBooking();return false;" "><asp:Literal runat="server" ID="Literal28" Text="<%$ Resources:Index, reserva %>"></asp:Literal></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     <section class="section swatch-blue text-center section-text-shadow section-no-inner-shadow">
 
         <div class="background-media" style="background-image: url('../assets/images/DSCF2765w.jpg'); background-repeat: repeat; background-size: cover; background-attachment: fixed; background-position: 50% 0px;" data-start="background-position:50% 0px"
@@ -8,29 +109,12 @@
         <div class="background-overlay  " style="background-color: rgba(0,0,0,0.4);"></div>
         <div class="container">
               <div class="row">
-                                <div class="col-md-12 primercol" > <a class="lobstertitle">General Conditions</a></div>
+                                <div class="col-md-12 primercol" > <a class="lobstertitle"><asp:Literal runat="server" ID="Literal6" Text="<%$ Resources:Index, gct %>"></asp:Literal></a></div>
                             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="portfolio-container element-normal-top element-no-bottom debajotitulo" style="text-align:left; margin-top:20px !important;">
-                     • An identity document in place is required in order to stay at our establishment. (ID, Passport or Family book for children under 14 years)</br>
-• Group activities must be booked at least fifteen days before, due to organizational issues.</br>
-• It is required to bring from home bathroom utilities that you may need, such as towels, gels, toothpaste, etc.</br>
-• It is prohibited to introduce explosive substances or materials, flammable or any other kind that could cause damages or disturb the rest of clients. It is forbidden to light candles, oil lamps or any other kind of campfire.</br>
-• It is prohibited to bring animals without the direct authorization of the company.</br>
-• Dogs must remain on leads and properly identified with their corresponding documentation in order. (Vaccination booklet, insurance, or others). Also, big dogs or those considered potentially dangerous must be muzzled to walk around the premises.</br>
-• Wakana Lake will not be held responsible for lost or stolen items inside the facilities or accommodations.</br>
-• Wakana Lake will not be held responsible if certain activities cannot take place due to weather circumstances.</br>
-• It is not permitted to enter the premises with gas bottles or any food or drinks.</br>
-• Wakana Lake is a place for rest and relaxation therefore it is not permitted to make noise after 23:00 hrs in the accommodation area and after 00:00 hrs in the chill-out area.</br>
-• If you are a smoker, you must know that smoking is forbidden inside the accommodations. We kindly request inside the park, do not leave at any moment unattended cigarettes, and never throw the cigarette butt on the floor.</br>
-• The company reserves the right to add, update, modify or cancel, at any moment and without previous notification, the general sales conditions, any content, information and services.</br>
-• The company reserves the right to use images and videos taken inside the premises of Wakana Lake for marketing purposes.</br></br>
-Wakana Lake notes for the activities:</br>
-• Closed sport shoes are required. Also consider that mud stains from the Spartan Trail activity are hard to get off.</br>
-• Canopy Park: Minimum height required is 1,40m, weight under 120 Kg and have good physical conditions.
-
-
+                     <asp:Literal runat="server" ID="Literal1" Text="<%$ Resources:Index, gctexto %>"></asp:Literal>
                     </div>
                 </div>
                

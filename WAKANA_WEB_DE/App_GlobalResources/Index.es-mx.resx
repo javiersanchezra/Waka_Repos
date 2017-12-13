@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="acccortijoandaluz" xml:space="preserve">
+    <value>Cortijo Andaluz</value>
+  </data>
+  <data name="accreservar" xml:space="preserve">
+    <value>RESERVAR AHORA</value>
+  </data>
+  <data name="acctipis" xml:space="preserve">
+    <value>Tipis</value>
+  </data>
+  <data name="accwakanacasas" xml:space="preserve">
+    <value>WAKANA CASAS</value>
+  </data>
+  <data name="accyurtas" xml:space="preserve">
+    <value>Yurtas</value>
+  </data>
+  <data name="acercadenos" xml:space="preserve">
+    <value>Acerca de nosotros</value>
+  </data>
+  <data name="actdisponesmosdeuna" xml:space="preserve">
+    <value>“Disponemos de una amplia oferta de actividades lúdicas, deportivas y de ocio que, además de incentivar la realización de actividades físicas y llevar una vida sana, contribuyen a trabajar en valores fundamentales como la autoconfianza, la superación o el trabajo en equipo, desarrollando también actitudes positivas hacia la convivencia y el respeto por la Naturaleza.”</value>
+  </data>
+  <data name="acthorario" xml:space="preserve">
+    <value>Horario de actividades</value>
+  </data>
+  <data name="actividades" xml:space="preserve">
+    <value>Actividades</value>
+  </data>
+  <data name="actividadestitulo" xml:space="preserve">
+    <value>Actividades</value>
+  </data>
+  <data name="actprecios7" xml:space="preserve">
+    <value>PRECIOS Grupos hasta 7 personas</value>
+  </data>
+  <data name="actprecios8" xml:space="preserve">
+    <value>PRECIOS Grupos de 8 a 17 personas</value>
+  </data>
+  <data name="actpreciosgisela" xml:space="preserve">
+    <value>Precios Gisela Pulido Pro Center</value>
+  </data>
+  <data name="actspartancalzado" xml:space="preserve">
+    <value>Calzado deportivo cerrado</value>
+  </data>
+  <data name="actspartanropaycalzado" xml:space="preserve">
+    <value>Ropa y calzado extra para después de la actividad</value>
+  </data>
+  <data name="actspartantrailobs" xml:space="preserve">
+    <value>20 Obstáculos</value>
+  </data>
+  <data name="actspartantrailrequisitos" xml:space="preserve">
+    <value>REQUISITOS:</value>
+  </data>
+  <data name="alojamientos" xml:space="preserve">
+    <value>Alojamientos</value>
+  </data>
+  <data name="andacortijoandaluz" xml:space="preserve">
+    <value>Cortijo Andaluz</value>
+  </data>
+  <data name="andaprecios" xml:space="preserve">
+    <value>PRECIOS</value>
+  </data>
+  <data name="arcatrapa" xml:space="preserve">
+    <value>Atrapa la bandera</value>
+  </data>
+  <data name="arcguerra" xml:space="preserve">
+    <value>Guerra de comandos</value>
+  </data>
+  <data name="arcintroduccion" xml:space="preserve">
+    <value>Introducción al tiro con arco</value>
+  </data>
+  <data name="arctodoscontratodos" xml:space="preserve">
+    <value>Todos contra todos</value>
+  </data>
+  <data name="aventuracomienza" xml:space="preserve">
+    <value>LA AVENTURA COMIENZA AQUÍ</value>
+  </data>
+  <data name="bocalanfecha" xml:space="preserve">
+    <value>FECHAS 2017</value>
+  </data>
+  <data name="bocalanmasinfo" xml:space="preserve">
+    <value>INFORMACIÓN</value>
+  </data>
+  <data name="campamentobocalantitulo" xml:space="preserve">
+    <value>Campamentos Bocalan</value>
+  </data>
+  <data name="campamentos" xml:space="preserve">
+    <value>Campamentos</value>
+  </data>
+  <data name="campamentosbocalan" xml:space="preserve">
+    <value>Campamentos Bocalan</value>
+  </data>
+  <data name="campamentosescolares" xml:space="preserve">
+    <value>Campamentos Escolares</value>
+  </data>
+  <data name="campamentosspartanrace" xml:space="preserve">
+    <value>Campamentos Spartan Race</value>
+  </data>
+  <data name="campamentosveranowakana" xml:space="preserve">
+    <value>Campamentos de Verano Wakana Lake</value>
+  </data>
+  <data name="campscampamentoswakanalake" xml:space="preserve">
+    <value>Campamentos Wakana Lake</value>
+  </data>
+  <data name="campsfechas2017" xml:space="preserve">
+    <value>FECHAS 2017</value>
+  </data>
+  <data name="campsmasinfo" xml:space="preserve">
+    <value>INFORMACIÓN</value>
+  </data>
+  <data name="canopybuenaformafisica" xml:space="preserve">
+    <value>Buena forma física</value>
+  </data>
+  <data name="canopycalzadodeportivo" xml:space="preserve">
+    <value>Calzado deportivo cerrado</value>
+  </data>
+  <data name="canopymedimasde140" xml:space="preserve">
+    <value>Medir más de 140cm</value>
+  </data>
+  <data name="canopyparkrequisitos" xml:space="preserve">
+    <value>REQUISITOS</value>
+  </data>
+  <data name="canopypesarmenos120" xml:space="preserve">
+    <value>Pesar menos de 120kg</value>
+  </data>
+  <data name="colaboradores" xml:space="preserve">
+    <value>Colaboradores</value>
+  </data>
+  <data name="comdejateseducirpor" xml:space="preserve">
+    <value>Déjate seducir por la belleza y la extraordinaria energía que desprende Wakana.</value>
+  </data>
+  <data name="comelyocorporal" xml:space="preserve">
+    <value>El Yo Corporal</value>
+  </data>
+  <data name="comelyoespiritual" xml:space="preserve">
+    <value>El Yo Espiritual</value>
+  </data>
+  <data name="comelyointelectual" xml:space="preserve">
+    <value>El Yo Intelectual</value>
+  </data>
+  <data name="comexploratuespiritualidad" xml:space="preserve">
+    <value>Explora tu espiritualidad interior a través de la naturaleza y encuentra la claridad para tus metas personales y profesionales.</value>
+  </data>
+  <data name="comnuestramision" xml:space="preserve">
+    <value>NUESTRA MISIÓN</value>
+  </data>
+  <data name="comnuestravision" xml:space="preserve">
+    <value>NUESTRA VISIÓN</value>
+  </data>
+  <data name="comporloquevivimos" xml:space="preserve">
+    <value>Por lo que vivimos</value>
+  </data>
+  <data name="comreconecta" xml:space="preserve">
+    <value>Reconecta con tu “Yo Corporal” y activa todas las fuerzas y capacidades de tu cuerpo.</value>
+  </data>
+  <data name="comserloslideres" xml:space="preserve">
+    <value>Ser los líderes en conectar la esencia de las personas con la madre naturaleza, el deporte y las artes.</value>
+  </data>
+  <data name="comtraerarmonia" xml:space="preserve">
+    <value>Traer armonía a cada hombre, mujer y niño que visite Wakana, abrazar la naturaleza, repartir felicidad, inspiración.</value>
+  </data>
+  <data name="comunidad" xml:space="preserve">
+    <value>Comunidad</value>
+  </data>
+  <data name="comwakanalakeesunlugar" xml:space="preserve">
+    <value>“Wakana Lake es un lugar de armonía, bienestar y actividades en el exterior, situado en el corazón de la naturaleza. Descubre...”</value>
+  </data>
+  <data name="cortijoandaluz" xml:space="preserve">
+    <value>Cortijo Andaluz</value>
+  </data>
+  <data name="cyclingdisfruta" xml:space="preserve">
+    <value>Disfruta del Corredor Verde Dos Bahías que va desde Los Barrios hasta Puerto Real con un total de 93 Km</value>
+  </data>
+  <data name="cyclingmountain" xml:space="preserve">
+    <value>Mountain bike (MTB)</value>
+  </data>
+  <data name="cyclingtodoslosniveles" xml:space="preserve">
+    <value>Todos los niveles</value>
+  </data>
+  <data name="dia" xml:space="preserve">
+    <value>DÍA</value>
+  </data>
+  <data name="encuentralaarmonia" xml:space="preserve">
+    <value>ENCUENTRA LA ARMONÍA</value>
+  </data>
+  <data name="equipo" xml:space="preserve">
+    <value>Equipo</value>
+  </data>
+  <data name="eventos" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="eventosevents" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="exploranuestroscampamentos" xml:space="preserve">
+    <value>EXPLORA NUESTROS CAMPAMENTOS</value>
+  </data>
+  <data name="explorarwakana" xml:space="preserve">
+    <value>EXPLORAR WAKANA</value>
+  </data>
+  <data name="facesactividades" xml:space="preserve">
+    <value>Actividades</value>
+  </data>
+  <data name="facesbienvenidos" xml:space="preserve">
+    <value>Bienvenidos a la Felicidad</value>
+  </data>
+  <data name="faceslago" xml:space="preserve">
+    <value>Lago</value>
+  </data>
+  <data name="facesrostros" xml:space="preserve">
+    <value>Rostros</value>
+  </data>
+  <data name="facesvideos" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="galeria" xml:space="preserve">
+    <value>Galería</value>
+  </data>
+  <data name="horsesaprenderas" xml:space="preserve">
+    <value>Aprenderás la técnica y manejo en ruta. Disfrutarás de la Naturaleza que ofrece Wakana Lake y sus alrededores.</value>
+  </data>
+  <data name="horsesgrupode5" xml:space="preserve">
+    <value>Grupo de 5 personas (máx).</value>
+  </data>
+  <data name="horsesiestuprimeravez" xml:space="preserve">
+    <value>Si es tu primera vez:</value>
+  </data>
+  <data name="horsespantalonlargo" xml:space="preserve">
+    <value>Pantalón largo y ﬂexible.</value>
+  </data>
+  <data name="horsesrequisitos" xml:space="preserve">
+    <value>REQUISITOS</value>
+  </data>
+  <data name="horsessitienesexp" xml:space="preserve">
+    <value>Si tienes experiencia:</value>
+  </data>
+  <data name="horsessolodejatellevar" xml:space="preserve">
+    <value>Sólo déjate llevar por el idílico paraje en el que nos encontramos.</value>
+  </data>
+  <data name="horseszapatosdedeporte" xml:space="preserve">
+    <value>Zapatos de deporte o bota de caña alta</value>
+  </data>
+  <data name="kayakdisfruta" xml:space="preserve">
+    <value>Disfruta de rutas por nuestro embalse y de toda la vida salvaje que nos ofrece</value>
+  </data>
+  <data name="kayakexpagua" xml:space="preserve">
+    <value />
+  </data>
+  <data name="kayaksinlimite" xml:space="preserve">
+    <value>Sin límite de edad</value>
+  </data>
+  <data name="kitecentrodedeportesacuaticos" xml:space="preserve">
+    <value>Centro de deportes acuáticos Gisela Pulido, 10 veces campeona del mundo de kite surf</value>
+  </data>
+  <data name="kitedescargarinfo" xml:space="preserve">
+    <value>DESCARGAR INFORMACIÓN</value>
+  </data>
+  <data name="kitedisfrutanavegando" xml:space="preserve">
+    <value>Disfruta navegando y aprovechando la fuerza del Levante de la zona</value>
+  </data>
+  <data name="kitegozadelasvistas" xml:space="preserve">
+    <value>Goza de las vistas privilegiadas de nuestro entorno a la vez que practicas deporte</value>
+  </data>
+  <data name="kitenavegaseguroennuestra" xml:space="preserve">
+    <value>Navega seguro en nuestra zona destinada a esta práctica.</value>
+  </data>
+  <data name="lamagiadewakana" xml:space="preserve">
+    <value>LA MAGIA DE WAKANA</value>
+  </data>
+  <data name="lugar" xml:space="preserve">
+    <value>Lugar</value>
+  </data>
+  <data name="mapa" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="mapdireccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="mapmapadewakana" xml:space="preserve">
+    <value>Mapa de Wakana Lake</value>
+  </data>
+  <data name="masinfo" xml:space="preserve">
+    <value>MAS INFORMACIÓN</value>
+  </data>
+  <data name="meealegre" xml:space="preserve">
+    <value>Alegre, optimista y soñador. Apasionado de la cultura y la naturaleza, enamorado de las aves y de la provincia en la que vivo. Técnico en información turística, monitor de medio ambiente y finalizando los estudios en Ciencias Ambientales. &lt;br/&gt;&lt;br/&gt; Mi vida ha girado desde muy pequeño entorno al deporte, la naturaleza y la historia. Actualmente muy ligado a la ornitología siendo uno de los socios fundadores del grupo local SEO Birdlife Cádiz. Sin mayor interés que mostrar a nuestros visitantes las bellezas y singularidades de este rincón, principio y fin de Europa, puerta entre el Atlántico y el Mediterráneo.</value>
+  </data>
+  <data name="meedptoact" xml:space="preserve">
+    <value>Dpto. de Actividades</value>
+  </data>
+  <data name="meedptodenaturaleza" xml:space="preserve">
+    <value>Dpto. de Naturaleza/Recepción</value>
+  </data>
+  <data name="meeentregandofelicidad" xml:space="preserve">
+    <value>Entregando felicidad cada día.</value>
+  </data>
+  <data name="meeginger" xml:space="preserve">
+    <value>Junto con Pitágoras y Jack, la dulce Ginger no permitirá que ningún ratón duerma bajo tú cama.</value>
+  </data>
+  <data name="meejuanfuncion" xml:space="preserve">
+    <value>Mi función en Wakana Lake es coordinar el departamento de actividades intentando con ello, transmitir valores a través del deporte.</value>
+  </data>
+  <data name="meejuanprimeraslineas" xml:space="preserve">
+    <value>Soy un amante del deporte, he practicado y practico a día de hoy varias disciplinas deportivas, alguna de ellas a nivel de competición.Soy un amante del deporte, he practicado y practico a día de hoy varias disciplinas deportivas, alguna de ellas a nivel de competición.</value>
+  </data>
+  <data name="meemoody" xml:space="preserve">
+    <value>Soy Moody, fiel compañera y tu guardiana en las noches de Wakana Lake.</value>
+  </data>
+  <data name="meewakanalakehe" xml:space="preserve">
+    <value>Wakana Lake Héroes</value>
+  </data>
+  <data name="mes" xml:space="preserve">
+    <value>MES</value>
+  </data>
+  <data name="mmeepitagoras" xml:space="preserve">
+    <value>Pitágoras y Jack, pequeños leones de Wakana Lake no permitirán que ningún ratón duerma bajo tú cama.</value>
+  </data>
+  <data name="ofertas" xml:space="preserve">
+    <value>OFERTAS</value>
+  </data>
+  <data name="ornitaguilaimp" xml:space="preserve">
+    <value>Águila imperial</value>
+  </data>
+  <data name="ornitaguilapescadora" xml:space="preserve">
+    <value>Águila pescadora</value>
+  </data>
+  <data name="ornitcadizeslaprovincia" xml:space="preserve">
+    <value>Cádiz es la provincia con mayor diversidad ornitológica de la península debido a su situación geográfica. Son varias especies destacadas las que nos visitan en Wakana Lake como por ejemplo:</value>
+  </data>
+  <data name="paddlecentrodedeportes" xml:space="preserve">
+    <value>Centro de deportes acuáticos Gisela Pulido, 10 veces campeona del mundo de kite surf</value>
+  </data>
+  <data name="paddledisfruta" xml:space="preserve">
+    <value>Disfruta del paisaje desde la visión que nos ofrece el remar de pie</value>
+  </data>
+  <data name="paddlesolooengrupos" xml:space="preserve">
+    <value>Sólo o en grupos</value>
+  </data>
+  <data name="paddletrabajaelequilibrio" xml:space="preserve">
+    <value>Trabaja el equilibrio</value>
+  </data>
+  <data name="reserva" xml:space="preserve">
+    <value>RESERVA</value>
+  </data>
+  <data name="sobrenosotros" xml:space="preserve">
+    <value>SOBRE NOSOTROS</value>
+  </data>
+  <data name="spartanracecampstitulo" xml:space="preserve">
+    <value>Spartan Race Camps</value>
+  </data>
+  <data name="summercampscampamentodeverano" xml:space="preserve">
+    <value>Campamentos de Verano</value>
+  </data>
+  <data name="summercampsfechas2017" xml:space="preserve">
+    <value>Fechas 2017</value>
+  </data>
+  <data name="summercampsmasinfo" xml:space="preserve">
+    <value>INFORMACIÓN</value>
+  </data>
+  <data name="tepeesprecios" xml:space="preserve">
+    <value>PRECIOS</value>
+  </data>
+  <data name="tepeestipis" xml:space="preserve">
+    <value>Tipis</value>
+  </data>
+  <data name="tipis" xml:space="preserve">
+    <value>Tipis</value>
+  </data>
+  <data name="tuhogarfueradetuhogar" xml:space="preserve">
+    <value>TU HOGAR FUERA DE TU HOGAR</value>
+  </data>
+  <data name="unveranodeposibilidades" xml:space="preserve">
+    <value>UN VERANO DE POSIBILDIADES</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>VIDEO</value>
+  </data>
+  <data name="visitaralojamientos" xml:space="preserve">
+    <value>VISITAR ALOJAMIENTOS</value>
+  </data>
+  <data name="yurtas" xml:space="preserve">
+    <value>Yurtas</value>
+  </data>
+  <data name="yurtasprecios" xml:space="preserve">
+    <value>PRECIOS</value>
+  </data>
+  <data name="yurtasyurtas" xml:space="preserve">
+    <value>Yurtas</value>
+  </data>
+  <data name="avisolegal" xml:space="preserve">
+    <value>AVISO LEGAL</value>
+  </data>
+  <data name="bookwakana" xml:space="preserve">
+    <value>BOOK WAKANA</value>
+  </data>
+  <data name="buhoreal" xml:space="preserve">
+    <value>Buho real</value>
+  </data>
+  <data name="condicionesgenerales" xml:space="preserve">
+    <value>CONDICIONES</value>
+  </data>
+  <data name="contactofooter" xml:space="preserve">
+    <value>CONTACTO</value>
+  </data>
+  <data name="florawakanalake" xml:space="preserve">
+    <value>Wakana Lake se encuentra dentro del Parque Natural de los Alcornocales, conocido como la última Selva Virgen del sur de Europa. Gracias a la pureza de nuestras aguas existe una colonia de nutrias bastante importante en nuestra zona. Junto con las nutrias, zorros y venados entre otros comparten este idílico paraje.</value>
+  </data>
+  <data name="localizacion" xml:space="preserve">
+    <value>LOCALIZACIÓN</value>
+  </data>
+  <data name="ornitmilanonegro" xml:space="preserve">
+    <value>Milano negro</value>
+  </data>
+  <data name="partnerscolabora" xml:space="preserve">
+    <value>COLABORA CON NOSOTROS</value>
+  </data>
+  <data name="partnersexplorar" xml:space="preserve">
+    <value>EXPLORAR ACTIVIDADES</value>
+  </data>
+  <data name="partnersnuestros" xml:space="preserve">
+    <value>Nuestros Colaboradores</value>
+  </data>
+  <data name="politicadecancelacion" xml:space="preserve">
+    <value>POLÍTICA DE CANCELACIÓN</value>
+  </data>
+  <data name="politicadereserva" xml:space="preserve">
+    <value>POLÍTICA DE RESERVA</value>
+  </data>
+  <data name="preguntasfrecuentes" xml:space="preserve">
+    <value>PREGUNTAS FRECUENTES</value>
+  </data>
+  <data name="bookingcancel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cancelpolelestable" xml:space="preserve">
+    <value>El establecimiento cargará el 100% de la primera noche al menos 10 días antes de la llegada.</value>
+  </data>
+  <data name="cancelpolsicancelas1" xml:space="preserve">
+    <value>Si cancelas o modiﬁcas la reserva hasta 10 días antes de la fecha de llegada, el establecimiento no efectuará cargos.</value>
+  </data>
+  <data name="cancelpolsicancelas2" xml:space="preserve">
+    <value>Si cancelas o modiﬁcas la reserva fuera de plazo (menos de 10 días antes de la llegada), el establecimiento cargará el 100% de la primera noche.</value>
+  </data>
+  <data name="cancelpolsinotepresentas" xml:space="preserve">
+    <value>Si no te presentas, el establecimiento cargará la estancia completa.</value>
+  </data>
+  <data name="contactconsultasgenerales" xml:space="preserve">
+    <value>Consultas Generales</value>
+  </data>
+  <data name="contactcontactanos" xml:space="preserve">
+    <value>CONTACTA CON NOSOTROS</value>
+  </data>
+  <data name="contactdireccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="contactempleos" xml:space="preserve">
+    <value>Empleos</value>
+  </data>
+  <data name="contactespaña" xml:space="preserve">
+    <value>España</value>
+  </data>
+  <data name="contactestasinteresado" xml:space="preserve">
+    <value>Estás interesado en colaborar con nosotros? - CONTÁCTANOS</value>
+  </data>
+  <data name="contacthablemos" xml:space="preserve">
+    <value>Hablemos</value>
+  </data>
+  <data name="contactmandanosemail" xml:space="preserve">
+    <value>Mándanos un e-mail</value>
+  </data>
+  <data name="contactnuestralocalizacion" xml:space="preserve">
+    <value>Nuestra Localización</value>
+  </data>
+  <data name="contacttelefono" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="experienciacontuequipo" xml:space="preserve">
+    <value>CON TU EQUIPO</value>
+  </data>
+  <data name="experienciacontufamilia" xml:space="preserve">
+    <value>CON TU FAMILIA</value>
+  </data>
+  <data name="experienciacontusamigos" xml:space="preserve">
+    <value>CON TUS AMIGOS</value>
+  </data>
+  <data name="experienciaexploraractividades" xml:space="preserve">
+    <value>EXPLORA LAS ACTIVIDADES</value>
+  </data>
+  <data name="experienciareserva" xml:space="preserve">
+    <value>RESERVA PARA TU EQUIPO</value>
+  </data>
+  <data name="experienciawakanat" xml:space="preserve">
+    <value>Experiencia Wakana</value>
+  </data>
+  <data name="faqabrilymayo" xml:space="preserve">
+    <value>· Abril y mayo - Fines de semana (de Viernes a Domingo) / 10:00 a 19:00 horas &lt;br/&gt;· Junio, julio y agosto - Todos los días / 10:00 a 19:00 horas&lt;br/&gt;· Septiembre y octubre - Fines de semana (de Viernes a Domingo) / 10:00 a 19:00 horas &lt;br/&gt;&lt;br/&gt;*Nota: Si es usted un grupo de más de 18 personas, podemos concretar ciertas actividades fuera de temporada.</value>
+  </data>
+  <data name="faqactividades" xml:space="preserve">
+    <value>Actividades</value>
+  </data>
+  <data name="faqalojamientost" xml:space="preserve">
+    <value>Alojamientos</value>
+  </data>
+  <data name="faqcuandosepueden" xml:space="preserve">
+    <value>¿Cuándo se pueden realizar las actividades?</value>
+  </data>
+  <data name="faqdisponemosdebaren" xml:space="preserve">
+    <value>“Disponemos de bar en nuestra zona chill-out junto al lago, en el que podrás tomarte las bebidas que quieras. Para aquellos clientes que van a pasar un agradable día en Wakana Lake sin pernoctación, contamos además con un servicio de barbacoas para su disfrute. En él se incluye un surtido variado de carne ibérica de la zona, la barbacoa de gas y su bombona; pudiendo disfrutar de ella en cualquier lugar al aire libre dentro de nuestras instalaciones. También disponemos de diferentes regímenes de comida para aquellos que pernocten en Wakana Lake. Tanto yurtas como tipis cuentan con desayuno incluido, pudiendo contratar a parte, si lo desea, el servicio de media pensión o pensión completa”.</value>
+  </data>
+  <data name="faqelpantanodecelemin" xml:space="preserve">
+    <value>El pantano del Celemín ocupa una superficie de 473 hectáreas y cuenta con una capacidad de 43 hectómetros cúbicos.</value>
+  </data>
+  <data name="faqennuestrocomplejosepuedellevar" xml:space="preserve">
+    <value>En nuestro complejo se puede llevar a cabo las siguientes actividades, algunas de las cuales necesitan la asistencia de monitor (*):&lt;br/&gt;&lt;br/&gt;· Arc Attack (tiro con arco) (*)&lt;br/&gt;· Canopy Park (Parque de tirolinas y paso de puentes) (*)&lt;br/&gt; · Spartan Trail&lt;br/&gt;· Paseos en kayak&lt;br/&gt;· Paseos en tabla de paddle-surf&lt;br/&gt;· Paseos en bicicleta&lt;br/&gt;· Rutas a caballo (*)</value>
+  </data>
+  <data name="faqesaptaparaelbaño" xml:space="preserve">
+    <value>¿Es apta para el baño el agua del pantano del Celemín?</value>
+  </data>
+  <data name="faqesmuygrandelpantano" xml:space="preserve">
+    <value>¿Es muy grande Wakana Lake?</value>
+  </data>
+  <data name="faqexisteunaedad" xml:space="preserve">
+    <value>¿Existe una edad, estatura, peso mínimos o alguna recomendación que deba saber para participar en las actividades?</value>
+  </data>
+  <data name="faqexisteunnumerominimomax" xml:space="preserve">
+    <value>¿Existe un número mínimo /máximo de participantes en cada actividad?</value>
+  </data>
+  <data name="faqhayunrestaurante" xml:space="preserve">
+    <value>¿Hay restaurante en Wakana Lake?</value>
+  </data>
+  <data name="faqinstalaciones" xml:space="preserve">
+    <value>Instalaciones</value>
+  </data>
+  <data name="faqmepuedoalojarenwakanalake" xml:space="preserve">
+    <value>¿Me puedo alojar en Wakana Lake? ¿Cuándo?</value>
+  </data>
+  <data name="faqnonoesposible" xml:space="preserve">
+    <value>No, no es posible. Se puede pernoctar en los diferentes alojamientos anteriormente citados.</value>
+  </data>
+  <data name="faqparapasar" xml:space="preserve">
+    <value>Para pasar la jornada en Wakana Lake es necesario abonar un canon de acceso de 5,00 Euros y firmar un documento de descargo de responsabilidades.</value>
+  </data>
+  <data name="faqporsupuesto" xml:space="preserve">
+    <value>Por supuesto. Disponemos de un total de 150 plazas en diferentes tipos de alojamiento: albergue (60 plazas), tipis (48 plazas) y yurtas (42 plazas). Nuestro calendario de apertura al público es:&lt;br/&gt;&lt;br/&gt;· Abril y mayo - Fines de semana (de Viernes a Domingo)&lt;br/&gt;· Junio, julio y agosto - Todos los días&lt;br/&gt;· Septiembre y octubre - Fines de semana (de Viernes a Domingo)&lt;br/&gt;&lt;br/&gt;*Nota: Si es usted un grupo de más de 18 personas, es posible la reserva de alojamiento fuera de temporada.</value>
+  </data>
+  <data name="faqqueact" xml:space="preserve">
+    <value>¿Qué actividades se pueden realizar en Wakana Lake?</value>
+  </data>
+  <data name="faqquees" xml:space="preserve">
+    <value>¿Qué es Wakana Lake?</value>
+  </data>
+  <data name="faqquextensiontienelepantano" xml:space="preserve">
+    <value>¿Qué extensión y capacidad tiene el pantano  (embalse) del Celemín?</value>
+  </data>
+  <data name="faqrequisitosarcattack" xml:space="preserve">
+    <value>&lt;u&gt;Requisitos:&lt;/u&gt;&lt;br/&gt;· Arc Attack --- Tener una estatura mínima de 1,40 m.&lt;br/&gt;· Canopy Park --- Tener una estatura mínima de 1,40 m. y un peso máximo de 120,00 kg.&lt;br/&gt;&lt;br/&gt;&lt;u&gt;Importante:&lt;/u&gt;&lt;br/&gt;· Es obligatorio el uso de calzado cerrado para la realización de las actividades.&lt;br/&gt;· Hay que tener en cuenta que la Spartan Race tiene piscinas de barro, por lo que tenga en cuenta que la ropa que use, se va a manchar.</value>
+  </data>
+  <data name="faqsepuedeacampar" xml:space="preserve">
+    <value>¿Se puede acampar con tienda o caravana / auto-caravana en Wakana Lake?</value>
+  </data>
+  <data name="faqsepuedeacceder" xml:space="preserve">
+    <value>¿Se puede acceder libremente a Wakana Lake?</value>
+  </data>
+  <data name="faqsitotalmente" xml:space="preserve">
+    <value>Sí, totalmente apta. Hemos realizado un completo análisis de las aguas del pantano que ha demostrado que son ideales para el baño.</value>
+  </data>
+  <data name="faqsoloenlaspartantrall" xml:space="preserve">
+    <value>Sólo en la Spartan Trail se exige un número mínimo de 18 participantes, con un máximo de participantes ilimitado (duración de la actividad: sujeta al número de participantes y su condición física).&lt;br/&gt;· Canopy Park --- mínimo: 1 / máximo: 25 (duración: 2 horas)&lt;br/&gt;· Kayaks --- mínimo: 1 / máximo: 28 + 1 monitor, cuando se solicite (duración: 1 hora)&lt;br/&gt;· Paddle-surf --- mínimo: 1 / máximo: 15 + 1 monitor, cuando se solicite (duración: 1 hora)&lt;br/&gt;· Arc Attack --- mínimo: 1 / máximo: 26&lt;br/&gt;· Bicicletas --- mínimo: 1 / máximo: 25</value>
+  </data>
+  <data name="faqtitulo" xml:space="preserve">
+    <value>Preguntas Frecuentes</value>
+  </data>
+  <data name="faqwakanalakecuentacasi20" xml:space="preserve">
+    <value>Wakana Lake cuenta con casi 20 hectáreas de superficie además del embalse. Dentro de las cuales podrá disfrutar de multitud de actividades.</value>
+  </data>
+  <data name="faqwakanalakeesuncomplejo" xml:space="preserve">
+    <value>Wakana Lake es un complejo de multiaventura en el medio natural, situado en pleno Parque Natural de Los Alcornocales, a orillas del pantano del Celemín.&lt;br/&gt;Wakana Lake es un lugar para compartir. Ideal para todo tipo de clientes, parejas que deseen relajarse, familias que buscan una experiencia diferente que complementen sus vacaciones o grupos de amigos o empresas que necesiten de un programa a su medida.</value>
+  </data>
+  <data name="gaarchery" xml:space="preserve">
+    <value>ARCHERY</value>
+  </data>
+  <data name="gabooknow" xml:space="preserve">
+    <value>BOOK NOW</value>
+  </data>
+  <data name="gacomm" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="gamacco" xml:space="preserve">
+    <value>Accomodation</value>
+  </data>
+  <data name="gamact" xml:space="preserve">
+    <value>Activities</value>
+  </data>
+  <data name="gamactiv" xml:space="preserve">
+    <value>Activities</value>
+  </data>
+  <data name="gamapof" xml:space="preserve">
+    <value>Map of Wakana</value>
+  </data>
+  <data name="gamcamping" xml:space="preserve">
+    <value>CAMPING</value>
+  </data>
+  <data name="gamcontact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="gamgeneral" xml:space="preserve">
+    <value>General Activities</value>
+  </data>
+  <data name="gamspecial" xml:space="preserve">
+    <value>Special Activities</value>
+  </data>
+  <data name="gamtheexp" xml:space="preserve">
+    <value>The Experience</value>
+  </data>
+  <data name="gaplace" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="gct" xml:space="preserve">
+    <value>Condiciones Generales</value>
+  </data>
+  <data name="gctexto" xml:space="preserve">
+    <value>•Es obligatorio presentar documento identiﬁcativo en vigor para alojarse en nuestro establecimiento (DNI, Pasaporte o Libro de Familia para los menores de 14 años).&lt;br/&gt;•Las actividades para grupos deberán concertarse con al menos quince días de antelación, por cuestiones organizativas.&lt;br/&gt;•Es obligatorio traer de casa todos los útiles de baño que necesite, tales como toallas, geles, pasta de dientes, etc.&lt;br/&gt;•Está prohibido introducir materias o sustancias explosivas, inﬂamables u otras que puedan causar daños o molestias al resto de clientes. Se prohíbe encender velas, lámparas de aceite o cualquier tipo de hoguera.&lt;br/&gt;•Está prohibido introducir animales sin autorización expresa de la empresa.&lt;br/&gt;•Los perros deben de ir atados y estar debidamente identiﬁcados con la documentación correspondiente en regla (cartilla de vacunaciones, seguro, u otros). Además, los perros grandes o considerados potencialmente peligrosos deben llevar bozal para pasear por las instalaciones.&lt;br/&gt;•La pérdida o robo de objetos  dentro de las instalaciones y alojamientos no será responsabilidad de Wakana Lake.&lt;br/&gt;•Si ciertas actividades no se pueden realizar o llevar a cabo debido a condiciones meteorológicas adversas, Wakana Lake estará exenta de responsabilidad.&lt;br/&gt;•La introducción de camping gas, comida o bebidas de cualquier tipo no se permite.&lt;br/&gt;•Wakana Lake es un lugar de descanso y relajación por lo que no está permitido hacer ruido a partir de las 23:00 en la zona del albergue y a partir de las 00:00 en la zona chill-out.&lt;br/&gt;•Si usted es fumador, ha de saber que no se permite fumar dentro del alojamiento. Rogamos, por favor, que dentro del parque natural, no descuide su cigarrillo bajo ningún concepto y nunca tire la colilla al suelo.&lt;br/&gt;•La empresa se reserva el derecho de añadir, actualizar, modiﬁcar y suprimir, en cualquier momento y sin previo aviso, las condiciones generales de venta, cualquier contenido, información y servicio.&lt;br/&gt;•La empresa se reserva el derecho de utilizar las fotografías y videos tomados dentro de las instalaciones de Wakana Lake para su comercialización.</value>
+  </data>
+  <data name="lnconsentimiento" xml:space="preserve">
+    <value>CONSENTIMIENTO Y REVOCACIÓN DEL USUARIO</value>
+  </data>
+  <data name="lnconsentimientotexto" xml:space="preserve">
+    <value>&lt;p&gt;A través de las casillas de marcación El usuario acepta nuestra política de privacidad y obtenemos &lt;/p&gt;
+                        &lt;p&gt;su consentimiento para el envío de comunicaciones informativas sobre nuestros servicios y &lt;/p&gt;
+                        &lt;p&gt;actividades así como para la contestación a las consultas formuladas por el usuario. Así mismo &lt;/p&gt;
+                        &lt;p&gt;podrá en cualquier momento revocar el consentimiento prestado para el envío de estas &lt;/p&gt;
+                        &lt;p&gt;comunicaciones electrónicas con fines de promoción y publicidad de nuestros productos, dirigiendo &lt;/p&gt;
+                        &lt;p&gt;un mail a la dirección info@wakanalake.com o  dirigiéndose a nuestro domicilio en los términos&lt;/p&gt;
+                        &lt;p&gt;definidos por WAKANA LAKE GLAMPING.&lt;/p&gt;
+
+                        &lt;p&gt;WAKANA LAKE GLAMPING quedará exonerado de responsabilidad en el caso de que la solicitud &lt;/p&gt;
+                        &lt;p&gt;de muestra o corrección de datos se realice desde la dirección de correo electrónico que usted nos &lt;/p&gt;
+                        &lt;p&gt;ha aportado a través de cualquiera de los formularios de la web, pues en ese caso presumirá que es &lt;/p&gt;
+                        &lt;p&gt;el usuario quién la realiza. &lt;/p&gt;</value>
+  </data>
+  <data name="lndatosdetrafico" xml:space="preserve">
+    <value>DATOS DE TRÁFICO</value>
+  </data>
+  <data name="lndatosdetraficotexto" xml:space="preserve">
+    <value>&lt;p&gt;Los datos de tráfico como nombre del proveedor de acceso, dirección IP, fecha y hora de acceso,&lt;/p&gt;
+                        &lt;p&gt;enlaces desde los que accede y cualquier otro información de naturaleza parecida o análoga que &lt;/p&gt;
+                        &lt;p&gt;pueda proporcionar en su navegación por el Sitio web, serán tratados de forma anónima y con la &lt;/p&gt;
+                        &lt;p&gt;única finalidad de realizar estadísticas de visitas de nuestro Sitio web.&lt;/p&gt;
+
+                        &lt;p&gt;Un método de recoger información complementaria de sus visitas a nuestro servicio,  es registrando &lt;/p&gt;
+                        &lt;p&gt;la dirección o protocolo IP de su equipo. Este protocolo IP es un número que automáticamente es&lt;/p&gt;
+                        &lt;p&gt;asignado a su sistema cada vez que usted navega. Cualquier página web a la que usted accede &lt;/p&gt;
+                        &lt;p&gt;detecta inmediatamente la presencia de su terminal por su dirección IP. Cuando usted accede a &lt;/p&gt;
+                        &lt;p&gt;nuestra página, su dirección IP queda automáticamente almacenada. Esta recogida tiene como única&lt;/p&gt;
+                        &lt;p&gt;función, la elaboración de una estadística de visitas a nuestra web que permita conocer el &lt;/p&gt;
+                        &lt;p&gt;funcionamiento de nuestro servicio y nos permita mejorarlo día a día. De acuerdo con la LSSI (Ley &lt;/p&gt;
+                        &lt;p&gt;de Servicios de la Sociedad de la Información) WAKANA LAKE GLAMPING guardará los &lt;/p&gt;
+                        &lt;p&gt;registros de navegación durante el plazo fijado legalmente (un año), desde el mismo momento en &lt;/p&gt;
+                        &lt;p&gt;que se produzca el desarrollo reglamentario de la citada normativa (según especificaciones del&lt;/p&gt;
+                        &lt;p&gt;Ministerio de Telecomunicaciones). &lt;/p&gt;</value>
+  </data>
+  <data name="lnejercicios" xml:space="preserve">
+    <value>EJERCICIO DE DERECHOS DE PROTECCIÓN DE DATOS</value>
+  </data>
+  <data name="lnejerciciostexto" xml:space="preserve">
+    <value>&lt;p&gt;El usuario tiene derecho a solicitar y obtener gratuitamente información sobre sus datos de carácter&lt;/p&gt;
+                        &lt;p&gt;personal sometidos a tratamiento, de su origen (que en nuestro caso serán siempre los formularios &lt;/p&gt;
+                        &lt;p&gt;situados en la web) y de las comunicaciones que puedan afectar a los mismos.&lt;/p&gt;
+
+                        &lt;p&gt;Los usuarios pueden dirigir una comunicación por escrito al domicilio social de WAKANA LAKE &lt;/p&gt;
+                        &lt;p&gt;GLAMPING presente en el AVISO LEGAL o a la dirección de correo electrónico &lt;/p&gt;
+                        &lt;p&gt;info@wakanalake.com incluyendo en ambos casos fotocopia de su DNI u otro documento &lt;/p&gt;
+                        &lt;p&gt;identificativo similar, para solicitar el ejercicio de los derechos de Acceso, Rectificación, &lt;/p&gt;
+                        &lt;p&gt;Cancelación y Oposición. &lt;/p&gt;</value>
+  </data>
+  <data name="lnformularios" xml:space="preserve">
+    <value>FORMULARIOS DE CONTACTO Y MEDIOS DE COMUNICACIÓN TRADICIONALES</value>
+  </data>
+  <data name="lnformulariostexto" xml:space="preserve">
+    <value>&lt;p&gt;Se permite al usuario el envío no cifrado de sus datos personales a través de formularios de &lt;/p&gt;
+                        &lt;p&gt;contacto de tipo estándar, y alojados en los servidores de WAKANA LAKE GLAMPING. &lt;/p&gt;
+                        &lt;p&gt;Tanto los datos recabados a través de la Web como los que nos facilite mediante enlaces al &lt;/p&gt;
+                        &lt;p&gt;correo electrónico y otros medios de comunicación indicados en la sección de contacto, &lt;/p&gt;
+                        &lt;p&gt;serán objeto de tratamiento automatizado e incorporados a los correspondientes ficheros de &lt;/p&gt;
+                        &lt;p&gt;los que WAKANA LAKE GLAMPING. es titular y que se encuentran debidamente Inscritos &lt;/p&gt;
+                        &lt;p&gt;en el Registro General de la Agencia Española de Protección de Datos. La finalidad del &lt;/p&gt;
+                        &lt;p&gt;tratamiento de los mismos será la de tramitar las consultas planteadas, envío de publicidad y &lt;/p&gt;
+                        &lt;p&gt;Boletín de noticias por medios electrónicos acerca de la empresa, sus actividades y &lt;/p&gt;
+                        &lt;p&gt;promociones y gestión de reservas.&lt;/p&gt;
+
+                        &lt;p&gt;Se informa que se gestionarán de forma automatizada para la administración, ampliación y &lt;/p&gt;
+                        &lt;p&gt;mejora de nuestros servicios así como para fines técnicos y comerciales sobre los servicios &lt;/p&gt;
+                        &lt;p&gt;ofrecidos. Serán conservados en los ficheros de nuestra empresa con el fin de realizar &lt;/p&gt;
+                        &lt;p&gt;seguimiento comercial y mantenerle informado (sobre los servicios y productos que le &lt;/p&gt;
+                        &lt;p&gt;puedan ser de su interés) por correo postal, telefónicamente o mediante otro cualquier medio &lt;/p&gt;
+                        &lt;p&gt;electrónico que nos haya usted facilitado. En todo caso, los datos recogidos y tratados son &lt;/p&gt;
+                        &lt;p&gt;únicamente los básicos para las finalidades señaladas anteriormente.&lt;/p&gt;
+
+                        &lt;p&gt;El Usuario es responsable de la veracidad de sus datos, comprometiéndose a no introducir &lt;/p&gt;
+                        &lt;p&gt;datos falsos y a proceder a la rectificación de los mismos si fuera necesario. El prestador &lt;/p&gt;
+                        &lt;p&gt;pone a disposición del Usuario todos los medios para que pueda proceder a la modificación &lt;/p&gt;
+                        &lt;p&gt;de sus datos mediante los formularios designados en nuestra web. El Usuario manifiesta que &lt;/p&gt;
+                        &lt;p&gt;cuando no introduce sus datos personales sino los de un tercero están autorizados por éste &lt;/p&gt;
+                        &lt;p&gt;para su introducción.&lt;/p&gt;
+
+                        &lt;p&gt;Los campos en los que figure un asterisco (*) son aquellos que requieren una &lt;/p&gt;
+                        &lt;p&gt;cumplimentación obligatoria. De no ser cubiertos la consecuencia consiste en la &lt;/p&gt;
+                        &lt;p&gt;imposibilidad de prestar el servicio que se pretende solicitar o la imposibilidad de enviar la&lt;/p&gt;
+                        &lt;p&gt;solicitud de información. &lt;/p&gt;</value>
+  </data>
+  <data name="lnmedidas" xml:space="preserve">
+    <value>MEDIDAS DE SEGURIDAD</value>
+  </data>
+  <data name="lnmedidastexto" xml:space="preserve">
+    <value>&lt;p&gt;Por último se le informa que se tienen adoptados los niveles de seguridad de protección de Datos&lt;/p&gt;
+                        &lt;p&gt;Personales legalmente requeridos por la normativa vigente, y se ha instalado todos los medios y&lt;/p&gt;
+                        &lt;p&gt;medidas técnicas y organizativas a su alcance para evitar la pérdida, mal uso, alteración, acceso no &lt;/p&gt;
+                        &lt;p&gt;autorizado y robo de los Datos Personales que se nos facilite . No obstante, el Usuario debe ser &lt;/p&gt;
+                        &lt;p&gt;consciente de que las medidas de seguridad en Internet no son inexpugnables.&lt;/p&gt;</value>
+  </data>
+  <data name="lnpoliticadeprivacidad" xml:space="preserve">
+    <value>POLÍTICA DE PRIVACIDAD.</value>
+  </data>
+  <data name="lnpoliticatexto" xml:space="preserve">
+    <value>&lt;p&gt;En el marco del cumplimiento de lo dispuesto en Art. 5 de la Ley Orgánica 15/1999, de 13 de&lt;/p&gt;
+                        &lt;p&gt;diciembre, sobre Protección de Datos de Carácter Personal (LOPD), WAKANA LAKE&lt;/p&gt;
+                        &lt;p&gt;GLAMPING  informa a los Usuarios de esta web mediante este documento del uso y tratamiento de &lt;/p&gt;
+                        &lt;p&gt;los datos personales que faciliten o vayan a facilitar en su navegación y de la política de protección&lt;/p&gt;
+                        &lt;p&gt;de datos que se aplicará sobre dichos datos. &lt;/p&gt;</value>
+  </data>
+  <data name="lnredes" xml:space="preserve">
+    <value>REDES SOCIALES</value>
+  </data>
+  <data name="lnredestexto" xml:space="preserve">
+    <value>&lt;p&gt;WAKANA LAKE GLAMPING cuenta con perfil en Facebook e Instagram) reconociéndose &lt;/p&gt;
+                        &lt;p&gt;en todos los casos responsable del tratamiento de los datos de sus seguidores, fans, &lt;/p&gt;
+                        &lt;p&gt;suscriptores, comentaristas y otros perfiles de usuarios (en adelante, Seguidores). El &lt;/p&gt;
+                        &lt;p&gt;tratamiento que WAKANA LAKE GLAMPING. llevará a cabo con dichos datos será, como &lt;/p&gt;
+                        &lt;p&gt;máximo, el que la red social permita a los perfiles corporativos. Así pues, WAKANA LAKE &lt;/p&gt;
+                        &lt;p&gt;GLAMPING podrá informar a sus seguidores por cualquier vía que la red social permita &lt;/p&gt;
+                        &lt;p&gt;sobre sus actividades, ofertas, así como prestar servicio personalizado de atención al cliente. &lt;/p&gt;
+                        &lt;p&gt;En ningún caso WAKANA LAKE GLAMPING extraerá datos de las redes sociales, a menos &lt;/p&gt;
+                        &lt;p&gt;que se obtuviera puntual y expresamente el consentimiento del usuario para ello. Cuando, &lt;/p&gt;
+                        &lt;p&gt;debido a la propia naturaleza de las redes sociales, el ejercicio efectivo de los derechos del &lt;/p&gt;
+                        &lt;p&gt;seguidor quede supeditado a la modificación del perfil personal de éste, WAKANA LAKE &lt;/p&gt;
+                        &lt;p&gt;GLAMPING le ayudará y aconsejará a tal fin en la medida de sus posibilidades.&lt;/p&gt;
+
+                        &lt;p&gt;Ciertos servicios prestados a través del Sitio Web pueden contener condiciones particulares &lt;/p&gt;
+                        &lt;p&gt;con previsiones específicas en materia de protección de datos personales. Se hace &lt;/p&gt;
+                        &lt;p&gt;indispensable su lectura y aceptación con carácter previo a la solicitud del servicio de que se &lt;/p&gt;
+                        &lt;p&gt;trate. &lt;/p&gt;</value>
+  </data>
+  <data name="rppuntos" xml:space="preserve">
+    <value>•Como garantía de reserva, solicitamos una tarjeta de crédito (titular, número, caducidad y cvc), número de cuenta o una transferencia bancaria (mandar justiﬁcante vía e-mail). &lt;/br&gt;
+•El importe de la reserva será de un 20%  para grupos en el momento de la conﬁrmación. &lt;/br&gt;
+•El importe total será abonado SIEMPRE antes de la fecha de llegada. &lt;/br&gt;
+•La estancia mínima será de dos noches para cualquier época del año, excepto puentes, semana santa y festivos en los que la estancia mínima será de 3 noches. &lt;/br&gt;
+•Los pagos efectuados con tarjeta, no serán devueltos por el mismo medio, una vez transcurrido un mes de la fecha de compra.&lt;/br&gt;</value>
+  </data>
+  <data name="rptitulo" xml:space="preserve">
+    <value>Política de Reserva</value>
+  </data>
+  <data name="pmact" xml:space="preserve">
+    <value>Actividades</value>
+  </data>
+  <data name="pmalojamientos" xml:space="preserve">
+    <value>Alojamientos</value>
+  </data>
+  <data name="pmandalusian" xml:space="preserve">
+    <value>Cortijo Andaluz</value>
+  </data>
+  <data name="pmavisolegal" xml:space="preserve">
+    <value>AVISO LEGAL</value>
+  </data>
+  <data name="pmbocalan" xml:space="preserve">
+    <value>Campamentos Bocalan</value>
+  </data>
+  <data name="pmcamps" xml:space="preserve">
+    <value>Campamentos</value>
+  </data>
+  <data name="pmcomunidad" xml:space="preserve">
+    <value>Comunidad</value>
+  </data>
+  <data name="pmcondicionesgenerales" xml:space="preserve">
+    <value>CONDICIONES GENERALES</value>
+  </data>
+  <data name="pmcontacto" xml:space="preserve">
+    <value>CONTACTO</value>
+  </data>
+  <data name="pmequipo" xml:space="preserve">
+    <value>Equipo</value>
+  </data>
+  <data name="pmevents" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="pmgaleria" xml:space="preserve">
+    <value>Galería</value>
+  </data>
+  <data name="pmlocalizacion" xml:space="preserve">
+    <value>LOCALIZACIÓN</value>
+  </data>
+  <data name="pmlugar" xml:space="preserve">
+    <value>Lugar</value>
+  </data>
+  <data name="pmmapa" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="pmnosotros" xml:space="preserve">
+    <value>Acerca de nosotros</value>
+  </data>
+  <data name="pmpartners" xml:space="preserve">
+    <value>Colaboradores</value>
+  </data>
+  <data name="pmpoliticacancelacion" xml:space="preserve">
+    <value>POLÍTICA DE CANCELACIÓN</value>
+  </data>
+  <data name="pmpoliticareserva" xml:space="preserve">
+    <value>POLÍTICA DE RESERVA</value>
+  </data>
+  <data name="pmpreguntas" xml:space="preserve">
+    <value>PREGUNTAS FRECUENTES</value>
+  </data>
+  <data name="pmreserva" xml:space="preserve">
+    <value>RESERVA</value>
+  </data>
+  <data name="pmschoolcamps" xml:space="preserve">
+    <value>Campamentos Escolares</value>
+  </data>
+  <data name="pmspartan" xml:space="preserve">
+    <value>Campamentos Spartan Race</value>
+  </data>
+  <data name="pmsummercamps" xml:space="preserve">
+    <value>Campamentos de Verano Wakana Lake</value>
+  </data>
+  <data name="pmtipis" xml:space="preserve">
+    <value>Tipis</value>
+  </data>
+  <data name="pmyurtas" xml:space="preserve">
+    <value>Yurtas</value>
+  </data>
+  <data name="cancelpoltitulo" xml:space="preserve">
+    <value>Política de Cancelación</value>
+  </data>
+</root>

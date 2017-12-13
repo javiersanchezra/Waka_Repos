@@ -103,7 +103,7 @@
 
 <body class="transparent-header">
     <form id="form1" runat="server">
-        <div class="pace-overlay"></div>
+        <%--<div class="pace-overlay"></div>
         <div id="masthead" class="navbar navbar-static-top swatch-black navbar-sticky" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -124,30 +124,32 @@
  
 
                         <li class="dropdown">
-                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown">Place</a>
+                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown"><asp:Literal runat="server" ID="Literal6" Text="<%$ Resources:Index, pmlugar  %>"></asp:Literal>
+</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="Faces.aspx">Gallery
+                                    <a href="Faces.aspx"><asp:Literal runat="server" ID="Literal1" Text="<%$ Resources:Index, pmgaleria %>"></asp:Literal>
+ery
                                                     
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="Map.aspx">Map
+                                    <a href="Map.aspx"><asp:Literal runat="server" ID="Literal2" Text="<%$ Resources:Index,pmmapa %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
                                 <li class="dropdown-submenu">
-                                    <a tabindex="-1" href="#">Community</a>
-
-
+                                    <a tabindex="-1" href="#"><asp:Literal runat="server" ID="Literal3" Text="<%$ Resources:Index, pmcomunidad %>"></asp:Literal>
+</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="Community.aspx">About Us</a></li>
-                                        <li><a href="Meetthecommunity.aspx">Team</a></li>
+                                        <li><a href="Community.aspx"><asp:Literal runat="server" ID="Literal4" Text="<%$ Resources:Index, pmnosotros %>"></asp:Literal>
+</a></li>
+                                        <li><a href="Meetthecommunity.aspx"><asp:Literal runat="server" ID="Literal5" Text="<%$ Resources:Index, pmequipo %>"></asp:Literal>
+</a></li>
                                     </ul>
 
-
-
                                 </li>
 
 
@@ -155,20 +157,24 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accommodation</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><asp:Literal runat="server" ID="Literal7" Text="<%$ Resources:Index, pmalojamientos %>"></asp:Literal>
+</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="Yurtas.aspx">Yurts
+                                    <a href="Yurtas.aspx"<asp:Literal runat="server" ID="Literal8" Text="<%$ Resources:Index, pmyurtas %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Andalusian.aspx">Andalusian Cortijo
+                                    <a href="Andalusian.aspx"><asp:Literal runat="server" ID="Literal9" Text="<%$ Resources:Index, pmandalusian %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Tepees.aspx">Tepees
+                                    <a href="Tepees.aspx"><asp:Literal runat="server" ID="Literal10" Text="<%$ Resources:Index, pmtipis %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
@@ -179,25 +185,30 @@
 
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Camps</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><asp:Literal runat="server" ID="Literal11" Text="<%$ Resources:Index, pmcamps %>"></asp:Literal>
+</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="Camps.aspx">School Camps
+                                    <a href="Camps.aspx"><asp:Literal runat="server" ID="Literal12" Text="<%$ Resources:Index, pmschoolcamps %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="SummerCamps.aspx">Wakana Lake Summers Camps
+                                    <a href="SummerCamps.aspx"><asp:Literal runat="server" ID="Literal13" Text="<%$ Resources:Index, pmsummercamps %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="SpartanCamps.aspx">Spartan Race Camps
+                                    <a href="SpartanCamps.aspx"><asp:Literal runat="server" ID="Literal14" Text="<%$ Resources:Index, pmspartan %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
                                   <li>
-                                    <a href="BocalanCamps.aspx">Bocalan Camps
+                                    <a href="BocalanCamps.aspx"><asp:Literal runat="server" ID="Literal15" Text="<%$ Resources:Index, pmbocalan %>"></asp:Literal>
+
                                                     
                                     </a>
                                 </li>
@@ -205,15 +216,18 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="Activities.aspx">Activities</a>
+                            <a href="Activities.aspx"><asp:Literal runat="server" ID="Literal16" Text="<%$ Resources:Index, pmact %>"></asp:Literal>
+</a>
 
                         </li>
                         <li class="dropdown">
-                            <a href="Events.aspx">Events</a>
+                            <a href="Events.aspx"><asp:Literal runat="server" ID="Literal17" Text="<%$ Resources:Index, pmevents %>"></asp:Literal>
+</a>
                         </li>
 
                         <li class="dropdown">
-                            <a href="Partners.aspx">Partners</a>
+                            <a href="Partners.aspx"><asp:Literal runat="server" ID="Literal18" Text="<%$ Resources:Index, pmpartners %>"></asp:Literal>
+</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" onclick="CambiarEspanol();return false;" style="font-size: 30px;">
@@ -221,7 +235,8 @@
 
                         </li>
                            <li class="dropdown">
-                             <a href="#" onclick="ShowBooking();return false;" ">BOOKING</a>
+                             <a href="#" onclick="ShowBooking();return false;" "><asp:Literal runat="server" ID="Literal19" Text="<%$ Resources:Index, pmreserva %>"></asp:Literal>
+</a>
                            
                         </li>
                     </ul>
@@ -233,7 +248,7 @@
 
 
 
-
+--%>
 
         <div id="content">
             <article>
@@ -318,26 +333,37 @@
                                 <div class="row">
 
                                     <div class="col-md-2" style="padding-left: 0px; padding-right: 0px;">
-                                        <center><a class="linksub"  href="LegalNotice.aspx" style=" color:white; ">LEGAL NOTICE</a></br> <a class="linksub"  href="GeneralConditions.aspx" style=" color:white; ">GENERAL CONDITIONS</a></br><a class="linksub"  href="ReservationPolicy.aspx" style=" color:white; ">RESERVATION POLICY</a></br><a class="linksub"  href="CancelationPolicy.aspx" style=" color:white; ">CANCELATION POLICY</a>
+                                        <center><a class="linksub"  href="LegalNotice.aspx" style=" color:white; ">
+                                            <asp:Literal runat="server" ID="Literal20" Text="<%$ Resources:Index, pmavisolegal %>"></asp:Literal>
+
+                                                </a></br> <a class="linksub"  href="GeneralConditions.aspx" style=" color:white; ">
+                                                    <asp:Literal runat="server" ID="Literal21" Text="<%$ Resources:Index, pmcondicionesgenerales %>"></asp:Literal>
+                                                        </a></br><a class="linksub"  href="ReservationPolicy.aspx" style=" color:white; ">
+                                                                <asp:Literal runat="server" ID="Literal22" Text="<%$ Resources:Index, pmpoliticareserva %>"></asp:Literal>
+                                                            </a></br><a class="linksub"  href="CancelationPolicy.aspx" style=" color:white; "><asp:Literal runat="server" ID="Literal23" Text="<%$ Resources:Index, pmpoliticacancelacion %>"></asp:Literal>
+                                                                    </a>
                      </center>
                                         </br>
                                     </div>
 
                                     <div class="col-md-2">
-                                        <center> <a  class="linksub" href="FAQ.aspx" style=" color:white; ">FAQ</a>
+                                        <center> <a  class="linksub" href="FAQ.aspx" style=" color:white; "><asp:Literal runat="server" ID="Literal24" Text="<%$ Resources:Index, pmpreguntas %>"></asp:Literal>
+</a>
                        </center>
                                         </br>
                                     </div>
                                     <div class="col-md-4" style="color: white; text-align: left;">
                                         <center>
-                                        <a class="linksub" href="Map.aspx" style="color:white;  ">LOCATION</a></br></br>
+                                        <a class="linksub" href="Map.aspx" style="color:white;  "><asp:Literal runat="server" ID="Literal25" Text="<%$ Resources:Index, pmlocalizacion %>"></asp:Literal>
+</a></br></br>
                                             <a href="https://www.google.com.mx/maps/place/WAKANA+LAKE/@36.31006,-5.7429637,21z/data=!4m5!3m4!1s0x0:0x1925801980d6b5aa!8m2!3d36.3100875!4d-5.7428419"><span class="fa fa-map-marker " style="margin-right: 10px;"></span>Ctra. A 2226 Benalup - Los Barrios </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;km 6,5, C.P. 11190 Benalup - Casas Viejas, Cádiz</br>Lat,Long: 36.3097393,-5.7433607</a>
                                         </center>
                                         </br>
                                     </div>
                                     <div class="col-md-4" style="color: white; text-align: left;">
                                         <center>
-                                        <a class="linksub" href="Contact.aspx" >CONTACT</a></br></br>
+                                        <a class="linksub" href="Contact.aspx" ><asp:Literal runat="server" ID="Literal26" Text="<%$ Resources:Index, pmcontacto %>"></asp:Literal>
+</a></br></br>
                                           <span class="fa fa-phone  " style="margin-right: 10px;"></span>+34 687 929459 </br>
                                         <span class="fa fa-envelope-o " style="margin-right: 10px;"></span>info@wakanalake.com</br>
                        

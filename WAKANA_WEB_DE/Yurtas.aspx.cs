@@ -21,8 +21,98 @@ namespace WAKANA_WEB_DE
             //ON PAGE LOAD, LOADS IMAGES
             LoadImages();
 
+            //IDIOMA
+            if (!IsPostBack)
+            {
+                if (Session["lenguaje"] != null)
+                {
+                    ImageButton1.ImageUrl = SetCulInPost(Session["lenguaje"].ToString());
+                    Session["flag"] = 1;
+                }
+                else
+                {
+                    ImageButton1.ImageUrl = "~/assets/images/England.jpg";
+                    Session["lenguaje"] = "es-mx";
+                    Session["flag"] = 1;
+                }
+            }
+
+            if (Convert.ToInt16(Session["flag"]) == 1)
+            {
+                if (Session["lenguaje"] != null)
+                {
+                    ImageButton1.ImageUrl = SetCulInPost(Session["lenguaje"].ToString());
+                }
+            }
+
         }
 
+        public string SetCulInPost(string cul)
+        {
+            if (cul == "es-mx")
+            {
+                return "~/assets/images/England.jpg";
+            }
+            if (cul == "en-US")
+            {
+                return "~/assets/images/spain.jpg";
+            }
+
+            return "";
+        }
+
+        public string GetURL()
+        {
+            var url = ImageButton1.ImageUrl.ToString();
+            if (url == "~/assets/images/England.jpg")
+            {
+                return "en-US";
+            }
+            else
+            {
+                return "es-mx";
+            }
+        }
+
+        public static string cul;
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            cul = GetURL();
+            Session["lenguaje"] = cul;
+            if (cul != null)
+            {
+                Culture = cul;
+                UICulture = cul;
+                InitializeCulture();
+                Response.Redirect("Yurtas.aspx", false);
+            }
+        }
+
+        protected override void InitializeCulture()
+        {
+            base.InitializeCulture();
+
+            if (cul == null)
+            {
+                if (Session["lenguaje"] != null)
+                {
+                    Culture = Session["lenguaje"].ToString();
+                    UICulture = Session["lenguaje"].ToString();
+                }
+                else
+                {
+                    Culture = "es-mx";
+                    UICulture = "es-mx";
+
+                }
+            }
+
+            if (cul != null)
+            {
+                Culture = cul;
+                UICulture = cul;
+            }
+        }
 
         private void LoadImages()
         {
@@ -79,5 +169,7 @@ namespace WAKANA_WEB_DE
             //SETS ALL THE SERVER SIDE GENERATED CODE ON THE FRONT END, TO CREATE THE GALLERY ELEMENTS
             this.GalleryPlaceHolder.Text = str;
         }
+
+        
     }
 }

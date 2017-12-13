@@ -86,9 +86,6 @@
             booking.Show();
         }
 
-
-
-
         function ShowContactMod() {
             ContactMod.Show();
         }
@@ -101,10 +98,7 @@
 </head>
 <body class="transparent-header">
     <form runat="server">
-
         <div class="pace-overlay"></div>
-
-
 
         <div id="masthead" class="navbar navbar-static-top swatch-black navbar-sticky" role="banner">
             <div class="container">
@@ -114,7 +108,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="Default.aspx" class="navbar-brand" style="width: 250px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                    <a href="Default.aspx" class="navbar-brand" style="width: 200px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
                         <img src="../assets/images/logobar.png" alt="Wakana Lake" />
                     </a>
                 </div>
@@ -128,109 +122,80 @@
                         </li>--%>
 
                         <li class="dropdown">
-                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown" >Place</a>
+                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal1" Text="<%$ Resources:Index, lugar %>"></asp:Literal></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="Faces.aspx">Gallery
-                                                    
+                                    <a href="Faces.aspx"><asp:Literal runat="server" ID="Literal2" Text="<%$ Resources:Index, galeria %>"></asp:Literal>         
                                     </a>
                                 </li>
-                      
                                 <li>
-                                    <a href="Map.aspx">Map
+                                    <a href="Map.aspx"><asp:Literal runat="server" ID="Literal3" Text="<%$ Resources:Index, mapa %>"></asp:Literal>
                                                     
                                     </a>
                                 </li>
                                 <li class="dropdown-submenu">
-                                    <a tabindex="-1" href="#">Community</a>
-
-
+                                    <a tabindex="-1" href="#"><asp:Literal runat="server" ID="Literal4" Text="<%$ Resources:Index, comunidad %>"></asp:Literal></a>
                                     <ul class="dropdown-menu">
-                                      <li><a  href="Community.aspx">About Us</a></li>
-                                        <li><a  href="Meetthecommunity.aspx">Team</a></li>
+                                      <li><a  href="Community.aspx"><asp:Literal runat="server" ID="Literal5" Text="<%$ Resources:Index, acercadenos %>"></asp:Literal></a></li>
+                                        <li><a  href="Meetthecommunity.aspx"><asp:Literal runat="server" ID="Literal6" Text="<%$ Resources:Index, equipo %>"></asp:Literal></a></li>
                                     </ul>
-
-
-
                                 </li>
-
-
                             </ul>
                         </li>
-
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Accommodation</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal7" Text="<%$ Resources:Index, alojamientos %>"></asp:Literal></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="Yurtas.aspx">Yurts
-                                                    
+                                    <a href="Yurtas.aspx"><asp:Literal runat="server" ID="Literal8" Text="<%$ Resources:Index, yurtas %>"></asp:Literal>          
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Andalusian.aspx">Andalusian Cortijo
-                                                    
+                                    <a href="Andalusian.aspx"><asp:Literal runat="server" ID="Literal9" Text="<%$ Resources:Index, cortijoandaluz %>"></asp:Literal>   
                                     </a>
                                 </li>
                                  <li>
-                                    <a href="Tepees.aspx">Tepees
-                                                    
+                                    <a href="Tepees.aspx"><asp:Literal runat="server" ID="Literal10" Text="<%$ Resources:Index, tipis %>"></asp:Literal>          
                                     </a>
                                 </li>
-
-
                             </ul>
                         </li>
-
-                     
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Camps</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal11" Text="<%$ Resources:Index, campamentos %>"></asp:Literal></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="Camps.aspx">School Camps
-                                                    
+                                    <a href="Camps.aspx"><asp:Literal runat="server" ID="Literal12" Text="<%$ Resources:Index, campamentosescolares %>"></asp:Literal>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="SummerCamps.aspx">Wakana Lake Summers Camps
-                                                    
+                                    <a href="SummerCamps.aspx"><asp:Literal runat="server" ID="Literal13" Text="<%$ Resources:Index, campamentosveranowakana %>"></asp:Literal>     
                                     </a>
                                 </li>
                                  <li>
-                                    <a href="SpartanCamps.aspx">Spartan Race Camps
-                                                    
+                                    <a href="SpartanCamps.aspx"><asp:Literal runat="server" ID="Literal14" Text="<%$ Resources:Index, campamentosspartanrace %>"></asp:Literal>
                                     </a>
                                 </li>
                                   <li>
-                                    <a href="BocalanCamps.aspx">Bocalan Camps
-                                                    
+                                    <a href="BocalanCamps.aspx"><asp:Literal runat="server" ID="Literal15" Text="<%$ Resources:Index, campamentosbocalan %>"></asp:Literal>         
                                     </a>
                                 </li>
-
                             </ul>
                         </li>
-
                           <li class="dropdown">
-                            <a href="Activities.aspx" >Activities</a>
-                            
+                            <a href="Activities.aspx" ><asp:Literal runat="server" ID="Literal16" Text="<%$ Resources:Index, actividades %>"></asp:Literal></a>
                         </li>
                         <li class="dropdown">
-                            <a href="Events.aspx" >Events</a>
+                            <a href="Events.aspx" ><asp:Literal runat="server" ID="Literal17" Text="<%$ Resources:Index, eventos %>"></asp:Literal></a>
                         </li>
-                      
                            <li class="dropdown">
-                            <a href="Partners.aspx" >Partners</a>
+                            <a href="Partners.aspx" ><asp:Literal runat="server" ID="Literal18" Text="<%$ Resources:Index, colaboradores %>"></asp:Literal></a>
                         </li>
-                          <li class="dropdown">
-                             <a href="/es/Default.aspx"  style=" font-size:30px;  "><img style="padding-bottom:10px" width="34px" height="20px" src="assets/images/spain.jpg"></img></a>
-                           
+                          <li class="dropdown lenguajediv">  <%--ELEGIR IDIOMA--%>
+                              <asp:ImageButton CssClass="imagenl" ID="ImageButton1" runat="server" Height="20px" ImageUrl="~/assets/images/england.jpg" OnClick="ImageButton1_Click" Width="34px" />
                         </li>
                         <li class="dropdown">
-                             <a href="#" onclick="ShowBooking();return false;" ">BOOKING</a>
-                           
+                             <a href="#" onclick="ShowBooking();return false;" "><asp:Literal runat="server" ID="Literal19" Text="<%$ Resources:Index, reserva %>"></asp:Literal></a>
                         </li>
-
                     </ul>
-
                 </nav>
             </div>
         </div>
@@ -261,9 +226,7 @@
 
                     <!-- the ID here will be used in the JavaScript below to initialize the slider -->
                     <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display: none">
-
                         <ul>
-
                             <!-- MINIMUM SLIDE STRUCTURE -->
                             <!-- SLIDE  -->
                             <li data-index="rs-1599" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="30" data-thumb="../../assets/images/fitness-60x60.jpg" data-rotate="0" data-saveperformance="off" data-title="HTML5 Video" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
@@ -324,14 +287,8 @@
                                     data-paddingbottom="[20,10,10,10]"
                                     data-paddingleft="[10,0,0,0]"
                                     style="z-index: 19; white-space: nowrap; text-transform: left; font-size: 5vw; font-weight: 100; font-family: 'Josefin Sans';">
-                                    THE ADVENTURE STARTS HERE
+                                    <asp:Literal runat="server" ID="Literal20" Text="<%$ Resources:Index, aventuracomienza %>"></asp:Literal>
                                 </div>
-
-
-
-
-
-
 
                                 <div class="tp-caption Newspaper-Button rev-btn"
                                     id="slide-1599-layer-5"
@@ -343,12 +300,12 @@
                                     data-type="button"
                                     data-actions='[{
  
-        "event": "click", 
-        "action": "simplelink", 
-        "target": "_self", 
-        "url": "Events.aspx"
+                                        "event": "click", 
+                                        "action": "simplelink", 
+                                        "target": "_self", 
+                                        "url": "Events.aspx"
  
-    }]'
+                                    }]'
                                     data-responsive_offset="on"
                                     data-responsive="off"
                                     data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
@@ -357,13 +314,9 @@
                                     data-paddingright="[10,10,10,10]"
                                     data-paddingbottom="[10,10,10,10]"
                                     data-paddingleft="[10,10,10,10]"
-                                    style="z-index: 198; width: 152px; text-align: center; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; ">
-                                    <a href="Events.aspx" style="position: relative; z-index: 150; color: white;">PROMOTIONS</a>
+                                    style="z-index: 198; width: 208px; text-align: center; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; ">
+                                    <a href="Events.aspx" style="position: relative; z-index: 150; color: white;"><asp:Literal runat="server" ID="Literal21" Text="<%$ Resources:Index, ofertas %>"></asp:Literal></a>
                                 </div>
-
-
-
-
 
                                 <a href="#" style="color: white;" onclick="ShowYouTube();return false;">
                                     <div class="tp-caption Newspaper-Button"
@@ -382,16 +335,11 @@
                                         data-paddingright="[10,10,10,10]"
                                         data-paddingbottom="[10,10,10,10]"
                                         data-paddingleft="[10,10,10,10]"
-                                        style="height: 39px; z-index: 199; white-space: nowrap; outline: none; box-shadow: none; box-sizing: border-box; cursor: pointer; font-family: Quicksand; visibility: inherit; transition: none; text-align: center !important; line-height: 0px; margin: 0px; letter-spacing: 2px; font-size: 13px; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px; color: black; background-color: white; border-radius: 0px;">
+                                        style="width:208px;height: 39px; z-index: 199; white-space: nowrap; outline: none; box-shadow: none; box-sizing: border-box; cursor: pointer; font-family: Quicksand; visibility: inherit; transition: none; text-align: center !important; line-height: 0px; margin: 0px; letter-spacing: 2px; font-size: 13px; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px; color: black; background-color: white; border-radius: 0px;">
                                         <img src="../img/play-button.png" style="width: 25px; height: 25px;" />
-                                        PLAY VIDEO
+                                        <asp:Literal runat="server" ID="Literal22" Text="<%$ Resources:Index, video %>"></asp:Literal>
                                     </div>
                                 </a>
-
-
-
-
-
                             </li>
 
                             <li data-index="rs-1562" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="30" data-thumb="../../assets/images/fitness-60x60.jpg" data-rotate="0" data-saveperformance="off" data-title="HTML5 Video" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
@@ -444,10 +392,8 @@
                                     data-paddingbottom="[20,10,10,10]"
                                     data-paddingleft="[10,0,0,0]"
                                     style="z-index: 19; white-space: nowrap; text-transform: left; font-size: 5vw; font-weight: 100; font-family: 'Josefin Sans';">
-                                    A SUMMER OF POSSIBILITIES 
+                                    <asp:Literal runat="server" ID="Literal23" Text="<%$ Resources:Index, unveranodeposibilidades %>"></asp:Literal>
                                 </div>
-
-
 
                                 <div class="tp-caption Newspaper-Button rev-btn "
                                     id="slide-1562-layer-4"
@@ -459,12 +405,12 @@
                                     data-type="button"
                                     data-actions='[{
  
-        "event": "click", 
-        "action": "simplelink", 
-        "target": "_self", 
-        "url": "Camps.aspx"
+                                        "event": "click", 
+                                        "action": "simplelink", 
+                                        "target": "_self", 
+                                        "url": "Camps.aspx"
  
-    }]'
+                                    }]'
                                     data-responsive_offset="on"
                                     data-responsive="off"
                                     data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
@@ -474,9 +420,8 @@
                                     data-paddingbottom="[10,10,10,10]"
                                     data-paddingleft="[10,10,10,10]"
                                     style="z-index: 108; font-family:'Josefin Sans'; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; ">
-                                    EXPLORE OUR CAMPS
+                                    <asp:Literal runat="server" ID="Literal24" Text="<%$ Resources:Index, exploranuestroscampamentos %>"></asp:Literal>
                                 </div>
-
 
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption NotGeneric-Icon   tp-resizeme"
@@ -551,10 +496,8 @@
                                     data-paddingbottom="[20,10,10,10]"
                                     data-paddingleft="[10,0,0,0]"
                                     style="z-index: 19; white-space: nowrap; text-transform: left; font-size: 5vw; font-weight: 100; font-family: 'Josefin Sans';">
-                                    WHERE HARMONY FINDS YOU
+                                    <asp:Literal runat="server" ID="Literal25" Text="<%$ Resources:Index, encuentralaarmonia %>"></asp:Literal>
                                 </div>
-
-
 
                                 <div class="tp-caption Newspaper-Button rev-btn "
                                     id="slide-1560-layer-4"
@@ -566,12 +509,12 @@
                                     data-type="button"
                                     data-actions='[{
  
-        "event": "click", 
-        "action": "simplelink", 
-        "target": "_self", 
-        "url": "Community.aspx"
+                                        "event": "click", 
+                                        "action": "simplelink", 
+                                        "target": "_self", 
+                                        "url": "Community.aspx"
  
-    }]'
+                                    }]'
                                     data-responsive_offset="on"
                                     data-responsive="off"
                                     data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
@@ -581,9 +524,8 @@
                                     data-paddingbottom="[10,10,10,10]"
                                     data-paddingleft="[10,10,10,10]"
                                     style="z-index: 108;  font-family:'Josefin Sans'; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; ">
-                                    ABOUT US
+                                    <asp:Literal runat="server" ID="Literal26" Text="<%$ Resources:Index, sobrenosotros %>"></asp:Literal>
                                 </div>
-
 
 
                                 <!-- LAYER NR. 4 -->
@@ -606,25 +548,7 @@
                                     <i class="pe-7s-ball"></i>
                                 </div>
 
-
                             </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                             <li data-index="rs-1561" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="30" data-thumb="../../assets/images/fitness-60x60.jpg" data-rotate="0" data-saveperformance="off" data-title="HTML5 Video" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                 <!-- MAIN IMAGE -->
@@ -663,8 +587,7 @@
                                     data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
                                     <%--  data-fontsize="['60']"--%>
                                     data-lineheight="['145']"
-                                    <%--    data-width="['auto']"
-                            data-height="['auto']"--%>
+                                    <%--    data-width="['auto']" data-height="['auto']"--%>
                                     data-whitespace="nowrap"
                                     data-type="text"
                                     data-responsive_offset="on"
@@ -675,10 +598,8 @@
                                     data-paddingbottom="[20,10,10,10]"
                                     data-paddingleft="[10,0,0,0]"
                                     style="z-index: 19; white-space: nowrap; text-transform: left; font-size: 5vw; font-weight: 100; font-family: 'Josefin Sans';">
-                                    YOUR HOME AWAY FROM HOME
+                                    <asp:Literal runat="server" ID="Literal27" Text="<%$ Resources:Index, tuhogarfueradetuhogar %>"></asp:Literal>
                                 </div>
-
-
 
                                 <div class="tp-caption Newspaper-Button rev-btn "
                                     id="slide-1561-layer-4"
@@ -690,12 +611,12 @@
                                     data-type="button"
                                     data-actions='[{
  
-        "event": "click", 
-        "action": "simplelink", 
-        "target": "_self", 
-        "url": "Accommodation.aspx"
+                                        "event": "click", 
+                                        "action": "simplelink", 
+                                        "target": "_self", 
+                                        "url": "Accommodation.aspx"
  
-    }]'
+                                    }]'
                                     data-responsive_offset="on"
                                     data-responsive="off"
                                     data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
@@ -705,9 +626,8 @@
                                     data-paddingbottom="[10,10,10,10]"
                                     data-paddingleft="[10,10,10,10]"
                                     style="z-index: 108;  font-family:'Josefin Sans'; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; ">
-                                    VISIT ACCOMMODATION
+                                    <asp:Literal runat="server" ID="Literal28" Text="<%$ Resources:Index, visitaralojamientos %>"></asp:Literal>
                                 </div>
-
 
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption NotGeneric-Icon   tp-resizeme"
@@ -728,15 +648,7 @@
                                     style="z-index: 21; white-space: nowrap; text-transform: left; cursor: default;">
                                     <i class="pe-7s-ball"></i>
                                 </div>
-
-
                             </li>
-
-
-
-
-
-
 
                             <li data-index="rs-1563" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="30" data-thumb="../../assets/images/fitness-60x60.jpg" data-rotate="0" data-saveperformance="off" data-title="HTML5 Video" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                 <!-- MAIN IMAGE -->
@@ -788,10 +700,8 @@
                                     data-paddingbottom="[20,10,10,10]"
                                     data-paddingleft="[10,0,0,0]"
                                     style="z-index: 19; white-space: nowrap; text-transform: left; font-size: 5vw; font-weight: 100; font-family: 'Josefin Sans';">
-                                    THE MAGIC OF WAKANA
+                                    <asp:Literal runat="server" ID="Literal29" Text="<%$ Resources:Index, lamagiadewakana %>"></asp:Literal>
                                 </div>
-
-
 
                                 <div class="tp-caption Newspaper-Button rev-btn "
                                     id="slide-1563-layer-4"
@@ -803,12 +713,12 @@
                                     data-type="button"
                                     data-actions='[{
  
-        "event": "click", 
-        "action": "simplelink", 
-        "target": "_self", 
-        "url": "Place.aspx"
+                                        "event": "click", 
+                                        "action": "simplelink", 
+                                        "target": "_self", 
+                                        "url": "Place.aspx"
  
-    }]'
+                                    }]'
                                     data-responsive_offset="on"
                                     data-responsive="off"
                                     data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
@@ -818,9 +728,8 @@
                                     data-paddingbottom="[10,10,10,10]"
                                     data-paddingleft="[10,10,10,10]"
                                     style="z-index: 108;  font-family:'Josefin Sans'; white-space: nowrap; text-transform: left; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer; ">
-                                    EXPLORE WAKANA
+                                    <asp:Literal runat="server" ID="Literal30" Text="<%$ Resources:Index, explorarwakana %>"></asp:Literal>
                                 </div>
-
 
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption NotGeneric-Icon   tp-resizeme"
@@ -841,37 +750,11 @@
                                     style="z-index: 21; white-space: nowrap; text-transform: left; cursor: default;">
                                     <i class="pe-7s-ball"></i>
                                 </div>
-
-
                             </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         </ul>
-
                     </div>
-
                 </div>
                 <script type="text/javascript">
-
-
                     jQuery(document).ready(function () {
 
                         /* initialize the slider based on the Slider's ID attribute from the wrapper above */
@@ -922,43 +805,45 @@
                     });
 
                 </script>
-
-
-
-
-
-
-
-
+                <%--Checar esto--%>
                 <footer id="footer" role="contentinfo">
                     <section class="section swatch-black">
                     <div class="container">
-
                         <div class="row" style="margin-top: 25px; margin-bottom: 25px;">
                             <div class="col-md-11">
                                 <div class="row">
 
                                     <div class="col-md-2" style=" padding-left: 0px;padding-right: 0px;">
-                                        <center><a class="linksub"  href="LegalNotice.aspx" style=" color:white; ">LEGAL NOTICE</a></br> <a class="linksub"  href="GeneralConditions.aspx" style=" color:white; ">GENERAL CONDITIONS</a></br><a class="linksub"  href="ReservationPolicy.aspx" style=" color:white; ">RESERVATION POLICY</a></br><a class="linksub"  href="CancelationPolicy.aspx" style=" color:white; ">CANCELATION POLICY</a>
-                     </center>
+                                        <center>
+                                            <a class="linksub"  href="LegalNotice.aspx" style=" color:white; ">
+                                                <asp:Literal runat="server" ID="Literal31" Text="<%$ Resources:Index, avisolegal %>"></asp:Literal></a>
+                                            </br><a class="linksub"  href="GeneralConditions.aspx" style=" color:white; ">
+                                                <asp:Literal runat="server" ID="Literal32" Text="<%$ Resources:Index, condicionesgenerales %>"></asp:Literal></a>
+                                            </br><a class="linksub"  href="ReservationPolicy.aspx" style=" color:white; ">
+                                                <asp:Literal runat="server" ID="Literal33" Text="<%$ Resources:Index, politicadereserva %>"></asp:Literal>
+                                                 </a></br><a class="linksub"  href="CancelationPolicy.aspx" style=" color:white; ">
+                                                     <asp:Literal runat="server" ID="Literal34" Text="<%$ Resources:Index, politicadecancelacion %>"></asp:Literal>
+                                                          </a>
+                                        </center>
                                         </br>
                                     </div>
 
                                     <div class="col-md-2">
-                                        <center> <a  class="linksub" href="FAQ.aspx" style=" color:white; ">FAQ</a>
-                       </center>
+                                        <center>
+                                            <a  class="linksub" href="FAQ.aspx" style=" color:white; "><asp:Literal runat="server" ID="Literal35" Text="<%$ Resources:Index, preguntasfrecuentes %>"></asp:Literal></a>
+                                        </center>
                                         </br>
                                     </div>
                                     <div class="col-md-4" style="color: white;  text-align: left;">
                                         <center>
-                                        <a class="linksub" href="Map.aspx" style="color:white;  ">LOCATION</a></br></br>
+                                        <a class="linksub" href="Map.aspx" style="color:white;  "><asp:Literal runat="server" ID="Literal36" Text="<%$ Resources:Index, localizacion %>"></asp:Literal></a></br></br>
                                             <a href="https://www.google.com.mx/maps/place/WAKANA+LAKE/@36.31006,-5.7429637,21z/data=!4m5!3m4!1s0x0:0x1925801980d6b5aa!8m2!3d36.3100875!4d-5.7428419"><span class="fa fa-map-marker " style="margin-right: 10px;"></span>Ctra. A 2226 Benalup - Los Barrios </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;km 6,5, C.P. 11190 Benalup - Casas Viejas, Cádiz</br>Lat,Long: 36.3097393,-5.7433607</a>
                                         </center>
                                         </br>
                                     </div>
                                     <div class="col-md-4" style="color: white;  text-align: left;">
                                         <center>
-                                        <a class="linksub" href="Contact.aspx" >CONTACT</a></br></br>
+                                        <a class="linksub" href="Contact.aspx" ><asp:Literal runat="server" ID="Literal37" Text="<%$ Resources:Index, contactofooter %>"></asp:Literal></a></br></br>
                                           <span class="fa fa-phone  " style="margin-right: 10px;"></span>+34 687 929459 </br>
                                         <span class="fa fa-envelope-o " style="margin-right: 10px;"></span>info@wakanalake.com</br>
                        
@@ -1039,16 +924,6 @@
                             <Paddings PaddingBottom="5px" />
                         </ContentStyle>
                     </dx:ASPxPopupControl>
-
-
-
-
-
-
-
-
-
-
 
                     <%--CONTACT POP UP--%>
                     <dx:ASPxPopupControl ID="ContactMod" runat="server" CloseAction="OuterMouseClick" CloseOnEscape="true" Modal="True"

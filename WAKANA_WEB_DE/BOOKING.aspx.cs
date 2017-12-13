@@ -716,7 +716,7 @@ namespace WAKANA_WEB_DE
                 items = new List<Item>()
             };
 
-            #region LODI
+            
             if (this.Session["TypeAccommodation"].ToString() == "Yurtas" && (PersonasFromSpinner == 1 || PersonasFromSpinner == 2))
             {
                 this.Session["altascosto"] = this.Session["highseason_yurta12"].ToString();
@@ -866,8 +866,3 @@ namespace WAKANA_WEB_DE
         }
     }
 }
-
-
-
-
-

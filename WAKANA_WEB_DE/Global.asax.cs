@@ -22,7 +22,7 @@ using System;
 
             void Session_Start(object sender, EventArgs e) {
             // Code that runs when a new session is started
-            Response.Redirect("~/es/Default.aspx");
+            Response.Redirect("~/Default.aspx");
         }
 
             void Session_End(object sender, EventArgs e) {

@@ -2,6 +2,105 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="pace-overlay"></div>
+
+        <div id="masthead" class="navbar navbar-static-top swatch-black navbar-sticky" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="Default.aspx" class="navbar-brand" style="width: 200px; font-weight: lighter; font-size: 30px; font-family: 'Josefin Sans';">
+                        <img src="../assets/images/logobar.png" alt="Wakana Lake" />
+                    </a>
+                </div>
+                 <nav class="collapse navbar-collapse main-navbar" role="navigation">
+                    <div class="menu-sidebar pull-right">
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="Place.aspx" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal11" Text="<%$ Resources:Index, lugar %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Faces.aspx"><asp:Literal runat="server" ID="Literal50" Text="<%$ Resources:Index, galeria %>"></asp:Literal>         
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Map.aspx"><asp:Literal runat="server" ID="Literal51" Text="<%$ Resources:Index, mapa %>"></asp:Literal>
+                                                    
+                                    </a>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#"><asp:Literal runat="server" ID="Literal52" Text="<%$ Resources:Index, comunidad %>"></asp:Literal></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a  href="Community.aspx"><asp:Literal runat="server" ID="Literal53" Text="<%$ Resources:Index, acercadenos %>"></asp:Literal></a></li>
+                                        <li><a  href="Meetthecommunity.aspx"><asp:Literal runat="server" ID="Literal54" Text="<%$ Resources:Index, equipo %>"></asp:Literal></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal55" Text="<%$ Resources:Index, alojamientos %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Yurtas.aspx"><asp:Literal runat="server" ID="Literal56" Text="<%$ Resources:Index, yurtas %>"></asp:Literal>          
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Andalusian.aspx"><asp:Literal runat="server" ID="Literal57" Text="<%$ Resources:Index, cortijoandaluz %>"></asp:Literal>   
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="Tepees.aspx"><asp:Literal runat="server" ID="Literal58" Text="<%$ Resources:Index, tipis %>"></asp:Literal>          
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><asp:Literal runat="server" ID="Literal59" Text="<%$ Resources:Index, campamentos %>"></asp:Literal></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="Camps.aspx"><asp:Literal runat="server" ID="Literal60" Text="<%$ Resources:Index, campamentosescolares %>"></asp:Literal>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="SummerCamps.aspx"><asp:Literal runat="server" ID="Literal61" Text="<%$ Resources:Index, campamentosveranowakana %>"></asp:Literal>     
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="SpartanCamps.aspx"><asp:Literal runat="server" ID="Literal62" Text="<%$ Resources:Index, campamentosspartanrace %>"></asp:Literal>
+                                    </a>
+                                </li>
+                                  <li>
+                                    <a href="BocalanCamps.aspx"><asp:Literal runat="server" ID="Literal63" Text="<%$ Resources:Index, campamentosbocalan %>"></asp:Literal>         
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                          <li class="dropdown">
+                            <a href="Activities.aspx" ><asp:Literal runat="server" ID="Literal64" Text="<%$ Resources:Index, actividades %>"></asp:Literal></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Events.aspx" ><asp:Literal runat="server" ID="Literal65" Text="<%$ Resources:Index, eventos %>"></asp:Literal></a>
+                        </li>
+                           <li class="dropdown">
+                            <a href="Partners.aspx" ><asp:Literal runat="server" ID="Literal66" Text="<%$ Resources:Index, colaboradores %>"></asp:Literal></a>
+                        </li>
+                          <li class="dropdown lenguajediv">  <%--ELEGIR IDIOMA--%>
+                              <asp:ImageButton CssClass="imagenl" ID="ImageButton1" runat="server" Height="20px" ImageUrl="~/assets/images/england.jpg" OnClick="ImageButton1_Click" Width="34px" />
+                        </li>
+                        <li class="dropdown">
+                             <a href="#" onclick="ShowBooking();return false;" "><asp:Literal runat="server" ID="Literal67" Text="<%$ Resources:Index, reserva %>"></asp:Literal></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     <script>
 
         function ShowSpartan() {
@@ -62,20 +161,17 @@
         <div class="background-overlay  " style="background-color: rgba(0,0,0,0.4);"></div>
         <div class="container" style="margin-bottom: 20px;">
             <div class="row">
-                <div class="col-md-12 primercol"><a class="lobstertitle" style="font-size: 6.5vw;">Activities</a></div>
+                <div class="col-md-12 primercol"><a class="lobstertitle" style="font-size: 6.5vw;"><asp:Literal runat="server" ID="Literal1" Text="<%$ Resources:Index, actividadestitulo %>"></asp:Literal></a></div>
             </div>
-
             <div class="portfolio-container element-normal-top element-no-bottom debajotitulo" style="margin-top: 20px !important; margin-bottom: 20px !important;">
-
 
                 <div class="col-sm-4 RemoveMargin">
                     <div class="container4" style="background-color: rgba(0, 0, 0, 0.6); background-image: none;">
                         <%--<p class="MainTitle">Activities</p>--%>
-                        <p class="textoact">“Wakana offers various activities ranging from relaxing walks to games and sports that promote an active and healthy lifestyle. All activities aim at improving fundamental values such as self-confidence and team building whilst developing positive attitudes towards social communities and nature.”</p>
+                        <p class="textoact"><asp:Literal runat="server" ID="Literal2" Text="<%$ Resources:Index, actdisponesmosdeuna %>"></asp:Literal></p>
                     </div>
-
-
                 </div>
+
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowSpartan();return false;">
 
                     <div class="container4" style="background-image: url('../img/act/spartantrial.jpg');">
@@ -87,9 +183,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
 
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowCanopy();return false;">
 
@@ -103,11 +196,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowArcAttack();return false;">
 
                     <div class="container4" style="background-image: url('../img/act/archery.jpg');">
@@ -119,12 +207,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
 
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowKayak();return false;">
 
@@ -138,8 +220,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowPaddle();return false;">
 
                     <div class="container4" style="background-image: url('../img/act/paddlesurf.jpg');">
@@ -151,9 +231,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
 
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowKite();return false;">
 
@@ -167,11 +244,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowCycling();return false;">
 
                     <div class="container4" style="background-image: url('../img/act/biking.jpg');">
@@ -183,16 +255,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
 
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowHorse();return false;">
 
@@ -206,11 +268,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowSwimming();return false;">
 
                     <div class="container4" style="background-image: url('../img/act/swimming.jpg');">
@@ -222,8 +279,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowOrni();return false;">
 
@@ -237,9 +292,6 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="col-sm-4 RemoveMargin" style="cursor: pointer;" onclick="ShowFLandFA();return false;">
 
                     <div class="container4" style="background-image: url('../img/act/floraandfauna.jpg');">
@@ -251,12 +303,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
                  <div class="row">
                 <div class="col-md-12">
                     </br>
-                                  <a href="../../ACTIVITIES TIMETABLE.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">Activities Schedule</a>
+                                  <a href="../../ACTIVITIES TIMETABLE.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;"><asp:Literal runat="server" ID="Literal3" Text="<%$ Resources:Index, acthorario %>"></asp:Literal></a>
                     </br>
                 </div>
                 </br>
@@ -267,7 +318,7 @@
              <div class="row">
                 <div class="col-md-12">
                     </br>
-                                  <a href="../../Pack 1 Day Without Accommodation from 1 to 7.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">PRICES for Groups up to 7 persons</a>
+                                  <a href="../../Pack 1 Day Without Accommodation from 1 to 7.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;"><asp:Literal runat="server" ID="Literal4" Text="<%$ Resources:Index, actprecios7 %>"></asp:Literal></a>
                     </br>
                 </div>
                 </br>
@@ -277,7 +328,7 @@
              <div class="row">
                 <div class="col-md-12">
                     </br>
-                                  <a href="../../Pack 1 Day Without Accommodation from 8 to 17.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">PRICES for Groups from 8 up to 17 persons</a>
+                                  <a href="../../Pack 1 Day Without Accommodation from 8 to 17.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;"><asp:Literal runat="server" ID="Literal5" Text="<%$ Resources:Index, actprecios8 %>"></asp:Literal></a>
                     </br>
                 </div>
                 </br>
@@ -286,7 +337,7 @@
                      <div class="row">
                 <div class="col-md-12">
                     </br>
-                                  <a href="../../Gisela Pulido Pro Center.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;">Gisela Pulido Pro Center Prices </a>
+                                  <a href="../../Gisela Pulido Pro Center.pdf" target="_blank" class="wakanasublink" style="font-family: Quicksand; font-size: 20px; text-align: center;"><asp:Literal runat="server" ID="Literal6" Text="<%$ Resources:Index, actpreciosgisela %>"></asp:Literal></a>
                     </br>
                 </div>
                 </br>
@@ -322,7 +373,11 @@
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">SPARTAN TRAIL</div>
                         <div class="camptext">
-                            REQUIREMENTS</br></br>• Closed-toe sports shoes</br>• Spare pair of shoes and clothing for after</br>the activity<br />
+                            <asp:Literal runat="server" ID="Literal7" Text="<%$ Resources:Index, actspartantrailobs %>"></asp:Literal>
+                            <br /><br /><asp:Literal runat="server" ID="Literal8" Text="<%$ Resources:Index, actspartantrailrequisitos %>"></asp:Literal>
+                            </br></br>• <asp:Literal runat="server" ID="Literal9" Text="<%$ Resources:Index, actspartancalzado %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal10" Text="<%$ Resources:Index, actspartanropaycalzado %>"></asp:Literal>
+                           <%-- </br><asp:Literal runat="server" ID="Literal11" Text="<%$ Resources:Index, actspartanpalabraactividad %>"></asp:Literal>--%><br />
                             <br>
                         </div>
 
@@ -361,8 +416,11 @@
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">CANOPY PARK</div>
                         <div class="camptext">
-                            REQUIREMENTS</br></br>• Good physical health</br>• Closed-toe sports shoes</br>• Minimum height of 140cm<br />
-                            • Maximum weight of 120kg
+                            <asp:Literal runat="server" ID="Literal12" Text="<%$ Resources:Index, canopyparkrequisitos %>"></asp:Literal>
+                            </br></br>• <asp:Literal runat="server" ID="Literal13" Text="<%$ Resources:Index, canopybuenaformafisica %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal14" Text="<%$ Resources:Index, canopycalzadodeportivo %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal15" Text="<%$ Resources:Index, canopymedimasde140 %>"></asp:Literal><br />
+                            •<asp:Literal runat="server" ID="Literal16" Text="<%$ Resources:Index, canopypesarmenos120 %>"></asp:Literal>
                         </div>
 
                     </div>
@@ -399,8 +457,10 @@
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">ARC ATTACK</div>
                         <div class="camptext">
-                            • Introduction to bow and arrow</br>• Team battle</br>• Capture the flag<br />
-                            • Free-for-all
+                            • <asp:Literal runat="server" ID="Literal17" Text="<%$ Resources:Index, arcintroduccion %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal18" Text="<%$ Resources:Index, arcguerra %>"></asp:Literal>
+                            </br>•<asp:Literal runat="server" ID="Literal19" Text="<%$ Resources:Index, arcatrapa %>"></asp:Literal><br />
+                            • <asp:Literal runat="server" ID="Literal20" Text="<%$ Resources:Index, arctodoscontratodos %>"></asp:Literal>
                         </div>
 
                     </div>
@@ -437,8 +497,9 @@
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">KAYAK</div>
                         <div class="camptext">
-                            • Enjoy all the wildlife that Wakana Lake has to offer
-                            </br>• Experience nature from the water</br>• No age limit
+                            • <asp:Literal runat="server" ID="Literal21" Text="<%$ Resources:Index, kayakdisfruta %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal22" Text="<%$ Resources:Index, kayakexpagua %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal23" Text="<%$ Resources:Index, kayaksinlimite %>"></asp:Literal>
                             
                         </div>
 
@@ -476,9 +537,10 @@
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">PADDLE SURF</div>
                         <div class="camptext">
-                            • Improve balance and coordination</br>• See the sights from the vantage point of the paddle board</br>• Individual or in groups
-                            <br />
-                            • Gisela Pulido’s Water Sports Centre, 10 times World Champion of Kite Surf
+                            • <asp:Literal runat="server" ID="Literal24" Text="<%$ Resources:Index, paddletrabajaelequilibrio %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal25" Text="<%$ Resources:Index, paddledisfruta %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal26" Text="<%$ Resources:Index, paddlesolooengrupos %>"></asp:Literal>
+                            <br />• <asp:Literal runat="server" ID="Literal27" Text="<%$ Resources:Index, paddlecentrodedeportes %>"></asp:Literal>
 
                         </div>
 
@@ -516,14 +578,14 @@
                     <div class="col-sm-6" style="padding: 5px;">
                         <div class="cmn-t-underlinecamp " style="font-size: 28px; line-height: 28px;color: black;">KITE SURF & WIND SURF</div>
                         <div class="camptext" >
-                            • Safely navigate the lake intended for kite surfing
+                            • <asp:Literal runat="server" ID="Literal28" Text="<%$ Resources:Index, kitedisfrutanavegando %>"></asp:Literal>
                             <br />
-                            • Take advantage of the powerful winds of the Levante
+                            • <asp:Literal runat="server" ID="Literal29" Text="<%$ Resources:Index, kitegozadelasvistas %>"></asp:Literal>
                             <br />
-                            • Enjoy the privileged sights of our environment at the same time as practicing sport
+                            • <asp:Literal runat="server" ID="Literal30" Text="<%$ Resources:Index, kitenavegaseguroennuestra %>"></asp:Literal>
                             <br />
-                            • Gisela Pulido’s Water Sports Centre, 10 times World Champion of Kite Surf  
-                            <br /><br /><center >  <a href="../../Gisela Pulido Pro Center.pdf" target="_blank" class="wakanasublink" style="color:black;">DOWNLOAD INFO</a></center> 
+                            • <asp:Literal runat="server" ID="Literal31" Text="<%$ Resources:Index, kitecentrodedeportesacuaticos %>"></asp:Literal>
+                            <br /><br /><center >  <a href="../../Gisela Pulido Pro Center.pdf" target="_blank" class="wakanasublink" style="color:black;"><asp:Literal runat="server" ID="Literal32" Text="<%$ Resources:Index, kitedescargarinfo %>"></asp:Literal></a></center> 
                             
                         </div>
 
@@ -534,44 +596,6 @@
 
     </dx:ASPxPopupControl>
 
-    <%-- MODAL CAMPING--%>
-    <%--<dx:ASPxPopupControl ID="ASPxPopupControl4" CssClass="modalact" ClientInstanceName="CampingModal" runat="server" CloseAction="OuterMouseClick" CloseOnEscape="true" Modal="True"
-        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowHeader="false" AutoUpdatePosition="True" CloseAnimationType="Fade" LoadContentViaCallback="None">
-
-        <ContentCollection>
-            <dx:PopupControlContentControl>
-                <div class="row">
-                    <div class="col-sm-6 imgcontainer">
-                        <dx:ASPxImageSlider ID="ASPxImageSlider7" runat="server" ClientInstanceName="ImageSlider"
-                            EnableViewState="False" EnableTheming="False" NavigateUrlFormatString="javascript:void({0});" ShowNavigationBar="False" SettingsAutoGeneratedImages-ImageHeight="1000px" SettingsAutoGeneratedImages-ImageWidth="1000px" ImageSourceFolder="~/gallery/act/camping">
-                            <SettingsImageArea ImageSizeMode="FillAndCrop" NavigationButtonVisibility="None"
-                                ItemTextVisibility="Always" EnableLoopNavigation="true" />
-                            <SettingsNavigationBar Mode="Dots" />
-                            <SettingsSlideShow AutoPlay="true" StopPlayingWhenPaging="false" PausePlayingWhenMouseOver="false" PlayPauseButtonVisibility="Faded"></SettingsSlideShow>
-
-
-                            <SettingsAutoGeneratedImages ImageWidth="1000px" ImageHeight="1000px"></SettingsAutoGeneratedImages>
-
-                            <Styles>
-                                <ImageArea Width="100%" Height="100%" />
-                            </Styles>
-                        </dx:ASPxImageSlider>
-
-                    </div>
-                    <div class="col-sm-6" style="padding: 10px;">
-                        <div class="cmn-t-underlinecamp " style="color: black;">CAMPING</div>
-                        <div class="camptext">
-                            </br></br>
-                        </div>
-
-                    </div>
-                </div>
-            </dx:PopupControlContentControl>
-        </ContentCollection>
-
-    </dx:ASPxPopupControl>--%>
-
-    <%-- MODAL CYCLING RUTES--%>
     <dx:ASPxPopupControl ID="ASPxPopupControl5" CssClass="modalact" ClientInstanceName="CyclingModal" runat="server" CloseAction="OuterMouseClick" CloseOnEscape="true" Modal="True"
         PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowHeader="false" AutoUpdatePosition="True" CloseAnimationType="Fade" LoadContentViaCallback="None">
 
@@ -598,12 +622,12 @@
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">CYCLING ROUTES</div>
                         <div class="camptext">
-                            • Explore the Green Way Dos Bahías from Los Barrios to Puerto Real with a total of 93km
+                            • <asp:Literal runat="server" ID="Literal33" Text="<%$ Resources:Index, cyclingdisfruta %>"></asp:Literal>
                             <br />
-                            • Mountain bike (MTB)
+                            • <asp:Literal runat="server" ID="Literal34" Text="<%$ Resources:Index, cyclingmountain %>"></asp:Literal>
                            
                             <br />
-                            • All riding levels
+                            • <asp:Literal runat="server" ID="Literal35" Text="<%$ Resources:Index, cyclingtodoslosniveles %>"></asp:Literal>
 
                         </div>
 
@@ -641,12 +665,14 @@
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">HORSE RIDING</div>
                         <div class="camptext" style="font-size: 25px; line-height: 25px;">
-                            If it’s your first time:</br> 
-You will learn the techniques needed to ride and manage a horse. Enjoy the landscape offered by Wakana Lake and its surroundings.</br> </br> If you have experience:</br>
-Let yourself be taken away by the idyllic place we find ourselves in.</br>
-Group of five people (max.)</br>REQUIREMENTS</br>
-• Comfortable trousers.</br>
-• Preferably boots or sports shoes.
+                            <asp:Literal runat="server" ID="Literal36" Text="<%$ Resources:Index, horsesiestuprimeravez %>"></asp:Literal>
+                            </br> <asp:Literal runat="server" ID="Literal37" Text="<%$ Resources:Index, horsesaprenderas %>"></asp:Literal>
+                            </br> </br><asp:Literal runat="server" ID="Literal38" Text="<%$ Resources:Index, horsessitienesexp %>"></asp:Literal>
+                            </br><asp:Literal runat="server" ID="Literal39" Text="<%$ Resources:Index, horsessolodejatellevar %>"></asp:Literal>
+                            </br><asp:Literal runat="server" ID="Literal40" Text="<%$ Resources:Index, horsesgrupode5 %>"></asp:Literal>
+                            </br><asp:Literal runat="server" ID="Literal41" Text="<%$ Resources:Index, horsesrequisitos %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal42" Text="<%$ Resources:Index, horsespantalonlargo %>"></asp:Literal>
+                            </br>• <asp:Literal runat="server" ID="Literal43" Text="<%$ Resources:Index, horseszapatosdedeporte %>"></asp:Literal>
                         </div>
 
                     </div>
@@ -719,11 +745,11 @@ Group of five people (max.)</br>REQUIREMENTS</br>
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">ORNITHOLOGY</div>
                         <div class="camptext" style="font-size: 25px; line-height: 25px;">
-                            Cádiz es la provincia con mayor diversidad ornitológica de la península debido a su situación geográfica. Son varias especies destacadas las que nos visitan en Wakana Lake como por ejemplo:
-</br></br>1.	Águila imperial
-</br>2.	Águila pescadora
-</br>3.	Milano negro
-</br>4.	Buho real
+                            <asp:Literal runat="server" ID="Literal44" Text="<%$ Resources:Index, ornitcadizeslaprovincia %>"></asp:Literal>
+                            </br></br>1.	<asp:Literal runat="server" ID="Literal45" Text="<%$ Resources:Index, ornitaguilaimp %>"></asp:Literal>
+                            </br>2.	<asp:Literal runat="server" ID="Literal46" Text="<%$ Resources:Index, ornitaguilapescadora %>"></asp:Literal>
+                            </br>3.	<asp:Literal runat="server" ID="Literal47" Text="<%$ Resources:Index, ornitmilanonegro %>"></asp:Literal>
+                            </br>4.	<asp:Literal runat="server" ID="Literal48" Text="<%$ Resources:Index, buhoreal %>"></asp:Literal>
 
                         </div>
 
@@ -762,7 +788,7 @@ Group of five people (max.)</br>REQUIREMENTS</br>
                     <div class="col-sm-6" style="padding: 10px;">
                         <div class="cmn-t-underlinecamp " style="color: black;">FLORA AND FAUNA</div>
                         <div class="camptext" style="font-size: 25px; line-height: 25px;">
-                            Wakana Lake se encuentra dentro del Parque Natural de los Alcornocales, conocido como la última Selva Virgen del sur de Europa. Gracias a la pureza de nuestras aguas existe una colonia de nutrias bastante importante en nuestra zona. Junto con las nutrias, zorros y venados entre otros comparten este idílico paraje.
+                            <asp:Literal runat="server" ID="Literal49" Text="<%$ Resources:Index, florawakanalake %>"></asp:Literal>
                         </div>
 
                     </div>

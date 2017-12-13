@@ -10,13 +10,13 @@
         <div class="container">
             </br> </br> </br>
             <div class="row">
-                <div class="col-md-12 primercol"><a class="lobstertitle3">Payment and booking canceled.</a></div>
+                <div class="col-md-12 primercol"><a class="lobstertitle3"><asp:Literal runat="server" ID="Literal18" Text="<%$ Resources:Index, bookingcancel %>"></asp:Literal></a></div>
             </div>
             
        
               </br>
               </br>
-            </div>
+            </div>|
      
 
 

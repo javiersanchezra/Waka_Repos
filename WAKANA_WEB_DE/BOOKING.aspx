@@ -26,7 +26,11 @@
     <title></title>
 
     <style>
-        
+        /*BOOKING*/
+        html,
+        body {
+            overflow: hidden;
+        }
     </style>
 
     <script type="text/javascript">

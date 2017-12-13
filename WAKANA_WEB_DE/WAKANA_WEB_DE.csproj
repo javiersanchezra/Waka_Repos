@@ -851,6 +851,16 @@
     <Compile Include="Andalusian.aspx.designer.cs">
       <DependentUpon>Andalusian.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Index.designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Index.es-mx.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.es-mx.resx</DependentUpon>
+    </Compile>
     <Compile Include="BaseSamplePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1314,6 +1324,16 @@
     <Folder Include="revolution\css\navigation-skins\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_GlobalResources\Index.es-mx.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Index.es-mx.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_GlobalResources\Index.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Index.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>

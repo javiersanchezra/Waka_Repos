@@ -1955,11 +1955,7 @@ a.ReserveNow {
     padding: 0px !important;
 }
 
-/*BOOKING*/
-html,
-body {
-    overflow: hidden;
-}
+
 
 .scrollbar {
 }
@@ -2173,11 +2169,30 @@ a.wakanasublink {
     text-align: center !important;
 }
 
-.lobstertitle {
+.lobstertitleBlack {
     color: black !important;
 }
 
 .campimage {
+}
+
+/*CAMBIO DE LENGUAJE*/
+.languagedevelop {
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    color: white;
+    border: 0px;
+    background-color: rgba(255,255,255,0);
+}
+
+.lenguajediv {
+    padding-top: 26px;
+    padding-bottom: 33px;
+}
+
+.imagenl{
+    margin-top:1px;
 }
 
 

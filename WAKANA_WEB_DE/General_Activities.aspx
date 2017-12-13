@@ -104,11 +104,11 @@
             
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown menu-item-object-oxy_mega_menu ">
-                       <a href="#" onclick="ShowLoginWindow();return false;" style="font-family: 'Quicksand';">BOOK NOW</a>
+                       <a href="#" onclick="ShowLoginWindow();return false;" style="font-family: 'Quicksand';"><asp:Literal runat="server" ID="Literal6" Text="<%$ Resources:Index, gabooknow %>"></asp:Literal></a>
                     </li>
 
                     <li class="dropdown">
-                        <a href="Place.aspx"  class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Quicksand';">Place</a>
+                        <a href="Place.aspx"  class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Quicksand';"><asp:Literal runat="server" ID="Literal1" Text="<%$ Resources:Index, gaplace %>"></asp:Literal></a>
                         <ul class="dropdown-menu">
                                 <li>
                                     <a href="Place.aspx">Wakana Lake
@@ -116,12 +116,12 @@
                                                 </a>
                                 </li>
                                 <li>
-                                    <a href="Map.aspx">Map of Wakana
+                                    <a href="Map.aspx"><asp:Literal runat="server" ID="Literal2" Text="<%$ Resources:Index, gamapof %>"></asp:Literal>
                                                     
                                                 </a>
                                 </li>
                                 <li>
-                                    <a href="Accommodation.aspx">Accommodation
+                                    <a href="Accommodation.aspx"><asp:Literal runat="server" ID="Literal3" Text="<%$ Resources:Index, gamacco %>"></asp:Literal>
                                                     
                                                 </a>
                                 </li>
@@ -131,24 +131,24 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="MeettheCommunity.aspx"  style="font-family: 'Quicksand';">Community</a>
+                        <a href="MeettheCommunity.aspx"  style="font-family: 'Quicksand';"><asp:Literal runat="server" ID="Literal4" Text="<%$ Resources:Index, gacomm %>"></asp:Literal></a>
                   
                          </li>
 
                     <li class="dropdown">
-                        <a href="Experience.aspx"  style="font-family: 'Quicksand';">The Experience</a>
+                        <a href="Experience.aspx"  style="font-family: 'Quicksand';"><asp:Literal runat="server" ID="Literal5" Text="<%$ Resources:Index, gamtheexp %>"></asp:Literal></a>
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Quicksand';">Activities</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: 'Quicksand';"><asp:Literal runat="server" ID="Literal7" Text="<%$ Resources:Index, gamactiv %>"></asp:Literal></a>
                       <ul class="dropdown-menu">
                                 <li>
-                                    <a href="General_Activities.aspx">General Activities
+                                    <a href="General_Activities.aspx"><asp:Literal runat="server" ID="Literal8" Text="<%$ Resources:Index, gamgeneral %>"></asp:Literal>
                                                     
                                                 </a>
                                 </li>
                                 <li>
-                                    <a href="#">Special Activities
+                                    <a href="#"><asp:Literal runat="server" ID="Literal9" Text="<%$ Resources:Index, gamspecial %>"></asp:Literal>
                                                     
                                                 </a>
                                 </li>
@@ -159,7 +159,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="Contact.aspx" style="font-family: 'Quicksand';">Contact</a>
+                        <a href="Contact.aspx" style="font-family: 'Quicksand';"><asp:Literal runat="server" ID="Literal10" Text="<%$ Resources:Index, gamcontact %>"></asp:Literal></a>
                     </li>
                     </ul>
                
@@ -286,7 +286,7 @@
                                                             data-paddingbottom="[0,0,0,0]"
                                                             data-paddingleft="[0,0,0,0]"
                                                             style="z-index: 8; min-width: 300px; max-width: 300px; white-space: normal; font-size: 80px; line-height: 30px; font-weight: 500; color: rgba(255, 255, 255, 1.00); font-family: Lobster; cursor: pointer;">
-                                                            Activities<br />
+                                                            <asp:Literal runat="server" ID="Literal11" Text="<%$ Resources:Index, gamact %>"></asp:Literal><br />
 
                                                         </div>
 
@@ -406,7 +406,7 @@
                                                             data-paddingbottom="[0,0,0,0]"
                                                             data-paddingleft="[0,0,0,0]"
                                                             style="z-index: 18; min-width: 300px; max-width: 300px; white-space: normal; font-size: 30px; line-height: 30px; font-weight: 500; color: rgba(255, 255, 255, 1.00); font-family: Quicksand; cursor: pointer;">
-                                                            CAMPING<br />   
+                                                            <asp:Literal runat="server" ID="Literal12" Text="<%$ Resources:Index, gamcamping %>"></asp:Literal><br />   
                                                         </div>
 
                                                          <!--LAYER EXTRA -->
@@ -555,7 +555,7 @@
                                                             data-paddingbottom="[0,0,0,0]"
                                                             data-paddingleft="[0,0,0,0]"
                                                             style="z-index: 18; min-width: 300px; max-width: 300px; white-space: normal; font-size: 30px; line-height: 30px; font-weight: 500; color: rgba(255, 255, 255, 1.00); font-family: Quicksand; cursor: pointer;">
-                                                            ARCHERY<br />   
+                                                            <asp:Literal runat="server" ID="Literal13" Text="<%$ Resources:Index, gaarchery %>"></asp:Literal><br />   
                                                         </div>
 
                                                         <!--LAYER EXTRA -->
@@ -616,319 +616,7 @@
                                     </div>
                                     <!-- END REVOLUTION SLIDER -->
 
-                                   <%-- <!-- SERVICES -->
-                                    <section class="example">
-                                        <article class="content">
-
-
-                                            <div id="rev_slider_158_2_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="nice-and-clean-services" data-source="gallery" style="margin: 0px auto; background-color: #2d3032; padding: 0px; margin-top: 0px; margin-bottom: 0px;">
-                                                <!-- START REVOLUTION SLIDER 5.3.1.6 fullwidth mode -->
-                                                <div id="rev_slider_158_2" class="rev_slider fullwidthabanner" style="display: none;" data-version="5.3.1.6">
-                                                    <ul>
-                                                        <!-- SLIDE  -->
-                                                        <li data-index="rs-420" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                                                            <!-- MAIN IMAGE -->
-                                                            <img src="../../assets/images/transparent.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                                                            <!-- LAYERS -->
-
-                                                            <!-- LAYER NR. 1 -->
-                                                            <div class="tp-caption   tp-resizeme   rev_group"
-                                                                id="slide-420-layer-27"
-                                                                data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
-                                                                data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
-                                                                data-width="['#1/3#','#1/3#','#1/1#','#1/1#']"
-                                                                data-height="360"
-                                                                data-whitespace="nowrap"
-                                                                data-type="group"
-                                                                data-basealign="slide"
-                                                                data-responsive_offset="on"
-                                                                data-frames='[{"delay":300,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;fb:10px;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-                                                                data-margintop="[0,0,0,0]"
-                                                                data-marginright="[0,0,0,0]"
-                                                                data-marginbottom="[0,0,0,0]"
-                                                                data-marginleft="[0,0,0,0]"
-                                                                data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                data-paddingtop="[0,0,0,0]"
-                                                                data-paddingright="[0,0,0,0]"
-                                                                data-paddingbottom="[0,0,0,0]"
-                                                                data-paddingleft="[0,0,0,0]"
-                                                                style="z-index: 5; min-width: #1/3#px; max-width: #1/3#px; max-width: 360px; max-width: 360px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00); font-family: Open Sans;">
-                                                                <!-- LAYER NR. 2 -->
-                                                                <div class="tp-caption   tp-resizeme"
-                                                                    id="slide-420-layer-28"
-                                                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="image"
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    data-autoplay="off"
-                                                                    style="z-index: 6;">
-                                                                    <img src="../assets/images/Captura de pantalla 2016-07-04 a las 21.51.12.png" />
-                                                                </div>
-
-                                                                <!-- LAYER NR. 3 -->
-                                                                <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
-                                                                    id="slide-420-layer-29"
-                                                                    data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
-                                                                    data-width="100%"
-                                                                    data-height="360"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="shape"
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":600,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"bytrigger","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeOut"}]'
-                                                                    data-margintop="[0,0,0,0]"
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    data-lasttriggerstate="reset"
-                                                                    style="z-index: 7; font-family: Open Sans; background-color: rgba(45, 48, 50, 0.65); cursor: pointer;">
-                                                                </div>
-
-
-
-                                                                <!-- LAYER NR. 5 -->
-                                                                <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
-                                                                    id="slide-420-layer-31"
-                                                                    data-x="['left','left','left','left']" data-hoffset="['-1','-1','-1','-1']"
-                                                                    data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
-                                                                    data-width="100%"
-                                                                    data-height="360"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="shape"
-                                                                    data-actions='[{"event":"mouseenter","action":"playvideo","layer":"slide-420-layer-13","delay":""},{"event":"mouseleave","action":"stopvideo","layer":"slide-420-layer-13","delay":""},{"event":"mouseenter","action":"stoplayer","layer":"slide-420-layer-14","delay":""},{"event":"mouseleave","action":"startlayer","layer":"slide-420-layer-14","delay":""}]'
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bs:solid;bw:0 0 0 0;"}]'
-                                                                    data-margintop="[0,0,0,0]"
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    style="z-index: 9; font-family: Open Sans; background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0); cursor: pointer;">
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- LAYER NR. 6 -->
-                                                            <div class="tp-caption   tp-resizeme   rev_group"
-                                                                id="slide-420-layer-32"
-                                                                data-x="['center','center','left','left']" data-hoffset="['0','0','0','0']"
-                                                                data-y="['top','top','top','top']" data-voffset="['0','0','360','360']"
-                                                                data-width="['#1/3#','#1/3#','#1/1#','#1/1#']"
-                                                                data-height="360"
-                                                                data-whitespace="nowrap"
-                                                                data-type="group"
-                                                                data-basealign="slide"
-                                                                data-responsive_offset="on"
-                                                                data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;fb:10px;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-                                                                data-margintop="[0,0,0,0]"
-                                                                data-marginright="[0,0,0,0]"
-                                                                data-marginbottom="[0,0,0,0]"
-                                                                data-marginleft="[0,0,0,0]"
-                                                                data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                data-paddingtop="[0,0,0,0]"
-                                                                data-paddingright="[0,0,0,0]"
-                                                                data-paddingbottom="[0,0,0,0]"
-                                                                data-paddingleft="[0,0,0,0]"
-                                                                style="z-index: 10; min-width: #1/3#px; max-width: #1/3#px; max-width: 360px; max-width: 360px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00); font-family: Open Sans;">
-                                                                <!-- LAYER NR. 7 -->
-                                                                <div class="tp-caption   tp-resizeme"
-                                                                    id="slide-420-layer-33"
-                                                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="image"
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    data-autoplay="off"
-                                                                    style="z-index: 11;">
-                                                                    <img src="../assets/images/Paddle surf.jpg" />
-                                                                </div>
-
-                                                                <!-- LAYER NR. 8 -->
-                                                                <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
-                                                                    id="slide-420-layer-34"
-                                                                    data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
-                                                                    data-width="100%"
-                                                                    data-height="360"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="shape"
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":600,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"bytrigger","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeOut"}]'
-                                                                    data-margintop="[0,0,0,0]"
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    data-lasttriggerstate="reset"
-                                                                    style="z-index: 12; font-family: Open Sans; background-color: rgba(45, 48, 50, 0.65); cursor: pointer;">
-                                                                </div>
-
-
-
-                                                                <!-- LAYER NR. 10 -->
-                                                                <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
-                                                                    id="slide-420-layer-36"
-                                                                    data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
-                                                                    data-width="100%"
-                                                                    data-height="360"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="shape"
-                                                                    data-actions='[{"event":"mouseenter","action":"playvideo","layer":"slide-420-layer-17","delay":""},{"event":"mouseleave","action":"stopvideo","layer":"slide-420-layer-17","delay":""},{"event":"mouseenter","action":"stoplayer","layer":"slide-420-layer-18","delay":""},{"event":"mouseleave","action":"startlayer","layer":"slide-420-layer-18","delay":""}]'
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bs:solid;bw:0 0 0 0;"}]'
-                                                                    data-margintop="[0,0,0,0]"
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    style="z-index: 14; font-family: Open Sans; background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0); cursor: pointer;">
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- LAYER NR. 11 -->
-                                                            <div class="tp-caption   tp-resizeme   rev_group"
-                                                                id="slide-420-layer-37"
-                                                                data-x="['right','right','left','left']" data-hoffset="['0','0','0','0']"
-                                                                data-y="['top','top','top','top']" data-voffset="['0','0','720','720']"
-                                                                data-width="['#1/3#','#1/3#','#1/1#','#1/1#']"
-                                                                data-height="360"
-                                                                data-whitespace="nowrap"
-                                                                data-type="group"
-                                                                data-basealign="slide"
-                                                                data-responsive_offset="on"
-                                                                data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;fb:10px;","mask":"x:0px;y:[-100%];s:inherit;e:inherit;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-                                                                data-margintop="[0,0,0,0]"
-                                                                data-marginright="[0,0,0,0]"
-                                                                data-marginbottom="[0,0,0,0]"
-                                                                data-marginleft="[0,0,0,0]"
-                                                                data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                data-paddingtop="[0,0,0,0]"
-                                                                data-paddingright="[0,0,0,0]"
-                                                                data-paddingbottom="[0,0,0,0]"
-                                                                data-paddingleft="[0,0,0,0]"
-                                                                style="z-index: 15; min-width: #1/3#px; max-width: #1/3#px; max-width: 360px; max-width: 360px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00); font-family: Open Sans;">
-                                                                <!-- LAYER NR. 12 -->
-                                                                <div class="tp-caption   tp-resizeme"
-                                                                    id="slide-420-layer-38"
-                                                                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="image"
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    data-autoplay="off"
-                                                                    style="z-index: 16;">
-                                                                    <img src="../assets/images/Captura de pantalla 2016-07-04 a las 21.44.25.png" />
-                                                                </div>
-
-                                                                <!-- LAYER NR. 13 -->
-                                                                <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
-                                                                    id="slide-420-layer-39"
-                                                                    data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
-                                                                    data-width="100%"
-                                                                    data-height="360"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="shape"
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":600,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"bytrigger","speed":600,"frame":"999","to":"opacity:0;","ease":"Power4.easeOut"}]'
-                                                                    data-margintop="[0,0,0,0]"
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    data-lasttriggerstate="reset"
-                                                                    style="z-index: 17; font-family: Open Sans; background-color: rgba(45, 48, 50, 0.65); cursor: pointer;">
-                                                                </div>
-
-
-
-                                                                <!-- LAYER NR. 15 -->
-                                                                <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme"
-                                                                    id="slide-420-layer-41"
-                                                                    data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
-                                                                    data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
-                                                                    data-width="100%"
-                                                                    data-height="360"
-                                                                    data-whitespace="nowrap"
-                                                                    data-type="shape"
-                                                                    data-actions='[{"event":"mouseenter","action":"playvideo","layer":"slide-420-layer-23","delay":""},{"event":"mouseleave","action":"stopvideo","layer":"slide-420-layer-23","delay":""},{"event":"mouseenter","action":"stoplayer","layer":"slide-420-layer-24","delay":""},{"event":"mouseleave","action":"startlayer","layer":"slide-420-layer-24","delay":""}]'
-                                                                    data-responsive_offset="on"
-                                                                    data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0, 0, 0, 1.00);bs:solid;bw:0 0 0 0;"}]'
-                                                                    data-margintop="[0,0,0,0]"
-                                                                    data-marginright="[0,0,0,0]"
-                                                                    data-marginbottom="[0,0,0,0]"
-                                                                    data-marginleft="[0,0,0,0]"
-                                                                    data-textalign="['inherit','inherit','inherit','inherit']"
-                                                                    data-paddingtop="[0,0,0,0]"
-                                                                    data-paddingright="[0,0,0,0]"
-                                                                    data-paddingbottom="[0,0,0,0]"
-                                                                    data-paddingleft="[0,0,0,0]"
-                                                                    style="z-index: 19; font-family: Open Sans; background-color: rgba(0, 0, 0, 0); border-color: rgba(0, 0, 0, 0); cursor: pointer;">
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-                                                </div>
-                                            </div>
-                                            <!-- END REVOLUTION SLIDER -->--%>
-
-
-
-
-
-
-
-
+                              
 
                                             <script type="text/javascript">
                                                 var tpj = jQuery;
@@ -1251,150 +939,7 @@
                                                 //    }
                                                 //});	/*ready*/
                                             </script>
-                                              <%-- <script type="text/javascript">
-                                                var tpj = jQuery;
-
                                           
-                                                var revapi154;
-                                                tpj(document).ready(function () {
-                                                    if (tpj("#menu").revolution == undefined) {
-                                                        revslider_showDoubleJqueryError("#menu");
-                                                    } else {
-
-                                                        revapi158 = tpj("#rev_slider_158_2").show().revolution({
-                                                            sliderType: "standard",
-                                                            jsFileLocation: "//server.local/revslider/wp-content/plugins/revslider/public/assets/js/",
-                                                            //sliderLayout: "fullwidth",
-                                                            dottedOverlay: "none",
-                                                            delay: 9000,
-                                                            navigation: {
-                                                                onHoverStop: "off",
-                                                            },
-                                                            viewPort: {
-                                                                enable: true,
-                                                                outof: "wait",
-                                                                visible_area: "80%",
-                                                                presize: false
-                                                            },
-                                                            responsiveLevels: [1240, 1024, 778, 480],
-                                                            visibilityLevels: [1240, 1024, 778, 480],
-                                                            gridwidth: [1240, 1024, 778, 480],
-                                                            gridheight: [360, 360, 1080, 1080],
-                                                            lazyType: "none",
-                                                            shadow: 0,
-                                                            spinner: "off",
-                                                            stopLoop: "on",
-                                                            stopAfterLoops: 0,
-                                                            stopAtSlide: 1,
-                                                            shuffle: "off",
-                                                            autoHeight: "off",
-                                                            disableProgressBar: "on",
-                                                            hideThumbsOnMobile: "off",
-                                                            hideSliderAtLimit: 0,
-                                                            hideCaptionAtLimit: 0,
-                                                            hideAllCaptionAtLilmit: 0,
-                                                            debugMode: false,
-                                                            fallbacks: {
-                                                                simplifyAll: "off",
-                                                                nextSlideOnWindowFocus: "off",
-                                                                disableFocusListener: false,
-                                                            }
-                                                        });
-
-
-
-
-
-                                                        function sliderAnchors() {
-
-                                                            var anchorarray = new Array;
-                                                            lastknowheaderheight = 0; //jQuery('').height();
-
-                                                            // ANCHOR AND ITS HIGHLITS
-                                                            jQuery('.tp-rs-menulink').each(function (i) {
-                                                                var a = jQuery(this),
-                                                                    obj = new Object();
-
-                                                                obj.button = a;
-                                                                obj.href = a.attr("href");
-                                                                if (obj.href != undefined) {
-                                                                    obj.fakehref = obj.href.replace("#", "#!");
-
-                                                                    if (obj.href != undefined && obj.href.split("http").length < 2 && obj.href != "#wp-toolbar") {
-                                                                        obj.target = jQuery(obj.href);
-                                                                        obj.offset = obj.target.data('offset') == undefined ? 0 : obj.target.data('offset');
-                                                                    }
-
-                                                                    if (obj.target != undefined && obj.target.length > 0)
-                                                                        anchorarray.push(obj);
-                                                                }
-                                                            });
-
-                                                            jQuery('.tp-rs-menulink').each(function (i) {
-                                                                var a = jQuery(this);
-                                                                a.click(function () {
-
-                                                                    var obj = new Object(),
-                                                                        ypos = 0;
-
-                                                                    if (a.attr('href') != undefined) {
-                                                                        obj.href = a.attr("href");
-                                                                        obj.target = jQuery(obj.href);
-                                                                        if (obj.href != undefined && obj.target != undefined && jQuery(obj.target).length > 0) {
-
-
-                                                                            //if (jQuery(this).hasClass("tp-rs-menu-selected")) return false;
-
-                                                                            obj.offset = obj.target.data('offset') == undefined ? 0 : obj.target.data('offset');
-                                                                            obj.top = jQuery(obj.target).offset().top;
-                                                                            ypos = obj.top + obj.offset;
-                                                                            var counter = { val: jQuery(document).scrollTop() };
-
-
-                                                                            if (jQuery('body').data('currenscrollanim') != undefined)
-                                                                                jQuery('body').data('currenscrollanim').pause();
-
-
-                                                                            var sanim = punchgs.TweenLite.to(counter, 1, {
-                                                                                val: ypos, ease: punchgs.Power4.easeOut,
-                                                                                onUpdate: function () {
-                                                                                    forcescrolled = true;
-                                                                                    punchgs.TweenLite.set(jQuery('body, html'), { scrollTop: counter.val - 90 });
-                                                                                },
-                                                                                onComplete: function () {
-                                                                                    forcescrolled = false;
-                                                                                    jQuery(window).trigger("scroll.tprsmenu");
-                                                                                }
-                                                                            });
-
-                                                                            forcescrolled = true;
-                                                                            jQuery.each(anchorarray, function (index, o) {
-                                                                                if (obj.href !== o.href) {
-                                                                                    o.button.removeClass("tp-rs-menu-selected");
-                                                                                } else {
-                                                                                    o.button.addClass("tp-rs-menu-selected");
-                                                                                    window.history.pushState('', '', obj.href)
-                                                                                }
-                                                                            });
-
-
-                                                                            jQuery('body').data('currenscrollanim', sanim);
-                                                                            return false;
-                                                                        } else {
-                                                                            return true;
-                                                                        }
-                                                                    } else {
-                                                                        return true;
-                                                                    }
-                                                                })
-                                                            });
-
-                                                        }
-
-                                                        sliderAnchors();
-                                                    }
-                                                });	
-                                            </script>--%>
                         </div>
                     </div>
                 </div>
